@@ -1,27 +1,330 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: #27272b;
+  --background-darker: #151515;
+  --color: #ddd;
+  --white: #fff;
+  --purple: #ab79d7;
+  --purple-light: #cd94ff;
+  --yellow: #dedf40;
+  --green: #62cb5c;
+  --green-light: #8aed85;
+  --blue: #00bbcb;
+  --pink: #d367c1;
+  --red: #e74c3c;
+  --orange: orange;
+  --black: #151515;
+  --dark: #666;
+  --grey: #ccc;
+  --gradient: var(--pink) 15%, var(--green) 25%, var(--blue) 75%,
+    var(--purple) 90%;
+  --gradient-2: var(--purple) 30%, var(--blue) 65%;
+  --gradient-3: var(--pink) 45%, var(--yellow) 85%;
+  --gradient-4: var(--background) 60%, var(--black) 90%;
+  --gradient-5: var(--orange) 0%, var(--red) 45%;
+  --gradient-focus: var(--pink) 30%, var(--purple-light) 95%;
+  --transparent: rgba(255, 255, 255, 0.3);
+  --placeholder: #777;
+  --border: #333;
+  --btn-color: #fff;
+  --font-size: 16px;
+  --line-height: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.light-theme {
+  --background: #fff;
+  --background-darker: #f5f5f5;
+  --color: #333;
+  --white: #fff;
+  --purple: #c99be2;
+  --purple-light: #e4a2e8;
+  --yellow: #f8c0ff;
+  --green: #ffbbf0;
+  --green-light: #e8a2ab;
+  --blue: #f19b9b;
+  --pink: #ffbbd3;
+  --red: coral;
+  --orange: #ff9f00;
+  --black: #666;
+  --dark: #777;
+  --grey: #ccc;
+  --gradient: var(--pink) 15%, var(--green) 25%, var(--blue) 75%,
+    var(--purple) 90%;
+  --gradient-2: var(--purple) 40%, var(--blue) 70%;
+  --gradient-3: var(--pink) 45%, var(--yellow) 85%;
+  --gradient-4: var(--background) 60%, var(--black) 90%;
+  --gradient-5: var(--orange) 0%, var(--red) 45%;
+  --gradient-focus: var(--pink) 30%, var(--purple-light) 95%;
+  --transparent: rgba(0, 0, 0, 0.1);
+  --placeholder: #d1d1d1;
+  --border: #ccc;
+  --btn-color: #555;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background-color: var(--background-darker);
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+}
+
+section {
+  position: relative;
+}
+
+footer {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  background: var(--pink);
+  background: linear-gradient(to right, var(--pink) 40%, var(--blue) 75%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 34px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--pink);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--purple);
+}
+
+ul {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+small {
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+}
+
+small b {
+  color: var(--pink);
+  font-weight: 500;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+form button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.button {
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--white);
+  padding: 2px 18px;
+  font-size: 21px;
+  box-sizing: border-box;
+  color: var(--white);
+  width: 100%;
+  max-width: 288px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--purple);
+  border: 3px solid var(--purple);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--btn-color);
+}
+
+.button.loading {
+  background-color: transparent;
+  cursor: default;
+  pointer-events: none;
+}
+
+.spinner {
+  animation: spinner 2s infinite linear;
+  font-size: 27px;
+  color: var(--btn-color);
+}
+
+.extra-wrapper {
+  display: grid;
+}
+
+.extra-wrapper > * {
+  margin-bottom: 0;
+}
+
+.extra-wrapper button {
+  width: 280px;
+}
+
+.loading-icon {
+  animation: spinner 2s infinite linear;
+  font-size: 45px;
+  color: var(--pink);
+}
+
+hr {
+  border: none;
+  overflow: visible;
+  text-align: center;
+  height: 20px;
+}
+
+hr::after {
+  background: var(--background);
+  content: '△';
+  padding: 0 3px;
+  position: relative;
+  top: 0;
+}
+
+hr::before {
+  background: linear-gradient(to right, var(--gradient-2));
+  content: '';
+  position: relative;
+  display: block;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  header .button {
+    max-width: 180px;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes showIn {
+  from {
+    opacity: 0;
+    top: 35px;
+  }
+  to {
+    opacity: 1;
+    top: 30px;
+  }
 }

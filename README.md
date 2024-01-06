@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next.js Wellness App
 
-## Getting Started
+The Next.js wellness App is a web application designed to aid users in monitoring their health and fitness progress. Offering a diverse range of features, this app assists in managing wellness routines and fostering a healthier lifestyle.
 
-First, run the development server:
+### Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Quiz Page:** Initiated with a quiz, the app guides users through various questions, collecting crucial data to tailor wellness and health recommendations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Redux Toolkit Slices:** Efficient state management using Redux Toolkit slices ensures organized data handling across multiple components and pages.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. **Height and Weight Pages:** Users input their height, weight, and target weight, with a switcher for metric/imperial units, facilitating Body Mass Index (BMI) calculations.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **BMI Results Page:** Utilizing user data, the app calculates BMI and categorizes it as UNDERWEIGHT, NORMAL, OVERWEIGHT, or OBESE, offering detailed descriptions for each category.
 
-## Learn More
+5. **Testimonials:** Featuring feedback from satisfied users who achieved their health goals using the app.
 
-To learn more about Next.js, take a look at the following resources:
+6. **Loader:** Smooth transitions between app sections are facilitated by a Loader component displaying engaging loading animations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+7. **Progress Bars:** Dynamic progress bars reflect the user's BMI category, providing visual health progress tracking.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+8. **Routing and Communication:** Seamless navigation between quiz, variants, height/weight input, and results, with interactive component communication for a smooth user experience.
 
-## Deploy on Vercel
+9. **Navigation:** Users can move across 13 different app pages, including a "Step Back" button for easy navigation.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+10. **Email:** Allows users to save data to the backend API with frontend/backend validation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+11. **Offer:** Users can select from three available plans.
+
+12. **Checkout:** Simulates payment, performs form validation, and sends data to the backend server using the /submit-checkout endpoint.
+
+13. **Theme Switcher:** Toggle between light and dark themes for personalized app display.
+
+### Usage
+
+To run the app:
+
+1. Clone the repository to your local machine: `git clone https://github.com/njordulv/next-wellness-app.git`
+2. Install the required dependencies: `npm install`
+3. Start the development server: `npm start`
+4. Open your web browser and navigate to http://localhost:3000 to access the app.
+
+### Future Enhancements
+
+This project is actively maintained and open to further improvements. Some possible future enhancements include:
+
+- Additional questions and quiz variants to gather more comprehensive user data.
+- Integration with a user account system to save and track progress over time.
+- Enhanced data visualization and analysis to provide more personalized health recommendations.
+
+### Contributing
+
+Contributions are welcome:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature-name`
+3. Make your changes and commit them: `git commit -m "Add your feature or bug fix"`
+4. Push your changes to your fork: `git push origin feature/your-feature-name`
+5. Create a pull request on the original repository's main branch.
+
+### License
+
+This project is licensed under the [MIT License](LICENSE).
+
+### Credits
+
+- Created by Njordr
+- This project was created with [Create Next App](https://nextjs.org/).
