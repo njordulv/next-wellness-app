@@ -1,6 +1,6 @@
 {
   "name": "next-wellness-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "react-redux": "^9.0.4",
+    "styled-components": "^6.1.6"
   },
   "devDependencies": {
     "@types/node": "20.10.6",

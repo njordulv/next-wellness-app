@@ -2,25 +2,19 @@ import Link from 'next/link'
 import { GiWeightScale } from 'react-icons/gi'
 import styles from './page.module.css'
 
-export const metadata = {
-  title: 'Next Wellness App',
-  description:
-    'Next.js Wellness App is a web application designed to help users track their health and fitness progress',
-}
-
 export default function Home() {
   return (
     <>
-      <h1>Welcome to the Next Fasting App!</h1>
+      <h1>Welcome to the Next Wellness App!</h1>
       <div className="text-left">
         <p>
-          Get on the path to a healthier you with our fasting and BMI
+          Get on the path to a healthier you with our wellness and BMI
           calculator. Start your journey to a better lifestyle today.
         </p>
         <h2>Features:</h2>
         <div className={styles.homeText}>
           <ul>
-            <li>Take our quiz to customize your fasting plan</li>
+            <li>Take our quiz to customize your wellness plan</li>
             <li>Calculate your Body Mass Index (BMI)</li>
             <li>Get results and recommendations based on your BMI</li>
             <li>Track your progress with our progress bars</li>
