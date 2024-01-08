@@ -16,7 +16,7 @@ export default function Quiz() {
         your goals, habits, and needs. Start your unique path to becoming the
         best version of yourself right now!
       </p>
-      <div className="text-center">
+      <div className="text-center flex items-center flex-col">
         <Link href="/quiz/goal" className="button">
           Start Quiz
         </Link>

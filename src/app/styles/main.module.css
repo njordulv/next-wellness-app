@@ -1,8 +1,3 @@
-.main {
-  text-align: center;
-  scroll-behavior: smooth;
-}
-
 .mainSection {
   min-height: 585px;
   background-color: var(--background);
@@ -39,23 +34,6 @@
   position: sticky;
   top: 0;
   z-index: 2;
-}
-
-.homeText {
-  position: relative;
-  background-color: var(--background-darker);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.sectionIcon {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-size: 160px;
-  opacity: 0.04;
-  color: var(--color);
 }
 
 .spaceBetween {

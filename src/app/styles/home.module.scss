@@ -1,0 +1,25 @@
+.page {
+  &_heading {
+    @apply mb-6;
+  }
+
+  &_content {
+    @apply text-left;
+  }
+
+  &_features {
+    @apply relative rounded-lg mb-5 p-5 custom-bg-darker;
+  }
+
+  &_list {
+    @apply p-0;
+  }
+
+  &_icon {
+    @apply absolute right-0 bottom-0 text-9xl opacity-5;
+  }
+
+  &_buttons {
+    @apply flex items-center flex-col text-center;
+  }
+}

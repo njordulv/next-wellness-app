@@ -229,22 +229,24 @@ img {
   color: var(--btn-color);
 }
 
-.extra-wrapper {
-  display: grid;
-}
-
-.extra-wrapper > * {
-  margin-bottom: 0;
-}
-
-.extra-wrapper button {
-  width: 280px;
-}
-
-.loading-icon {
+.animate-spinner {
   animation: spinner 2s infinite linear;
-  font-size: 45px;
+}
+
+.custom-color-pink {
   color: var(--pink);
+}
+
+.custom-bg {
+  background: var(--background);
+}
+.custom-bg-logo {
+  background: linear-gradient(180deg, var(--gradient-2));
+  color: var(--white);
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 hr {
@@ -273,17 +275,6 @@ hr::before {
   height: 1px;
   top: 50%;
   margin-top: -1px;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @media (max-width: 480px) {

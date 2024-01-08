@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,7 +14,31 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        background: 'var(--background)',
+        'background-darker': 'var(--background-darker)',
+        purple: 'var(--purple)',
+        'purple-light': 'var(--purple-light)',
+        yellow: 'var(--yellow)',
+        green: 'var(--green)',
+        'green-light': 'var(--green-light)',
+        blue: 'var(--blue)',
+        pink: 'var(--pink)',
+        red: 'var(--red)',
+        orange: 'var(--orange)',
+        black: 'var(--black)',
+        dark: 'var(--dark)',
+        grey: 'var(--grey)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.custom-bg-darker': {
+          background: 'var(--background-darker)',
+        },
+      })
+    }),
+  ],
 }

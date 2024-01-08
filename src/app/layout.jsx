@@ -22,8 +22,8 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={baloo.className}>
           <Header />
-          <main className={styles.main}>
-            <section className={styles.mainSection}>
+          <main className="text-center scroll-smooth">
+            <section className="custom-bg min-h-[585px]">
               <div className={styles.wrapper}>
                 <div className={styles.content}>{children}</div>
               </div>

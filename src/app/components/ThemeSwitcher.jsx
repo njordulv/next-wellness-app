@@ -1,13 +1,10 @@
 'use client'
 
-import { useSelector, useDispatch } from '../../lib/redux/store'
 import { useEffect } from 'react'
 import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
-import {
-  setThemeMode,
-  selectThemeMode,
-} from '../../lib/redux/slices/themeSlice'
-import styles from './ThemeSwitcher.module.css'
+import { useSelector, useDispatch } from '../lib/redux/store'
+import { setThemeMode, selectThemeMode } from '../lib/redux/slices/themeSlice'
+import styles from '../styles/theme.module.scss'
 
 const ThemeSwitcher = () => {
   const dispatch = useDispatch()
@@ -32,15 +29,15 @@ const ThemeSwitcher = () => {
 
   return (
     <div className={styles.themeSwitch}>
-      <label className={styles.checkboxWrapper}>
+      <label className={styles.themeSwitch_wrapper}>
         <input
           type="checkbox"
           checked={darkTheme}
           onChange={(e) => themeHandler(e, 'darkTheme')}
-          className={styles.checkboxInput}
+          className={styles.themeSwitch_input}
         />
-        <div className={styles.checkboxSlider}>
-          <div className={styles.checkboxKnob} aria-label="Switch theme">
+        <div className={styles.themeSwitch_slider}>
+          <div className={styles.themeSwitch_knob} aria-label="Switch theme">
             {darkTheme ? <IoMoonSharp /> : <IoSunnyOutline />}
           </div>
         </div>
