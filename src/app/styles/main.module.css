@@ -8,8 +8,6 @@
   background-color: var(--background);
 }
 
-.headerWrapper,
-.footerWrapper,
 .wrapper {
   position: relative;
   min-height: 100vh;
@@ -21,12 +19,6 @@
   margin: 0 auto;
   box-sizing: border-box;
   z-index: 1;
-}
-
-.headerWrapper,
-.footerWrapper {
-  min-height: auto;
-  display: flex;
 }
 
 .container {
@@ -47,21 +39,6 @@
   position: sticky;
   top: 0;
   z-index: 2;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: 46px;
-  box-sizing: border-box;
-}
-
-.logoIcon {
-  color: var(--white);
-  background: linear-gradient(180deg, var(--gradient-2));
-  font-size: 46px;
-  border-radius: 5px;
 }
 
 .homeText {

@@ -1,8 +1,8 @@
 import { Baloo_2 } from 'next/font/google'
 import { Providers } from './lib/providers'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import styles from './page.module.css'
+import Header from './components/Common/Header'
+import Footer from './components/Common/Footer'
+import styles from './styles/main.module.css'
 import './globals.css'
 
 const baloo = Baloo_2({
