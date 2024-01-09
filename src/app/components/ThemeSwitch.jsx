@@ -1,6 +1,7 @@
 'use client'
 
-import { IoSunnyOutline, IoMoonSharp, IoInvertMode } from 'react-icons/io5'
+import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
+import { BiLoaderAlt } from 'react-icons/bi'
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 
@@ -13,7 +14,7 @@ export default function ThemeSwitch() {
   return (
     <div className="absolute flex left-0 text-2xl">
       {!mounted ? (
-        <IoInvertMode />
+        <BiLoaderAlt className="animate-spinner" />
       ) : resolvedTheme === 'dark' ? (
         <button onClick={() => setTheme('light')}>
           <IoSunnyOutline />
