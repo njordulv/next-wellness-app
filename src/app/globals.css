@@ -34,7 +34,7 @@
   --line-height: 24px;
 }
 
-.light-theme {
+[data-theme='light'] {
   --background: #fff;
   --background-darker: #f5f5f5;
   --color: #333;
