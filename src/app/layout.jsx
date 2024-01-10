@@ -1,7 +1,7 @@
 import { Baloo_2 } from 'next/font/google'
 import { Providers } from './theme-provider'
-import Header from './components/Common/Header'
-import Footer from './components/Common/Footer'
+import Header from './components/common/Header'
+import Footer from './components/common/Footer'
 import styles from './styles/main.module.css'
 import './globals.css'
 

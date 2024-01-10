@@ -29,6 +29,7 @@ module.exports = {
         black: 'var(--black)',
         dark: 'var(--dark)',
         grey: 'var(--grey)',
+        customGreen: '#00b67a',
       },
     },
   },
