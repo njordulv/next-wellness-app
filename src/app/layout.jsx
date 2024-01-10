@@ -1,5 +1,5 @@
 import { Baloo_2 } from 'next/font/google'
-import { Providers } from './theme-provider'
+import { AppProviders } from './lib/providers/app-providers'
 import Header from './components/common/Header'
 import Footer from './components/common/Footer'
 import styles from './styles/main.module.css'
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={baloo.className}>
-        <Providers>
+        <AppProviders>
           <Header />
           <main className="text-center scroll-smooth">
             <section className="custom-bg min-h-[585px]">
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
             </section>
           </main>
           <Footer />
-        </Providers>
+        </AppProviders>
       </body>
     </html>
   )

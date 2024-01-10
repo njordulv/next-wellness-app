@@ -17,7 +17,7 @@ export default function Quiz() {
         best version of yourself right now!
       </p>
       <div className="text-center flex items-center flex-col">
-        <Link href="/quiz/goal" className="button">
+        <Link href="/quiz/height" className="button">
           Start Quiz
         </Link>
       </div>

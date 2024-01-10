@@ -3,11 +3,13 @@ import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
 } from 'react-redux'
-import themeReducer from './slices/themeSlice'
+import formReducer from './slices/formSlice'
+import switcherReducer from './slices/switcherSlice'
 
 export const reduxStore = configureStore({
   reducer: {
-    theme: themeReducer,
+    form: formReducer,
+    switcher: switcherReducer,
   },
 })
 

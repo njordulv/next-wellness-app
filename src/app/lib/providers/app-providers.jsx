@@ -1,8 +1,10 @@
 'use client'
 
 import { ThemeProvider } from 'next-themes'
+import { Provider } from 'react-redux'
+import { reduxStore } from '../redux/store'
 
-export function Providers({ children }) {
+export function AppProviders({ children }) {
   return (
     <ThemeProvider
       attribute="data-theme"
@@ -10,7 +12,7 @@ export function Providers({ children }) {
       enableSystem
       storageKey="theme"
     >
-      {children}
+      <Provider store={reduxStore}>{children}</Provider>
     </ThemeProvider>
   )
 }
