@@ -11,7 +11,7 @@ export default function ThemeSwitch() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <div className="absolute flex left-0 text-2xl">
+    <div className="absolute flex left-0 text-2xl cursor-pointer hover:text-blue transition-all">
       {!mounted ? (
         <IoSunny />
       ) : resolvedTheme === 'dark' ? (

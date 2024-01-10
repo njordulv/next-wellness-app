@@ -1,0 +1,118 @@
+.formEmail {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  &__field {
+    position: relative;
+    margin: 0 auto 20px;
+    padding-bottom: 15px;
+  }
+
+  &__input {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 5px 10px 5px 33px;
+    text-align: left;
+    color: var(--color);
+    box-sizing: border-box;
+    outline: none;
+    background-color: var(--background);
+
+    &::placeholder {
+      color: var(--placeholder);
+      transition: all 0.3s ease;
+    }
+
+    &:focus-visible::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &__error,
+  &__success {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: left;
+    bottom: 0;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+  }
+
+  &__error {
+    bottom: -3px;
+    color: var(--red);
+  }
+
+  &__success {
+    bottom: -3px;
+    color: darkseagreen;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 10px;
+    top: 16px;
+    font-size: 18px;
+    color: var(--purple);
+  }
+
+  &__erase {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color);
+    transition: all 0.3s ease;
+
+    &:disabled {
+      opacity: 0;
+    }
+  }
+
+  &__button {
+    max-width: initial;
+
+    &__error {
+      bottom: -3px;
+      text-align: left;
+    }
+  }
+
+  &__privacy {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    color: var(--grey);
+    margin-bottom: 20px;
+
+    & svg {
+      font-size: 24px;
+      color: var(--green);
+    }
+
+    & a,
+    & a:visited {
+      color: var(--btn-color);
+    }
+
+    & a:hover {
+      color: var(--green);
+    }
+  }
+
+  &__privacy-text {
+    text-align: left;
+  }
+}

@@ -6,8 +6,8 @@ import styles from './styles/main.module.css'
 import './globals.css'
 
 const baloo = Baloo_2({
-  weight: ['400', '500', '600'],
   subsets: ['latin'],
+  display: 'swap',
 })
 
 export const metadata = {
