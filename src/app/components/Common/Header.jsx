@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { IoFitnessOutline } from 'react-icons/io5'
-// import ThemeSwitcher from '../ThemeSwitcher'
 import ThemeSwitch from '../ThemeSwitch'
 
 export default function Header() {

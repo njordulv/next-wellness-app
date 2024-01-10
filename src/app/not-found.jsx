@@ -3,7 +3,7 @@ import Back from './components/Back'
 export default function NotFound() {
   return (
     <>
-      <div className="grid">
+      <div className="grid justify-center">
         <h1 className="m-0">404</h1>
         <hr />
         <h3 className="m-0">Page Not Found</h3>

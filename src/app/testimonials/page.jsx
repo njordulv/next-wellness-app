@@ -1,8 +1,10 @@
 import Slider from '../components/slider/testimonials'
+import ProgressCircular from '../components/progress/ProgressCircular'
 
 export default function Testimonials() {
   return (
     <>
+      <ProgressCircular />
       <h1>Our Users</h1>
       <h3>
         Over a thousand users have successfully reached their milestones using

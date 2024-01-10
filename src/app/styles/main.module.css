@@ -5,7 +5,7 @@
 
 .wrapper {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 170px);
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -328,10 +328,4 @@
 
 .switcherButton .switcherCheckbox:checked ~ .switcherLayer {
   background-color: var(--black);
-}
-
-.CircularProgressbar {
-  width: 190;
-  height: 190px;
-  margin-bottom: 30px;
 }

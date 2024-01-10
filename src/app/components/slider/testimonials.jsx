@@ -9,7 +9,7 @@ import { testimonials } from '../../data/testimonials'
 import './css/slick.scss'
 import './css/slick-theme.scss'
 
-export default class SimpleSlider extends Component {
+export default class TestimonialSlider extends Component {
   render() {
     const settings = {
       className: 'center',
