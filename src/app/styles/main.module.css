@@ -5,7 +5,7 @@
 
 .wrapper {
   position: relative;
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 175px);
   display: flex;
   flex-direction: column;
   place-content: center;

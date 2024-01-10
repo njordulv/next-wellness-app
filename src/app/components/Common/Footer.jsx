@@ -25,7 +25,7 @@ export default function Footer() {
     <footer>
       <Wrapper>
         <Container>
-          Copyright &copy; {year} React Fasting App. <br />
+          Copyright &copy; {year} Next Wellness App. <br />
           All Rights Reserved.
         </Container>
       </Wrapper>
