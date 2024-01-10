@@ -17,7 +17,7 @@ import {
   selectDisabledGoal,
   selectIsMetric,
 } from '../../lib/redux/slices/formSlice'
-import Switcher from '../../components/Switcher'
+import MetricSwitch from '../../components/switcher/MetricSwitch'
 import { verdictData } from '../../data/verdict'
 import styles from '../../styles/main.module.css'
 
@@ -100,7 +100,7 @@ const QuizWeightGoal = () => {
   return (
     <>
       <h2>What is your goal weight?</h2>
-      <Switcher />
+      <MetricSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>
           <label htmlFor="input-weight">

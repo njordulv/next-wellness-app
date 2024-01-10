@@ -1,13 +1,13 @@
 'use client'
 
-import { useSelector, useDispatch } from '../lib/redux/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import {
   toggleSwitch,
   selectSwitcherSystem,
   selectSwitcherIsMetric,
-} from '../lib/redux/slices/switcherSlice'
-import { resetForm, setIsMetric } from '../lib/redux/slices/formSlice'
-import styles from '../styles/main.module.css'
+} from '../../lib/redux/slices/switcherSlice'
+import { resetForm, setIsMetric } from '../../lib/redux/slices/formSlice'
+import styles from './MetricSwitch.module.scss'
 
 const Switcher = () => {
   const dispatch = useDispatch()
@@ -23,18 +23,18 @@ const Switcher = () => {
   return (
     <>
       <div className={styles.switcher}>
-        <div className={styles.switcherButton}>
+        <div className={styles.switcher_button}>
           <input
             type="checkbox"
-            className={styles.switcherCheckbox}
+            className={styles.switcher_checkbox}
             name={SwitcherSystem}
             checked={SwitcherIsMetric}
             onChange={() => toggleSystem()}
           />
-          <div className={styles.switcherKnobs}>
+          <div className={styles.switcher_knobs}>
             <span></span>
           </div>
-          <div className={styles.switcherLayer}></div>
+          <div className={styles.switcher_layer}></div>
         </div>
       </div>
     </>

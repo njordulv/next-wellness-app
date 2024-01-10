@@ -13,7 +13,7 @@ import {
   selectDisabledWeight,
   selectIsMetric,
 } from '../../lib/redux/slices/formSlice'
-import Switcher from '../../components/Switcher'
+import MetricSwitch from '../../components/switcher/MetricSwitch'
 import styles from '../../styles/main.module.css'
 
 const QuizWeight = () => {
@@ -68,7 +68,7 @@ const QuizWeight = () => {
   return (
     <>
       <h2>Enter your weight</h2>
-      <Switcher />
+      <MetricSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>
           <label htmlFor={isMetric ? 'input-weight' : 'input-weight-imperial'}>

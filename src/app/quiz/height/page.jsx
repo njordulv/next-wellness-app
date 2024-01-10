@@ -12,7 +12,7 @@ import {
   selectIsMetric,
 } from '../../lib/redux/slices/formSlice'
 import HeightImperial from './imperial'
-import Switcher from '../../components/Switcher'
+import MetricSwitch from '../../components/switcher/MetricSwitch'
 import styles from '../../styles/main.module.css'
 
 const QuizHeight = () => {
@@ -56,7 +56,7 @@ const QuizHeight = () => {
   return (
     <>
       <h2>Enter your height</h2>
-      <Switcher />
+      <MetricSwitch />
       {isMetric ? (
         <form onSubmit={continueHandler} className={styles.heightForm}>
           <div className={styles.inputField}>
