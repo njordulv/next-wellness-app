@@ -36,13 +36,16 @@ function writeFileAsync(filePath, content) {
 app.post('/submit-email', async (req, res) => {
   try {
     const formData = req.body
-    const data = await readFileAsync('data/email.json')
-    const emailData = JSON.parse(data)
+    let data = await readFileAsync('data/email.json')
 
+    if (!data) {
+      data = '[]'
+    }
+
+    const emailData = JSON.parse(data)
     emailData.push(formData)
 
     await writeFileAsync('data/email.json', JSON.stringify(emailData, null, 2))
-
     res.status(200).send('Data was saved successfully')
   } catch (err) {
     res.status(500).send('Error saving data')
