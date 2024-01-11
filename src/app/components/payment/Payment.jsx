@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { v4 as uuidv4 } from 'uuid'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -40,13 +39,7 @@ const Payment = () => {
   const [fullPrice, setFullPrice] = useState(planTwo.monthPrice)
   const [errorDisplayed, setErrorDisplayed] = useState(false)
   const [loading, setLoading] = useState(false)
-
-  // unique IDs for payment plan inputs
-  const [planIds] = useState({
-    plan1Id: 'plan1_' + uuidv4(),
-    plan2Id: 'plan2_' + uuidv4(),
-    plan3Id: 'plan3_' + uuidv4(),
-  })
+  const paymentPlanId = ['plan1', 'plan2', 'plan3']
 
   // plan selection
   const handlePlanChange = (event, name) => {
@@ -110,13 +103,13 @@ const Payment = () => {
           <div className={styles.paymentPlan}>
             <input
               type="radio"
-              id={planIds.plan1Id}
+              id={paymentPlanId[0]}
               name="planOptions"
               className={styles.paymentInput}
               checked={plans && plans.plan1}
               onChange={(e) => handlePlanChange(e, 'plan1')}
             />
-            <label htmlFor={planIds.plan1Id}>
+            <label htmlFor={paymentPlanId[0]}>
               <div className={styles.paymentName}>{planOne.name}</div>
               <div className={styles.paymentPrice}>
                 <span>
@@ -137,13 +130,13 @@ const Payment = () => {
           <div className={styles.paymentPlan}>
             <input
               type="radio"
-              id={planIds.plan2Id}
+              id={paymentPlanId[1]}
               name="planOptions"
               className={styles.paymentInput}
               checked={plans && plans.plan2}
               onChange={(e) => handlePlanChange(e, 'plan2')}
             />
-            <label htmlFor={planIds.plan2Id}>
+            <label htmlFor={paymentPlanId[1]}>
               <div className={styles.paymentName}>{planTwo.name}</div>
               <div className={styles.paymentPrice}>
                 <span>
@@ -169,13 +162,13 @@ const Payment = () => {
           <div className={styles.paymentPlan}>
             <input
               type="radio"
-              id={planIds.plan3Id}
+              id={paymentPlanId[2]}
               name="planOptions"
               className={styles.paymentInput}
               checked={plans && plans.plan3}
               onChange={(e) => handlePlanChange(e, 'plan3')}
             />
-            <label htmlFor={planIds.plan3Id}>
+            <label htmlFor={paymentPlanId[2]}>
               <div className={styles.paymentName}>{planThree.name}</div>
               <div className={styles.paymentPrice}>
                 <span>
