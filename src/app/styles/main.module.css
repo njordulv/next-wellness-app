@@ -69,12 +69,19 @@
   background: linear-gradient(to right, var(--gradient-2));
 }
 
+.scrollProgressBarWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
 .scrollProgressBar {
   background: linear-gradient(to right, var(--gradient));
   height: 4px;
   border-radius: 2px;
-  position: absolute;
-  bottom: 0;
 }
 
 .totalQuestions {

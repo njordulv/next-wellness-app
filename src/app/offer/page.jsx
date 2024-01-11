@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { GiWeightScale, GiCheckMark } from 'react-icons/gi'
 import {
   TbStretching2,
@@ -8,12 +7,14 @@ import {
   TbStarFilled,
   TbActivity,
 } from 'react-icons/tb'
+import { SiReact, SiNextdotjs, SiVercel, SiNodedotjs } from 'react-icons/si'
 import { useSelector } from '../lib/redux/store'
 import {
   selectIsMetric,
   selectGoal,
   selectGoalImperial,
 } from '../lib/redux/slices/formSlice'
+import ProgressScroll from '../components/progress/ProgressScroll'
 import TestimonialSlider from '../components/slider/testimonials'
 import Payment from '../components/payment/Payment'
 import styles from '../styles/offer.module.scss'
@@ -33,8 +34,9 @@ const Offer = () => {
 
   return (
     <div className={styles.offerPage}>
+      <ProgressScroll />
       <div className={styles.offerTarget}>
-        <div className={styles.offerTargetTop}>
+        <div className={styles.offerTarget_top}>
           <div>
             <TbTargetOff />
           </div>
@@ -42,11 +44,11 @@ const Offer = () => {
             <TbStretching2 />
           </div>
         </div>
-        <div className={styles.offerTargetMid}>
+        <div className={styles.offerTarget_mid}>
           <b>Before</b>
           <b>After</b>
         </div>
-        <div className={styles.offerTargetBot}>
+        <div className={styles.offerTarget_bot}>
           <div>
             <span>Metabolic rate</span>
             <div className="flex flex-row gap-0 mt-4 text-2xl text-green">
@@ -77,10 +79,10 @@ const Offer = () => {
       <br />
       <br />
       <h2>Your custom plan awaits!</h2>
-      <div className={styles.offerTargetWeight}>
+      <div className={styles.offerTarget_weight}>
         <h4>Target Weight</h4>
         <span>
-          <GiWeightScale className={styles.offerScaleIcon} />
+          <GiWeightScale className="text-green text-[22px]" />
           {isMetric
             ? goal
               ? `${goal} kg`
@@ -96,9 +98,9 @@ const Offer = () => {
       <br />
       <div className="text-center">
         <h2 className="flex items-center justify-center">
-          <TbStarFilled className={styles.offerIconStar} />
+          <TbStarFilled className="text-orange text-2xl" />
           &nbsp;10000+&nbsp;
-          <TbStarFilled className={styles.offerIconStar} />
+          <TbStarFilled className="text-orange text-2xl" />
         </h2>
         <p>
           Newcomers achieved their enduring weight loss goals with our program!
@@ -132,15 +134,13 @@ const Offer = () => {
           All these features are integrated into a single mobile app available
           on IOS 14.0+ or Android 8.0+ devices.
         </p>
-        <Image
-          src={'next.svg'}
-          className="my-10 bg-blue p-7 rounded-md"
-          width={620}
-          height={250}
-          sizes="620x250"
-          alt="mac image"
-          priority={false}
-        />
+        <p>Powered by:</p>
+        <div className="grid grid-cols-2 items-center gap-4 text-grey text-[88px] mt-9 mb-5">
+          <SiReact className="bg-background-darker w-full rounded-md p-5" />
+          <SiNextdotjs className="bg-background-darker w-full rounded-md p-5" />
+          <SiVercel className="bg-background-darker w-full rounded-md p-5" />
+          <SiNodedotjs className="bg-background-darker w-full rounded-md p-5" />
+        </div>
       </div>
       <br />
       <h2>Read the inspiring success stories from our users</h2>
@@ -156,10 +156,10 @@ const Offer = () => {
       <br />
       <br />
       <h2>Witness noticeable transformations within a mere 3 weeks</h2>
-      <div className={styles.offerTargetWeight}>
+      <div className={styles.offerTarget_weight}>
         <h4>Target Weight</h4>
         <span>
-          <GiWeightScale className={styles.offerScaleIcon} />
+          <GiWeightScale className="text-green text-[22px]" />
           {goal ? `${goal} lbs` : 'Please complete all the previous steps'}
         </span>
       </div>
