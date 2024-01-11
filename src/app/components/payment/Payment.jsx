@@ -1,12 +1,12 @@
 'use client'
 
-import { useDispatch, useSelector } from '../../lib/redux/store'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { v4 as uuidv4 } from 'uuid'
+import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { BiLoaderAlt } from 'react-icons/bi'
+import { useDispatch, useSelector } from '../../lib/redux/store'
 import {
   setPlans,
   setOffer,
@@ -23,7 +23,7 @@ import {
   setCheckbox,
   selectCheckbox,
 } from '../../lib/redux/slices/checkboxSlice'
-import styles from './Payment.module.css'
+import styles from './Payment.module.scss'
 
 const Payment = () => {
   const dispatch = useDispatch()
