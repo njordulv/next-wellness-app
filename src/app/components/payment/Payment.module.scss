@@ -180,6 +180,10 @@
 
     &:checked + .checkboxSlider {
       background-color: var(--purple);
+
+      .checkboxKnob {
+        left: calc(100% - 19px - 3px);
+      }
     }
   }
 
@@ -204,9 +208,5 @@
     top: 0;
     background-color: var(--white);
     box-shadow: 0 2px 6px rgba(153, 153, 153, 0.75);
-
-    input[type='checkbox']:checked + .checkboxSlider & {
-      left: calc(100% - 19px - 3px);
-    }
   }
 }

@@ -232,9 +232,9 @@ const Payment = () => {
               &nbsp; for each subsequent quarterly renewal until I opt to
               cancel. To avoid any charges, it`s necessary to cancel your
               subscription at least one day before its expiration. This can be
-              done by contacting support@fasting.app or calling our US number:
-              555-01-39. The transaction details might appear on your bank
-              statement
+              done by contacting support@nextwellness.app or calling our US
+              number: 555-01-39. The transaction details might appear on your
+              bank statement
             </small>
           </div>
         </div>
