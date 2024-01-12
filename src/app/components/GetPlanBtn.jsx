@@ -8,10 +8,7 @@ export default function GetPlanBtn() {
   }
 
   return (
-    <button
-      className="button button--small absolute right-0"
-      onClick={handleScrollToPlan}
-    >
+    <button className="button button--small" onClick={handleScrollToPlan}>
       Get My Plan
     </button>
   )
