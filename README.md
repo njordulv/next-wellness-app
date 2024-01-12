@@ -35,9 +35,12 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 To run the app:
 
 1. Clone the repository to your local machine: `git clone https://github.com/njordulv/next-wellness-app.git`
-2. Install the required dependencies: `npm install`
-3. Start the development server: `npm start`
-4. Open your web browser and navigate to http://localhost:3000 to access the app.
+2. Install the required dependencies using Yarn: `yarn install`
+3. Navigate to the backend API directory: `cd api`
+4. Start the backend server: `yarn dev`
+5. Return to the root directory of the project.
+6. Start the frontend development server: `yarn dev`
+7. Open your web browser and navigate to http://localhost:3000 to access the app.
 
 ### Future Enhancements
 
