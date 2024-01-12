@@ -28,7 +28,6 @@ export default function Home() {
         <p>Start exploring the app to unlock a healthier you!</p>
         <p>Ready to begin? Click below to start your personalized quiz.</p>
       </div>
-      <br />
       <div className={styles.page_buttons}>
         <Link href="/quiz" className="button">
           Start Now

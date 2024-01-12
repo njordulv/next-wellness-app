@@ -32,6 +32,7 @@
   --btn-color: #fff;
   --font-size: 16px;
   --line-height: 24px;
+  --header-height: 68px;
 }
 
 [data-theme='light'] {
@@ -84,8 +85,15 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 10px 0;
+  height: var(--header-height);
   text-align: center;
+  background-color: var(--background-darker);
+  z-index: 2;
 }
 
 section {
@@ -197,7 +205,7 @@ form button {
   color: var(--white);
   width: 100%;
   max-width: 288px;
-  height: 45px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,6 +213,10 @@ form button {
   border: 3px solid var(--purple);
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.button--small {
+  max-width: 188px;
 }
 
 .button:hover {
@@ -274,7 +286,9 @@ hr::before {
 
 @media (max-width: 480px) {
   header .button {
-    max-width: 180px;
+    max-width: 105px;
+    font-size: 15px;
+    padding: 0 10px;
   }
 }
 

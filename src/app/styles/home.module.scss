@@ -4,15 +4,15 @@
   }
 
   &_content {
-    @apply text-left;
+    @apply text-left mb-7;
   }
 
   &_features {
-    @apply relative rounded-lg mb-5 p-5 custom-bg-darker;
+    @apply relative rounded-lg p-5 custom-bg-darker;
   }
 
   &_list {
-    @apply p-0;
+    @apply list-disc;
   }
 
   &_icon {

@@ -134,9 +134,12 @@ const Offer = () => {
           All these features are integrated into a single mobile app available
           on IOS 14.0+ or Android 8.0+ devices.
         </p>
-        <p>Powered by:</p>
-        <div className="grid grid-cols-2 items-center gap-4 text-grey text-[88px] mt-9 mb-5">
-          <SiReact className="bg-background-darker w-full rounded-md p-5" />
+        <small>Powered by:</small>
+        <div className="grid grid-cols-2 items-center gap-4 text-grey text-[88px] mt-2 mb-5">
+          <SiReact
+            className="bg-background-darker w-full rounded-md p-5"
+            aria-label="react"
+          />
           <SiNextdotjs className="bg-background-darker w-full rounded-md p-5" />
           <SiVercel className="bg-background-darker w-full rounded-md p-5" />
           <SiNodedotjs className="bg-background-darker w-full rounded-md p-5" />
