@@ -24,7 +24,7 @@ import {
 } from '../lib/redux/slices/paymentSlice'
 import Plans from '../components/checkout/Plans'
 import Final from '../components/checkout/Final'
-import styles from '../components/checkout/Form.module.css'
+import styles from '../styles/form.module.scss'
 
 const Checkout = () => {
   const dispatch = useDispatch()

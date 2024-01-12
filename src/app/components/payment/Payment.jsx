@@ -22,7 +22,7 @@ import {
   setCheckbox,
   selectCheckbox,
 } from '../../lib/redux/slices/checkboxSlice'
-import styles from './Payment.module.scss'
+import styles from '../../styles/payment.module.scss'
 
 const Payment = () => {
   const dispatch = useDispatch()

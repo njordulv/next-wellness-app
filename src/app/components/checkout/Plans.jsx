@@ -7,7 +7,7 @@ import {
   selectPlanTwo,
   selectPlanThree,
 } from '../../lib/redux/slices/paymentSlice'
-import styles from './Checkout.module.css'
+import styles from '../../styles/checkout.module.scss'
 
 const Plans = () => {
   const plans = useSelector(selectPlans)

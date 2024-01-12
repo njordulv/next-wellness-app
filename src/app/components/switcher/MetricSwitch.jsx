@@ -7,7 +7,7 @@ import {
   selectSwitcherIsMetric,
 } from '../../lib/redux/slices/switcherSlice'
 import { resetForm, setIsMetric } from '../../lib/redux/slices/formSlice'
-import styles from './MetricSwitch.module.scss'
+import styles from '../../styles/metric-switch.module.scss'
 
 const Switcher = () => {
   const dispatch = useDispatch()
