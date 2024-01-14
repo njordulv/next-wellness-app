@@ -107,7 +107,7 @@ const Final = ({ setPopup, emailValue }) => {
         <h2>Your Order is Confirmed</h2>
         <h3>
           Thank you for choosing <br />
-          React Fasting App!
+          Next Wellness App!
         </h3>
         <h5>
           An email to <span>{emailValue}</span> was sent with your personalized

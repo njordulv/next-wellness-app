@@ -8,7 +8,7 @@ export default function Testimonials() {
       <h1>Our Users</h1>
       <h3>
         Over a thousand users have successfully reached their milestones using
-        the Next Fasting App
+        the Next Wellness App
       </h3>
       <Slider />
     </>
