@@ -1,6 +1,6 @@
 const questions = [
   {
-    counter: '1',
+    id: '1',
     question: 'What is your goal with regard to weight management?',
     options: [
       'Weight loss',
@@ -10,7 +10,7 @@ const questions = [
     ],
   },
   {
-    counter: '2',
+    id: '2',
     question: 'How many full meals do you have during the day?',
     options: [
       'Three times a day',
@@ -20,12 +20,12 @@ const questions = [
     ],
   },
   {
-    counter: '3',
+    id: '3',
     question: 'What type of foods do you enjoy the most?',
     options: ['Vegetables', 'Fruits', 'Meat', 'Dairy products', 'Grains'],
   },
   {
-    counter: '4',
+    id: '4',
     question: 'What type of foods do you enjoy the least?',
     options: [
       'Fast food',
@@ -35,7 +35,7 @@ const questions = [
     ],
   },
   {
-    counter: '5',
+    id: '5',
     question:
       'Do you have any medical conditions or dietary restrictions that may affect your weight loss plan?',
     options: [
@@ -47,17 +47,17 @@ const questions = [
     ],
   },
   {
-    counter: '6',
+    id: '6',
     question: 'Which weight loss methods or diets have you previously tried?',
     options: ['Keto diet', 'Low-carb diet', 'Water fasting', 'Vegetarianism'],
   },
   {
-    counter: '7',
+    id: '7',
     question: 'Are you currently exercising or physically active?',
     options: ['Yes, regularly', 'Occasionally', 'No, not at all'],
   },
   {
-    counter: '8',
+    id: '8',
     question: 'How do you handle stress and emotional eating?',
     options: [
       'Eat more when stressed',
@@ -66,7 +66,7 @@ const questions = [
     ],
   },
   {
-    counter: '9',
+    id: '9',
     question: 'What is your level of physical activity?',
     options: [
       'Sedentary (little to no exercise)',
@@ -77,7 +77,7 @@ const questions = [
     ],
   },
   {
-    counter: '10',
+    id: '10',
     question:
       'How motivated are you to make changes to your diet and lifestyle for weight management?',
     options: [

@@ -3,6 +3,7 @@ import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
 } from 'react-redux'
+import optionHistoryReducer from './slices/optionHistorySlice'
 import formReducer from './slices/formSlice'
 import switcherReducer from './slices/switcherSlice'
 import emailReducer from './slices/emailSlice'
@@ -11,6 +12,7 @@ import checkboxReducer from './slices/checkboxSlice'
 
 export const reduxStore = configureStore({
   reducer: {
+    optionHistory: optionHistoryReducer,
     form: formReducer,
     switcher: switcherReducer,
     email: emailReducer,
