@@ -21,7 +21,7 @@ const QuestionTpl = ({ question, options, path }) => {
 
   return (
     <>
-      <h2>{question.question}</h2>
+      <h2>{question}</h2>
       <div className={styles.items}>
         {options.map((option, index) => (
           <div key={index} className={styles.item}>

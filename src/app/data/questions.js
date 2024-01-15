@@ -1,6 +1,7 @@
 const questions = [
   {
-    id: '1',
+    id: 1,
+    slug: 'your-goal',
     question: 'What is your goal with regard to weight management?',
     options: [
       'Weight loss',
@@ -10,7 +11,8 @@ const questions = [
     ],
   },
   {
-    id: '2',
+    id: 2,
+    slug: 'full-meals',
     question: 'How many full meals do you have during the day?',
     options: [
       'Three times a day',
@@ -20,12 +22,14 @@ const questions = [
     ],
   },
   {
-    id: '3',
+    id: 3,
+    slug: 'most-foods',
     question: 'What type of foods do you enjoy the most?',
     options: ['Vegetables', 'Fruits', 'Meat', 'Dairy products', 'Grains'],
   },
   {
-    id: '4',
+    id: 4,
+    slug: 'least-foods',
     question: 'What type of foods do you enjoy the least?',
     options: [
       'Fast food',
@@ -35,7 +39,8 @@ const questions = [
     ],
   },
   {
-    id: '5',
+    id: 5,
+    slug: 'loss-plan',
     question:
       'Do you have any medical conditions or dietary restrictions that may affect your weight loss plan?',
     options: [
@@ -47,17 +52,20 @@ const questions = [
     ],
   },
   {
-    id: '6',
+    id: 6,
+    slug: 'diet',
     question: 'Which weight loss methods or diets have you previously tried?',
     options: ['Keto diet', 'Low-carb diet', 'Water fasting', 'Vegetarianism'],
   },
   {
-    id: '7',
+    id: 7,
+    slug: 'activity',
     question: 'Are you currently exercising or physically active?',
     options: ['Yes, regularly', 'Occasionally', 'No, not at all'],
   },
   {
-    id: '8',
+    id: 8,
+    slug: 'handling-stress',
     question: 'How do you handle stress and emotional eating?',
     options: [
       'Eat more when stressed',
@@ -66,7 +74,8 @@ const questions = [
     ],
   },
   {
-    id: '9',
+    id: 9,
+    slug: 'level-activity',
     question: 'What is your level of physical activity?',
     options: [
       'Sedentary (little to no exercise)',
@@ -77,7 +86,8 @@ const questions = [
     ],
   },
   {
-    id: '10',
+    id: 10,
+    slug: 'weight-management',
     question:
       'How motivated are you to make changes to your diet and lifestyle for weight management?',
     options: [
