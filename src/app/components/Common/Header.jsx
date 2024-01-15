@@ -1,14 +1,16 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { IoFitnessOutline } from 'react-icons/io5'
+import { usePathname, useRouter } from 'next/navigation'
+import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
 import ThemeSwitch from '../switcher/ThemeSwitch'
 import GetPlanBtn from '../../components/GetPlanBtn'
 
 export default function Header() {
+  const router = useRouter()
   const pathname = usePathname()
   const enablePath = pathname === '/offer'
+  const quizPath = pathname.startsWith('/quiz')
 
   return (
     <header>
@@ -19,6 +21,12 @@ export default function Header() {
           }`}
         >
           <ThemeSwitch />
+          {quizPath && (
+            <IoArrowBackCircleOutline
+              className="absolute flex left-12 text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
+              onClick={() => router.back()}
+            />
+          )}
           {enablePath ? (
             <GetPlanBtn />
           ) : (
