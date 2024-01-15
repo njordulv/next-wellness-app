@@ -10,13 +10,13 @@ const QuestionTpl = ({ question, options, path }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const selectedOption =
-    useSelector((state) => state.optionHistory[router.pathname]) || ''
+    useSelector((state) => state.optionHistory[router.asPath]) || ''
 
   const handleOptionChange = (option) => {
+    dispatch(setOptionHistory({ pathname: router.asPath, option }))
     setTimeout(() => {
       router.push(path)
-    }, 400)
-    dispatch(setOptionHistory({ pathname: router.pathname, option }))
+    }, 500)
   }
 
   return (
@@ -30,7 +30,7 @@ const QuestionTpl = ({ question, options, path }) => {
                 className={styles.input}
                 type="radio"
                 value={option}
-                checked={selectedOption === option ? 'checked' : ''}
+                checked={selectedOption === option}
                 onChange={() => handleOptionChange(option)}
               />
               <span className={styles.back}></span>
