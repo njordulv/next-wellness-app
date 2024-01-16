@@ -16,7 +16,7 @@ import {
 import MetricSwitch from '../switcher/MetricSwitch'
 import styles from '../../styles/main.module.css'
 
-const QuizWeight = () => {
+const QuizWeight = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -67,7 +67,7 @@ const QuizWeight = () => {
 
   return (
     <>
-      <h2>Enter your weight</h2>
+      <h2>{title}</h2>
       <MetricSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>

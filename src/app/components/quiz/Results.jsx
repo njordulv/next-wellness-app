@@ -15,7 +15,7 @@ import {
 import { BMI } from '../../data/formulas'
 import styles from '../../styles/results.module.scss'
 
-const Results = () => {
+const Results = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -80,7 +80,7 @@ const Results = () => {
 
   return (
     <>
-      <h2>A recap of your general well-being</h2>
+      <h2>{title}</h2>
       <div className={styles.bmiContainer}>
         <div className={styles.bmiTop}>
           <span>

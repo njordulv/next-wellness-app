@@ -84,26 +84,6 @@
   border-radius: 2px;
 }
 
-.totalQuestions {
-  position: absolute;
-  right: 0;
-  color: darkgray;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.totalQuestions b {
-  color: inherit;
-}
-
-.totalQuestions span {
-  position: relative;
-  z-index: 1;
-}
-
 .quizPage {
   border: 0;
 }

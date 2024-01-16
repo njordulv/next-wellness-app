@@ -15,7 +15,7 @@ import HeightImperial from './Imperial'
 import MetricSwitch from '../switcher/MetricSwitch'
 import styles from '../../styles/main.module.css'
 
-const QuizHeight = () => {
+const QuizHeight = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -55,7 +55,7 @@ const QuizHeight = () => {
 
   return (
     <>
-      <h2>Enter your height</h2>
+      <h2>{title}</h2>
       <MetricSwitch />
       {isMetric ? (
         <form onSubmit={continueHandler} className={styles.heightForm}>

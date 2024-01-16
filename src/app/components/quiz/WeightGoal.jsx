@@ -21,7 +21,7 @@ import MetricSwitch from '../switcher/MetricSwitch'
 import { verdictData } from '../../data/verdict'
 import styles from '../../styles/main.module.css'
 
-const QuizWeightGoal = () => {
+const QuizWeightGoal = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -99,7 +99,7 @@ const QuizWeightGoal = () => {
 
   return (
     <>
-      <h2>What is your goal weight?</h2>
+      <h2>{title}</h2>
       <MetricSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>
