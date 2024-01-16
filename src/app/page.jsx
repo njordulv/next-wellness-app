@@ -29,7 +29,7 @@ export default function Home() {
         <p>Ready to begin? Click below to start your personalized quiz.</p>
       </div>
       <div className={styles.page_buttons}>
-        <Link href="/quiz" className="button">
+        <Link href="/quiz/your-goal" className="button">
           Start Now
         </Link>
       </div>

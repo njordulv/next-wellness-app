@@ -11,8 +11,8 @@ import {
   selectDisabled,
   selectIsMetric,
 } from '../../lib/redux/slices/formSlice'
-import HeightImperial from './imperial'
-import MetricSwitch from '../../components/switcher/MetricSwitch'
+import HeightImperial from './Imperial'
+import MetricSwitch from '../switcher/MetricSwitch'
 import styles from '../../styles/main.module.css'
 
 const QuizHeight = () => {

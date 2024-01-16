@@ -1,10 +1,10 @@
 'use client'
 
-import { useSelector, useDispatch } from '../lib/redux/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import { useRouter } from 'next/navigation'
 import { RiCheckFill } from 'react-icons/ri'
-import { setOptionHistory } from '../lib/redux/slices/optionHistorySlice'
-import styles from '../styles/question.module.scss'
+import { setOptionHistory } from '../../lib/redux/slices/optionHistorySlice'
+import styles from '../../styles/question.module.scss'
 
 const QuestionTpl = ({ question, options, path }) => {
   const dispatch = useDispatch()

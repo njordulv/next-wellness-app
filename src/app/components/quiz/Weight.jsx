@@ -13,7 +13,7 @@ import {
   selectDisabledWeight,
   selectIsMetric,
 } from '../../lib/redux/slices/formSlice'
-import MetricSwitch from '../../components/switcher/MetricSwitch'
+import MetricSwitch from '../switcher/MetricSwitch'
 import styles from '../../styles/main.module.css'
 
 const QuizWeight = () => {

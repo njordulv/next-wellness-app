@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
 import ThemeSwitch from '../switcher/ThemeSwitch'
 import GetPlanBtn from '../../components/GetPlanBtn'
-import TotalQuiz from '../TotalQuiz'
+import TotalQuiz from '../quiz/TotalQuiz'
 
 export default function Header() {
   const router = useRouter()

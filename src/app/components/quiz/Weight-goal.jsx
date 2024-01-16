@@ -17,7 +17,7 @@ import {
   selectDisabledGoal,
   selectIsMetric,
 } from '../../lib/redux/slices/formSlice'
-import MetricSwitch from '../../components/switcher/MetricSwitch'
+import MetricSwitch from '../switcher/MetricSwitch'
 import { verdictData } from '../../data/verdict'
 import styles from '../../styles/main.module.css'
 
