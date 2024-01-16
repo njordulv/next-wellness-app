@@ -9,6 +9,7 @@ import switcherReducer from './slices/switcherSlice'
 import emailReducer from './slices/emailSlice'
 import paymentReducer from './slices/paymentSlice'
 import checkboxReducer from './slices/checkboxSlice'
+import quizReducer from './slices/quizSlice'
 
 export const reduxStore = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const reduxStore = configureStore({
     email: emailReducer,
     payment: paymentReducer,
     checkbox: checkboxReducer,
+    quiz: quizReducer,
   },
 })
 

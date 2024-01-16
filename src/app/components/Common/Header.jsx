@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
 import ThemeSwitch from '../switcher/ThemeSwitch'
 import GetPlanBtn from '../../components/GetPlanBtn'
+import TotalQuiz from '../TotalQuiz'
 
 export default function Header() {
   const router = useRouter()
@@ -22,10 +23,13 @@ export default function Header() {
         >
           <ThemeSwitch />
           {quizPath && (
-            <IoArrowBackCircleOutline
-              className="absolute flex left-12 text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
-              onClick={() => router.back()}
-            />
+            <>
+              <IoArrowBackCircleOutline
+                className="absolute flex left-12 text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
+                onClick={() => router.back()}
+              />
+              <TotalQuiz />
+            </>
           )}
           {enablePath ? (
             <GetPlanBtn />

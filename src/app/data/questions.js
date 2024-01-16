@@ -98,5 +98,6 @@ const questions = [
       'Extremely motivated',
     ],
   },
+  { id: 11, slug: '/quiz/height' },
 ]
 export default questions
