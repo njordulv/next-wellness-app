@@ -6,7 +6,7 @@ import { RiCheckFill } from 'react-icons/ri'
 import { setOptionHistory } from '../../lib/redux/slices/optionHistorySlice'
 import styles from '../../styles/question.module.scss'
 
-const QuizTemplate = ({ title, options, path }) => {
+const QuizTemplate = ({ heading, options, path }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const selectedOption =
@@ -21,7 +21,7 @@ const QuizTemplate = ({ title, options, path }) => {
 
   return (
     <>
-      <h2>{title}</h2>
+      <h2>{heading}</h2>
       <div className={styles.items}>
         {options.map((option, index) => (
           <div key={index} className={styles.item}>
