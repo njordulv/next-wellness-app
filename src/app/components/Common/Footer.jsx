@@ -1,34 +1,15 @@
-'use client'
-
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 620px;
-  padding: 0 15px;
-  margin: 0 auto;
-  box-sizing: border-box;
-`
-
-const Container = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 export default function Footer() {
   const date = new Date()
   const year = date.getFullYear()
 
   return (
-    <footer>
-      <Wrapper>
-        <Container>
+    <footer className="flex flex-col items-center text-center py-5 text-[13px]">
+      <div className="w-full max-w-[620px] px-4 mx-auto box-border">
+        <div className="relative flex items-center justify-center">
           Copyright &copy; {year} Next Wellness App. <br />
           All Rights Reserved.
-        </Container>
-      </Wrapper>
+        </div>
+      </div>
     </footer>
   )
 }
