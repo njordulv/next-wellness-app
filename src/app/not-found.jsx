@@ -1,5 +1,10 @@
 import Back from './components/Back'
 
+export const metadata = {
+  title: 'Page Not Found',
+  description: '404 - Page Not Found',
+}
+
 export default function NotFound() {
   return (
     <>

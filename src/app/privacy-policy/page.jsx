@@ -1,3 +1,9 @@
+export const metadata = {
+  title: 'Privacy Policy',
+  description:
+    'This Privacy Policy describes the privacy practices for Next Wellness App',
+}
+
 const PrivacyPolicy = () => {
   return (
     <>

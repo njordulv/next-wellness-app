@@ -1,6 +1,12 @@
 import Slider from '../components/slider/testimonials'
 import ProgressCircular from '../components/progress/ProgressCircular'
 
+export const metadata = {
+  title: 'Testimonials',
+  description:
+    'Over a thousand users have successfully reached their milestones using the Next Wellness App',
+}
+
 export default function Testimonials() {
   return (
     <>
