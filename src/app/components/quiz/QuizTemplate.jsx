@@ -1,19 +1,18 @@
 'use client'
 
-import { useSelector, useDispatch } from '../../lib/redux/store'
+import { useDispatch } from '../../lib/redux/store'
 import { useRouter } from 'next/navigation'
 import { RiCheckFill } from 'react-icons/ri'
 import { setOptionHistory } from '../../lib/redux/slices/optionHistorySlice'
-import styles from '../../styles/question.module.scss'
+import styles from '../../styles/quiz.module.scss'
 
 const QuizTemplate = ({ heading, options, path }) => {
   const dispatch = useDispatch()
   const router = useRouter()
-  const selectedOption =
-    useSelector((state) => state.optionHistory[router.asPath]) || ''
 
   const handleOptionChange = (option) => {
-    dispatch(setOptionHistory({ pathname: router.asPath, option }))
+    dispatch(setOptionHistory({ pathname: path, option }))
+
     setTimeout(() => {
       router.push(path)
     }, 500)
@@ -23,14 +22,14 @@ const QuizTemplate = ({ heading, options, path }) => {
     <>
       <h2>{heading}</h2>
       <div className={styles.items}>
-        {options.map((option, index) => (
-          <div key={index} className={styles.item}>
+        {options.map((option) => (
+          <div key={option} className={styles.item}>
             <label>
               <input
                 className={styles.input}
                 type="radio"
+                name="quiz-options"
                 value={option}
-                checked={selectedOption === option}
                 onChange={() => handleOptionChange(option)}
               />
               <span className={styles.back}></span>
