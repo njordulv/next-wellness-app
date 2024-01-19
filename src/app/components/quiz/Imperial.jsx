@@ -11,7 +11,7 @@ import {
   selectHeightImperialInch,
   selectHeightError,
 } from '@Store/slices/formSlice'
-import styles from '@Styles/main.module.css'
+import styles from '@Styles/main.module.scss'
 
 const HeightImperial = () => {
   const dispatch = useDispatch()

@@ -19,7 +19,7 @@ import {
 } from '@Store/slices/formSlice'
 import MetricSwitch from '@Components/switcher/MetricSwitch'
 import { verdictData } from '@Data/verdict'
-import styles from '@Styles/main.module.css'
+import styles from '@Styles/main.module.scss'
 
 const QuizWeightGoal = ({ title }) => {
   const dispatch = useDispatch()
@@ -37,7 +37,7 @@ const QuizWeightGoal = ({ title }) => {
   const verdictText = (text, percentNumber) => {
     const updatedText = text.replace(
       /\d+(?=\s(of your weight))/i,
-      percentNumber + '%'
+      `${percentNumber}%`
     )
     return updatedText
   }

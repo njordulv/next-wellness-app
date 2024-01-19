@@ -289,7 +289,7 @@ const Checkout = () => {
         setLoading(false)
       }, 3000)
     } catch (error) {
-      toast.error('Error sending data: ' + error)
+      toast.error(`Error sending data: ${error}`)
     }
   }
 

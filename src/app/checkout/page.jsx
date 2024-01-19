@@ -1,4 +1,4 @@
-import Checkout from '@Components/checkout/Main'
+import Checkout from '@Components/checkout/Checkout'
 
 export const metadata = {
   title: 'Next Wellness App Checkout',

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { GiWeightScale } from 'react-icons/gi'
-import styles from './styles/home.module.scss'
+import styles from '@Styles/home.module.scss'
 
 export default function Home() {
   return (

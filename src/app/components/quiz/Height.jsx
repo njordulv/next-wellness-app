@@ -13,7 +13,7 @@ import {
 } from '@Store/slices/formSlice'
 import HeightImperial from './Imperial'
 import MetricSwitch from '@Components/switcher/MetricSwitch'
-import styles from '@Styles/main.module.css'
+import styles from '@Styles/main.module.scss'
 
 const QuizHeight = ({ title }) => {
   const dispatch = useDispatch()

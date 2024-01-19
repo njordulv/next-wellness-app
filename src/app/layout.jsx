@@ -2,7 +2,7 @@ import { Baloo_2 } from 'next/font/google'
 import { AppProviders } from './lib/providers/app-providers'
 import Header from './components/common/Header'
 import Footer from './components/common/Footer'
-import styles from './styles/main.module.css'
+import styles from '@Styles/main.module.scss'
 import './globals.css'
 
 const baloo = Baloo_2({
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <AppProviders>
           <Header />
           <main className="text-center scroll-smooth pt-[68px]">
-            <section className="custom-bg min-h-[585px]">
+            <section className="custom-bg min-h-[685px]">
               <div className={styles.wrapper}>
                 <div className={styles.content}>{children}</div>
               </div>

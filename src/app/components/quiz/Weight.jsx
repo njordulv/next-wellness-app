@@ -14,7 +14,7 @@ import {
   selectIsMetric,
 } from '@Store/slices/formSlice'
 import MetricSwitch from '@Components/switcher/MetricSwitch'
-import styles from '@Styles/main.module.css'
+import styles from '@Styles/main.module.scss'
 
 const QuizWeight = ({ title }) => {
   const dispatch = useDispatch()
