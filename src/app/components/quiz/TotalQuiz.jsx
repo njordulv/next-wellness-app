@@ -10,13 +10,9 @@ const TotalQuiz = () => {
 
   return (
     <div className="flex right-0 absolute gap-1 text-[16px] text-dark">
-      {quizCurrent !== 0 && (
-        <>
-          <span>{quizCurrent}</span>
-          <span>/</span>
-          <span>{quizTotal}</span>
-        </>
-      )}
+      <span>{!quizCurrent ? 0 : quizCurrent}</span>
+      <span>/</span>
+      <span>{!quizTotal ? 0 : quizTotal}</span>
     </div>
   )
 }
