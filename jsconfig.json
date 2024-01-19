@@ -4,7 +4,8 @@
       "@/*": ["./src/*"],
       "@Components/*": ["./src/app/components/*"],
       "@Store/*": ["./src/app/lib/redux/*"],
-      "@Styles/*": ["./src/app/styles/*"]
+      "@Styles/*": ["./src/app/styles/*"],
+      "@Data/*": ["./src/app/data"]
     }
   }
 }

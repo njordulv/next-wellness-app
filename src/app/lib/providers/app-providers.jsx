@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
-import { reduxStore } from '../redux/store'
+import { reduxStore } from '@Store/store'
 
 export function AppProviders({ children }) {
   return (

@@ -1,4 +1,4 @@
-import Offer from '../components/Offer'
+import Offer from '@Components/offer/Offer'
 
 export const metadata = {
   title: 'Choose Your Plan',

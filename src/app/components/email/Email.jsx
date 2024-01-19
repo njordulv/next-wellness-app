@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '../lib/redux/store'
+import { useSelector, useDispatch } from '@Store/store'
 import { useState } from 'react'
 import Link from 'next/link'
 import { HiOutlineMail } from 'react-icons/hi'
@@ -15,8 +15,8 @@ import {
   selectEmailValue,
   clearNetworkError,
   selectNetworkError,
-} from '../lib/redux/slices/emailSlice'
-import styles from '../styles/email.module.scss'
+} from '@Store/slices/emailSlice'
+import styles from '@Styles/email.module.scss'
 
 const Email = () => {
   const dispatch = useDispatch()

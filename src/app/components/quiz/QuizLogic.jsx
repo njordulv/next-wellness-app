@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from '@Store/store'
 import { setQuizSlug, setQuizTotal } from '@Store/slices/quizSlice'
-import quizPages from '../../data/quizPages'
+import quizPages from '@Data/quizPages'
 import NotFound from '../../not-found'
 import QuizTemplate from './QuizTemplate'
 import Height from './Height'

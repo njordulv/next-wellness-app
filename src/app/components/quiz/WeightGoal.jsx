@@ -17,8 +17,8 @@ import {
   selectDisabledGoal,
   selectIsMetric,
 } from '@Store/slices/formSlice'
-import MetricSwitch from '../switcher/MetricSwitch'
-import { verdictData } from '../../data/verdict'
+import MetricSwitch from '@Components/switcher/MetricSwitch'
+import { verdictData } from '@Data/verdict'
 import styles from '@Styles/main.module.css'
 
 const QuizWeightGoal = ({ title }) => {

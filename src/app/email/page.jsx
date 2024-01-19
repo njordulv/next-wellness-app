@@ -1,4 +1,4 @@
-import Email from '../components/Email'
+import Email from '@Components/email/Email'
 
 export const metadata = {
   title: 'Provide your email address',

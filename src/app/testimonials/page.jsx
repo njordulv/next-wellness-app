@@ -1,5 +1,5 @@
-import Slider from '../components/slider/testimonials'
-import ProgressCircular from '../components/progress/ProgressCircular'
+import Slider from '@Components/slider/testimonials'
+import ProgressCircular from '@Components/progress/ProgressCircular'
 
 export const metadata = {
   title: 'Testimonials',

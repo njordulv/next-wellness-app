@@ -1,5 +1,5 @@
-import QuizLogic from '../../components/quiz/QuizLogic'
-import quizPages from '../../data/quizPages'
+import QuizLogic from '@Components/quiz/QuizLogic'
+import quizPages from '@Data/quizPages'
 
 export function generateMetadata({ params }) {
   const quiz = quizPages.find((page) => page.slug === params.quizSlug)

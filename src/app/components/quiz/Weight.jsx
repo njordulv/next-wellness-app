@@ -13,7 +13,7 @@ import {
   selectDisabledWeight,
   selectIsMetric,
 } from '@Store/slices/formSlice'
-import MetricSwitch from '../switcher/MetricSwitch'
+import MetricSwitch from '@Components/switcher/MetricSwitch'
 import styles from '@Styles/main.module.css'
 
 const QuizWeight = ({ title }) => {

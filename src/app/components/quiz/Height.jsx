@@ -12,7 +12,7 @@ import {
   selectIsMetric,
 } from '@Store/slices/formSlice'
 import HeightImperial from './Imperial'
-import MetricSwitch from '../switcher/MetricSwitch'
+import MetricSwitch from '@Components/switcher/MetricSwitch'
 import styles from '@Styles/main.module.css'
 
 const QuizHeight = ({ title }) => {

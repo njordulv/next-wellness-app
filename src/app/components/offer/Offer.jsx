@@ -8,16 +8,16 @@ import {
   TbActivity,
 } from 'react-icons/tb'
 import { SiReact, SiNextdotjs, SiVercel, SiNodedotjs } from 'react-icons/si'
-import { useSelector } from '../lib/redux/store'
+import { useSelector } from '@Store/store'
 import {
   selectIsMetric,
   selectGoal,
   selectGoalImperial,
-} from '../lib/redux/slices/formSlice'
-import ProgressScroll from '../components/progress/ProgressScroll'
-import TestimonialSlider from '../components/slider/testimonials'
-import Payment from '../components/payment/Payment'
-import styles from '../styles/offer.module.scss'
+} from '@Store/slices/formSlice'
+import ProgressScroll from '@Components/progress/ProgressScroll'
+import TestimonialSlider from '@Components/slider/testimonials'
+import Payment from '@Components/payment/Payment'
+import styles from '@Styles/offer.module.scss'
 
 const Offer = () => {
   const isMetric = useSelector(selectIsMetric)

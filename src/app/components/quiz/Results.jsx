@@ -12,7 +12,7 @@ import {
   selectWeightImperial,
   selectTotalCm,
 } from '@Store/slices/formSlice'
-import { BMI } from '../../data/formulas'
+import { BMI } from '@Data/formulas'
 import styles from '@Styles/results.module.scss'
 
 const Results = ({ title }) => {
