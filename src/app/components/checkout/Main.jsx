@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import { useDispatch, useSelector } from '../../lib/redux/store'
+import { useDispatch, useSelector } from '@Store/store'
 import axios from 'axios'
 import {
   LiaCreditCard,
@@ -15,19 +15,16 @@ import {
 import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import {
-  setEmailValue,
-  selectEmailValue,
-} from '../../lib/redux/slices/emailSlice'
+import { setEmailValue, selectEmailValue } from '@Store/slices/emailSlice'
 import {
   selectPlans,
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-} from '../../lib/redux/slices/paymentSlice'
+} from '@Store/slices/paymentSlice'
 import Plans from './Plans'
 import Final from './Final'
-import styles from '../../styles/form.module.scss'
+import styles from '@Styles/form.module.scss'
 
 const Checkout = () => {
   const dispatch = useDispatch()

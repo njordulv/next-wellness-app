@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '../../lib/redux/store'
+import { useSelector, useDispatch } from '@Store/store'
 import { useState, useEffect } from 'react'
 import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri'
 import {
@@ -11,9 +11,9 @@ import {
   selectInputWeight,
   selectWeightImperial,
   selectTotalCm,
-} from '../../lib/redux/slices/formSlice'
+} from '@Store/slices/formSlice'
 import { BMI } from '../../data/formulas'
-import styles from '../../styles/results.module.scss'
+import styles from '@Styles/results.module.scss'
 
 const Results = ({ title }) => {
   const dispatch = useDispatch()

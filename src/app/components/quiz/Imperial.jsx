@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '../../lib/redux/store'
+import { useSelector, useDispatch } from '@Store/store'
 import {
   setFeet,
   setInch,
@@ -10,8 +10,8 @@ import {
   selectHeightImperialFeet,
   selectHeightImperialInch,
   selectHeightError,
-} from '../../lib/redux/slices/formSlice'
-import styles from '../../styles/main.module.css'
+} from '@Store/slices/formSlice'
+import styles from '@Styles/main.module.css'
 
 const HeightImperial = () => {
   const dispatch = useDispatch()

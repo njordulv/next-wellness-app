@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useDispatch } from '../../lib/redux/store'
-import { setQuizSlug, setQuizTotal } from '../../lib/redux/slices/quizSlice'
+import { useDispatch } from '@Store/store'
+import { setQuizSlug, setQuizTotal } from '@Store/slices/quizSlice'
 import quizPages from '../../data/quizPages'
 import NotFound from '../../not-found'
 import QuizTemplate from './QuizTemplate'

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '../../lib/redux/store'
+import { useSelector, useDispatch } from '@Store/store'
 import {
   setGoal,
   setGoalImperial,
@@ -16,10 +16,10 @@ import {
   selectVerdict,
   selectDisabledGoal,
   selectIsMetric,
-} from '../../lib/redux/slices/formSlice'
+} from '@Store/slices/formSlice'
 import MetricSwitch from '../switcher/MetricSwitch'
 import { verdictData } from '../../data/verdict'
-import styles from '../../styles/main.module.css'
+import styles from '@Styles/main.module.css'
 
 const QuizWeightGoal = ({ title }) => {
   const dispatch = useDispatch()

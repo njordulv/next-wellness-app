@@ -1,13 +1,13 @@
 'use client'
 
-import { useSelector } from '../../lib/redux/store'
+import { useSelector } from '@Store/store'
 import {
   selectPlans,
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-} from '../../lib/redux/slices/paymentSlice'
-import styles from '../../styles/checkout.module.scss'
+} from '@Store/slices/paymentSlice'
+import styles from '@Styles/checkout.module.scss'
 
 const Plans = () => {
   const plans = useSelector(selectPlans)
