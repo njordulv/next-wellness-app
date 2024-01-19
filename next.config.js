@@ -14,6 +14,7 @@ module.exports = {
     config.resolve.alias['@Store'] = path.join(__dirname, './src/app/lib/redux')
     config.resolve.alias['@Styles'] = path.join(__dirname, './src/app/styles')
     config.resolve.alias['@Data'] = path.join(__dirname, './src/app/data')
+    config.resolve.alias['@App'] = path.join(__dirname, './src/app')
 
     return config
   },

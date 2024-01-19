@@ -1,9 +1,9 @@
 import { Baloo_2 } from 'next/font/google'
-import { AppProviders } from './lib/providers/app-providers'
-import Header from './components/common/Header'
-import Footer from './components/common/Footer'
+import { AppProviders } from '@App/lib/providers/app-providers'
+import Header from '@Components/common/Header'
+import Footer from '@Components/common/Footer'
 import styles from '@Styles/main.module.scss'
-import './globals.css'
+import '@App/globals.css'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
