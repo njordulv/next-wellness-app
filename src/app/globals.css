@@ -213,6 +213,14 @@ form button {
   max-width: 188px;
 }
 
+.button--extra-small {
+  max-width: 70px;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 2px 10px;
+  height: 36px;
+}
+
 .button:hover {
   background-color: transparent;
   color: var(--btn-color);
@@ -222,6 +230,13 @@ form button {
   background-color: transparent;
   cursor: default;
   pointer-events: none;
+}
+
+.is-disabled {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.4s ease;
 }
 
 .spinner {

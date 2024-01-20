@@ -2,6 +2,7 @@ import { Baloo_2 } from 'next/font/google'
 import { AppProviders } from '@App/lib/providers/app-providers'
 import Header from '@Components/common/Header'
 import Footer from '@Components/common/Footer'
+import Cookie from '@Components/cookies/Cookie'
 import styles from '@Styles/main.module.scss'
 import '@App/globals.css'
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
             </section>
           </main>
           <Footer />
+          <Cookie />
         </AppProviders>
       </body>
     </html>
