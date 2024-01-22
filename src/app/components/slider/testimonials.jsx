@@ -5,7 +5,7 @@ import Slider from 'react-slick'
 import Image from 'next/image'
 import { IoStarSharp } from 'react-icons/io5'
 import { SiTrustpilot } from 'react-icons/si'
-import { testimonials } from '@/data/testimonials'
+import { testimonials } from '../../data/testimonials'
 import './css/slick.scss'
 import './css/slick-theme.scss'
 
