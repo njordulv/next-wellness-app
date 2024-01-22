@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '@Store/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import {
   setGoal,
   setGoalImperial,
@@ -16,12 +16,16 @@ import {
   selectVerdict,
   selectDisabledGoal,
   selectIsMetric,
-} from '@Store/slices/formSlice'
-import MetricSwitch from '@Components/switcher/MetricSwitch'
-import { verdictData } from '@Data/verdict'
-import styles from '@Styles/main.module.scss'
+} from '../../lib/redux/slices/formSlice'
+import MetricSwitch from '../switcher/MetricSwitch'
+import { verdictData } from '../../data/verdict'
+import styles from '../../styles/main.module.scss'
 
-const QuizWeightGoal = ({ title }) => {
+interface QuizWeightGoalProps {
+  title: string
+}
+
+const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -34,8 +38,8 @@ const QuizWeightGoal = ({ title }) => {
   const disabled = useSelector(selectDisabledGoal)
   const isMetric = useSelector(selectIsMetric)
 
-  const verdictText = (text, percentNumber) => {
-    const updatedText = text.replace(
+  const verdictText = (verdict: string, percentNumber: number): string => {
+    const updatedText = verdict.replace(
       /\d+(?=\s(of your weight))/i,
       `${percentNumber}%`
     )
@@ -46,20 +50,27 @@ const QuizWeightGoal = ({ title }) => {
     ? (((inputWeight - goal) / inputWeight) * 100).toFixed()
     : (((weightImperial - goal) / weightImperial) * 100).toFixed()
 
-  const goalHandler = (e) => {
-    e.preventDefault()
+  const goalHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = e.target.value
+    const numericValue = parseInt(value, 10)
 
     dispatch(setGoal(value))
     dispatch(setGoalImperial(value))
-    dispatch(setVerdict(''))
+
+    if (value.length === 0 || isNaN(numericValue)) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setVerdict(''))
+      dispatch(setWeightError(''))
+      return
+    }
 
     if (value.length < 2) {
       dispatch(setDisabledGoal(true))
       dispatch(setWeightError(''))
     }
 
-    const percentGoal = (value / (isMetric ? inputWeight : weightImperial)) * 10
+    const percentGoal =
+      (numericValue / (isMetric ? inputWeight : weightImperial)) * 10
 
     if (!value) {
       dispatch(setWeightError(''))
@@ -92,7 +103,7 @@ const QuizWeightGoal = ({ title }) => {
     }
   }
 
-  const continueHandler = (e) => {
+  const continueHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
     router.push('/quiz/results')
   }
@@ -108,7 +119,7 @@ const QuizWeightGoal = ({ title }) => {
               type="text"
               name="input-weight"
               className={`${styles.input}`}
-              maxLength="3"
+              maxLength={3}
               placeholder={isMetric ? '65' : '120'}
               value={isMetric ? goal : goalImperial}
               onChange={goalHandler}
@@ -125,7 +136,7 @@ const QuizWeightGoal = ({ title }) => {
       </form>
       {verdict && (
         <div className={`${styles.weightInfo} ${styles.active}`}>
-          {verdictText(verdict, percentNumber)}
+          {verdictText(verdict, Number(percentNumber))}
         </div>
       )}
     </>

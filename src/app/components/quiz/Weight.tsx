@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '@Store/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import {
   setInputWeight,
   setWeightImperial,
@@ -12,11 +12,15 @@ import {
   selectWeightError,
   selectDisabledWeight,
   selectIsMetric,
-} from '@Store/slices/formSlice'
-import MetricSwitch from '@Components/switcher/MetricSwitch'
-import styles from '@Styles/main.module.scss'
+} from '../../lib/redux/slices/formSlice'
+import MetricSwitch from '../switcher/MetricSwitch'
+import styles from '../../styles/main.module.scss'
 
-const QuizWeight = ({ title }) => {
+interface QuizWeightProps {
+  title: string
+}
+
+const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -26,16 +30,22 @@ const QuizWeight = ({ title }) => {
   const disabled = useSelector(selectDisabledWeight)
   const isMetric = useSelector(selectIsMetric)
 
-  const inputWeightHandler = (e) => {
+  const inputWeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     dispatch(setInputWeight(value))
+
+    const numericValue = parseInt(value, 10)
 
     if (isMetric) {
       dispatch(setWeightError(''))
 
-      if (!value) {
+      if (!numericValue) {
         dispatch(setDisabledWeight(true))
-      } else if (isNaN(value) || value < 40 || value > 230) {
+      } else if (
+        isNaN(numericValue) ||
+        numericValue < 40 ||
+        numericValue > 230
+      ) {
         dispatch(setDisabledWeight(true))
         dispatch(
           setWeightError('Kindly input a weight between 40 and 230 kilograms')
@@ -45,12 +55,16 @@ const QuizWeight = ({ title }) => {
         dispatch(setWeightError(''))
       }
     } else {
-      dispatch(setWeightImperial(value))
+      dispatch(setWeightImperial(numericValue))
 
-      if (!value) {
+      if (!numericValue) {
         dispatch(setWeightError(''))
         dispatch(setDisabledWeight(true))
-      } else if (isNaN(value) || value < 90 || value > 540) {
+      } else if (
+        isNaN(numericValue) ||
+        numericValue < 90 ||
+        numericValue > 540
+      ) {
         dispatch(setDisabledWeight(true))
         dispatch(setWeightError('Kindly input a weight between 90 and 540 lbs'))
       } else {
@@ -60,7 +74,7 @@ const QuizWeight = ({ title }) => {
     }
   }
 
-  const continueHandler = (e) => {
+  const continueHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     router.push('/quiz/weight-goal')
   }
@@ -76,7 +90,7 @@ const QuizWeight = ({ title }) => {
               type="text"
               name={isMetric ? 'input-weight' : 'input-weight-imperial'}
               className={`${styles.input}`}
-              maxLength="3"
+              maxLength={3}
               placeholder={isMetric ? '75' : '130'}
               value={isMetric ? inputWeight : inputWeightImp}
               onChange={inputWeightHandler}

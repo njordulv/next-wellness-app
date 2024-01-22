@@ -1,13 +1,13 @@
 'use client'
 
-import { useSelector } from '@Store/store'
+import { useSelector } from '@/store/store'
 import {
   selectPlans,
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-} from '@Store/slices/paymentSlice'
-import styles from '@Styles/checkout.module.scss'
+} from '@/store/slices/paymentSlice'
+import styles from '@/styles/checkout.module.scss'
 
 const Plans = () => {
   const plans = useSelector(selectPlans)

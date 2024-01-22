@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
-const ProgressCircular = () => {
+export default function ProgressCircular() {
   const [percentage, setPercentage] = useState(0)
   const router = useRouter()
 
@@ -41,5 +41,3 @@ const ProgressCircular = () => {
     />
   )
 }
-
-export default ProgressCircular

@@ -2,9 +2,13 @@
 
 import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
-import { reduxStore } from '@Store/store'
+import { reduxStore } from '../redux/store'
 
-export function AppProviders({ children }) {
+export default function AppProviders({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <ThemeProvider
       attribute="data-theme"

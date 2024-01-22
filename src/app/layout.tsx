@@ -1,23 +1,28 @@
+import type { Metadata } from 'next'
 import { Baloo_2 } from 'next/font/google'
-import { AppProviders } from '@App/lib/providers/app-providers'
-import Header from '@Components/common/Header'
-import Footer from '@Components/common/Footer'
-import Cookie from '@Components/cookies/Cookie'
-import styles from '@Styles/main.module.scss'
-import '@App/globals.css'
+import AppProviders from './lib/providers/app-providers'
+import Header from './components/common/Header'
+import Footer from './components/common/Footer'
+import Cookie from './components/cookies/Cookie'
+import styles from './styles/main.module.scss'
+import './globals.css'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
   display: 'swap',
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Next Wellness App',
   description:
     'Next.js Wellness App is a web application designed to help users track their health and fitness progress',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={baloo.className}>

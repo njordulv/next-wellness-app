@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useDispatch, useSelector } from '@Store/store'
+import { useDispatch, useSelector } from '@/store/store'
 import {
   setPlans,
   setOffer,
@@ -17,9 +17,9 @@ import {
   selectPlanThree,
   selectOffer,
   selectPopular,
-} from '@Store/slices/paymentSlice'
-import { setCheckbox, selectCheckbox } from '@Store/slices/checkboxSlice'
-import styles from '@Styles/payment.module.scss'
+} from '@/store/slices/paymentSlice'
+import { setCheckbox, selectCheckbox } from '@/store/slices/checkboxSlice'
+import styles from '@/styles/payment.module.scss'
 
 const Payment = () => {
   const dispatch = useDispatch()

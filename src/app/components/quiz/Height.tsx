@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '@Store/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import {
   setInputHeight,
   setHeightError,
@@ -10,12 +10,16 @@ import {
   selectHeightError,
   selectDisabled,
   selectIsMetric,
-} from '@Store/slices/formSlice'
+} from '../../lib/redux/slices/formSlice'
 import HeightImperial from './Imperial'
-import MetricSwitch from '@Components/switcher/MetricSwitch'
-import styles from '@Styles/main.module.scss'
+import MetricSwitch from '../switcher/MetricSwitch'
+import styles from '../../styles/main.module.scss'
 
-const QuizHeight = ({ title }) => {
+interface QuizHeightProps {
+  title: string
+}
+
+const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -24,21 +28,23 @@ const QuizHeight = ({ title }) => {
   const disabled = useSelector(selectDisabled)
   const isMetric = useSelector(selectIsMetric)
 
-  const inputHeightHandler = (e) => {
+  const inputHeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     dispatch(setInputHeight(value))
+
+    const numericValue = parseInt(value, 10)
 
     if (isMetric) {
       if (!value) {
         dispatch(setHeightError(''))
         dispatch(setDisabled(true))
-      } else if (isNaN(value)) {
+      } else if (isNaN(numericValue)) {
         dispatch(setHeightError('Ensure you input digits only'))
         dispatch(setDisabled(true))
-      } else if (value < 120) {
+      } else if (numericValue < 120) {
         dispatch(setHeightError('The minimum allowable height is 120 cm'))
         dispatch(setDisabled(true))
-      } else if (value > 240) {
+      } else if (numericValue > 240) {
         dispatch(setHeightError('The maximum allowable height is 240 cm'))
         dispatch(setDisabled(true))
       } else {
@@ -48,7 +54,7 @@ const QuizHeight = ({ title }) => {
     }
   }
 
-  const continueHandler = (e) => {
+  const continueHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     router.push('/quiz/weight')
   }
@@ -66,7 +72,7 @@ const QuizHeight = ({ title }) => {
                   type="text"
                   name="input-height"
                   className={`${styles.input}`}
-                  maxLength="3"
+                  maxLength={3}
                   placeholder="180"
                   value={inputHeight}
                   onChange={inputHeightHandler}

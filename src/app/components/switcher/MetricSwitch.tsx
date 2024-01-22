@@ -1,13 +1,13 @@
 'use client'
 
-import { useSelector, useDispatch } from '@Store/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import {
   toggleSwitch,
   selectSwitcherSystem,
   selectSwitcherIsMetric,
-} from '@Store/slices/switcherSlice'
-import { resetForm, setIsMetric } from '@Store/slices/formSlice'
-import styles from '@Styles/metric-switch.module.scss'
+} from '../../lib/redux/slices/switcherSlice'
+import { resetForm, setIsMetric } from '../../lib/redux/slices/formSlice'
+import styles from '../../styles/metric-switch.module.scss'
 
 const Switcher = () => {
   const dispatch = useDispatch()

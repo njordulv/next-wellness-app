@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styles from '@Styles/main.module.scss'
+import styles from '@/styles/main.module.scss'
 
 const ProgressScroll = () => {
   const [scrollProgress, setScrollProgress] = useState(0)

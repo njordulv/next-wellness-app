@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '@Store/store'
+import { useSelector, useDispatch } from '../../lib/redux/store'
 import {
   setFeet,
   setInch,
@@ -10,8 +10,8 @@ import {
   selectHeightImperialFeet,
   selectHeightImperialInch,
   selectHeightError,
-} from '@Store/slices/formSlice'
-import styles from '@Styles/main.module.scss'
+} from '../../lib/redux/slices/formSlice'
+import styles from '../../styles/main.module.scss'
 
 const HeightImperial = () => {
   const dispatch = useDispatch()
@@ -21,8 +21,11 @@ const HeightImperial = () => {
   const localFeet = useSelector(selectHeightImperialFeet)
   const localInch = useSelector(selectHeightImperialInch)
 
-  const imperialInputHandler = (event, name) => {
-    const value = event.target.value
+  const imperialInputHandler = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    name: string
+  ) => {
+    const value = e.target.value
     if (name === 'feet') {
       dispatch(setFeet(value))
     } else if (name === 'inch') {
@@ -30,7 +33,7 @@ const HeightImperial = () => {
     }
   }
 
-  const continueImperialHandler = (e) => {
+  const continueImperialHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const updatedFeet = parseInt(localFeet)
@@ -69,7 +72,7 @@ const HeightImperial = () => {
               type="text"
               name="input-height-ft"
               className={`${styles.input} ${styles.inputMin}`}
-              maxLength="1"
+              maxLength={1}
               placeholder="5"
               value={localFeet}
               onChange={(e) => imperialInputHandler(e, 'feet')}
@@ -81,7 +84,7 @@ const HeightImperial = () => {
               type="text"
               name="input-height-inch"
               className={`${styles.input} ${styles.inputMin}`}
-              maxLength="2"
+              maxLength={2}
               placeholder="9"
               value={localInch}
               onChange={(e) => imperialInputHandler(e, 'inch')}

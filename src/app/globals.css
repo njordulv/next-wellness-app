@@ -155,6 +155,11 @@ a:hover {
   color: var(--purple);
 }
 
+b,
+strong {
+  font-weight: bold;
+}
+
 ul {
   text-align: left;
   padding-left: 15px;
@@ -230,13 +235,6 @@ form button {
   background-color: transparent;
   cursor: default;
   pointer-events: none;
-}
-
-.is-disabled {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: all 0.4s ease;
 }
 
 .spinner {

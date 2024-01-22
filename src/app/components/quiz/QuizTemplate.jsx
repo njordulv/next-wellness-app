@@ -1,10 +1,10 @@
 'use client'
 
-import { useDispatch } from '@Store/store'
+import { useDispatch } from '../../lib/redux/store'
 import { useRouter } from 'next/navigation'
 import { RiCheckFill } from 'react-icons/ri'
-import { setOptionHistory } from '@Store/slices/optionHistorySlice'
-import styles from '@Styles/quiz.module.scss'
+import { setOptionHistory } from '../../lib/redux/slices/optionHistorySlice'
+import styles from '../../styles/quiz.module.scss'
 
 const QuizTemplate = ({ heading, options, path }) => {
   const dispatch = useDispatch()

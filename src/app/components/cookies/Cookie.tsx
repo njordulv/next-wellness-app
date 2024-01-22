@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import { setCookie, getCookie } from 'cookies-next'
 import { LiaCookieBiteSolid } from 'react-icons/lia'
 
-export default function Cookie() {
-  const [showCookie, setShowCookie] = useState(false)
+const Cookie: React.FC = () => {
+  const [showCookie, setShowCookie] = useState<boolean>(false)
 
   useEffect(() => {
     const consentCookie = getCookie('user-consent')
@@ -49,3 +49,5 @@ export default function Cookie() {
     </>
   )
 }
+
+export default Cookie

@@ -1,4 +1,4 @@
-import Back from '@Components/Back'
+import Back from './components/Back'
 
 export const metadata = {
   title: 'Page Not Found',

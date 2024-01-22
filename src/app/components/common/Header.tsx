@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
-import ThemeSwitch from '@Components/switcher/ThemeSwitch'
-import GetPlanBtn from '@Components/GetPlanBtn'
-import TotalQuiz from '@Components/quiz/TotalQuiz'
+import ThemeSwitch from '../switcher/ThemeSwitch'
+import GetPlanBtn from '../GetPlanBtn'
+import TotalQuiz from '../quiz/TotalQuiz'
 
 export default function Header() {
   const router = useRouter()
