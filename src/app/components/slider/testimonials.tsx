@@ -40,7 +40,7 @@ export default class TestimonialSlider extends Component {
       ],
     }
 
-    const stars = Array(5).fill()
+    const stars = Array(5).fill(0)
 
     return (
       <>

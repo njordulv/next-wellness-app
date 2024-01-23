@@ -23,5 +23,6 @@ export const reduxStore = configureStore({
   },
 })
 
+export type AppDispatch = typeof reduxStore.dispatch
 export const useDispatch = () => useReduxDispatch()
 export const useSelector = useReduxSelector

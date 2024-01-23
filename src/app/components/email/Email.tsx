@@ -2,24 +2,28 @@
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '@/store/store'
 import { useState } from 'react'
 import Link from 'next/link'
 import { HiOutlineMail } from 'react-icons/hi'
 import { GoShieldCheck } from 'react-icons/go'
 import { IoCloseOutline } from 'react-icons/io5'
 import { BiLoaderAlt } from 'react-icons/bi'
+import { useSelector, useDispatch, AppDispatch } from '../../lib/redux/store'
 import {
   submitEmail,
   setEmailValue,
   selectEmailValue,
   clearNetworkError,
   selectNetworkError,
-} from '@/store/slices/emailSlice'
-import styles from '@/styles/email.module.scss'
+} from '../../lib/redux/slices/emailSlice'
+import styles from '../../styles/email.module.scss'
 
-const Email = () => {
-  const dispatch = useDispatch()
+interface EmailFormData {
+  email: string
+}
+
+const Email: React.FC = () => {
+  const dispatch: AppDispatch = useDispatch()
   const router = useRouter()
   const emailValue = useSelector(selectEmailValue)
   const networkError = useSelector(selectNetworkError)
@@ -35,7 +39,7 @@ const Email = () => {
     handleSubmit,
     clearErrors,
     formState: { errors },
-  } = useForm()
+  } = useForm<EmailFormData>()
 
   const emailValidation = {
     required: 'Email is required',
@@ -45,7 +49,7 @@ const Email = () => {
     },
   }
 
-  const inputHandler = (e) => {
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     dispatch(setEmailValue(value))
 
@@ -67,8 +71,8 @@ const Email = () => {
     clearErrors()
   }
 
-  const onSubmitHandler = async (data) => {
-    const dataWithTime = { ...data, time: `${hours}:${minutes}` }
+  const onSubmitHandler = async (data: EmailFormData) => {
+    const dataWithTime = { email: data.email, time: `${hours}:${minutes}` }
     setLoading(true)
     try {
       const result = await dispatch(submitEmail(dataWithTime))
