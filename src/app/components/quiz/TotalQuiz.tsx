@@ -4,15 +4,15 @@ import {
   selectQuizTotal,
 } from '../../lib/redux/slices/quizSlice'
 
-const TotalQuiz = () => {
+const TotalQuiz: React.FC = () => {
   const quizCurrent = useSelector(selectQuizSlug)
   const quizTotal = useSelector(selectQuizTotal)
 
   return (
     <div className="flex right-0 absolute gap-1 text-[16px] text-dark">
-      <span>{!quizCurrent ? 0 : quizCurrent}</span>
+      <span>{quizCurrent || 0}</span>
       <span>/</span>
-      <span>{!quizTotal ? 0 : quizTotal}</span>
+      <span>{quizTotal || 0}</span>
     </div>
   )
 }

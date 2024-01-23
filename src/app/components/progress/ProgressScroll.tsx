@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import styles from '@/styles/main.module.scss'
+import styles from '../../styles/main.module.scss'
 
-const ProgressScroll = () => {
-  const [scrollProgress, setScrollProgress] = useState(0)
+const ProgressScroll: React.FC = () => {
+  const [scrollProgress, setScrollProgress] = useState<number>(0)
 
   const calculateScrollProgress = () => {
     const windowHeight = window.innerHeight
