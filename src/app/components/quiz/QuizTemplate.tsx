@@ -6,11 +6,21 @@ import { RiCheckFill } from 'react-icons/ri'
 import { setOptionHistory } from '../../lib/redux/slices/optionHistorySlice'
 import styles from '../../styles/quiz.module.scss'
 
-const QuizTemplate = ({ heading, options, path }) => {
+interface QuizTemplateProps {
+  heading: string
+  options: string[]
+  path: string
+}
+
+const QuizTemplate: React.FC<QuizTemplateProps> = ({
+  heading,
+  options,
+  path,
+}) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
-  const handleOptionChange = (option) => {
+  const handleOptionChange = (option: string) => {
     dispatch(setOptionHistory({ pathname: path, option }))
 
     setTimeout(() => {

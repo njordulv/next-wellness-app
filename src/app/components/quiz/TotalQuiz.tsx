@@ -10,7 +10,7 @@ const TotalQuiz: React.FC = () => {
 
   return (
     <div className="flex right-0 absolute gap-1 text-[16px] text-dark">
-      <span>{quizCurrent || 0}</span>
+      <span>{quizCurrent || '0'}</span>
       <span>/</span>
       <span>{quizTotal || 0}</span>
     </div>

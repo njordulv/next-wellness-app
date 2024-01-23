@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface QuizState {
-  quizSlug: number
+  quizSlug: string
   quizTotal: number
 }
 
 const initialState: QuizState = {
-  quizSlug: 0,
+  quizSlug: '',
   quizTotal: 0,
 }
 
@@ -14,7 +14,7 @@ const quizSlice = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-    setQuizSlug: (state, action: PayloadAction<number>) => {
+    setQuizSlug: (state, action: PayloadAction<string>) => {
       state.quizSlug = action.payload
     },
     setQuizTotal: (state, action: PayloadAction<number>) => {

@@ -15,17 +15,20 @@ import {
 import { BMI } from '../../data/formulas'
 import styles from '../../styles/results.module.scss'
 
-const Results = ({ title }) => {
+interface ResultsProps {
+  title: string
+}
+
+const Results: React.FC<ResultsProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
-
   const active = useSelector(selectActive)
   const weightImperial = useSelector(selectWeightImperial)
   const [disabled, setDisabled] = useState(true)
   let inputHeight = useSelector(selectInputHeight)
   let inputWeight = useSelector(selectInputWeight)
   let totalCm = useSelector(selectTotalCm)
-  let totalKg = (weightImperial * 0.45359237).toFixed()
+  let totalKg = (parseFloat(weightImperial) * 0.45359237).toFixed()
 
   const BMIcurrent = BMI(inputHeight, inputWeight, totalCm, totalKg)
   const delay = 1700
@@ -36,7 +39,7 @@ const Results = ({ title }) => {
 
   useEffect(() => {
     const timeoutDelayHandler = () => {
-      let activeIndex = null
+      let activeIndex: number = 0
 
       if (BMIcurrent <= 18.4) {
         activeIndex = 0
@@ -48,7 +51,7 @@ const Results = ({ title }) => {
         activeIndex = 3
       }
 
-      if (activeIndex !== null) {
+      if (activeIndex !== 0) {
         setTimeout(() => {
           dispatch(setActive(activeIndex))
         }, delay)
@@ -64,7 +67,7 @@ const Results = ({ title }) => {
     timeoutDelayHandler()
   }, [BMIcurrent, dispatch])
 
-  let BMIprogress
+  let BMIprogress: number
 
   if (BMIcurrent <= 18.4) {
     BMIprogress = 10
@@ -137,7 +140,7 @@ const Results = ({ title }) => {
           </span>
         </div>
       </div>
-      {BMIcurrent <= 18.4 ? (
+      {BMIcurrent <= 18.4 && (
         <div className={styles.bmiText}>
           <p>
             Individuals with a BMI of 18.4 or less fall into the
@@ -154,10 +157,8 @@ const Results = ({ title }) => {
             healthier weight.
           </p>
         </div>
-      ) : (
-        ' '
       )}
-      {BMIcurrent >= 18.5 && BMIcurrent <= 24.9 ? (
+      {BMIcurrent >= 18.5 && BMIcurrent <= 24.9 && (
         <div className={styles.bmiText}>
           <p>
             A BMI falling within the range of 18.5 to 24.9 is considered
@@ -173,10 +174,8 @@ const Results = ({ title }) => {
             and longevity.
           </p>
         </div>
-      ) : (
-        ' '
       )}
-      {BMIcurrent >= 25 && BMIcurrent <= 39.9 ? (
+      {BMIcurrent >= 25 && BMIcurrent <= 39.9 && (
         <div className={styles.bmiText}>
           <p>BMI values between 25.0 and 39.9 are classified as Overweight</p>
           <p>
@@ -189,10 +188,8 @@ const Results = ({ title }) => {
             activity is recommended for those in this category.
           </p>
         </div>
-      ) : (
-        ' '
       )}
-      {BMIcurrent >= 40 ? (
+      {BMIcurrent >= 40 && (
         <div className={styles.bmiText}>
           <p>A BMI of 40.0 or higher is categorized as Obese</p>
           <p>
@@ -207,15 +204,11 @@ const Results = ({ title }) => {
             intervention.
           </p>
         </div>
-      ) : (
-        ''
       )}
-      {isNaN(BMIcurrent) ? (
+      {isNaN(BMIcurrent) && (
         <div className={`${styles.bmiText} ${styles.bmiTextError}`}>
           Try again with correct values
         </div>
-      ) : (
-        ''
       )}
       <small className={styles.bmiTextSmall}>
         It`s important to note that while BMI is a useful tool for evaluating
