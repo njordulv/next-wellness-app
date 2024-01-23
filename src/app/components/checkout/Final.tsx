@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 import { useRouter } from 'next/navigation'
 import styled from 'styled-components'
 import { VscChromeClose } from 'react-icons/vsc'
@@ -92,9 +93,15 @@ const ClosePopup = styled.button`
   }
 `
 
-const Final = ({ setPopup, emailValue }) => {
+interface FinalProps {
+  showPopup: boolean
+  setPopup: Dispatch<SetStateAction<boolean>>
+  emailValue: string
+}
+
+const Final: React.FC<FinalProps> = ({ showPopup, setPopup, emailValue }) => {
   const router = useRouter()
-  const showPopup = setPopup ? 'show' : 'hide'
+  const popupClass = showPopup ? 'show' : 'hide'
 
   const closePopupHandler = () => {
     setPopup(false)
@@ -102,7 +109,7 @@ const Final = ({ setPopup, emailValue }) => {
   }
 
   return (
-    <Popup className={showPopup}>
+    <Popup className={popupClass}>
       <PopupWrapper>
         <h2>Your Order is Confirmed</h2>
         <h3>

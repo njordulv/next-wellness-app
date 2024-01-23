@@ -39,7 +39,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
     if (isMetric) {
       dispatch(setWeightError(''))
 
-      if (!numericValue) {
+      if (!value) {
         dispatch(setDisabledWeight(true))
       } else if (
         isNaN(numericValue) ||
@@ -55,7 +55,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
         dispatch(setWeightError(''))
       }
     } else {
-      dispatch(setWeightImperial(numericValue))
+      dispatch(setWeightImperial(value))
 
       if (!numericValue) {
         dispatch(setWeightError(''))

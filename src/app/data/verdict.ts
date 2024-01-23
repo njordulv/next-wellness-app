@@ -1,6 +1,11 @@
+interface VerdictTypes {
+  text: string
+  key: string
+}
+
 let percentNumber = 0
 
-export const verdictData = [
+export const verdictData: VerdictTypes[] = [
   {
     text: `A practical objective is to lose ${percentNumber} of your weight. You can ensure your overall health and wellness over the long run by successfully regulating your weight. As per the guidance from the CDC (Centers for Disease Control and Prevention), losing 4 kilograms per month is viewed as a safe and sensible weight loss plan.`,
     key: 'answer1',

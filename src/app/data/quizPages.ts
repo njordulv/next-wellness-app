@@ -1,4 +1,12 @@
-const quizPages = [
+interface QuizPagesData {
+  slug: string
+  title: string
+  description: string
+  heading: string
+  options: string[]
+}
+
+const quizPages: QuizPagesData[] = [
   {
     slug: 'your-goal',
     title: 'Weight Management Goal Quiz',

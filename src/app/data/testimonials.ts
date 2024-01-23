@@ -1,4 +1,11 @@
-export const testimonials = [
+interface TestimonialsData {
+  id: number
+  image: string
+  name: string
+  message: string
+}
+
+export const testimonials: TestimonialsData[] = [
   {
     id: 1,
     image: 'http://dummyimage.com/100x100.png/dedede/333333',

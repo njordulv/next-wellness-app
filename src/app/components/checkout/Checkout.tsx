@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import { useDispatch, useSelector } from '@/store/store'
+import { useDispatch, useSelector } from '../../lib/redux/store'
 import axios from 'axios'
 import {
   LiaCreditCard,
@@ -15,21 +15,33 @@ import {
 import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { setEmailValue, selectEmailValue } from '@/store/slices/emailSlice'
+import {
+  setEmailValue,
+  selectEmailValue,
+} from '../../lib/redux/slices/emailSlice'
 import {
   selectPlans,
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-} from '@/store/slices/paymentSlice'
+} from '../../lib/redux/slices/paymentSlice'
 import Plans from './Plans'
 import Final from './Final'
-import styles from '@/styles/form.module.scss'
+import styles from '../../styles/form.module.scss'
 
-const Checkout = () => {
+interface FormData {
+  cardNumber: string
+  expDate: string
+  cvv: string
+  firstName: string
+  lastName: string
+  email: string
+}
+
+const Checkout: React.FC = () => {
   const dispatch = useDispatch()
   const currentYear = new Date().getFullYear()
-  const [cardValue, setCardValue] = useState('')
+  const [cardValue, setCardValue] = useState<string>('')
   const [expDateValue, setExpDateValue] = useState('')
   const [cvvValue, setCvvValue] = useState('')
   const [firstNameValue, setFirstNameValue] = useState('')
@@ -68,7 +80,7 @@ const Checkout = () => {
     clearErrors,
     setError,
     formState: { errors },
-  } = useForm()
+  } = useForm<FormData>()
 
   const cardValidation = {
     required: 'Credit card number is required',
@@ -84,7 +96,7 @@ const Checkout = () => {
       value: /^(0[1-9]|1[0-2])\/\d{2}$/,
       message: 'Invalid expiration date',
     },
-    validate: (value) => {
+    validate: (value: any) => {
       const enteredYear = Number(value.split('/')[1])
       const currentYearLastTwoDigits = Number(String(currentYear).slice(-2))
       const maxAllowedYear = currentYearLastTwoDigits + 10
@@ -132,7 +144,7 @@ const Checkout = () => {
     },
   }
 
-  const cardHandler = (e) => {
+  const cardHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
     const cleanedValue = val.replace(/\D/g, '')
     const groups = cleanedValue.match(/.{1,4}/g)
@@ -174,7 +186,7 @@ const Checkout = () => {
     }
   }
 
-  const checkCardType = (cardNumber) => {
+  const checkCardType = (cardNumber: string) => {
     const visaPattern = /^4/
     const mastercardPattern = /^5[1-5]/
     const amexPattern = /^3[47]/
@@ -193,7 +205,7 @@ const Checkout = () => {
     }
   }
 
-  const expDateHandler = (e) => {
+  const expDateHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value
     const lastChar = value.charAt(value.length - 1)
 
@@ -219,7 +231,7 @@ const Checkout = () => {
     setExpDateValue(value)
   }
 
-  const cvvHandler = (e) => {
+  const cvvHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
     const value = val.replace(/\D/g, '')
     setCvvValue(value)
@@ -234,7 +246,7 @@ const Checkout = () => {
     }
   }
 
-  const firstNameHandler = (e) => {
+  const firstNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setFirstNameValue(value)
 
@@ -243,7 +255,7 @@ const Checkout = () => {
     }
   }
 
-  const lastNameHandler = (e) => {
+  const lastNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setLastNameValue(value)
 
@@ -252,12 +264,12 @@ const Checkout = () => {
     }
   }
 
-  const isValidEmail = (email) => {
+  const isValidEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return emailRegex.test(email)
   }
 
-  const emailHandler = (e) => {
+  const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     dispatch(setEmailValue(value))
 
@@ -273,7 +285,7 @@ const Checkout = () => {
     }
   }
 
-  const onSubmit = async (checkoutData) => {
+  const onSubmit = async (checkoutData: FormData) => {
     const updatedCheckoutData = {
       ...checkoutData,
       total: totalPrice ? totalPrice : '0',
@@ -321,7 +333,7 @@ const Checkout = () => {
                       {...register('cardNumber', cardValidation)}
                       className={`${styles.input}`}
                       type="text"
-                      maxLength="19"
+                      maxLength={19}
                       placeholder="Card Number"
                       value={cardValue}
                       onChange={cardHandler}
@@ -343,7 +355,7 @@ const Checkout = () => {
                       {...register('expDate', expDateValidation)}
                       className={`${styles.input}`}
                       type="text"
-                      maxLength="5"
+                      maxLength={5}
                       placeholder="MM/YY"
                       value={expDateValue}
                       onChange={expDateHandler}
@@ -365,7 +377,7 @@ const Checkout = () => {
                       {...register('cvv', cvvValidation)}
                       className={`${styles.input}`}
                       type="password"
-                      maxLength="4"
+                      maxLength={4}
                       placeholder="CVV/CVC"
                       value={cvvValue}
                       onChange={cvvHandler}
@@ -480,7 +492,9 @@ const Checkout = () => {
           </small>
         </div>
       </div>
-      {popup && <Final setPopup={setPopup} emailValue={emailValue} />}
+      {popup && (
+        <Final showPopup={popup} setPopup={setPopup} emailValue={emailValue} />
+      )}
     </>
   )
 }

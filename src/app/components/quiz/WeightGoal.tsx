@@ -46,9 +46,16 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
     return updatedText
   }
 
+  let inputWeightNumber = parseFloat(inputWeight)
+  let goalNumber = parseFloat(goal)
+  let weightImperialNumber = parseFloat(weightImperial)
+
   let percentNumber = isMetric
-    ? (((inputWeight - goal) / inputWeight) * 100).toFixed()
-    : (((weightImperial - goal) / weightImperial) * 100).toFixed()
+    ? (((inputWeightNumber - goalNumber) / inputWeightNumber) * 100).toFixed()
+    : (
+        ((weightImperialNumber - goalNumber) / weightImperialNumber) *
+        100
+      ).toFixed()
 
   const goalHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = e.target.value
@@ -70,7 +77,8 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
     }
 
     const percentGoal =
-      (numericValue / (isMetric ? inputWeight : weightImperial)) * 10
+      (numericValue / (isMetric ? inputWeightNumber : weightImperialNumber)) *
+      10
 
     if (!value) {
       dispatch(setWeightError(''))

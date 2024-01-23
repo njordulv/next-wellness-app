@@ -57,7 +57,9 @@ const HeightImperial = () => {
       dispatch(setHeightError(errorMsg))
     } else {
       dispatch(setHeightError(''))
-      const totalCm = (updatedFeet * 30.48 + updatedInch * 2.54).toFixed()
+      const totalCm = parseFloat(
+        (updatedFeet * 30.48 + updatedInch * 2.54).toFixed()
+      )
       dispatch(setTotalCm(totalCm))
       router.push('/quiz/weight')
     }

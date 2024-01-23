@@ -6,11 +6,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// Import route handlers
 const emailHandler = require('./email')
 const checkoutHandler = require('./checkout')
 
-// Use the route handlers
 app.use('/submit-email', emailHandler)
 app.use('/submit-checkout', checkoutHandler)
 

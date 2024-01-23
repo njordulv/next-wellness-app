@@ -30,14 +30,11 @@ function writeFileAsync(filePath, content) {
 router.post('/', async (req, res) => {
   try {
     const formData = req.body
-
-    // Check if the file exists
     const fileExists = fs.existsSync('data/email.json')
 
     let emailData
 
     if (fileExists) {
-      // Read and parse existing file content
       const data = await readFileAsync('data/email.json')
       emailData = JSON.parse(data)
     } else {

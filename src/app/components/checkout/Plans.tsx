@@ -1,26 +1,26 @@
 'use client'
 
-import { useSelector } from '@/store/store'
+import { useSelector } from '../../lib/redux/store'
 import {
   selectPlans,
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-} from '@/store/slices/paymentSlice'
-import styles from '@/styles/checkout.module.scss'
+} from '../../lib/redux/slices/paymentSlice'
+import styles from '../../styles/checkout.module.scss'
 
-const Plans = () => {
+const Plans: React.FC = () => {
   const plans = useSelector(selectPlans)
   const planOne = useSelector(selectPlanOne)
   const planTwo = useSelector(selectPlanTwo)
   const planThree = useSelector(selectPlanThree)
   const currency = plans.currency.symbol
 
-  let selectedPlan = ''
-  let monthlyPrice = ''
-  let discountPrice = ''
-  let totalPrice = ''
-  let totalDiscountPrice = ''
+  let selectedPlan: string = ''
+  let monthlyPrice: string = ''
+  let discountPrice: string = ''
+  let totalPrice: string = ''
+  let totalDiscountPrice: string = ''
 
   if (plans.plan1 === true) {
     selectedPlan = planOne.name
