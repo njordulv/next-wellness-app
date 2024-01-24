@@ -20,10 +20,10 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/app/components/*"],
-      "@/store/*": ["./src/app/lib/redux/*"],
-      "@/styles/*": ["./src/app/styles/*"],
-      "@/data/*": ["./src/app/data/*"]
+      "@/components/*": ["./src/app/[lang]/components/*"],
+      "@/store/*": ["./src/app/[lang]/lib/redux/*"],
+      "@/styles/*": ["./src/app/[lang]/styles/*"],
+      "@/data/*": ["./src/app/[lang]/data/*"]
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
