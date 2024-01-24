@@ -17,11 +17,14 @@
       {
         "name": "next"
       }
-    ]
-  },
-  "baseUrl": "src",
-  "paths": {
-    "@components": ["components/*"]
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/app/components/*"],
+      "@/store/*": ["./src/app/lib/redux/*"],
+      "@/styles/*": ["./src/app/styles/*"],
+      "@/data/*": ["./src/app/data/*"]
+    }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

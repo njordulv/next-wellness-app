@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '../../lib/redux/store'
+import { useSelector, useDispatch } from '@/store/store'
 import { useState, useEffect } from 'react'
 import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri'
 import {
@@ -11,9 +11,9 @@ import {
   selectInputWeight,
   selectWeightImperial,
   selectTotalCm,
-} from '../../lib/redux/slices/formSlice'
-import { BMI } from '../../data/formulas'
-import styles from '../../styles/results.module.scss'
+} from '@/store/slices/formSlice'
+import { BMI } from '@/data/formulas'
+import styles from '@/styles/results.module.scss'
 
 interface ResultsProps {
   title: string

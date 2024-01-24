@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { Baloo_2 } from 'next/font/google'
-import AppProviders from './lib/providers/app-providers'
-import Header from './components/common/Header'
-import Footer from './components/common/Footer'
-import Cookie from './components/cookies/Cookie'
-import styles from './styles/main.module.scss'
+import AppProviders from '@/app/lib/providers/app-providers'
+import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
+import Cookie from '@/components/cookies/Cookie'
+import styles from '@/styles/main.module.scss'
 import './globals.css'
 
 const baloo = Baloo_2({

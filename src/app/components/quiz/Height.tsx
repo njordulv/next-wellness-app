@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useSelector, useDispatch } from '../../lib/redux/store'
+import { useSelector, useDispatch } from '@/store/store'
 import {
   setInputHeight,
   setHeightError,
@@ -10,10 +10,10 @@ import {
   selectHeightError,
   selectDisabled,
   selectIsMetric,
-} from '../../lib/redux/slices/formSlice'
+} from '@/store/slices/formSlice'
 import HeightImperial from './Imperial'
-import MetricSwitch from '../switcher/MetricSwitch'
-import styles from '../../styles/main.module.scss'
+import MetricSwitch from '@/components/switcher/MetricSwitch'
+import styles from '@/styles/main.module.scss'
 
 interface QuizHeightProps {
   title: string

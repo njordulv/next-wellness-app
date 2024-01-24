@@ -1,5 +1,5 @@
-import QuizLogic from '../../components/quiz/QuizLogic'
-import quizPages from '../../data/quizPages'
+import QuizLogic from '@/components/quiz/QuizLogic'
+import quizPages from '@/data/quizPages'
 
 interface QuizPage {
   slug: string
