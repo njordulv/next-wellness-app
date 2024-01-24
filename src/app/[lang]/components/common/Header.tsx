@@ -3,16 +3,21 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
-import ThemeSwitch from '@/components/switcher/ThemeSwitch'
+import { type Locale } from '@/app/i18n-config'
 import LocaleSwitch from '@/components/switcher/LocaleSwitch'
+import ThemeSwitch from '@/components/switcher/ThemeSwitch'
 import GetPlanBtn from '@/components/GetPlanBtn'
 import TotalQuiz from '@/components/quiz/TotalQuiz'
 
-export default function Header() {
+type HeaderProps = {
+  lang: Locale
+}
+
+const Header: React.FC<HeaderProps> = ({ lang }) => {
   const router = useRouter()
   const pathname = usePathname()
-  const enablePath = pathname === '/offer'
-  const quizPath = pathname.startsWith('/quiz')
+  const enablePath = pathname === `/${lang}/offer`
+  const quizPath = pathname.startsWith(`/${lang}/quiz`)
 
   return (
     <header>
@@ -27,7 +32,7 @@ export default function Header() {
           {quizPath && (
             <>
               <IoArrowBackCircleOutline
-                className="absolute flex left-12 text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
+                className="absolute flex left-[97px] text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
                 onClick={() => router.back()}
               />
               <TotalQuiz />
@@ -36,7 +41,7 @@ export default function Header() {
           {enablePath ? (
             <GetPlanBtn />
           ) : (
-            <Link href="/" title="Wellness App">
+            <Link href={`/${lang}`} title="Wellness App">
               <IoFitnessOutline className="custom-bg-logo text-5xl rounded-md" />
             </Link>
           )}
@@ -45,3 +50,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header

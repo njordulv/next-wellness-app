@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { GiWeightScale } from 'react-icons/gi'
 import styles from '@/styles/home.module.scss'
-import { getDictionary } from '../get-dictionary'
-import { Locale } from '../i18n-config'
+import { getDictionary } from '@/app/get-dictionary'
+import { Locale } from '@/app/i18n-config'
 
 export default async function Home({
   params: { lang },

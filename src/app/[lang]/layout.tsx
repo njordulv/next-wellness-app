@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang={params.lang} suppressHydrationWarning>
       <body className={baloo.className}>
         <AppProviders>
-          <Header />
+          <Header lang={params.lang} />
           <main className="text-center scroll-smooth pt-[68px]">
             <section className="custom-bg min-h-[685px]">
               <div className={styles.wrapper}>
