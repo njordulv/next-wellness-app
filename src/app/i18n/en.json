@@ -1,0 +1,17 @@
+{
+  "home": {
+    "welcome": "Welcome to the Next Wellness App",
+    "description": "Get on the path to a healthier you with our wellness and BMI calculator. Start your journey to a better lifestyle today.",
+    "features": "Features",
+    "list1": "Take our quiz to customize your wellness plan",
+    "list2": "Calculate your Body Mass Index (BMI)",
+    "list3": "Get results and recommendations based on your BMI",
+    "list4": "Track your progress with our progress bars",
+    "list5": "Easily navigate through different quiz and result pages",
+    "list6": "Check our testimonials",
+    "list7": "Choose your best activity plan",
+    "text1": "Start exploring the app to unlock a healthier you!",
+    "text2": "Ready to begin? Click below to start your personalized quiz.",
+    "startBtn": "Start Now"
+  }
+}

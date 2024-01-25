@@ -9,36 +9,33 @@ export default async function Home({
 }: {
   params: { lang: Locale }
 }) {
-  const dictionary = await getDictionary(lang)
+  const trans = await getDictionary(lang)
 
   return (
     <>
-      <h1 className={styles.page_heading}>{dictionary['home'].welcome}</h1>
+      <h1 className={styles.page_heading}>{trans['home'].welcome}</h1>
       <div className={styles.page_content}>
-        <p>
-          Get on the path to a healthier you with our wellness and BMI
-          calculator. Start your journey to a better lifestyle today.
-        </p>
-        <h2>Features:</h2>
+        <p>{trans['home'].description}</p>
+        <h2>{trans['home'].features}:</h2>
         <div className={styles.page_features}>
           <ul className={styles.page_list}>
-            <li>Take our quiz to customize your wellness plan</li>
-            <li>Calculate your Body Mass Index (BMI)</li>
-            <li>Get results and recommendations based on your BMI</li>
-            <li>Track your progress with our progress bars</li>
-            <li>Easily navigate through different quiz and result pages</li>
-            <li>Check our testimonials</li>
-            <li>Choose your best activity plan</li>
+            <li>{trans['home'].list1}</li>
+            <li>{trans['home'].list2}</li>
+            <li>{trans['home'].list3}</li>
+            <li>{trans['home'].list4}</li>
+            <li>{trans['home'].list5}</li>
+            <li>{trans['home'].list6}</li>
+            <li>{trans['home'].list7}</li>
           </ul>
           <GiWeightScale className={styles.page_icon} />
         </div>
         <br />
-        <p>Start exploring the app to unlock a healthier you!</p>
-        <p>Ready to begin? Click below to start your personalized quiz.</p>
+        <p>{trans['home'].text1}</p>
+        <p>{trans['home'].text2}</p>
       </div>
       <div className={styles.page_buttons}>
         <Link href={`/${lang}/quiz/your-goal`} className="button">
-          Start Now
+          {trans['home'].startBtn}
         </Link>
       </div>
     </>
