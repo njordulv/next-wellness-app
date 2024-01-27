@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Baloo_2 } from 'next/font/google'
-import { useLocale } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { ReactNode } from 'react'
 import AppProviders from '@/providers/app-providers'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
@@ -19,20 +20,17 @@ export const metadata: Metadata = {
     'Next.js Wellness App is a web application designed to help users track their health and fitness progress',
 }
 
-interface RootLayoutProps {
-  children: React.ReactNode
-  params: {
-    locale: string
-    lang: string
-  }
+type Props = {
+  children: ReactNode
+  params: { locale: string }
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children, params }) => {
-  const locale = useLocale()
-
-  if (params.locale !== locale) {
-    return <h1>Not found</h1>
-  }
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: Props) {
+  // Enable static rendering
+  unstable_setRequestLocale(locale)
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -53,5 +51,3 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children, params }) => {
     </html>
   )
 }
-
-export default RootLayout

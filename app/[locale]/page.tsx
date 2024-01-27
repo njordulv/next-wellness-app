@@ -1,10 +1,16 @@
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import { GiWeightScale } from 'react-icons/gi'
 import styles from '@/styles/home.module.scss'
-import { useTranslations } from 'next-intl'
 
-export default function Home() {
-  const t = useTranslations('home')
+type Props = {
+  params: { locale: string }
+}
+
+export default function Home({ params: { locale } }: Props) {
+  unstable_setRequestLocale(locale)
+  const t = useTranslations('Home')
 
   return (
     <>

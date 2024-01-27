@@ -1,5 +1,5 @@
 {
-  "home": {
+  "Home": {
     "welcome": "Willkommen bei der Next Wellness App",
     "description": "Beginnen Sie Ihren Weg zu einem gesünderen Ich mit unserem Wellness- und BMI-Rechner. Starten Sie heute Ihre Reise zu einem besseren Lebensstil.",
     "features": "Funktionen",
@@ -14,12 +14,15 @@
     "text2": "Bereit anzufangen? Klicken Sie unten, um Ihr persönliches Quiz zu starten.",
     "startBtn": "Jetzt starten"
   },
-  "footer": {
+  "Footer": {
     "Copyright": "Urheberrecht",
     "rights": "Alle Rechte vorbehalten."
   },
-  "cookie": {
+  "Cookie": {
     "text": "Cookies verbessern Ihr Browsing-Erlebnis. Ihre fortgesetzte Nutzung impliziert die Akzeptanz unserer",
     "link": "Cookie-Richtlinie"
+  },
+  "NotFound": {
+    "text": "Page not found"
   }
 }

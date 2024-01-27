@@ -1,5 +1,5 @@
 {
-  "home": {
+  "Home": {
     "welcome": "Welcome to the Next Wellness App",
     "description": "Get on the path to a healthier you with our wellness and BMI calculator. Start your journey to a better lifestyle today.",
     "features": "Features",
@@ -14,12 +14,15 @@
     "text2": "Ready to begin? Click below to start your personalized quiz.",
     "startBtn": "Start Now"
   },
-  "footer": {
+  "Footer": {
     "Copyright": "Copyright",
     "rights": "All Rights Reserved."
   },
-  "cookie": {
+  "Cookie": {
     "text": "Cookies enhance your browsing experience. Your continued use implies acceptance of our",
     "link": "Cookie Policy"
+  },
+  "NotFound": {
+    "text": "Page not found"
   }
 }
