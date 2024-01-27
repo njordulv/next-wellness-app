@@ -13,5 +13,13 @@
     "text1": "Start exploring the app to unlock a healthier you!",
     "text2": "Ready to begin? Click below to start your personalized quiz.",
     "startBtn": "Start Now"
+  },
+  "footer": {
+    "copyright": "Copyright",
+    "rights": "All Rights Reserved."
+  },
+  "cookie": {
+    "text": "Cookies enhance your browsing experience. Your continued use implies acceptance of our",
+    "link": "Cookie Policy"
   }
 }
