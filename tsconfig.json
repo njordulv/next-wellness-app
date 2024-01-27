@@ -19,13 +19,20 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/app/[lang]/components/*"],
-      "@/store/*": ["./src/app/[lang]/lib/redux/*"],
-      "@/styles/*": ["./src/app/[lang]/styles/*"],
-      "@/data/*": ["./src/app/[lang]/data/*"]
+      "@/*": ["./app/*"],
+      "@/components/*": ["./app/[locale]/components/*"],
+      "@/providers/*": ["./app/[locale]/lib/providers/*"],
+      "@/store/*": ["./app/[locale]/lib/redux/*"],
+      "@/styles/*": ["./app/[locale]/styles/*"],
+      "@/data/*": ["./app/[locale]/data/*"]
     }
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "i18n.js"
+  ],
   "exclude": ["node_modules"]
 }
