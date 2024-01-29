@@ -22,7 +22,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, DE {🇩🇪 Deutsch} EN {🇺🇸 English} FR {🇫🇷 Français}}"
   },
   "Navigation": {
     "home": "Home",
@@ -43,7 +43,7 @@
     }
   },
   "Home": {
-    "welcome": "Bienvenue sur l'application Next Wellness",
+    "title": "Bienvenue sur l'application Next Wellness",
     "description": "Entamez le chemin vers une meilleure santé avec notre calculateur de bien-être et d'IMC. Commencez aujourd'hui votre voyage vers un style de vie amélioré.",
     "features": "Fonctionnalités",
     "list1": "Participez à notre quiz pour personnaliser votre plan de bien-être",
@@ -64,5 +64,18 @@
   "Cookie": {
     "text": "Les cookies améliorent votre expérience de navigation. Leur utilisation continue implique l'acceptation de notre",
     "link": "Politique de Cookies"
+  },
+  "CookiePolicy": {
+    "title": "Politique de Cookies",
+    "description": "Cette politique de cookies décrit les pratiques en matière de cookies pour Next Wellness App",
+    "updated": "Mise à jour",
+    "text1": "Chez Next Wellness App, nous nous engageons à maintenir la confiance de nos visiteurs sur notre application Web. En particulier, nous voulons que vous sachiez que Next Wellness App ne vend, ne loue ni n'échange de listes de diffusion avec d'autres sociétés et entreprises à des fins de marketing. Dans cette politique de confidentialité, nous avons fourni des informations détaillées sur quand et pourquoi nous utilisons des cookies, comment nous les utilisons, les conditions limitées dans lesquelles nous pouvons les divulguer à des tiers et comment nous les protégeons.",
+    "head1": "Que sont les cookies ?",
+    "text2": "Les cookies sont de petits fichiers de données placés sur votre ordinateur ou appareil mobile lorsque vous visitez un site Web. Les cookies sont largement utilisés par les fournisseurs de services en ligne pour faciliter et contribuer à rendre l'interaction entre les utilisateurs et les sites Web plus rapide et plus facile, ainsi que pour fournir des informations de reporting.",
+    "text3": "Les cookies définis par le propriétaire du site Web (dans ce cas, Next Wellness App) sont appelés « cookies de première partie ». Les cookies définis par des parties autres que le propriétaire du site Web sont appelés « cookies tiers ». Les cookies tiers permettent de fournir des fonctionnalités ou fonctionnalités tierces sur ou via le site Web (par exemple, comme la publicité, le contenu interactif et les analyses). Les parties qui installent ces cookies tiers peuvent reconnaître votre ordinateur aussi bien lorsqu'il visite le site Internet en question que lorsqu'il visite certains autres sites Internet.",
+    "head2": "Pourquoi utilisons-nous des cookies ?",
+    "text4": "Nous utilisons des cookies propriétaires et tiers pour plusieurs raisons. Certains cookies sont nécessaires pour des raisons techniques au fonctionnement de notre application Web, et nous les qualifions de « essentiels ». ou &quot;strictement nécessaire&quot; biscuits. D'autres cookies nous permettent également de suivre et de cibler les intérêts de nos utilisateurs pour améliorer l'expérience sur notre application Web. Des tiers utilisent des cookies via notre site Web à des fins publicitaires, analytiques et autres.",
+    "head3": "Comment puis-je contrôler les cookies ?",
+    "text5": "Vous avez le droit de décider d'accepter ou de refuser les cookies. Vous pouvez configurer ou modifier les contrôles de votre navigateur Web pour accepter ou refuser les cookies."
   }
 }

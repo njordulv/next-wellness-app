@@ -1,7 +1,8 @@
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import Link from 'next/link'
 import { GiWeightScale } from 'react-icons/gi'
+import PageLayout from '../components/PageLayout'
 import styles from '@/styles/home.module.scss'
 
 type Props = {
@@ -10,14 +11,14 @@ type Props = {
 
 export default function Home({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale)
+
   const t = useTranslations('Home')
 
   return (
-    <>
-      <h1 className={styles.page_heading}>{t('welcome')}</h1>
-      <div className={styles.page_content}>
+    <PageLayout title={t('title')}>
+      <div className="text-left">
         <p>{t('description')}</p>
-        <h2>{t('features')}</h2>
+        <h2>{t('features')}:</h2>
         <div className={styles.page_features}>
           <ul className={styles.page_list}>
             <li>{t('list1')}</li>
@@ -33,12 +34,12 @@ export default function Home({ params: { locale } }: Props) {
         <br />
         <p>{t('text1')}</p>
         <p>{t('text2')}</p>
+        <div className={styles.page_buttons}>
+          <Link href={`${locale}/quiz/your-goal`} className="button">
+            {t('startBtn')}
+          </Link>
+        </div>
       </div>
-      <div className={styles.page_buttons}>
-        <Link href={`${locale}/quiz/your-goal`} className="button">
-          {t('startBtn')}
-        </Link>
-      </div>
-    </>
+    </PageLayout>
   )
 }

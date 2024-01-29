@@ -202,7 +202,6 @@ form button {
   font-size: 21px;
   box-sizing: border-box;
   color: var(--white);
-  width: 100%;
   min-width: 288px;
   height: 48px;
   display: flex;

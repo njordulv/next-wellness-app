@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { setCookie, getCookie } from 'cookies-next'
 import { LiaCookieBiteSolid } from 'react-icons/lia'
@@ -11,6 +12,7 @@ type Props = {
 }
 
 export default function Cookie({ text, link }: Props) {
+  const locale = useLocale()
   const [showCookie, setShowCookie] = useState<boolean>(false)
 
   useEffect(() => {
@@ -38,7 +40,7 @@ export default function Cookie({ text, link }: Props) {
               <LiaCookieBiteSolid className="text-[30px] w-16 hidden sm:flex" />
               <div className="text-[14px]">
                 {text}&nbsp;
-                <Link href="/cookie-policy">{link}</Link>.
+                <Link href={`/${locale}/cookie-policy`}>{link}</Link>.
               </div>
               <button
                 className="button button--extra-small"

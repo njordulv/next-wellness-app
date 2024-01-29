@@ -1,18 +1,20 @@
 'use client'
 
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
-import LocaleSwitcher from '../LocaleSwitcher'
+// import LocaleSwitcher from '../LocaleSwitcher'
 import ThemeSwitch from '../ThemeSwitch'
 import GetPlanBtn from '@/components/GetPlanBtn'
 import TotalQuiz from '@/components/quiz/TotalQuiz'
 
 const Header: React.FC = () => {
+  const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
-  const enablePath = pathname === `/offer`
-  const quizPath = pathname.startsWith(`/quiz`)
+  const enablePath = pathname === `/${locale}/offer`
+  const quizPath = pathname.startsWith(`/${locale}/quiz`)
 
   return (
     <header>
@@ -36,7 +38,7 @@ const Header: React.FC = () => {
           {enablePath ? (
             <GetPlanBtn />
           ) : (
-            <Link href={`/`} title="Wellness App">
+            <Link href={`/${locale}`} title="Wellness App">
               <IoFitnessOutline className="custom-bg-logo text-5xl rounded-md" />
             </Link>
           )}

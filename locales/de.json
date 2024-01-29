@@ -22,7 +22,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, DE {🇩🇪 Deutsch} EN {🇺🇸 English} FR {🇫🇷 Français}}"
   },
   "Navigation": {
     "home": "Home",
@@ -43,7 +43,7 @@
     }
   },
   "Home": {
-    "welcome": "Willkommen bei der Next Wellness App",
+    "title": "Willkommen bei der Next Wellness App",
     "description": "Beginnen Sie Ihren Weg zu einem gesünderen Ich mit unserem Wellness- und BMI-Rechner. Starten Sie heute Ihre Reise zu einem besseren Lebensstil.",
     "features": "Funktionen",
     "list1": "Machen Sie unser Quiz, um Ihren Wellness-Plan zu individualisieren",
@@ -64,5 +64,18 @@
   "Cookie": {
     "text": "Cookies verbessern Ihr Browsing-Erlebnis. Ihre fortgesetzte Nutzung impliziert die Akzeptanz unserer",
     "link": "Cookie-Richtlinie"
+  },
+  "CookiePolicy": {
+    "title": "Cookie-Richtlinie",
+    "description": "Diese Cookie-Richtlinie beschreibt die Cookie-Praktiken für Next Wellness App",
+    "updated": "Aktualisiert",
+    "text1": "Bei Next Wellness App sind wir bestrebt, das Vertrauen unserer Besucher in unsere Webanwendung aufrechtzuerhalten. Insbesondere möchten wir Sie darüber informieren, dass Next Wellness App keine E-Mail-Listen zu Marketingzwecken verkauft, vermietet oder mit anderen Unternehmen und Unternehmen tauscht. In dieser Datenschutzrichtlinie stellen wir detaillierte Informationen darüber bereit, wann und warum wir Cookies verwenden, wie wir sie verwenden, unter welchen eingeschränkten Bedingungen wir sie an andere weitergeben dürfen und wie wir sie schützen.",
+    "head1": "Was sind Cookies?",
+    "text2": "Cookies sind kleine Datendateien, die auf Ihrem Computer oder Mobilgerät abgelegt werden, wenn Sie eine Website besuchen. Cookies werden von Onlinedienstanbietern häufig verwendet, um die Interaktion zwischen Benutzern und Websites schneller und einfacher zu gestalten und um Berichtsinformationen bereitzustellen.",
+    "text3": "Vom Websitebesitzer (in diesem Fall Next Wellness App) gesetzte Cookies werden „Erstanbieter-Cookies“ genannt. Cookies, die von anderen Parteien als dem Eigentümer der Website gesetzt werden, werden als „Cookies von Drittanbietern“ bezeichnet. Cookies von Drittanbietern ermöglichen die Bereitstellung von Features oder Funktionen Dritter auf oder über die Website (z. B. Werbung, interaktive Inhalte und Analysen). Die Parteien, die diese Cookies von Drittanbietern setzen, können Ihren Computer sowohl beim Besuch der betreffenden Website als auch beim Besuch bestimmter anderer Websites erkennen.",
+    "head2": "Warum verwenden wir Cookies?",
+    "text4": "Wir verwenden Cookies von Erstanbietern und Drittanbietern aus mehreren Gründen. Einige Cookies sind aus technischen Gründen erforderlich, damit unsere Webanwendung funktioniert. Wir bezeichnen diese als „unbedingt erforderliche“ oder „unbedingt erforderliche“ Cookies. Andere Cookies ermöglichen es uns auch, die Interessen unserer Benutzer zu verfolgen und gezielt darauf abzuzielen, um das Erlebnis auf unserer Webanwendung zu verbessern. Dritte setzen über unsere Website Cookies für Werbe-, Analyse- und andere Zwecke ein.",
+    "head3": "Wie kann ich Cookies kontrollieren?",
+    "text5": "Sie haben das Recht zu entscheiden, ob Sie Cookies akzeptieren oder ablehnen. Sie können die Einstellungen Ihres Webbrowsers so einstellen oder ändern, dass Cookies akzeptiert oder abgelehnt werden."
   }
 }
