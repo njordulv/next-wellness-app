@@ -5,7 +5,12 @@ import { useEffect, useState } from 'react'
 import { setCookie, getCookie } from 'cookies-next'
 import { LiaCookieBiteSolid } from 'react-icons/lia'
 
-const Cookie: React.FC = () => {
+type Props = {
+  text: string
+  link: string
+}
+
+export default function Cookie({ text, link }: Props) {
   const [showCookie, setShowCookie] = useState<boolean>(false)
 
   useEffect(() => {
@@ -32,9 +37,8 @@ const Cookie: React.FC = () => {
             <div className="relative flex items-center justify-center gap-4">
               <LiaCookieBiteSolid className="text-[30px] w-16 hidden sm:flex" />
               <div className="text-[14px]">
-                Cookies enhance your browsing experience. Your continued use
-                implies acceptance of our{' '}
-                <Link href="/cookie-policy">Cookie Policy.</Link>
+                {text}&nbsp;
+                <Link href="/cookie-policy">{link}</Link>.
               </div>
               <button
                 className="button button--extra-small"
@@ -49,5 +53,3 @@ const Cookie: React.FC = () => {
     </>
   )
 }
-
-export default Cookie

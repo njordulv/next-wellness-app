@@ -7,7 +7,7 @@ import { Baloo_2 } from 'next/font/google'
 import AppProviders from './lib/providers/app-providers'
 import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
-import Cookie from '../components/cookies/Cookie'
+import Cookie from '../components/cookies/CookieLayout'
 import styles from '@/styles/main.module.scss'
 
 const baloo = Baloo_2({

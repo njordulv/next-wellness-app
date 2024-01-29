@@ -3,5 +3,6 @@ import Cookie from './Cookie'
 
 export default function CookieMain() {
   const t = useTranslations('Cookie')
-  return <Cookie text={t('text')} />
+
+  return <Cookie text={t('text')} link={t('link')} />
 }
