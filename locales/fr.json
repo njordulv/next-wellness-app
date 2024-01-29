@@ -9,12 +9,12 @@
   },
   "Error": {
     "title": "Something went wrong!",
-    "description": "404 - Page Not Found"
+    "description": "Page non trouvée"
   },
   "NotFoundPage": {
     "title": "404",
-    "description": "Page not found",
-    "back": "Back"
+    "description": "Page non trouvée",
+    "back": "Retour"
   },
   "LocaleLayout": {
     "title": "Next Wellness App",
@@ -58,14 +58,11 @@
     "startBtn": "Commencer Maintenant"
   },
   "Footer": {
-    "Copyright": "Droit d'auteur",
+    "copyright": "Droit d'auteur",
     "rights": "Tous droits réservés."
   },
   "Cookie": {
     "text": "Les cookies améliorent votre expérience de navigation. Leur utilisation continue implique l'acceptation de notre",
     "link": "Politique de Cookies"
-  },
-  "NotFound": {
-    "text": "Page not found"
   }
 }

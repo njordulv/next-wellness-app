@@ -9,7 +9,7 @@
   },
   "Error": {
     "title": "Something went wrong!",
-    "description": "404 - Page Not Found"
+    "description": "Page Not Found"
   },
   "NotFoundPage": {
     "title": "404",
@@ -58,14 +58,11 @@
     "startBtn": "Start Now"
   },
   "Footer": {
-    "Copyright": "Copyright",
+    "copyright": "Copyright",
     "rights": "All Rights Reserved."
   },
   "Cookie": {
     "text": "Cookies enhance your browsing experience. Your continued use implies acceptance of our",
     "link": "Cookie Policy"
-  },
-  "NotFound": {
-    "text": "Page not found"
   }
 }
