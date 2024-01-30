@@ -76,5 +76,25 @@
     "text4": "Wir verwenden Cookies von Erstanbietern und Drittanbietern aus mehreren Gründen. Einige Cookies sind aus technischen Gründen erforderlich, damit unsere Webanwendung funktioniert. Wir bezeichnen diese als „unbedingt erforderliche“ oder „unbedingt erforderliche“ Cookies. Andere Cookies ermöglichen es uns auch, die Interessen unserer Benutzer zu verfolgen und gezielt darauf abzuzielen, um das Erlebnis auf unserer Webanwendung zu verbessern. Dritte setzen über unsere Website Cookies für Werbe-, Analyse- und andere Zwecke ein.",
     "head3": "Wie kann ich Cookies kontrollieren?",
     "text5": "Sie haben das Recht zu entscheiden, ob Sie Cookies akzeptieren oder ablehnen. Sie können die Einstellungen Ihres Webbrowsers so einstellen oder ändern, dass Cookies akzeptiert oder abgelehnt werden."
+  },
+  "PrivacyPolicy": {
+    "title": "Datenschutzrichtlinie",
+    "description": "Lesen Sie unsere Datenschutzrichtlinie, um zu verstehen, wie die Next Wellness App Ihre persönlichen Daten schützt und verwaltet. Engagiert für Ihre Privatsphäre und Datensicherheit.",
+    "intro": "Bei der Next Wellness App legen wir großen Wert auf Ihre Privatsphäre und verpflichten uns, Ihre persönlichen Daten sicher und transparent zu behandeln. Unsere Datenschutzrichtlinie beschreibt, wie wir Ihre Daten sammeln, verwenden, speichern und schützen.",
+    "infoCollectionTitle": "Sammlung und Nutzung von Informationen",
+    "infoCollectionDesc": "Wir sammeln bestimmte persönliche Informationen, wenn Sie unsere Anwendung nutzen, einschließlich, aber nicht beschränkt auf:",
+    "emailInfo": "E-Mail-Adresse: Wir können Ihre E-Mail-Adresse sammeln, um Ihren Fastenplan zu personalisieren und wichtige Updates oder Informationen zu unseren Dienstleistungen zu kommunizieren.",
+    "usageDataInfo": "Nutzungsdaten: Wir sammeln Daten zu Ihrer Interaktion mit der App, um unsere Dienste und Benutzererfahrung zu verbessern.",
+    "dataSecurityTitle": "Datensicherheit und Schutz",
+    "dataSecurityDesc": "Ihre Privatsphäre und Datensicherheit sind unsere oberste Priorität. Wir implementieren robuste Maßnahmen, um Ihre Informationen vor unbefugtem Zugriff, Offenlegung, Veränderung oder Zerstörung zu schützen.",
+    "infoSharingTitle": "Informationsweitergabe",
+    "infoSharingDesc": "Wir verkaufen, handeln oder übertragen Ihre persönlichen Daten nicht an Dritte ohne Ihre Zustimmung, außer in Fällen, die gesetzlich vorgeschrieben sind oder um unsere Dienstleistungen zu verbessern.",
+    "consentTitle": "Zustimmung",
+    "consentDesc": "Durch die Nutzung der Next Wellness App stimmen Sie unserer Datenschutzrichtlinie zu und erklären sich mit der Sammlung und Nutzung Ihrer Informationen, wie hierin beschrieben, einverstanden.",
+    "updatesTitle": "Aktualisierungen unserer Richtlinie",
+    "updatesDesc": "Wir behalten uns das Recht vor, unsere Datenschutzrichtlinie jederzeit zu aktualisieren, zu ändern oder zu ändern. Wir empfehlen Ihnen, diese Seite regelmäßig auf Aktualisierungen zu überprüfen.",
+    "contactTitle": "Kontaktieren Sie uns",
+    "contactDesc": "Wenn Sie Fragen, Bedenken oder Feedback zu unserer Datenschutzrichtlinie oder unseren Datenpraktiken haben, zögern Sie bitte nicht, uns zu kontaktieren.",
+    "closingNote": "Bitte überprüfen Sie unsere Datenschutzrichtlinie, um Einblicke in die Nutzung Ihrer Informationen zu erhalten. Vielen Dank, dass Sie sich für Next Wellness App entschieden haben."
   }
 }

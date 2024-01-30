@@ -80,5 +80,25 @@
     "text4": "We use first party and third party cookies for several reasons. Some cookies are required for technical reasons in order for our web application to operate, and we refer to these as «essential» or «strictly necessary» cookies. Other cookies also enable us to track and target the interests of our users to enhance the experience on our web application. Third parties serve cookies through our website for advertising, analytics and other purposes.",
     "head3": "How Can I Control Cookies?",
     "text5": "You have the right to decide whether to accept or reject cookies. You can set or amend your web browser controls to accept or refuse cookies."
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "description": "Review our Privacy Policy to understand how Next Wellness App protects and manages your personal data. Committed to your privacy and data security.",
+    "intro": "At Next Wellness App, we deeply value your privacy and are committed to ensuring that your personal information is handled securely and transparently. Our Privacy Policy outlines how we collect, use, store, and protect your data.",
+    "infoCollectionTitle": "Information Collection and Usage",
+    "infoCollectionDesc": "We collect certain personal information when you use our application, including but not limited to:",
+    "emailInfo": "Email Address: We may collect your email address to personalize your fasting plan and communicate important updates or information related to our services.",
+    "usageDataInfo": "Usage Data: We gather data related to your interaction with the app to improve our services and user experience.",
+    "dataSecurityTitle": "Data Security and Protection",
+    "dataSecurityDesc": "Your privacy and data security are our top priorities. We implement robust measures to safeguard your information from unauthorized access, disclosure, alteration, or destruction.",
+    "infoSharingTitle": "Information Sharing",
+    "infoSharingDesc": "We do not sell, trade, or otherwise transfer your personal information to outside parties without your consent, except in cases required by law or to improve our services.",
+    "consentTitle": "Consent",
+    "consentDesc": "By using Next Wellness App, you consent to our Privacy Policy and agree to the collection and use of your information as described herein.",
+    "updatesTitle": "Updates to Our Policy",
+    "updatesDesc": "We reserve the right to update, modify, or change our Privacy Policy at any time. We encourage you to review this page periodically for any updates.",
+    "contactTitle": "Contact Us",
+    "contactDesc": "If you have any questions, concerns, or feedback regarding our Privacy Policy or data practices, please don`t hesitate to contact us.",
+    "closingNote": "Kindly review our Privacy Policy for insights on how we utilize your information. Thank you for choosing Next Wellness App."
   }
 }

@@ -80,5 +80,25 @@
     "text4": "Nous utilisons des cookies propriétaires et tiers pour plusieurs raisons. Certains cookies sont nécessaires pour des raisons techniques au fonctionnement de notre application Web, et nous les qualifions de « essentiels ». ou &quot;strictement nécessaire&quot; biscuits. D'autres cookies nous permettent également de suivre et de cibler les intérêts de nos utilisateurs pour améliorer l'expérience sur notre application Web. Des tiers utilisent des cookies via notre site Web à des fins publicitaires, analytiques et autres.",
     "head3": "Comment puis-je contrôler les cookies ?",
     "text5": "Vous avez le droit de décider d'accepter ou de refuser les cookies. Vous pouvez configurer ou modifier les contrôles de votre navigateur Web pour accepter ou refuser les cookies."
+  },
+  "PrivacyPolicy": {
+    "title": "Politique de Confidentialité",
+    "description": "Consultez notre Politique de Confidentialité pour comprendre comment l'application Next Wellness protège et gère vos données personnelles. Engagé envers votre vie privée et la sécurité de vos données.",
+    "intro": "Chez Next Wellness App, nous attachons une grande importance à votre vie privée et nous nous engageons à traiter vos informations personnelles de manière sécurisée et transparente. Notre Politique de Confidentialité décrit comment nous collectons, utilisons, stockons et protégeons vos données.",
+    "infoCollectionTitle": "Collecte et Utilisation des Informations",
+    "infoCollectionDesc": "Nous collectons certaines informations personnelles lorsque vous utilisez notre application, y compris, mais sans s'y limiter à:",
+    "emailInfo": "Adresse E-mail : Nous pouvons collecter votre adresse e-mail pour personnaliser votre plan de jeûne et communiquer des mises à jour importantes ou des informations relatives à nos services.",
+    "usageDataInfo": "Données d'Utilisation : Nous recueillons des données liées à votre interaction avec l'application afin d'améliorer nos services et l'expérience utilisateur.",
+    "dataSecurityTitle": "Sécurité et Protection des Données",
+    "dataSecurityDesc": "Votre vie privée et la sécurité de vos données sont nos principales priorités. Nous mettons en œuvre des mesures robustes pour protéger vos informations contre l'accès non autorisé, la divulgation, la modification ou la destruction.",
+    "infoSharingTitle": "Partage des Informations",
+    "infoSharingDesc": "Nous ne vendons, n'échangeons ou ne transférons pas vos informations personnelles à des tiers sans votre consentement, sauf dans les cas requis par la loi ou pour améliorer nos services.",
+    "consentTitle": "Consentement",
+    "consentDesc": "En utilisant l'application Next Wellness, vous consentez à notre Politique de Confidentialité et acceptez la collecte et l'utilisation de vos informations telles que décrites ici.",
+    "updatesTitle": "Mises à jour de notre Politique",
+    "updatesDesc": "Nous nous réservons le droit de mettre à jour, de modifier ou de changer notre Politique de Confidentialité à tout moment. Nous vous encourageons à consulter régulièrement cette page pour toute mise à jour.",
+    "contactTitle": "Nous Contacter",
+    "contactDesc": "Si vous avez des questions, des préoccupations ou des commentaires concernant notre Politique de Confidentialité ou nos pratiques de données, n'hésitez pas à nous contacter.",
+    "closingNote": "Veuillez consulter notre Politique de Confidentialité pour comprendre comment nous utilisons vos informations. Merci d'avoir choisi Next Wellness App."
   }
 }
