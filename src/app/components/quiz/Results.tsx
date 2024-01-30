@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import { useState, useEffect } from 'react'
 import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri'
@@ -22,6 +23,7 @@ interface ResultsProps {
 const Results: React.FC<ResultsProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
+  const locale = useLocale()
   const active = useSelector(selectActive)
   const weightImperial = useSelector(selectWeightImperial)
   const [disabled, setDisabled] = useState(true)
@@ -34,7 +36,7 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
   const delay = 1700
 
   const btnContinueHandler = () => {
-    return router.push('/testimonials')
+    return router.push(`/${locale}/testimonials`)
   }
 
   useEffect(() => {

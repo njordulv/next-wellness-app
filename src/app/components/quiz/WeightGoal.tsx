@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setGoal,
@@ -28,7 +29,7 @@ interface QuizWeightGoalProps {
 const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
-
+  const locale = useLocale()
   const inputWeight = useSelector(selectInputWeight)
   const weightImperial = useSelector(selectWeightImperial)
   const goal = useSelector(selectGoal)
@@ -113,7 +114,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
 
   const continueHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    router.push('/quiz/results')
+    router.push(`/${locale}/quiz/results`)
   }
 
   return (

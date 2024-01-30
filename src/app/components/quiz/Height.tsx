@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setInputHeight,
@@ -22,6 +23,7 @@ interface QuizHeightProps {
 const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
+  const locale = useLocale()
 
   const inputHeight = useSelector(selectInputHeight)
   const heightError = useSelector(selectHeightError)
@@ -56,7 +58,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
 
   const continueHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.push('/quiz/weight')
+    router.push(`/${locale}/quiz/weight`)
   }
 
   return (
