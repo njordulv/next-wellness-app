@@ -14,8 +14,8 @@ import {
   selectGoal,
   selectGoalImperial,
 } from '@/store/slices/formSlice'
-import ProgressScroll from '../progress/ProgressScroll'
-import TestimonialSlider from '../slider/testimonials'
+import ProgressScroll from '../../../components/progress/ProgressScroll'
+import TestimonialSlider from '../../../components/slider/testimonials'
 import Payment from '../payment/Payment'
 import styles from '@/styles/offer.module.scss'
 

@@ -1,5 +1,12 @@
-import ProgressCircular from '@/components/progress/ProgressCircular'
-import Slider from '@/components/slider/testimonials'
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import ProgressCircular from '../../components/progress/ProgressCircular'
+import PageLayout from '../../components/PageLayout'
+import Slider from '../../components/slider/testimonials'
+
+type Props = {
+  params: { locale: string }
+}
 
 export const metadata = {
   title: 'Testimonials',
@@ -7,16 +14,16 @@ export const metadata = {
     'Over a thousand users have successfully reached their milestones using the Next Wellness App',
 }
 
-export default function Testimonials() {
+export default function Testimonials({ params: { locale } }: Props) {
+  unstable_setRequestLocale(locale)
+
+  const t = useTranslations('Testimonials')
+
   return (
-    <>
+    <PageLayout title={t('title')}>
       <ProgressCircular />
-      <h1>Our Users</h1>
-      <h3>
-        Over a thousand users have successfully reached their milestones using
-        the Next Wellness App
-      </h3>
+      <h3>{t('heading')}</h3>
       <Slider />
-    </>
+    </PageLayout>
   )
 }

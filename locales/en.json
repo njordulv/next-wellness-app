@@ -91,5 +91,10 @@
     "contactTitle": "Contact Us",
     "contactDesc": "If you have any questions, concerns, or feedback regarding our Privacy Policy or data practices, please don`t hesitate to contact us.",
     "closingNote": "Kindly review our Privacy Policy for insights on how we utilize your information. Thank you for choosing Next Wellness App."
+  },
+  "Testimonials": {
+    "title": "Our Users",
+    "description": "Over a thousand users have successfully reached their milestones using the Next Wellness App",
+    "heading": " Over a thousand users have successfully reached their milestones using the Next Wellness App"
   }
 }

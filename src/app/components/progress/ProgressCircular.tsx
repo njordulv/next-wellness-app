@@ -1,11 +1,13 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
 const ProgressCircular: React.FC = () => {
+  const locale = useLocale()
   const [percentage, setPercentage] = useState<number>(0)
   const router = useRouter()
 
@@ -16,7 +18,7 @@ const ProgressCircular: React.FC = () => {
       if (progress > 100) {
         clearInterval(interval)
         setTimeout(() => {
-          router.push('/email')
+          router.push(`/${locale}/email`)
         }, 1000)
       } else {
         setPercentage(progress)
@@ -24,7 +26,7 @@ const ProgressCircular: React.FC = () => {
     }, 100)
 
     return () => clearInterval(interval)
-  }, [router])
+  }, [router, locale])
 
   return (
     <CircularProgressbar
