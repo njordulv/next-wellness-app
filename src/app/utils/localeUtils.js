@@ -1,7 +1,7 @@
 // Utility function to get quiz pages based on locale
-import quizPagesEn from '@/data/quizPages_en'
-import quizPagesDe from '@/data/quizPages_de'
-import quizPagesFr from '@/data/quizPages_fr'
+import quizPagesEn from '@/data/quiz/en'
+import quizPagesDe from '@/data/quiz/de'
+import quizPagesFr from '@/data/quiz/fr'
 
 export default function getQuizPagesByLocale(locale) {
   switch (locale) {
