@@ -341,10 +341,10 @@ hr::before {
   }
 }
 
-.select-menu .select-btn {
+.select-menu {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  text-transform: uppercase;
 }
 .select-menu .options {
   position: absolute;
@@ -352,13 +352,14 @@ hr::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3px;
   width: 50px;
-  top: 46px;
+  top: 58px;
   overflow-y: auto;
   max-height: 295px;
   padding: 5px;
-  border-radius: 8px;
-  background: #fff;
+  border-radius: 0 0 5px 5px;
+  background: var(--background-darker);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   animation-name: fadeInDown;
   -webkit-animation-name: fadeInDown;
@@ -370,31 +371,33 @@ hr::before {
 .select-menu .options .option {
   cursor: pointer;
   text-align: center;
-  border-radius: 8px;
-  background: #fff;
-}
-.select-menu .options .option:hover {
-  background: #f2f2f2;
-}
-.select-menu .options .option i {
-  font-size: 25px;
-  margin-right: 12px;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: var(--background-darker);
 }
 .select-menu .options .option .option-text {
-  font-size: 18px;
-  color: #333;
+  color: var(--color);
+  font-size: 16px;
 }
 
-.select-btn i {
-  font-size: 25px;
-  transition: 0.3s;
+.select-menu .options .option:hover {
+  background: var(--background);
 }
 
-.select-menu.active .select-btn i {
+.select-menu .options .option:hover .option-text {
+  color: var(--blue);
+}
+
+.select-menu svg {
+  transition: all 0.3s ease;
+}
+
+.select-menu.active svg {
   transform: rotate(-180deg);
 }
 .select-menu.active .options {
-  display: block;
+  display: flex;
   opacity: 0;
   z-index: 10;
   animation-name: fadeInUp;
@@ -407,7 +410,7 @@ hr::before {
 
 @keyframes fadeInUp {
   from {
-    transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 15px, 0);
   }
   to {
     transform: translate3d(0, 0, 0);
@@ -420,7 +423,7 @@ hr::before {
     opacity: 1;
   }
   to {
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 10px, 0);
     opacity: 0;
   }
 }

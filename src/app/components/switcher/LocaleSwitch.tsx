@@ -32,13 +32,9 @@ const LocaleSwitch: React.FC<LocaleProps> = () => {
   }
 
   return (
-    <div
-      className={`flex gap-2 items-center absolute left-[50px] select-menu ${
-        isActive ? 'active' : ''
-      }`}
-    >
+    <div className={`select-menu ${isActive ? 'active' : ''}`}>
       <span
-        className="flex gap-2 items-center cursor-pointer hover:text-blue transition-all active:scale-90"
+        className="flex gap-1 items-center cursor-pointer hover:text-blue transition-all active:scale-90"
         onClick={handleSelectClick}
       >
         {locale}
