@@ -25,7 +25,7 @@
       "@/store/*": ["./src/app/[locale]/lib/redux/*"],
       "@/utils/*": ["./src/app/utils/*"],
       "@/styles/*": ["./src/app/styles/*"],
-      "@/data/*": ["./src/app/[locale]/data/*"]
+      "@/data/*": ["./src/app/data/*"]
     }
   },
   "include": [

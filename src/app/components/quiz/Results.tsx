@@ -12,7 +12,7 @@ import {
   selectWeightImperial,
   selectTotalCm,
 } from '@/store/slices/formSlice'
-import { BMI } from '@/data/formulas'
+import { BMI } from '@/utils/healthMetrics'
 import styles from '@/styles/results.module.scss'
 
 interface ResultsProps {
