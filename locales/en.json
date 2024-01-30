@@ -16,13 +16,16 @@
     "description": "Page not found",
     "back": "Back"
   },
+  "Loading": {
+    "title": ""
+  },
   "LocaleLayout": {
     "title": "Next Wellness App",
     "description": "Next.js Wellness App is a web application designed to help users track their health and fitness progress"
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, DE {🇩🇪 Deutsch} EN {🇺🇸 English} FR {🇫🇷 Français}}"
+    "current": "EN"
   },
   "Navigation": {
     "home": "Home",

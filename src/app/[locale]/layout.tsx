@@ -1,12 +1,8 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
-import { locales } from '@/config'
 import { Baloo_2 } from 'next/font/google'
-
+import { locales } from '@/config'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import AppProviders from './lib/providers/app-providers'
-import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
-import Cookie from '../components/cookies/CookieLayout'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -43,12 +39,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={baloo.className}>
-        <AppProviders>
-          <Header />
-          {children}
-          <Footer />
-          <Cookie />
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   )

@@ -3,35 +3,31 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { GrLanguage } from 'react-icons/gr'
 import { useLocale } from 'next-intl'
+import { IoChevronDown } from 'react-icons/io5'
+import { locales } from '@/config'
 
 interface LocaleProps {
-  params: {
-    locale: string
-    lang: string
-  }
+  locale: string
 }
 
-const LocaleSwitch: React.FC<LocaleProps> = ({ params }) => {
+const LocaleSwitch: React.FC<LocaleProps> = () => {
   const locale = useLocale()
   const pathName = usePathname()
   const [isActive, setIsActive] = useState(false)
-  const [selectedText, setSelectedText] = useState('')
 
-  // const redirectedPathName = (locale) => {
-  //   if (!pathName) return '/'
-  //   const segments = pathName.split('/')
-  //   segments[1] = locale
-  //   return segments.join('/')
-  // }
+  const redirectedPathName = (locale: string) => {
+    if (!pathName) return '/'
+    const segments = pathName.split('/')
+    segments[1] = locale
+    return segments.join('/')
+  }
 
   const handleSelectClick = () => {
     setIsActive(!isActive)
   }
 
-  const handleOptionClick = (optionText: string) => {
-    setSelectedText(optionText)
+  const handleOptionClick = (locale: string) => {
     setIsActive(false)
   }
 
@@ -41,14 +37,16 @@ const LocaleSwitch: React.FC<LocaleProps> = ({ params }) => {
         isActive ? 'active' : ''
       }`}
     >
-      <GrLanguage
-        className="text-[22px] cursor-pointer hover:text-blue transition-all active:scale-90"
+      <span
+        className="flex gap-2 items-center cursor-pointer hover:text-blue transition-all active:scale-90"
         onClick={handleSelectClick}
-      />
-      {locale}
-      {/* {isActive && (
+      >
+        {locale}
+        <IoChevronDown />
+      </span>
+      {isActive && (
         <ul className="options">
-          {i18n.locales.map((locale) => (
+          {locales.map((locale) => (
             <li
               key={locale}
               className="option"
@@ -60,7 +58,7 @@ const LocaleSwitch: React.FC<LocaleProps> = ({ params }) => {
             </li>
           ))}
         </ul>
-      )} */}
+      )}
     </div>
   )
 }
