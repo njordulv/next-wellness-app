@@ -3,6 +3,9 @@ import { Baloo_2 } from 'next/font/google'
 import { locales } from '@/config'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import AppProviders from './lib/providers/app-providers'
+import Footer from '../components/common/Footer'
+import Cookie from '../components/cookies/CookieLayout'
+import Header from '../components/common/HeaderSSR'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -39,7 +42,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={baloo.className}>
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <Header />
+          {children}
+
+          <Cookie />
+          <Footer />
+        </AppProviders>
       </body>
     </html>
   )

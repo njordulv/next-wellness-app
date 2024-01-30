@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useDispatch, useSelector } from '../../lib/redux/store'
+import { useDispatch, useSelector } from '@/store/store'
 import {
   setPlans,
   setOffer,
@@ -17,11 +17,8 @@ import {
   selectPlanThree,
   selectOffer,
   selectPopular,
-} from '../../lib/redux/slices/paymentSlice'
-import {
-  setCheckbox,
-  selectCheckbox,
-} from '../../lib/redux/slices/checkboxSlice'
+} from '@/store/slices/paymentSlice'
+import { setCheckbox, selectCheckbox } from '@/store/slices/checkboxSlice'
 import styles from '@/styles/payment.module.scss'
 
 const Payment: React.FC = () => {

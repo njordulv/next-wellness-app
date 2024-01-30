@@ -11,7 +11,7 @@ export default function NotFoundPage() {
     <PageLayout title={t('title')}>
       <div className="grid justify-center">
         <hr />
-        <h3 className="my-10">{t('description')}</h3>
+        <h3 className="mt-6 mb-9">{t('description')}</h3>
         <Back back={t('back')} />
       </div>
     </PageLayout>

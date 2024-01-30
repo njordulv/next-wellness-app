@@ -8,12 +8,12 @@ import {
   TbActivity,
 } from 'react-icons/tb'
 import { SiReact, SiNextdotjs, SiVercel, SiNodedotjs } from 'react-icons/si'
-import { useSelector } from '../../lib/redux/store'
+import { useSelector } from '@/store/store'
 import {
   selectIsMetric,
   selectGoal,
   selectGoalImperial,
-} from '../../lib/redux/slices/formSlice'
+} from '@/store/slices/formSlice'
 import ProgressScroll from '../progress/ProgressScroll'
 import TestimonialSlider from '../slider/testimonials'
 import Payment from '../payment/Payment'

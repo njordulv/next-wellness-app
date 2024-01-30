@@ -1,12 +1,4 @@
 {
-  "IndexPage": {
-    "title": "next-intl example",
-    "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes."
-  },
-  "PathnamesPage": {
-    "title": "Pathnames",
-    "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>"
-  },
   "Error": {
     "title": "Something went wrong!",
     "description": "Seite nicht gefunden"
@@ -20,12 +12,8 @@
     "title": ""
   },
   "LocaleLayout": {
-    "title": "Next Wellness App",
-    "description": "Next.js Wellness App is a web application designed to help users track their health and fitness progress"
-  },
-  "LocaleSwitcher": {
-    "label": "Change language",
-    "current": "DE"
+    "title": "Willkommen bei der Next Wellness App",
+    "description": "Beginnen Sie Ihren Weg zu einem gesünderen Ich mit unserem Wellness- und BMI-Rechner. Starten Sie heute Ihre Reise zu einem besseren Lebensstil."
   },
   "PageLayout": {
     "links": {
@@ -63,6 +51,9 @@
   "Footer": {
     "copyright": "Urheberrecht",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "Quiz": {
+    "title": "Quiz"
   },
   "Cookie": {
     "text": "Cookies verbessern Ihr Browsing-Erlebnis. Ihre fortgesetzte Nutzung impliziert die Akzeptanz unserer",

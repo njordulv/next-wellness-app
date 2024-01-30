@@ -23,6 +23,7 @@
       "@/components/*": ["./src/app/[locale]/components/*"],
       "@/providers/*": ["./src/app/[locale]/lib/providers/*"],
       "@/store/*": ["./src/app/[locale]/lib/redux/*"],
+      "@/utils/*": ["./src/app/utils/*"],
       "@/styles/*": ["./src/app/styles/*"],
       "@/data/*": ["./src/app/[locale]/data/*"]
     }

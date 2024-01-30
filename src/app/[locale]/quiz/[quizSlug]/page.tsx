@@ -1,5 +1,7 @@
-import QuizLogic from '../@/components/quiz/QuizLogic'
-import quizPages from '../../data/quizPages'
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import QuizLogic from '../../../components/quiz/QuizLogic'
+import getQuizPagesByLocale from '@/utils/localeUtils'
 
 interface QuizPage {
   slug: string
@@ -9,9 +11,15 @@ interface QuizPage {
 
 interface Params {
   quizSlug: string
+  locale: string
+}
+
+type Props = {
+  params: Params
 }
 
 export function generateMetadata({ params }: { params: Params }) {
+  const quizPages = getQuizPagesByLocale(params.locale)
   const quiz = quizPages.find((page: QuizPage) => page.slug === params.quizSlug)
 
   if (!quiz) {
@@ -27,6 +35,11 @@ export function generateMetadata({ params }: { params: Params }) {
   }
 }
 
-export default function QuizPage({ params }: { params: Params }) {
+export default function QuizPage({ params }: Props) {
+  const { locale } = params
+  unstable_setRequestLocale(locale)
+  getQuizPagesByLocale(params.locale)
+
+  const t = useTranslations('Quiz')
   return <QuizLogic params={params} />
 }

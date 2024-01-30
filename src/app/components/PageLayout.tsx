@@ -1,8 +1,5 @@
 import { useTranslations } from 'next-intl'
 import { ReactNode } from 'react'
-import Footer from '../components/common/Footer'
-import Cookie from '../components/cookies/CookieLayout'
-import Header from './common/HeaderSSR'
 import styles from '@/styles/main.module.scss'
 
 type Props = {
@@ -15,7 +12,6 @@ export default function PageLayout({ children, title }: Props) {
 
   return (
     <>
-      <Header />
       <main className="text-center scroll-smooth pt-[118px] bg-background">
         <section className="custom-bg min-h-[585px]">
           <div className={styles.wrapper}>
@@ -24,8 +20,6 @@ export default function PageLayout({ children, title }: Props) {
           </div>
         </section>
       </main>
-      <Cookie />
-      <Footer />
     </>
   )
 }

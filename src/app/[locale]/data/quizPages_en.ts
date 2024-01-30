@@ -6,7 +6,7 @@ interface QuizPagesData {
   options: string[]
 }
 
-const quizPages: QuizPagesData[] = [
+const quizPagesEn: QuizPagesData[] = [
   {
     slug: 'your-goal',
     title: 'Weight Management Goal Quiz',
@@ -147,4 +147,4 @@ const quizPages: QuizPagesData[] = [
   },
 ]
 
-export default quizPages
+export default quizPagesEn

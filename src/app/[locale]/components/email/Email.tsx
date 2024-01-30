@@ -8,14 +8,14 @@ import { HiOutlineMail } from 'react-icons/hi'
 import { GoShieldCheck } from 'react-icons/go'
 import { IoCloseOutline } from 'react-icons/io5'
 import { BiLoaderAlt } from 'react-icons/bi'
-import { useSelector, useDispatch, AppDispatch } from '../../lib/redux/store'
+import { useSelector, useDispatch, AppDispatch } from '@/store/store'
 import {
   submitEmail,
   setEmailValue,
   selectEmailValue,
   clearNetworkError,
   selectNetworkError,
-} from '../../lib/redux/slices/emailSlice'
+} from '@/store/slices/emailSlice'
 import styles from '@/styles/email.module.scss'
 
 interface EmailFormData {

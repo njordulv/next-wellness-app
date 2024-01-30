@@ -1,8 +1,5 @@
-import { useSelector } from '../../lib/redux/store'
-import {
-  selectQuizSlug,
-  selectQuizTotal,
-} from '../../lib/redux/slices/quizSlice'
+import { useSelector } from '@/store/store'
+import { selectQuizSlug, selectQuizTotal } from '@/store/slices/quizSlice'
 
 const TotalQuiz: React.FC = () => {
   const quizCurrent = useSelector(selectQuizSlug)

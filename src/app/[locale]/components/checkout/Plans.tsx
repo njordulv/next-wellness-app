@@ -1,12 +1,12 @@
 'use client'
 
-import { useSelector } from '../../lib/redux/store'
+import { useSelector } from '@/store/store'
 import {
   selectPlans,
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-} from '../../lib/redux/slices/paymentSlice'
+} from '@/store/slices/paymentSlice'
 import styles from '@/styles/checkout.module.scss'
 
 const Plans: React.FC = () => {
