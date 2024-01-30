@@ -291,56 +291,6 @@ hr::before {
   top: 50%;
   margin-top: -1px;
 }
-
-@media (max-width: 480px) {
-  header .button {
-    max-width: 105px;
-    font-size: 15px;
-    padding: 0 10px;
-  }
-}
-
-@keyframes spinner {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes animateGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-@keyframes showIn {
-  from {
-    opacity: 0;
-    top: 35px;
-  }
-  to {
-    opacity: 1;
-    top: 30px;
-  }
-}
-
 .select-menu {
   display: flex;
   align-items: center;
@@ -406,6 +356,55 @@ hr::before {
   animation-fill-mode: both;
   -webkit-animation-duration: 0.4s;
   -webkit-animation-fill-mode: both;
+}
+
+@media (max-width: 480px) {
+  header .button {
+    max-width: 105px;
+    font-size: 15px;
+    padding: 0 10px;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes showIn {
+  from {
+    opacity: 0;
+    top: 35px;
+  }
+  to {
+    opacity: 1;
+    top: 30px;
+  }
 }
 
 @keyframes fadeInUp {

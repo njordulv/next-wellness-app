@@ -60,6 +60,10 @@
     "text2": "Prêt à commencer ? Cliquez ci-dessous pour démarrer votre quiz personnalisé.",
     "startBtn": "Commencer Maintenant"
   },
+  "Header": {
+    "locale": "FR",
+    "plan": "Get My Plan"
+  },
   "Footer": {
     "copyright": "Droit d'auteur",
     "rights": "Tous droits réservés."

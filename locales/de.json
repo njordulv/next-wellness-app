@@ -56,6 +56,10 @@
     "text2": "Bereit anzufangen? Klicken Sie unten, um Ihr persönliches Quiz zu starten.",
     "startBtn": "Jetzt starten"
   },
+  "Header": {
+    "locale": "DE",
+    "plan": "Get My Plan"
+  },
   "Footer": {
     "copyright": "Urheberrecht",
     "rights": "Alle Rechte vorbehalten."

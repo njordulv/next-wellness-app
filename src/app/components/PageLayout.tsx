@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { ReactNode } from 'react'
 import Footer from '../components/common/Footer'
 import Cookie from '../components/cookies/CookieLayout'
-import Header from '../components/common/HeaderLayout'
+import Header from './common/HeaderSSR'
 import styles from '@/styles/main.module.scss'
 
 type Props = {
