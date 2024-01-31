@@ -128,5 +128,17 @@
     "title": "Our Users",
     "description": "Over a thousand users have successfully reached their milestones using the Next Wellness App",
     "heading": " Over a thousand users have successfully reached their milestones using the Next Wellness App"
+  },
+  "Email": {
+    "title": "Provide your email address for receiving your personalized fasting plan!",
+    "description": "Provide your email address for receiving your personalized fasting plan!",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Invalid email address",
+    "errorEmail": "Error occurred: ",
+    "email": "Email",
+    "privacyPreText": "Kindly review our",
+    "privacyLink": "Privacy Policy",
+    "privacyPostText": "for insights on how we utilize your information.",
+    "submit": "Submit"
   }
 }

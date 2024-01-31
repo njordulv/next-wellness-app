@@ -1,3 +1,4 @@
+import { useNow, useTimeZone } from 'next-intl'
 import { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { Baloo_2 } from 'next/font/google'
@@ -48,7 +49,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={baloo.className}>
-        <NextIntlProvider locale={locale} messages={messages}>
+        <NextIntlProvider
+          locale={locale}
+          messages={messages}
+          timeZone="Europe/Berlin"
+          now={new Date()}
+        >
           <AppProviders>
             <Header />
             {children}

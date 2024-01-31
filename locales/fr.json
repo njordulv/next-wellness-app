@@ -128,5 +128,17 @@
     "title": "Nos Utilisateurs",
     "description": "Plus de mille utilisateurs ont atteint leurs objectifs avec succès en utilisant l'application Next Wellness",
     "heading": "Plus de mille utilisateurs ont atteint leurs objectifs avec succès en utilisant l'application Next Wellness"
+  },
+  "Email": {
+    "title": "Fournissez votre adresse e-mail pour recevoir votre plan de jeûne personnalisé !",
+    "description": "Fournissez votre adresse e-mail pour recevoir votre plan de jeûne personnalisé !",
+    "requiredEmail": "L'e-mail est requis",
+    "invalidEmail": "Adresse e-mail invalide",
+    "errorEmail": "Une erreur s'est produite : ",
+    "email": "E-mail",
+    "privacyPreText": "Veuillez consulter notre",
+    "privacyLink": "Politique de confidentialité",
+    "privacyPostText": "pour comprendre comment nous utilisons vos informations.",
+    "submit": "Soumettre"
   }
 }

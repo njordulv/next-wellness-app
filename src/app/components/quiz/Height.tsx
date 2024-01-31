@@ -14,7 +14,7 @@ import {
 } from '@/store/slices/formSlice'
 import HeightImperial from './Imperial'
 import MetricSwitch from '../../components/switcher/MetricSwitch'
-import * as mess from '@/utils/formMessages'
+import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
 interface QuizHeightProps {

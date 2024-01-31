@@ -2,6 +2,7 @@
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 import { useState } from 'react'
 import Link from 'next/link'
 import { HiOutlineMail } from 'react-icons/hi'
@@ -16,6 +17,8 @@ import {
   clearNetworkError,
   selectNetworkError,
 } from '@/store/slices/emailSlice'
+import PageLayout from '../../components/PageLayout'
+import * as mess from '@/utils/messages'
 import styles from '@/styles/email.module.scss'
 
 interface EmailFormData {
@@ -25,6 +28,8 @@ interface EmailFormData {
 const Email: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
   const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations('Email')
   const emailValue = useSelector(selectEmailValue)
   const networkError = useSelector(selectNetworkError)
   const [disabled, setDisabled] = useState(true)
@@ -42,10 +47,10 @@ const Email: React.FC = () => {
   } = useForm<EmailFormData>()
 
   const emailValidation = {
-    required: 'Email is required',
+    required: mess.requiredEmail(t),
     pattern: {
       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: 'Invalid email address',
+      message: mess.invalidEmail(t),
     },
   }
 
@@ -80,20 +85,17 @@ const Email: React.FC = () => {
       setTimeout(() => {
         if (submitEmail.fulfilled.match(result)) {
           setLoading(false)
-          router.push('/offer')
+          router.push(`/${locale}/offer`)
         }
       }, 3000)
     } catch (error) {
       setLoading(false)
-      console.error('Error occurred:', error)
+      console.error(mess.errorEmail(t), error)
     }
   }
 
   return (
-    <>
-      <h2>
-        Provide your email address for receiving your personalized fasting plan!
-      </h2>
+    <PageLayout title={t('title')}>
       <form
         onSubmit={handleSubmit(onSubmitHandler)}
         className={styles.formEmail}
@@ -127,8 +129,9 @@ const Email: React.FC = () => {
         <div className={styles.formEmail__privacy}>
           <GoShieldCheck />
           <span>
-            Kindly review our <Link href="/privacy-policy">Privacy Policy</Link>
-            &nbsp; for insights on how we utilize your information.
+            {t('privacyPreText')}&nbsp;
+            <Link href={`/${locale}/privacy-policy`}>{t('privacyLink')}</Link>
+            &nbsp;{t('privacyPostText')}
           </span>
         </div>
         {loading ? (
@@ -137,11 +140,11 @@ const Email: React.FC = () => {
           </button>
         ) : (
           <button type="submit" className="button">
-            Submit
+            {t('submit')}
           </button>
         )}
       </form>
-    </>
+    </PageLayout>
   )
 }
 

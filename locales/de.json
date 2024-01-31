@@ -128,5 +128,17 @@
     "title": "Unsere Nutzer",
     "description": "Über tausend Benutzer haben ihre Meilensteine erfolgreich mit der Next Wellness App erreicht",
     "heading": "Über tausend Benutzer haben ihre Meilensteine erfolgreich mit der Next Wellness App erreicht"
+  },
+  "Email": {
+    "title": "Geben Sie Ihre E-Mail-Adresse an, um Ihren persönlichen Fastenplan zu erhalten!",
+    "description": "Geben Sie Ihre E-Mail-Adresse an, um Ihren persönlichen Fastenplan zu erhalten!",
+    "requiredEmail": "E-Mail ist erforderlich",
+    "invalidEmail": "Ungültige E-Mail-Adresse",
+    "errorEmail": "Fehler aufgetreten: ",
+    "email": "E-Mail",
+    "privacyPreText": "Bitte überprüfen Sie unsere",
+    "privacyLink": "Datenschutzbestimmungen",
+    "privacyPostText": "um Einblicke zu erhalten, wie wir Ihre Informationen nutzen.",
+    "submit": "Absenden"
   }
 }

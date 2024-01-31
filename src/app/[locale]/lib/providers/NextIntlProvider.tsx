@@ -7,12 +7,16 @@ type Props = {
   messages: AbstractIntlMessages
   locale: string
   children: ReactNode
+  now: Date
+  timeZone: string
 }
 
 export default function NextIntlProvider({
   messages,
   locale,
   children,
+  now,
+  timeZone,
 }: Props) {
   return (
     <NextIntlClientProvider
@@ -21,6 +25,8 @@ export default function NextIntlProvider({
       defaultTranslationValues={{
         i: (text) => <i>{text}</i>,
       }}
+      now={now}
+      timeZone={timeZone}
     >
       {children}
     </NextIntlClientProvider>
