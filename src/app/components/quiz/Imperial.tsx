@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setFeet,
@@ -12,12 +12,14 @@ import {
   selectHeightImperialInch,
   selectHeightError,
 } from '@/store/slices/formSlice'
+import * as mess from '@/utils/formMessages'
 import styles from '@/styles/main.module.scss'
 
 const HeightImperial = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
+  const t = useTranslations('Quiz')
   const heightError = useSelector(selectHeightError)
   const localFeet = useSelector(selectHeightImperialFeet)
   const localInch = useSelector(selectHeightImperialInch)
@@ -49,11 +51,11 @@ const HeightImperial = () => {
     ) {
       let errorMsg = ''
       if (isNaN(updatedFeet) || isNaN(updatedInch)) {
-        errorMsg = 'Ensure you input digits only'
+        errorMsg = mess.getDigitsErrMsg(t)
       } else if (updatedFeet < 4 || updatedFeet > 7) {
-        errorMsg = 'Please state at least 4 ft and at most 7 ft'
+        errorMsg = mess.minHeightImpErrMsg(t)
       } else if (updatedInch > 11) {
-        errorMsg = 'Please state at most 11 inch'
+        errorMsg = mess.maxHeightImpErrMsg(t)
       }
       dispatch(setHeightError(errorMsg))
     } else {
@@ -97,7 +99,7 @@ const HeightImperial = () => {
           <div className={styles.inputError}>{heightError}</div>
         </div>
         <button type="submit" className="button">
-          Continue
+          {t('continue')}
         </button>
       </form>
     </>

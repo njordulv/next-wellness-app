@@ -53,7 +53,39 @@
     "rights": "Alle Rechte vorbehalten."
   },
   "Quiz": {
-    "title": "Quiz"
+    "title": "Quiz",
+    "continue": "Fortsetzen",
+    "digitsErrMsg": "Stellen Sie sicher, dass Sie nur Ziffern eingeben",
+    "minHeightErrMsg": "Die Mindesthöhe beträgt 120 cm",
+    "maxHeightErrMsg": "Die maximale Höhe beträgt 240 cm",
+    "minHeightImpErrMsg": "Bitte geben Sie mindestens 4 ft und höchstens 7 ft an",
+    "maxHeightImpErrMsg": "Bitte geben Sie höchstens 11 inch an",
+    "weightErrMsg": "Bitte geben Sie ein Gewicht zwischen 40 und 230 Kilogramm ein",
+    "weightImpErrMsg": "Bitte geben Sie ein Gewicht zwischen 90 und 540 lbs ein",
+    "weightValErrMsg": "Etwas ist schiefgelaufen, es scheint, als wäre Ihr Gewichtswert nicht festgelegt"
+  },
+  "Results": {
+    "yourBMI": "Ihr BMI ist ",
+    "incorrect": "Falsch",
+    "underweight": "Untergewicht",
+    "normal": "Normal",
+    "overweight": "Übergewicht",
+    "obese": "Fettleibig",
+    "underText1": "Personen mit einem BMI von 18,4 oder weniger fallen in die Kategorie 'Untergewicht'.",
+    "underText2": "Untergewicht kann ein Indikator für unzureichende Ernährung sein, was gesundheitliche Folgen wie geschwächtes Immunsystem, Nährstoffmangel und verminderte Knochendichte haben kann.",
+    "underText3": "Es ist wichtig, dass Personen in dieser Kategorie einen Gesundheitsfachmann zur Beurteilung und Beratung zur Erreichung eines gesünderen Gewichts konsultieren.",
+    "normalText1": "Ein BMI im Bereich von 18,5 bis 24,9 gilt als 'Normal' oder 'Gesundes' Gewicht.",
+    "normalText2": "Personen in diesem Bereich haben in der Regel ein für ihre Größe angemessenes Gewicht und ein geringeres Risiko für gewichtsbezogene Gesundheitsprobleme.",
+    "normalText3": "Die Aufrechterhaltung eines normalen BMI wird mit einer besseren Gesamtgesundheit und Langlebigkeit in Verbindung gebracht.",
+    "overText1": "BMI-Werte zwischen 25,0 und 39,9 werden als 'Übergewicht' klassifiziert",
+    "overText2": "Übergewichtige Personen haben ein im Verhältnis zu ihrer Größe übermäßiges Körpergewicht, was ihr Risiko für verschiedene Gesundheitsprobleme, einschließlich Herzkrankheiten, Typ-2-Diabetes und Gelenkprobleme, erhöhen kann.",
+    "overText3": "Gewichtsmanagement durch eine ausgewogene Ernährung und regelmäßige körperliche Aktivität wird für Personen in dieser Kategorie empfohlen.",
+    "obeseText1": "Ein BMI von 40,0 oder höher wird als Fettleibigkeit eingestuft",
+    "obeseText2": "Fettleibigkeit ist mit einem deutlich erhöhten Risiko für ernsthafte Gesundheitszustände verbunden, einschließlich Herz-Kreislauf-Erkrankungen, Bluthochdruck, Schlafapnoe und einigen Arten von Krebs.",
+    "obeseText3": "Es ist entscheidend, dass Personen in dieser Kategorie professionelle medizinische Beratung suchen und Gewichtsmanagementstrategien in Betracht ziehen, die diätetische Veränderungen, Bewegung und in einigen Fällen medizinische Eingriffe umfassen können.",
+    "errorBMI": "Versuchen Sie es erneut mit korrekten Werten",
+    "note": "Es ist wichtig zu beachten, dass der BMI zwar ein nützliches Werkzeug zur Bewertung des Gewichtsstatus auf Bevölkerungsebene ist, jedoch Faktoren wie Muskelmasse, Körperzusammensetzung oder Fettverteilung nicht berücksichtigt, die die Gesundheit eines Individuums beeinflussen können. Für eine umfassende Gesundheitsbewertung konsultieren Sie einen Gesundheitsdienstleister, der neben dem BMI auch weitere Faktoren berücksichtigt.",
+    "continue": "Fortsetzen"
   },
   "Cookie": {
     "text": "Cookies verbessern Ihr Browsing-Erlebnis. Ihre fortgesetzte Nutzung impliziert die Akzeptanz unserer",

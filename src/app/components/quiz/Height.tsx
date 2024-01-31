@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setInputHeight,
@@ -14,6 +14,7 @@ import {
 } from '@/store/slices/formSlice'
 import HeightImperial from './Imperial'
 import MetricSwitch from '../../components/switcher/MetricSwitch'
+import * as mess from '@/utils/formMessages'
 import styles from '@/styles/main.module.scss'
 
 interface QuizHeightProps {
@@ -24,6 +25,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
+  const t = useTranslations('Quiz')
   const inputHeight = useSelector(selectInputHeight)
   const heightError = useSelector(selectHeightError)
   const disabled = useSelector(selectDisabled)
@@ -40,13 +42,13 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
         dispatch(setHeightError(''))
         dispatch(setDisabled(true))
       } else if (isNaN(numericValue)) {
-        dispatch(setHeightError('Ensure you input digits only'))
+        dispatch(setHeightError(mess.getDigitsErrMsg(t)))
         dispatch(setDisabled(true))
       } else if (numericValue < 120) {
-        dispatch(setHeightError('The minimum allowable height is 120 cm'))
+        dispatch(setHeightError(mess.minHeightErrMsg(t)))
         dispatch(setDisabled(true))
       } else if (numericValue > 240) {
-        dispatch(setHeightError('The maximum allowable height is 240 cm'))
+        dispatch(setHeightError(mess.maxHeightErrMsg(t)))
         dispatch(setDisabled(true))
       } else {
         dispatch(setHeightError(''))
@@ -84,7 +86,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
             <div className={styles.inputError}>{heightError}</div>
           </div>
           <button type="submit" disabled={disabled} className="button">
-            Continue
+            {t('continue')}
           </button>
         </form>
       ) : (

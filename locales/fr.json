@@ -53,7 +53,39 @@
     "rights": "Tous droits réservés."
   },
   "Quiz": {
-    "title": "Quiz"
+    "title": "Quiz",
+    "continue": "Continuer",
+    "digitsErrMsg": "Assurez-vous de saisir uniquement des chiffres",
+    "minHeightErrMsg": "La hauteur minimale autorisée est de 120 cm",
+    "maxHeightErrMsg": "La hauteur maximale autorisée est de 240 cm",
+    "minHeightImpErrMsg": "Veuillez indiquer au moins 4 pieds et au maximum 7 pieds",
+    "maxHeightImpErrMsg": "Veuillez indiquer au maximum 11 pouces",
+    "weightErrMsg": "Veuillez saisir un poids entre 40 et 230 kilogrammes",
+    "weightImpErrMsg": "Veuillez saisir un poids entre 90 et 540 livres",
+    "weightValErrMsg": "Quelque chose s'est mal passé, il semble que votre valeur de poids n'est pas définie"
+  },
+  "Results": {
+    "yourBMI": "Votre IMC est ",
+    "incorrect": "Incorrect",
+    "underweight": "Insuffisance pondérale",
+    "normal": "Normal",
+    "overweight": "Surpoids",
+    "obese": "Obèse",
+    "underText1": "Les individus ayant un IMC de 18,4 ou moins sont considérés comme étant en 'Insuffisance pondérale'.",
+    "underText2": "Être en sous-poids peut être un indicateur d'une nutrition insuffisante, ce qui peut avoir des conséquences sur la santé, telles qu'un système immunitaire affaibli, des carences nutritionnelles et une densité osseuse réduite.",
+    "underText3": "Il est important pour les personnes dans cette catégorie de consulter un professionnel de la santé pour une évaluation et des conseils afin d'atteindre un poids plus sain.",
+    "normalText1": "Un IMC situé dans la plage de 18,5 à 24,9 est considéré comme un poids 'Normal' ou 'Sain'.",
+    "normalText2": "Les individus dans cette plage ont généralement un poids approprié pour leur taille et ont généralement un risque plus faible de problèmes de santé liés au poids.",
+    "normalText3": "Maintenir un IMC normal est associé à une meilleure santé globale et à une longévité accrue.",
+    "overText1": "Les valeurs d'IMC entre 25,0 et 39,9 sont classées comme 'Surpoids'",
+    "overText2": "Les individus en surpoids ont un excès de poids corporel par rapport à leur taille, ce qui peut augmenter leur risque de divers problèmes de santé, y compris les maladies cardiaques, le diabète de type 2 et les problèmes articulaires.",
+    "overText3": "La gestion du poids par une alimentation équilibrée et une activité physique régulière est recommandée pour les personnes dans cette catégorie.",
+    "obeseText1": "Un IMC de 40,0 ou plus est catégorisé comme Obèse",
+    "obeseText2": "L'obésité est associée à un risque considérablement accru de conditions de santé graves, y compris les maladies cardiovasculaires, l'hypertension, l'apnée du sommeil et certains types de cancer.",
+    "obeseText3": "Il est crucial pour les individus dans cette catégorie de chercher des conseils médicaux professionnels et d'envisager des stratégies de gestion du poids, qui peuvent inclure des changements alimentaires, de l'exercice et, dans certains cas, une intervention médicale.",
+    "errorBMI": "Réessayez avec des valeurs correctes",
+    "note": "Il est important de noter que bien que l'IMC soit un outil utile pour évaluer le statut pondéral au niveau de la population, il ne prend pas en compte des facteurs tels que la masse musculaire, la composition corporelle ou la répartition des graisses, qui peuvent influencer la santé globale d'un individu. Pour une évaluation complète de la santé, consultez un prestataire de soins de santé qui prend en compte des facteurs supplémentaires aux côtés de l'IMC.",
+    "continue": "Continuer"
   },
   "Cookie": {
     "text": "Les cookies améliorent votre expérience de navigation. Leur utilisation continue implique l'acceptation de notre",

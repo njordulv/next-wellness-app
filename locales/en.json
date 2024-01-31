@@ -53,7 +53,39 @@
     "rights": "All Rights Reserved."
   },
   "Quiz": {
-    "title": "Quiz"
+    "title": "Quiz",
+    "continue": "Continue",
+    "digitsErrMsg": "Ensure you input digits only",
+    "minHeightErrMsg": "The minimum allowable height is 120 cm",
+    "maxHeightErrMsg": "The maximum allowable height is 240 cm",
+    "minHeightImpErrMsg": "Please state at least 4 ft and at most 7 ft",
+    "maxHeightImpErrMsg": "Please state at most 11 inch",
+    "weightErrMsg": "Kindly input a weight between 40 and 230 kilograms",
+    "weightImpErrMsg": "Kindly input a weight between 90 and 540 lbs",
+    "weightValErrMsg": "Something went wrong, it looks like your weight value isn't set"
+  },
+  "Results": {
+    "yourBMI": "Your BMI is ",
+    "incorrect": "Incorrect",
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese",
+    "underText1": "Individuals with a BMI of 18.4 or less fall into the `Underweight` category.",
+    "underText2": "Being underweight may be an indicator of insufficient nutrition, which can have health consequences, such as weakened immune system, nutritional deficiencies, and reduced bone density.",
+    "underText3": "It is important for individuals in this category to consult a healthcare professional for assessment and guidance on achieving a healthier weight.",
+    "normalText1": "A BMI falling within the range of 18.5 to 24.9 is considered `Normal` or `Healthy` weight.",
+    "normalText2": "Individuals in this range are generally at a weight that is appropriate for their height, and they typically have a lower risk of weight-related health issues.",
+    "normalText3": "Maintaining a normal BMI is associated with better overall health and longevity.",
+    "overText1": "BMI values between 25.0 and 39.9 are classified as `Overweight`",
+    "overText2": "Overweight individuals have excess body weight relative to their height, and this may increase their risk of various health problems, including heart disease, type 2 diabetes, and joint issues.",
+    "overText3": "Weight management through a balanced diet and regular physical activity is recommended for those in this category.",
+    "obeseText1": "A BMI of 40.0 or higher is categorized as Obese",
+    "obeseText2": "Obesity is associated with a significantly increased risk of serious health conditions, including cardiovascular diseases, hypertension, sleep apnea, and some types of cancer.",
+    "obeseText3": "It is crucial for individuals in this category to seek professional medical guidance and consider weight management strategies, which may include dietary changes, exercise, and, in some cases, medical intervention.",
+    "errorBMI": "Try again with correct values",
+    "note": "It's important to note that while BMI is a useful tool for evaluating weight status on a population level, it does not take into account factors like muscle mass, body composition, or distribution of fat, which can influence an individual's overall health. For a thorough health assessment, consult a healthcare provider who considers additional factors alongside BMI.",
+    "continue": "Continue"
   },
   "Cookie": {
     "text": "Cookies enhance your browsing experience. Your continued use implies acceptance of our",
@@ -63,7 +95,7 @@
     "title": "Cookie Policy",
     "description": "This Cookie Policy describes the Cookie practices for Next Wellness App",
     "updated": "Updated",
-    "text1": "At Next Wellness App, we are committed to maintaining the trust and confidence of our visitors to our web application. In particular, we want you to know that Next Wellness App does not sell, rent or trade email lists with other companies and businesses for marketing purposes. In this Privacy Policy, we`ve provided detailed information on when and why we use cookies, how we use them, the limited conditions under which we may disclose it to others, and how we keep it secure.",
+    "text1": "At Next Wellness App, we are committed to maintaining the trust and confidence of our visitors to our web application. In particular, we want you to know that Next Wellness App does not sell, rent or trade email lists with other companies and businesses for marketing purposes. In this Privacy Policy, we've provided detailed information on when and why we use cookies, how we use them, the limited conditions under which we may disclose it to others, and how we keep it secure.",
     "head1": "What Are Cookies?",
     "text2": "Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by online service providers to facilitate and help to make the interaction between users and websites faster and easier, as well as to provide reporting information.",
     "text3": "Cookies set by the website owner (in this case, Next Wellness App) are called «first party cookies». Cookies set by parties other than the website owner are called «third party cookies». Third party cookies enable third party features or functionality to be provided on or through the website (e.g. like advertising, interactive content and analytics). The parties that set these third party cookies can recognize your computer both when it visits the website in question and also when it visits certain other websites.",
@@ -89,7 +121,7 @@
     "updatesTitle": "Updates to Our Policy",
     "updatesDesc": "We reserve the right to update, modify, or change our Privacy Policy at any time. We encourage you to review this page periodically for any updates.",
     "contactTitle": "Contact Us",
-    "contactDesc": "If you have any questions, concerns, or feedback regarding our Privacy Policy or data practices, please don`t hesitate to contact us.",
+    "contactDesc": "If you have any questions, concerns, or feedback regarding our Privacy Policy or data practices, please don't hesitate to contact us.",
     "closingNote": "Kindly review our Privacy Policy for insights on how we utilize your information. Thank you for choosing Next Wellness App."
   },
   "Testimonials": {

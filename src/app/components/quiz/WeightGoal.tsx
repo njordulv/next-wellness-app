@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setGoal,
@@ -20,6 +20,7 @@ import {
 } from '@/store/slices/formSlice'
 import MetricSwitch from '../../components/switcher/MetricSwitch'
 import { verdictData } from '@/data/verdict'
+import * as mess from '@/utils/formMessages'
 import styles from '@/styles/main.module.scss'
 
 interface QuizWeightGoalProps {
@@ -30,6 +31,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
+  const t = useTranslations('Quiz')
   const inputWeight = useSelector(selectInputWeight)
   const weightImperial = useSelector(selectWeightImperial)
   const goal = useSelector(selectGoal)
@@ -84,11 +86,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
     if (!value) {
       dispatch(setWeightError(''))
     } else if ((isMetric && !inputWeight) || (!isMetric && !weightImperial)) {
-      dispatch(
-        setWeightError(
-          "Something went wrong, it looks like your weight value isn't set"
-        )
-      )
+      dispatch(setWeightError(mess.weightValErrMsg(t)))
       return
     }
 
@@ -140,7 +138,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
           <div className={styles.inputError}>{weightError}</div>
         </div>
         <button type="submit" disabled={disabled} className="button">
-          Continue
+          {t('continue')}
         </button>
       </form>
       {verdict && (

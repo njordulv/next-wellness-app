@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setInputWeight,
@@ -15,6 +15,7 @@ import {
   selectIsMetric,
 } from '@/store/slices/formSlice'
 import MetricSwitch from '../../components/switcher/MetricSwitch'
+import * as mess from '@/utils/formMessages'
 import styles from '@/styles/main.module.scss'
 
 interface QuizWeightProps {
@@ -25,6 +26,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
+  const t = useTranslations('Quiz')
   const inputWeight = useSelector(selectInputWeight)
   const inputWeightImp = useSelector(selectWeightImperial)
   const weightError = useSelector(selectWeightError)
@@ -48,9 +50,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
         numericValue > 230
       ) {
         dispatch(setDisabledWeight(true))
-        dispatch(
-          setWeightError('Kindly input a weight between 40 and 230 kilograms')
-        )
+        dispatch(setWeightError(mess.weightErrMsg(t)))
       } else {
         dispatch(setDisabledWeight(false))
         dispatch(setWeightError(''))
@@ -67,7 +67,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
         numericValue > 540
       ) {
         dispatch(setDisabledWeight(true))
-        dispatch(setWeightError('Kindly input a weight between 90 and 540 lbs'))
+        dispatch(setWeightError(mess.weightImpErrMsg(t)))
       } else {
         dispatch(setDisabledWeight(false))
         dispatch(setWeightError(''))
@@ -103,7 +103,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
           <div className={styles.inputError}>{weightError}</div>
         </div>
         <button type="submit" disabled={disabled} className="button">
-          Continue
+          {t('continue')}
         </button>
       </form>
     </>
