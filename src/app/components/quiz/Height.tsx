@@ -13,7 +13,7 @@ import {
   selectIsMetric,
 } from '@/store/slices/formSlice'
 import HeightImperial from './Imperial'
-import MetricSwitch from '@/components/switcher/MetricSwitch'
+import MetricSwitch from '../../components/switcher/MetricSwitch'
 import styles from '@/styles/main.module.scss'
 
 interface QuizHeightProps {
@@ -24,7 +24,6 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
-
   const inputHeight = useSelector(selectInputHeight)
   const heightError = useSelector(selectHeightError)
   const disabled = useSelector(selectDisabled)

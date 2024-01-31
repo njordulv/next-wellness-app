@@ -14,7 +14,7 @@ import {
   selectDisabledWeight,
   selectIsMetric,
 } from '@/store/slices/formSlice'
-import MetricSwitch from '@/components/switcher/MetricSwitch'
+import MetricSwitch from '../../components/switcher/MetricSwitch'
 import styles from '@/styles/main.module.scss'
 
 interface QuizWeightProps {

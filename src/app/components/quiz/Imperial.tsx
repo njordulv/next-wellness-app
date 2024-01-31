@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setFeet,
@@ -16,7 +17,7 @@ import styles from '@/styles/main.module.scss'
 const HeightImperial = () => {
   const dispatch = useDispatch()
   const router = useRouter()
-
+  const locale = useLocale()
   const heightError = useSelector(selectHeightError)
   const localFeet = useSelector(selectHeightImperialFeet)
   const localInch = useSelector(selectHeightImperialInch)
@@ -61,7 +62,7 @@ const HeightImperial = () => {
         (updatedFeet * 30.48 + updatedInch * 2.54).toFixed()
       )
       dispatch(setTotalCm(totalCm))
-      router.push('/quiz/weight')
+      router.push(`/${locale}/quiz/weight`)
     }
   }
 
