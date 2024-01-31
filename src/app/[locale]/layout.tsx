@@ -1,9 +1,8 @@
-import { useNow, useTimeZone } from 'next-intl'
 import { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { Baloo_2 } from 'next/font/google'
 import { locales } from '@/config'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import AppProviders from './lib/providers/app-providers'
 import NextIntlProvider from './lib/providers/NextIntlProvider'
 import Footer from '../components/common/Footer'
@@ -45,6 +44,8 @@ export default async function LocaleLayout({
   } catch (error) {
     notFound()
   }
+  // Enable static rendering
+  unstable_setRequestLocale(locale)
 
   return (
     <html lang={locale} suppressHydrationWarning>
