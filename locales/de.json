@@ -8,9 +8,6 @@
     "description": "Seite nicht gefunden",
     "back": "Zurück"
   },
-  "Loading": {
-    "title": ""
-  },
   "LocaleLayout": {
     "title": "Willkommen bei der Next Wellness App",
     "description": "Beginnen Sie Ihren Weg zu einem gesünderen Ich mit unserem Wellness- und BMI-Rechner. Starten Sie heute Ihre Reise zu einem besseren Lebensstil."
@@ -46,7 +43,7 @@
   },
   "Header": {
     "locale": "DE",
-    "plan": "Get My Plan"
+    "plan": "Meinen Plan erhalten"
   },
   "Footer": {
     "copyright": "Urheberrecht",
@@ -140,5 +137,38 @@
     "privacyLink": "Datenschutzbestimmungen",
     "privacyPostText": "um Einblicke zu erhalten, wie wir Ihre Informationen nutzen.",
     "submit": "Absenden"
+  },
+  "Offer": {
+    "title": "Geben Sie Ihre E-Mail-Adresse an, um Ihren persönlichen Fastenplan zu erhalten!",
+    "before": "Vorher",
+    "after": "Nachher",
+    "metabolicRate": "Stoffwechselrate",
+    "keepInMind": "Beachten Sie, dass dies die erwarteten Ergebnisse nicht garantiert.",
+    "customPlanAwaits": "Ihr individueller Plan wartet auf Sie!",
+    "targetWeight": "Zielgewicht",
+    "completePrevSteps": "Bitte schließen Sie alle vorherigen Schritte ab",
+    "bestOffer": "Bestes Angebot",
+    "mostPopular": "Am beliebtesten",
+    "oneMonthPlan": "1-Monats-Plan",
+    "threeMonthPlan": "3-Monats-Plan",
+    "sixMonthPlan": "6-Monats-Plan",
+    "perDay": "pro Tag",
+    "autoRenewalConsent": "Mit der Auswahl dieser Option gebe ich mein Einverständnis für die automatische Erneuerung meines Abonnements mit der angegebenen Karte. Mir ist bewusst, dass ich heute belastet werde",
+    "and": "und",
+    "quarterlyRenewalCharge": "bei jeder nachfolgenden vierteljährlichen Erneuerung bis zu meiner Kündigung. Um jegliche Gebühren zu vermeiden, muss das Abonnement mindestens einen Tag vor Ablauf gekündigt werden. Dies kann durch Kontaktaufnahme mit support@nextwellness.app oder Anrufen unserer US-Nummer: 555-01-39 erfolgen. Die Transaktionsdetails könnten auf Ihrem Kontoauszug erscheinen",
+    "getMyPlan": "Holen Sie sich Ihren Plan",
+    "grabMyPlan": "Greifen Sie nach Ihrem Plan",
+    "newcomersSuccess": "Neulinge haben ihre dauerhaften Gewichtsverlustziele mit unserem Programm erreicht!",
+    "whatYouGet": "Was Sie bekommen:",
+    "customizationDetails": "Wir passen unseren Plan an Ihre einzigartigen Bedürfnisse und Ziele an, basierend auf den Informationen, die Sie uns geben, und unseren speziellen Algorithmen.",
+    "goalList": "Um Ihr Ziel zu erreichen, erhalten Sie:",
+    "item1": "Eine Schritt-für-Schritt-Anleitung zum Lebensstil",
+    "item2": "Über 100 Einblicke zum Gewichtsverlust",
+    "item3": "Tracker für Hydratation und Gewicht",
+    "item4": "Exklusive Anleitungen, um Ihr Verständnis für Ernährung und Training zur Erreichung Ihres Ziels zu vertiefen.",
+    "appFeatures": "Alle diese Funktionen sind in einer einzigen mobilen App integriert, verfügbar für IOS 14.0+ oder Android 8.0+ Geräte.",
+    "poweredBy": "Unterstützt von:",
+    "userSuccessStories": "Lesen Sie die inspirierenden Erfolgsgeschichten unserer Nutzer",
+    "transformationTimeframe": "Erleben Sie bemerkenswerte Verwandlungen innerhalb von nur 3 Wochen"
   }
 }

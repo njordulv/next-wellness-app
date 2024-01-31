@@ -8,9 +8,6 @@
     "description": "Page non trouvée",
     "back": "Retour"
   },
-  "Loading": {
-    "title": ""
-  },
   "LocaleLayout": {
     "title": "Bienvenue sur l'application Next Wellness",
     "description": "Entamez le chemin vers une meilleure santé avec notre calculateur de bien-être et d'IMC. Commencez aujourd'hui votre voyage vers un style de vie amélioré."
@@ -46,7 +43,7 @@
   },
   "Header": {
     "locale": "FR",
-    "plan": "Get My Plan"
+    "plan": "Obtenir mon plans"
   },
   "Footer": {
     "copyright": "Droit d'auteur",
@@ -140,5 +137,38 @@
     "privacyLink": "Politique de confidentialité",
     "privacyPostText": "pour comprendre comment nous utilisons vos informations.",
     "submit": "Soumettre"
+  },
+  "Offer": {
+    "title": "Fournissez votre adresse e-mail pour recevoir votre plan de jeûne personnalisé !",
+    "before": "Avant",
+    "after": "Après",
+    "metabolicRate": "Taux métabolique",
+    "keepInMind": "Gardez à l'esprit que cela ne garantit pas les résultats attendus.",
+    "customPlanAwaits": "Votre plan personnalisé vous attend !",
+    "targetWeight": "Poids cible",
+    "completePrevSteps": "Veuillez compléter toutes les étapes précédentes",
+    "bestOffer": "Meilleure offre",
+    "mostPopular": "Le plus populaire",
+    "oneMonthPlan": "Plan d'1 mois",
+    "threeMonthPlan": "Plan de 3 mois",
+    "sixMonthPlan": "Plan de 6 mois",
+    "perDay": "par jour",
+    "autoRenewalConsent": "En sélectionnant cette option, je donne mon consentement pour le renouvellement automatique de mon abonnement en utilisant la carte spécifiée. Je suis conscient qu'aujourd'hui je serai débité",
+    "and": "et pour",
+    "quarterlyRenewalCharge": "chaque renouvellement trimestriel suivant jusqu'à ce que je choisisse d'annuler. Pour éviter tout frais, il est nécessaire d'annuler votre abonnement au moins un jour avant son expiration. Cela peut être fait en contactant support@nextwellness.app ou en appelant notre numéro aux États-Unis : 555-01-39. Les détails de la transaction peuvent apparaître sur votre relevé bancaire",
+    "getMyPlan": "Obtenez mon plan",
+    "grabMyPlan": "Saisissez mon plan",
+    "newcomersSuccess": "Les nouveaux venus ont atteint leurs objectifs de perte de poids durable avec notre programme !",
+    "whatYouGet": "Ce que vous obtiendrez :",
+    "customizationDetails": "Nous personnalisons notre plan pour répondre à vos besoins et objectifs uniques en utilisant les informations que vous fournissez ainsi que nos algorithmes spéciaux.",
+    "goalList": "Pour atteindre votre objectif, vous recevrez :",
+    "item1": "Un guide étape par étape pour un mode de vie",
+    "item2": "Plus de 100 aperçus sur la perte de poids",
+    "item3": "Des traceurs pour l'hydratation et le poids",
+    "item4": "Des guides exclusifs pour approfondir votre compréhension de la nutrition et de l'entraînement pour atteindre votre objectif.",
+    "appFeatures": "Toutes ces fonctionnalités sont intégrées dans une seule application mobile disponible sur les appareils IOS 14.0+ ou Android 8.0+.",
+    "poweredBy": "Propulsé par :",
+    "userSuccessStories": "Lisez les histoires de réussite inspirantes de nos utilisateurs",
+    "transformationTimeframe": "Témoignez de transformations notables en seulement 3 semaines"
   }
 }

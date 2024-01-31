@@ -5,12 +5,12 @@ import { useDispatch } from '@/store/store'
 import { setQuizSlug, setQuizTotal } from '@/store/slices/quizSlice'
 import getQuizPagesByLocale from '@/utils/localeUtils'
 import NotFound from '../../not-found'
+import PageLayoutWithoutTitle from '../layouts/PageLayoutWithoutTitle'
 import QuizTemplate from './QuizTemplate'
 import Height from './Height'
 import Weight from './Weight'
 import WeightGoal from './WeightGoal'
 import Results from './Results'
-import styles from '@/styles/main.module.scss'
 
 interface QuizLogicProps {
   params: {
@@ -35,27 +35,23 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
   }, [dispatch, currentIndex, quizTotal])
 
   return (
-    <main className="text-center scroll-smooth pt-[118px] pb-[50px] bg-background">
-      <section className="custom-bg min-h-[585px]">
-        <div className={styles.wrapper}>
-          {currentQuiz ? (
-            <>
-              <QuizTemplate
-                heading={currentQuiz.heading}
-                options={currentQuiz.options}
-                path={nextPage ? nextPage.slug : '/quiz/results'}
-              />
-              {params.quizSlug === 'height' && <Height title="" />}
-              {params.quizSlug === 'weight' && <Weight title="" />}
-              {params.quizSlug === 'weight-goal' && <WeightGoal title="" />}
-              {params.quizSlug === 'results' && <Results title="" />}
-            </>
-          ) : (
-            <NotFound />
-          )}
-        </div>
-      </section>
-    </main>
+    <PageLayoutWithoutTitle>
+      {currentQuiz ? (
+        <>
+          <QuizTemplate
+            heading={currentQuiz.heading}
+            options={currentQuiz.options}
+            path={nextPage ? nextPage.slug : '/quiz/results'}
+          />
+          {params.quizSlug === 'height' && <Height title="" />}
+          {params.quizSlug === 'weight' && <Weight title="" />}
+          {params.quizSlug === 'weight-goal' && <WeightGoal title="" />}
+          {params.quizSlug === 'results' && <Results title="" />}
+        </>
+      ) : (
+        <NotFound />
+      )}
+    </PageLayoutWithoutTitle>
   )
 }
 

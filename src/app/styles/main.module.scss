@@ -131,7 +131,7 @@
 }
 
 .weightInfo {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   font-size: 13px;
@@ -145,11 +145,8 @@
   opacity: 0;
   box-sizing: border-box;
   min-height: 100px;
-  bottom: -40px;
-  left: 16px;
-  right: 16px;
-  max-width: 440px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 30px auto;
 }
 
 .weightInfo.active {

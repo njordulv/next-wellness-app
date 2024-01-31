@@ -17,7 +17,7 @@ import {
   clearNetworkError,
   selectNetworkError,
 } from '@/store/slices/emailSlice'
-import PageLayout from '../../components/PageLayout'
+import PageLayout from '../layouts/PageLayout'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/email.module.scss'
 

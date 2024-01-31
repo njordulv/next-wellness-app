@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import PageLayout from '../components/PageLayout'
+import PageLayout from '../components/layouts/PageLayout'
 import Back from '../components/Back'
 
 // app/[locale]/[...rest]/page.tsx is necessary for this page to render.

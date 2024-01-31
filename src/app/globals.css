@@ -214,8 +214,14 @@ form button {
 }
 
 .button--small {
-  max-width: 188px;
+  max-width: 192px;
+  padding: 2px 15px;
   min-width: auto;
+}
+
+[lang='de'] .button--small,
+[lang='fr'] .button--small {
+  font-size: 17px;
 }
 
 .button--extra-small {

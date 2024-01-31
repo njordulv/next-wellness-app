@@ -8,9 +8,6 @@
     "description": "Page not found",
     "back": "Back"
   },
-  "Loading": {
-    "title": ""
-  },
   "LocaleLayout": {
     "title": "Next Wellness App",
     "description": "Next.js Wellness App is a web application designed to help users track their health and fitness progress"
@@ -140,5 +137,38 @@
     "privacyLink": "Privacy Policy",
     "privacyPostText": "for insights on how we utilize your information.",
     "submit": "Submit"
+  },
+  "Offer": {
+    "title": "Provide your email address for receiving your personalized fasting plan!",
+    "before": "Before",
+    "after": "After",
+    "metabolicRate": "Metabolic rate",
+    "keepInMind": "Keep in mind that this doesn`t guarantee the expected outcomes.",
+    "customPlanAwaits": "Your custom plan awaits!",
+    "targetWeight": "Target Weight",
+    "completePrevSteps": "Please complete all the previous steps",
+    "bestOffer": "Best Offer",
+    "mostPopular": "Most Popular",
+    "oneMonthPlan": "1-Month Plan",
+    "threeMonthPlan": "3-Month Plan",
+    "sixMonthPlan": "6-Month Plan",
+    "perDay": "per day",
+    "autoRenewalConsent": "By selecting this option, I provide consent for the automatic renewal of my subscription using the specified card. I am aware that today I will be charged",
+    "and": "and",
+    "quarterlyRenewalCharge": "for each subsequent quarterly renewal until I opt to cancel. To avoid any charges, it`s necessary to cancel your subscription at least one day before its expiration. This can be done by contacting support@nextwellness.app or calling our US number: 555-01-39. The transaction details might appear on your bank statement",
+    "getMyPlan": "Get My Plan",
+    "grabMyPlan": "Grab My Plan",
+    "newcomersSuccess": "Newcomers achieved their enduring weight loss goals with our program!",
+    "whatYouGet": "What you`ll get:",
+    "customizationDetails": "We customize our plan to fit your unique needs and objectives using the information you provide alongside our special algorithms.",
+    "goalList": "To reach your goal, you`ll receive:",
+    "item1": "A step-by-step lifestyle guide",
+    "item2": "Over 100 weight-loss insights",
+    "item3": "Trackers for hydration and weight",
+    "item4": "Exclusive guides to deepen your understanding of nutrition and training for achieving your goal.",
+    "appFeatures": "All these features are integrated into a single mobile app available on IOS 14.0+ or Android 8.0+ devices.",
+    "poweredBy": "Powered by:",
+    "userSuccessStories": "Read the inspiring success stories from our users",
+    "transformationTimeframe": "Witness noticeable transformations within a mere 3 weeks"
   }
 }
