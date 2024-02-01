@@ -12,7 +12,7 @@ export default function PageLayout({ children, title }: Props) {
 
   return (
     <>
-      <main className="text-center scroll-smooth pt-[118px] pb-[50px] bg-background">
+      <main className="text-center scroll-smooth pt-[118px] pb-[40px] bg-background">
         <section className="custom-bg min-h-[585px]">
           <div className={styles.wrapper}>
             <h1 className={styles.page_heading}>{title}</h1>

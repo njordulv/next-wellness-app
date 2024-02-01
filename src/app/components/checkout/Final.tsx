@@ -115,7 +115,7 @@ const Final: React.FC<FinalProps> = ({ showPopup, setPopup, emailValue }) => {
     <Popup className={popupClass}>
       <PopupWrapper>
         <h2>{t('finalOrder')}</h2>
-        <h3>{t('finalthanx')}</h3>
+        <h3>{t('finalThanx')}</h3>
         <h5>
           {t('finalEmailStart')} <span>{emailValue}</span> {t('finalEmailEnd')}
         </h5>
