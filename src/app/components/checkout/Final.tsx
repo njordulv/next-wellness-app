@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 import { useRouter } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 import styled from 'styled-components'
 import { VscChromeClose } from 'react-icons/vsc'
 
@@ -101,24 +102,22 @@ interface FinalProps {
 
 const Final: React.FC<FinalProps> = ({ showPopup, setPopup, emailValue }) => {
   const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations('Checkout')
   const popupClass = showPopup ? 'show' : 'hide'
 
   const closePopupHandler = () => {
     setPopup(false)
-    router.push('/')
+    router.push(`/${locale}/`)
   }
 
   return (
     <Popup className={popupClass}>
       <PopupWrapper>
-        <h2>Your Order is Confirmed</h2>
-        <h3>
-          Thank you for choosing <br />
-          Next Wellness App!
-        </h3>
+        <h2>{t('finalOrder')}</h2>
+        <h3>{t('finalthanx')}</h3>
         <h5>
-          An email to <span>{emailValue}</span> was sent with your personalized
-          code to register on our platform.
+          {t('finalEmailStart')} <span>{emailValue}</span> {t('finalEmailEnd')}
         </h5>
         <ClosePopup onClick={closePopupHandler}>
           <VscChromeClose />

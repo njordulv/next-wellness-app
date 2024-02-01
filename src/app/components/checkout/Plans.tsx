@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useSelector } from '@/store/store'
 import {
   selectPlans,
@@ -10,6 +11,7 @@ import {
 import styles from '@/styles/checkout.module.scss'
 
 const Plans: React.FC = () => {
+  const t = useTranslations('Checkout')
   const plans = useSelector(selectPlans)
   const planOne = useSelector(selectPlanOne)
   const planTwo = useSelector(selectPlanTwo)
@@ -48,15 +50,15 @@ const Plans: React.FC = () => {
 
   return (
     <section className={styles.orderDetails}>
-      <h3>Order Details:</h3>
+      <h3>{t('orderDetails')}:</h3>
       <div className={styles.orderDetailsItems}>
         <div className={styles.orderDetailsItem}>
-          <div>Your choice:</div>
+          <div>{t('yourChoice')}:</div>
           <div></div>
           <div>{selectedPlan}</div>
         </div>
         <div className={styles.orderDetailsItem}>
-          <div>Monthly price:</div>
+          <div>{t('monthlyPrice')}:</div>
           <div></div>
           <div>
             <span className={styles.orderDetailsOldPrice}>
@@ -70,7 +72,7 @@ const Plans: React.FC = () => {
           </div>
         </div>
         <div className={styles.orderDetailsItem}>
-          <div>Total:</div>
+          <div>{t('total')}:</div>
           <div></div>
           <div>
             <span className={styles.orderDetailsOldPrice}>

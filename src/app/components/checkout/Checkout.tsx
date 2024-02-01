@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
+import { useTranslations, useLocale } from 'next-intl'
 import { useDispatch, useSelector } from '@/store/store'
 import axios from 'axios'
 import {
@@ -22,8 +23,10 @@ import {
   selectPlanTwo,
   selectPlanThree,
 } from '@/store/slices/paymentSlice'
+import PageLayout from '../layouts/PageLayout'
 import Plans from './Plans'
 import Final from './Final'
+import * as mess from '@/utils/messages'
 import styles from '@/styles/form.module.scss'
 
 interface FormData {
@@ -36,6 +39,8 @@ interface FormData {
 }
 
 const Checkout: React.FC = () => {
+  const locale = useLocale()
+  const t = useTranslations('Checkout')
   const dispatch = useDispatch()
   const currentYear = new Date().getFullYear()
   const [cardValue, setCardValue] = useState<string>('')
@@ -80,18 +85,18 @@ const Checkout: React.FC = () => {
   } = useForm<FormData>()
 
   const cardValidation = {
-    required: 'Credit card number is required',
+    required: mess.requiredCard(t),
     pattern: {
       value: /^\d{4} \d{4} \d{4} \d{4}$/,
-      message: 'Invalid credit card number',
+      message: mess.invalidCard(t),
     },
   }
 
   const expDateValidation = {
-    required: 'Expiration date is required',
+    required: mess.requiredExpDate(t),
     pattern: {
       value: /^(0[1-9]|1[0-2])\/\d{2}$/,
-      message: 'Invalid expiration date',
+      message: mess.invalidExpDate(t),
     },
     validate: (value: any) => {
       const enteredYear = Number(value.split('/')[1])
@@ -102,7 +107,7 @@ const Checkout: React.FC = () => {
         enteredYear < currentYearLastTwoDigits ||
         enteredYear > maxAllowedYear
       ) {
-        return 'Invalid expiration date'
+        return mess.invalidExpDate(t)
       }
 
       return true
@@ -110,34 +115,34 @@ const Checkout: React.FC = () => {
   }
 
   const cvvValidation = {
-    required: 'CVV/CVC is required',
+    required: mess.requiredCVV(t),
     pattern: {
       value: /^[0-9]{3,4}$/,
-      message: 'Invalid CVV/CVC',
+      message: mess.invalidCVV(t),
     },
   }
 
   const firstNameValidation = {
-    required: 'First Name is required',
+    required: mess.requiredName(t),
     pattern: {
       value: /^[A-Za-zÀ-ÖØ-öø-ÿ'\- ]+$/,
-      message: 'Invalid name format',
+      message: mess.invalidName(t),
     },
   }
 
   const lastNameValidation = {
-    required: 'Last Name is required',
+    required: mess.requiredLastName(t),
     pattern: {
       value: /^[A-Za-zÀ-ÖØ-öø-ÿ'\- ]+$/,
-      message: 'Invalid name format',
+      message: mess.invalidName(t),
     },
   }
 
   const emailValidation = {
-    required: 'Email is required',
+    required: mess.requiredCheckEmail(t),
     pattern: {
       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: 'Invalid email address format',
+      message: mess.invalidCheckEmail(t),
     },
   }
 
@@ -158,7 +163,7 @@ const Checkout: React.FC = () => {
     } else {
       setError('cardNumber', {
         type: 'manual',
-        message: 'Invalid card number',
+        message: mess.invalidCard(t),
       })
     }
 
@@ -198,7 +203,7 @@ const Checkout: React.FC = () => {
     } else if (discoverPattern.test(cardNumber)) {
       return 'Discover'
     } else {
-      return 'Unknown'
+      return t('unknown')
     }
   }
 
@@ -221,7 +226,7 @@ const Checkout: React.FC = () => {
     } else {
       setError('expDate', {
         type: 'manual',
-        message: 'Invalid expiration date',
+        message: mess.invalidExpDate(t),
       })
     }
 
@@ -238,7 +243,7 @@ const Checkout: React.FC = () => {
     } else {
       setError('cvv', {
         type: 'manual',
-        message: 'Invalid CVV/CVC number',
+        message: mess.invalidCVV(t),
       })
     }
   }
@@ -275,7 +280,7 @@ const Checkout: React.FC = () => {
     } else if (value.length > 3) {
       setError('email', {
         type: 'manual',
-        message: 'Invalid email address format',
+        message: mess.invalidCheckEmail(t),
       })
     } else {
       clearErrors('email')
@@ -298,12 +303,12 @@ const Checkout: React.FC = () => {
         setLoading(false)
       }, 3000)
     } catch (error) {
-      toast.error(`Error sending data: ${error}`)
+      toast.error(`${mess.errorSendData(t)}: ${error}`)
     }
   }
 
   return (
-    <>
+    <PageLayout title={t('title')}>
       <div
         className={
           popup
@@ -311,10 +316,6 @@ const Checkout: React.FC = () => {
             : `${styles.checkoutPage}`
         }
       >
-        <h2>
-          Include details <br />
-          of your payment information.
-        </h2>
         <section className={styles.checkoutForm}>
           <form>
             <div className={`${styles.formWrapper}`}>
@@ -331,7 +332,7 @@ const Checkout: React.FC = () => {
                       className={`${styles.input}`}
                       type="text"
                       maxLength={19}
-                      placeholder="Card Number"
+                      placeholder={t('placeholderCard')}
                       value={cardValue}
                       onChange={cardHandler}
                     />
@@ -396,7 +397,7 @@ const Checkout: React.FC = () => {
                       {...register('firstName', firstNameValidation)}
                       type="text"
                       className={`${styles.input}`}
-                      placeholder="First name"
+                      placeholder={t('placeholderName')}
                       value={firstNameValue}
                       onChange={firstNameHandler}
                     />
@@ -417,7 +418,7 @@ const Checkout: React.FC = () => {
                       {...register('lastName', lastNameValidation)}
                       type="text"
                       className={`${styles.input}`}
-                      placeholder="Last name"
+                      placeholder={t('placeholderLastName')}
                       value={lastNameValue}
                       onChange={lastNameHandler}
                     />
@@ -438,7 +439,7 @@ const Checkout: React.FC = () => {
                       {...register('email', emailValidation)}
                       type="text"
                       className={`${styles.input}`}
-                      placeholder="Email"
+                      placeholder={t('placeholderEmail')}
                       value={emailValue}
                       onChange={emailHandler}
                     />
@@ -470,7 +471,7 @@ const Checkout: React.FC = () => {
               className="button"
               onClick={handleSubmit(onSubmit)}
             >
-              Submit Order
+              {t('submitOrder')}
             </button>
           )}
         </div>
@@ -482,17 +483,16 @@ const Checkout: React.FC = () => {
         </section>
         <div className="text-left">
           <small>
-            By placing this order, you acknowledge that you`ve reviewed and
-            accepted our <Link href="/privacy-policy">Privacy Policy</Link>.
-            Please note, in certain instances, physical access to the device may
-            be necessary.
+            {t('orderAccepted')}{' '}
+            <Link href={`/${locale}/privacy-policy`}>{t('privacyText')}</Link>.{' '}
+            {t('orderNote')}
           </small>
         </div>
       </div>
       {popup && (
         <Final showPopup={popup} setPopup={setPopup} emailValue={emailValue} />
       )}
-    </>
+    </PageLayout>
   )
 }
 

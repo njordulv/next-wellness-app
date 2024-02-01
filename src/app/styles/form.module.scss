@@ -135,26 +135,19 @@
     padding-left: 48px;
   }
 }
-.inputError {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: left;
-  bottom: -14px;
-  font-size: 11px;
-  line-height: 14px;
-  font-weight: 400;
-  color: var(--red);
-}
+.inputError,
 .emailSuccess {
   position: absolute;
   left: 0;
   right: 0;
   text-align: left;
   bottom: -14px;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 14px;
   font-weight: 400;
+}
+.inputError {
+  color: var(--red);
 }
 @media (max-width: 640px) {
   .inputRow {
