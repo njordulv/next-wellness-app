@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import ProgressCircular from '../../components/progress/ProgressCircular'
-import PageLayout from '../../components/layouts/PageLayout'
-import Slider from '../../components/slider/testimonials'
+import ProgressCircular from '@/components/progress/ProgressCircular'
+import PageLayout from '@/components/layouts/PageLayout'
+import Slider from '@/components/slider/testimonials'
 
 type Props = {
   params: { locale: string }

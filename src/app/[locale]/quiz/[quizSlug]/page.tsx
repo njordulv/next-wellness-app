@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import QuizLogic from '../../../components/quiz/QuizLogic'
+import QuizLogic from '@/components/quiz/QuizLogic'
 import getQuizPagesByLocale from '@/utils/localeUtils'
 
 interface QuizPage {

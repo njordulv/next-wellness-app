@@ -23,7 +23,7 @@ import {
   selectPlanTwo,
   selectPlanThree,
 } from '@/store/slices/paymentSlice'
-import PageLayout from '../layouts/PageLayout'
+import PageLayout from '@/components/layouts/PageLayout'
 import Plans from './Plans'
 import Final from './Final'
 import * as mess from '@/utils/messages'

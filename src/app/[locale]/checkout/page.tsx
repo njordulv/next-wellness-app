@@ -1,5 +1,5 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
-import Checkout from '../../components/checkout/Checkout'
+import Checkout from '@/components/checkout/Checkout'
 
 type Props = {
   params: { locale: string }

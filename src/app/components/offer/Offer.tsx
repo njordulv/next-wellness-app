@@ -15,10 +15,10 @@ import {
   selectGoal,
   selectGoalImperial,
 } from '@/store/slices/formSlice'
-import PageLayoutWithoutTitle from '../layouts/PageLayoutWithoutTitle'
-import ProgressScroll from '../progress/ProgressScroll'
-import TestimonialSlider from '../slider/testimonials'
-import Payment from '../payment/Payment'
+import PageLayoutWithoutTitle from '@/components/layouts/PageLayoutWithoutTitle'
+import ProgressScroll from '@/components/progress/ProgressScroll'
+import TestimonialSlider from '@/components/slider/testimonials'
+import Payment from '@/components/payment/Payment'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/offer.module.scss'
 

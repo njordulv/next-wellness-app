@@ -3,11 +3,11 @@ import { notFound } from 'next/navigation'
 import { Baloo_2 } from 'next/font/google'
 import { locales } from '@/config'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-import AppProviders from './lib/providers/app-providers'
-import NextIntlProvider from './lib/providers/NextIntlProvider'
-import Footer from '../components/common/Footer'
-import Cookie from '../components/cookies/CookieLayout'
-import Header from '../components/common/HeaderSSR'
+import AppProviders from '@/providers/app-providers'
+import NextIntlProvider from '@/providers/NextIntlProvider'
+import Footer from '@/components/common/Footer'
+import Cookie from '@/components/cookies/CookieLayout'
+import Header from '@/components/common/HeaderSSR'
 
 const baloo = Baloo_2({
   subsets: ['latin'],

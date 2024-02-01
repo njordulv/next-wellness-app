@@ -13,18 +13,7 @@
     "description": "Entamez le chemin vers une meilleure santé avec notre calculateur de bien-être et d'IMC. Commencez aujourd'hui votre voyage vers un style de vie amélioré."
   },
   "PageLayout": {
-    "links": {
-      "docs": {
-        "title": "Docs",
-        "description": "Learn more about next-intl in the official docs.",
-        "href": "https://next-intl-docs.vercel.app/"
-      },
-      "source": {
-        "title": "Source code",
-        "description": "Browse the source code of this example on GitHub.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router"
-      }
-    }
+    "title": "Next Wellness App"
   },
   "Home": {
     "title": "Bienvenue sur l'application Next Wellness",

@@ -20,9 +20,9 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/components/*": ["./src/app/[locale]/components/*"],
-      "@/providers/*": ["./src/app/[locale]/lib/providers/*"],
-      "@/store/*": ["./src/app/[locale]/lib/redux/*"],
+      "@/components/*": ["./src/app/components/*"],
+      "@/providers/*": ["./src/app/lib/providers/*"],
+      "@/store/*": ["./src/app/lib/redux/*"],
       "@/utils/*": ["./src/app/utils/*"],
       "@/styles/*": ["./src/app/styles/*"],
       "@/data/*": ["./src/app/data/*"]

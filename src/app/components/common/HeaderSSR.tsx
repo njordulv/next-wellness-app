@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
-import ThemeSwitch from '../switcher/ThemeSwitch'
-import LocaleSwitch from '../switcher/LocaleSwitch'
-import GetPlanBtn from '../GetPlanBtn'
+import ThemeSwitch from '@/components/switcher/ThemeSwitch'
+import LocaleSwitch from '@/components/switcher/LocaleSwitch'
+import GetPlanBtn from '@/components/GetPlanBtn'
 import HeaderContent from './HeaderCSR'
 
 export default function HeaderSSR() {

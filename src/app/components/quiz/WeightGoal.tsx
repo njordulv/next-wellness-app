@@ -18,7 +18,7 @@ import {
   selectDisabledGoal,
   selectIsMetric,
 } from '@/store/slices/formSlice'
-import MetricSwitch from '../../components/switcher/MetricSwitch'
+import MetricSwitch from '@/components/switcher/MetricSwitch'
 import { verdictData } from '@/data/verdict'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'

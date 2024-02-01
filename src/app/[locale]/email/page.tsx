@@ -1,5 +1,5 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
-import Email from '../../components/email/Email'
+import Email from '@/components/email/Email'
 
 type Props = {
   params: { locale: string }

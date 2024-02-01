@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
-import TotalQuiz from '../../components/quiz/TotalQuiz'
+import TotalQuiz from '@/components/quiz/TotalQuiz'
 
 export default function HeaderCSR() {
   const locale = useLocale()
