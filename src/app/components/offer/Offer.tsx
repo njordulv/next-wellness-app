@@ -18,7 +18,7 @@ import {
 import PageLayoutWithoutTitle from '../layouts/PageLayoutWithoutTitle'
 import ProgressScroll from '../progress/ProgressScroll'
 import TestimonialSlider from '../slider/testimonials'
-import Payment from '../../[locale]/components/payment/Payment'
+import Payment from '../payment/Payment'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/offer.module.scss'
 

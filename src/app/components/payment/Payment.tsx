@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { toast, ToastContainer } from 'react-toastify'
@@ -19,11 +20,14 @@ import {
   selectPopular,
 } from '@/store/slices/paymentSlice'
 import { setCheckbox, selectCheckbox } from '@/store/slices/checkboxSlice'
+import * as mess from '@/utils/messages'
 import styles from '@/styles/payment.module.scss'
 
 const Payment: React.FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations('Payment')
   const plans = useSelector(selectPlans)
   const checkbox = useSelector(selectCheckbox)
   const currency = useSelector(selectCurrency)
@@ -62,13 +66,13 @@ const Payment: React.FC = () => {
     } else if (plan2) {
       setDefaultPrice(planTwo.discountFullPrice)
       setFullPrice(planTwo.monthPrice)
-      dispatch(setOffer('Best Offer'))
+      dispatch(setOffer(t('bestOffer')))
       dispatch(setPopular(''))
     } else {
       setDefaultPrice(planThree.discountFullPrice)
       setFullPrice(planThree.monthPrice)
       dispatch(setOffer(''))
-      dispatch(setPopular('Most Popular'))
+      dispatch(setPopular(t('mostPopular')))
     }
   }
 
@@ -87,14 +91,14 @@ const Payment: React.FC = () => {
 
     if (!(checkbox.conditions && checkbox.terms)) {
       if (!errorDisplayed) {
-        toast.error('Please check all the checkboxes')
+        toast.error(mess.checkboxError(t))
         setErrorDisplayed(true)
       }
     } else {
-      toast.success('Well Done!')
+      toast.success(mess.toastComplete(t))
       setLoading(true)
       setTimeout(() => {
-        router.push('/checkout')
+        router.push(`/${locale}/checkout`)
       }, 4000)
     }
   }
@@ -121,7 +125,7 @@ const Payment: React.FC = () => {
                     {planOne.discountPrice}
                   </b>
                   &nbsp;
-                  <i>per day</i>
+                  <i>{t('perDay')}</i>
                 </span>
                 <span className={styles.paymentOldPrice}>
                   {currency.symbol}
@@ -148,7 +152,7 @@ const Payment: React.FC = () => {
                     {planTwo.discountPrice}
                   </b>
                   &nbsp;
-                  <i>per day</i>
+                  <i>{t('perDay')}</i>
                 </span>
                 <span className={styles.paymentOldPrice}>
                   {currency.symbol}
@@ -180,7 +184,7 @@ const Payment: React.FC = () => {
                     {planThree.discountPrice}
                   </b>
                   &nbsp;
-                  <i>per day</i>
+                  <i>{t('perDay')}</i>
                 </span>
                 <span className={styles.paymentOldPrice}>
                   {currency.symbol}
@@ -203,10 +207,7 @@ const Payment: React.FC = () => {
                 <div className={styles.checkboxKnob}></div>
               </div>
             </label>
-            <small>
-              By ticking this box, I acknowledge and accept the Terms and
-              Conditions as well as the Refund Policy
-            </small>
+            <small>{t('checkboxOne')}</small>
           </div>
           <div className={styles.checkbox}>
             <label className={styles.checkboxWrapper}>
@@ -220,24 +221,17 @@ const Payment: React.FC = () => {
               </div>
             </label>
             <small>
-              By selecting this option, I provide consent for the automatic
-              renewal of my subscription using the specified card. I am aware
-              that today I will be charged&nbsp;
+              {t('checkboxTwoStart')}&nbsp;
               <b>
                 {defaultPrice}
                 &nbsp;{currency.abbr}
               </b>
-              &nbsp;and&nbsp;
+              &nbsp;{t('and')}&nbsp;
               <b>
                 {fullPrice}
                 &nbsp;{currency.abbr}
               </b>
-              &nbsp; for each subsequent quarterly renewal until I opt to
-              cancel. To avoid any charges, it`s necessary to cancel your
-              subscription at least one day before its expiration. This can be
-              done by contacting support@nextwellness.app or calling our US
-              number: 555-01-39. The transaction details might appear on your
-              bank statement
+              &nbsp; {t('checkboxTwoEnd')}
             </small>
           </div>
         </div>
@@ -248,7 +242,7 @@ const Payment: React.FC = () => {
             </button>
           ) : (
             <button type="submit" className="button">
-              Get My Plan
+              {t('getMyPlan')}
             </button>
           )}
         </div>

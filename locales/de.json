@@ -147,16 +147,6 @@
     "customPlanAwaits": "Ihr individueller Plan wartet auf Sie!",
     "targetWeight": "Zielgewicht",
     "completePrevSteps": "Bitte schließen Sie alle vorherigen Schritte ab",
-    "bestOffer": "Bestes Angebot",
-    "mostPopular": "Am beliebtesten",
-    "oneMonthPlan": "1-Monats-Plan",
-    "threeMonthPlan": "3-Monats-Plan",
-    "sixMonthPlan": "6-Monats-Plan",
-    "perDay": "pro Tag",
-    "autoRenewalConsent": "Mit der Auswahl dieser Option gebe ich mein Einverständnis für die automatische Erneuerung meines Abonnements mit der angegebenen Karte. Mir ist bewusst, dass ich heute belastet werde",
-    "and": "und",
-    "quarterlyRenewalCharge": "bei jeder nachfolgenden vierteljährlichen Erneuerung bis zu meiner Kündigung. Um jegliche Gebühren zu vermeiden, muss das Abonnement mindestens einen Tag vor Ablauf gekündigt werden. Dies kann durch Kontaktaufnahme mit support@nextwellness.app oder Anrufen unserer US-Nummer: 555-01-39 erfolgen. Die Transaktionsdetails könnten auf Ihrem Kontoauszug erscheinen",
-    "getMyPlan": "Holen Sie sich Ihren Plan",
     "grabMyPlan": "Greifen Sie nach Ihrem Plan",
     "newcomersSuccess": "Neulinge haben ihre dauerhaften Gewichtsverlustziele mit unserem Programm erreicht!",
     "whatYouGet": "Was Sie bekommen:",
@@ -170,5 +160,20 @@
     "poweredBy": "Unterstützt von:",
     "userSuccessStories": "Lesen Sie die inspirierenden Erfolgsgeschichten unserer Nutzer",
     "transformationTimeframe": "Erleben Sie bemerkenswerte Verwandlungen innerhalb von nur 3 Wochen"
+  },
+  "Payment": {
+    "oneMonthPlan": "1-Monats-Plan",
+    "threeMonthPlan": "3-Monats-Plan",
+    "sixMonthPlan": "6-Monats-Plan",
+    "bestOffer": "Bestes Angebot",
+    "mostPopular": "Am beliebtesten",
+    "perDay": "pro Tag",
+    "checkboxOne": "Durch Ankreuzen dieses Kästchens erkenne ich die Allgemeinen Geschäftsbedingungen sowie die Rückerstattungsrichtlinie an und akzeptiere sie",
+    "checkboxTwoStart": "Durch Auswahl dieser Option gebe ich meine Zustimmung zur automatischen Verlängerung meines Abonnements mit der angegebenen Karte. Mir ist bewusst, dass ich heute belastet werde",
+    "and": "und",
+    "checkboxTwoEnd": "für jede nachfolgende vierteljährliche Verlängerung, bis ich kündige. Um jegliche Gebühren zu vermeiden, muss das Abonnement mindestens einen Tag vor seinem Ablauf gekündigt werden. Dies kann durch Kontaktaufnahme mit support@nextwellness.app oder Anrufen unserer US-Nummer: 555-01-39 geschehen. Die Transaktionsdetails könnten auf Ihrem Kontoauszug erscheinen",
+    "toastComplete": "Gut gemacht!",
+    "checkboxError": "Bitte markieren Sie alle Kontrollkästchen",
+    "getMyPlan": "Holen Sie sich Ihren Plan"
   }
 }

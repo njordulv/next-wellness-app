@@ -147,16 +147,6 @@
     "customPlanAwaits": "Votre plan personnalisé vous attend !",
     "targetWeight": "Poids cible",
     "completePrevSteps": "Veuillez compléter toutes les étapes précédentes",
-    "bestOffer": "Meilleure offre",
-    "mostPopular": "Le plus populaire",
-    "oneMonthPlan": "Plan d'1 mois",
-    "threeMonthPlan": "Plan de 3 mois",
-    "sixMonthPlan": "Plan de 6 mois",
-    "perDay": "par jour",
-    "autoRenewalConsent": "En sélectionnant cette option, je donne mon consentement pour le renouvellement automatique de mon abonnement en utilisant la carte spécifiée. Je suis conscient qu'aujourd'hui je serai débité",
-    "and": "et pour",
-    "quarterlyRenewalCharge": "chaque renouvellement trimestriel suivant jusqu'à ce que je choisisse d'annuler. Pour éviter tout frais, il est nécessaire d'annuler votre abonnement au moins un jour avant son expiration. Cela peut être fait en contactant support@nextwellness.app ou en appelant notre numéro aux États-Unis : 555-01-39. Les détails de la transaction peuvent apparaître sur votre relevé bancaire",
-    "getMyPlan": "Obtenez mon plan",
     "grabMyPlan": "Saisissez mon plan",
     "newcomersSuccess": "Les nouveaux venus ont atteint leurs objectifs de perte de poids durable avec notre programme !",
     "whatYouGet": "Ce que vous obtiendrez :",
@@ -170,5 +160,20 @@
     "poweredBy": "Propulsé par :",
     "userSuccessStories": "Lisez les histoires de réussite inspirantes de nos utilisateurs",
     "transformationTimeframe": "Témoignez de transformations notables en seulement 3 semaines"
+  },
+  "Payment": {
+    "oneMonthPlan": "Plan d'1 mois",
+    "threeMonthPlan": "Plan de 3 mois",
+    "sixMonthPlan": "Plan de 6 mois",
+    "bestOffer": "Meilleure offre",
+    "mostPopular": "Le plus populaire",
+    "perDay": "par jour",
+    "checkboxOne": "En cochant cette case, je reconnais et accepte les Termes et Conditions ainsi que la Politique de remboursement",
+    "checkboxTwoStart": "En sélectionnant cette option, je donne mon consentement pour le renouvellement automatique de mon abonnement en utilisant la carte spécifiée. Je suis conscient qu'aujourd'hui je serai débité",
+    "and": "et",
+    "checkboxTwoEnd": "pour chaque renouvellement trimestriel subséquent jusqu'à ce que je choisisse d'annuler. Pour éviter tout frais, il est nécessaire d'annuler votre abonnement au moins un jour avant son expiration. Cela peut être fait en contactant support@nextwellness.app ou en appelant notre numéro aux États-Unis : 555-01-39. Les détails de la transaction peuvent apparaître sur votre relevé bancaire",
+    "toastComplete": "Bien joué !",
+    "checkboxError": "Veuillez cocher toutes les cases",
+    "getMyPlan": "Obtenez mon plan"
   }
 }

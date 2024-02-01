@@ -6,7 +6,8 @@ export const pathnames = {
   '/': '/',
 } satisfies Pathnames<typeof locales>
 
-// Use the default: `always`
-export const localePrefix = undefined
+export const localeDetection = true
+
+export const localePrefix = 'always'
 
 export type AppPathnames = keyof typeof pathnames

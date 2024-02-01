@@ -147,16 +147,6 @@
     "customPlanAwaits": "Your custom plan awaits!",
     "targetWeight": "Target Weight",
     "completePrevSteps": "Please complete all the previous steps",
-    "bestOffer": "Best Offer",
-    "mostPopular": "Most Popular",
-    "oneMonthPlan": "1-Month Plan",
-    "threeMonthPlan": "3-Month Plan",
-    "sixMonthPlan": "6-Month Plan",
-    "perDay": "per day",
-    "autoRenewalConsent": "By selecting this option, I provide consent for the automatic renewal of my subscription using the specified card. I am aware that today I will be charged",
-    "and": "and",
-    "quarterlyRenewalCharge": "for each subsequent quarterly renewal until I opt to cancel. To avoid any charges, it`s necessary to cancel your subscription at least one day before its expiration. This can be done by contacting support@nextwellness.app or calling our US number: 555-01-39. The transaction details might appear on your bank statement",
-    "getMyPlan": "Get My Plan",
     "grabMyPlan": "Grab My Plan",
     "newcomersSuccess": "Newcomers achieved their enduring weight loss goals with our program!",
     "whatYouGet": "What you`ll get:",
@@ -170,5 +160,20 @@
     "poweredBy": "Powered by:",
     "userSuccessStories": "Read the inspiring success stories from our users",
     "transformationTimeframe": "Witness noticeable transformations within a mere 3 weeks"
+  },
+  "Payment": {
+    "oneMonthPlan": "1-Month Plan",
+    "threeMonthPlan": "3-Month Plan",
+    "sixMonthPlan": "6-Month Plan",
+    "bestOffer": "Best Offer",
+    "mostPopular": "Most Popular",
+    "perDay": "per day",
+    "checkboxOne": "By ticking this box, I acknowledge and accept the Terms and Conditions as well as the Refund Policy",
+    "checkboxTwoStart": "By selecting this option, I provide consent for the automatic renewal of my subscription using the specified card. I am aware that today I will be charged",
+    "and": "and",
+    "checkboxTwoEnd": "for each subsequent quarterly renewal until I opt to cancel. To avoid any charges, it`s necessary to cancel your subscription at least one day before its expiration. This can be done by contacting support@nextwellness.app or calling our US number: 555-01-39. The transaction details might appear on your bank statement",
+    "toastComplete": "Well Done!",
+    "checkboxError": "Please check all the checkboxes",
+    "getMyPlan": "Get My Plan"
   }
 }
