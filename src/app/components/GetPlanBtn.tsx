@@ -1,15 +1,16 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
 type Props = {
   plan: string
 }
 
-export default function GetPlanBtn({ plan }: Props) {
+export default function GetPlanBtn() {
   const locale = useLocale()
   const pathname = usePathname()
+  const t = useTranslations('Header')
   const offerPage = pathname === `/${locale}/offer`
 
   const handleScrollToPlan = () => {
@@ -27,7 +28,7 @@ export default function GetPlanBtn({ plan }: Props) {
           className="absolute right-0 button button--small"
           onClick={handleScrollToPlan}
         >
-          {plan}
+          {t('plan')}
         </button>
       )}
     </>

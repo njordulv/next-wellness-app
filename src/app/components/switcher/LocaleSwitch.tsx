@@ -7,11 +7,7 @@ import { useLocale } from 'next-intl'
 import { IoChevronDown } from 'react-icons/io5'
 import { locales } from '@/config'
 
-interface LocaleProps {
-  locale: string
-}
-
-const LocaleSwitch: React.FC<LocaleProps> = () => {
+const LocaleSwitch: React.FC = () => {
   const locale = useLocale()
   const pathName = usePathname()
   const [isActive, setIsActive] = useState(false)
@@ -27,7 +23,7 @@ const LocaleSwitch: React.FC<LocaleProps> = () => {
     setIsActive(!isActive)
   }
 
-  const handleOptionClick = (locale: string) => {
+  const handleOptionClick = () => {
     setIsActive(false)
   }
 
@@ -46,7 +42,7 @@ const LocaleSwitch: React.FC<LocaleProps> = () => {
             <li
               key={locale}
               className="option"
-              onClick={() => handleOptionClick(locale)}
+              onClick={() => handleOptionClick()}
             >
               <Link href={redirectedPathName(locale)} className="option-text">
                 {locale}

@@ -7,7 +7,7 @@ import AppProviders from '@/providers/app-providers'
 import NextIntlProvider from '@/providers/NextIntlProvider'
 import Footer from '@/components/common/Footer'
 import Cookie from '@/components/cookies/CookieLayout'
-import Header from '@/components/common/HeaderSSR'
+import Header from '@/components/common/Header'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
