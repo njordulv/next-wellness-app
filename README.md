@@ -12,7 +12,7 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 4. **BMI Results Page:** Utilizing user data, the app calculates BMI and categorizes it as UNDERWEIGHT, NORMAL, OVERWEIGHT, or OBESE, offering detailed descriptions for each category.
 
-5. **Testimonials:** Featuring feedback from satisfied users who achieved their health goals using the app.
+5. **Testimonials:** Read inspiring feedback from users across the globe who have achieved their health goals using our app, now available in all supported languages.
 
 6. **Loader:** Smooth transitions between app sections are facilitated by a Loader component displaying engaging loading animations.
 
@@ -20,7 +20,7 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 8. **Routing and Communication:** Seamless navigation between quiz, variants, height/weight input, and results, with interactive component communication for a smooth user experience.
 
-9. **Navigation:** Users can move across 13 different app pages, including a "Step Back" button for easy navigation.
+9. **Navigation:** Users can move across 14 different app pages, including a "Step Back" button for easy navigation.
 
 10. **Email:** Allows users to save data to the backend API with frontend/backend validation.
 
@@ -29,6 +29,8 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 12. **Checkout:** Simulates payment, performs form validation, and sends data to the backend server using the /submit-checkout endpoint.
 
 13. **Theme Switcher:** Toggle between light and dark themes for personalized app display.
+
+14. **Multilingual Support:** I've thrilled to announce a major update to my app with full localization in English, German, and French! This update is part of commitment to making the wellness app accessible and user-friendly for a global audience.
 
 ### Usage
 
