@@ -111,9 +111,21 @@
     "closingNote": "Bitte überprüfen Sie unsere Datenschutzrichtlinie, um Einblicke in die Nutzung Ihrer Informationen zu erhalten. Vielen Dank, dass Sie sich für Next Wellness App entschieden haben."
   },
   "Testimonials": {
-    "title": "Erfahrungsberichte",
-    "description": "Über tausend Benutzer haben ihre Meilensteine erfolgreich mit der Next Wellness App erreicht",
-    "heading": "Über tausend Benutzer haben ihre Meilensteine erfolgreich mit der Next Wellness App erreicht"
+    "title": "Referenzen",
+    "description": "Über tausend Nutzer haben erfolgreich ihre Meilensteine mit der Next Wellness App erreicht",
+    "heading": "Über tausend Nutzer haben erfolgreich ihre Meilensteine mit der Next Wellness App erreicht",
+    "name1": "Tomas Clark",
+    "message1": "Die Next Wellness App hat mir geholfen, meine Gewichtsverlustziele effektiv zu erreichen!",
+    "name2": "Jane Smith",
+    "message2": "Ich liebe die Einfachheit und Effektivität der Next Wellness App. Sie hat das Fasten leicht gemacht!",
+    "name3": "Michael Johnson",
+    "message3": "Die Verwendung der Next Wellness App war ein Wendepunkt für meine Gesundheits- und Fitnessreise.",
+    "name4": "Emily Wilkinson",
+    "message4": "Ich empfehle die Next Wellness App wärmstens jedem, der nach einem zuverlässigen Fastenführer sucht!",
+    "name5": "Dave Brown",
+    "message5": "Die Funktionen der Next Wellness App sind gut durchdacht und benutzerfreundlich.",
+    "name6": "Sophia Miller",
+    "message6": "Die Next Wellness App ist mein bevorzugtes Werkzeug, um einen gesunden Lebensstil zu pflegen!"
   },
   "Email": {
     "title": "Geben Sie Ihre E-Mail-Adresse an, um Ihren persönlichen Fastenplan zu erhalten!",

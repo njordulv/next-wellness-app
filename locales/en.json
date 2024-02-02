@@ -113,7 +113,19 @@
   "Testimonials": {
     "title": "Testimonials",
     "description": "Over a thousand users have successfully reached their milestones using the Next Wellness App",
-    "heading": " Over a thousand users have successfully reached their milestones using the Next Wellness App"
+    "heading": " Over a thousand users have successfully reached their milestones using the Next Wellness App",
+    "name1": "Tomas Clark",
+    "message1": "Next Wellness App helped me achieve my weight loss goals effectively!",
+    "name2": "Jane Smith",
+    "message2": "I love the simplicity and effectiveness of Next Wellness App. It made fasting easy!",
+    "name3": "Michael Johnson",
+    "message3": "Using Next Wellness App was a game-changer for my health and fitness journey.",
+    "name4": "Emily Wilkinson",
+    "message4": "I highly recommend Next Wellness App to anyone looking for a reliable fasting guide!",
+    "name5": "Dave Brown",
+    "message5": "The features of Next Wellness App are well-thought-out and user-friendly.",
+    "name6": "Sophia Miller",
+    "message6": "Next Wellness App is my go-to tool for maintaining a healthy lifestyle!"
   },
   "Email": {
     "title": "Provide your email address for receiving your personalized fasting plan!",
