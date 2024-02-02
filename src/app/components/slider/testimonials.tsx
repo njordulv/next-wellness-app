@@ -1,8 +1,8 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import Slider from 'react-slick'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { IoStarSharp } from 'react-icons/io5'
 import { SiTrustpilot } from 'react-icons/si'
 import { testimonials } from '@/data/testimonials'

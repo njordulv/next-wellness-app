@@ -1,11 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
-import { BiLoaderAlt } from 'react-icons/bi'
+import { useTranslations, useLocale } from 'next-intl'
 import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { BiLoaderAlt } from 'react-icons/bi'
 import { useDispatch, useSelector } from '@/store/store'
 import {
   setPlans,
@@ -16,10 +15,9 @@ import {
   selectPlanOne,
   selectPlanTwo,
   selectPlanThree,
-  selectOffer,
-  selectPopular,
 } from '@/store/slices/paymentSlice'
 import { setCheckbox, selectCheckbox } from '@/store/slices/checkboxSlice'
+import 'react-toastify/dist/ReactToastify.css'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/payment.module.scss'
 
@@ -34,8 +32,8 @@ const Payment: React.FC = () => {
   const planOne = useSelector(selectPlanOne)
   const planTwo = useSelector(selectPlanTwo)
   const planThree = useSelector(selectPlanThree)
-  const offer = useSelector(selectOffer)
-  const popular = useSelector(selectPopular)
+  const [bestOffer, setBestOffer] = useState(t('bestOffer'))
+  const [mostPopular, setMostPopular] = useState('')
   const [defaultPrice, setDefaultPrice] = useState(planTwo.discountFullPrice)
   const [fullPrice, setFullPrice] = useState(planTwo.monthPrice)
   const [errorDisplayed, setErrorDisplayed] = useState(false)
@@ -63,16 +61,22 @@ const Payment: React.FC = () => {
       setFullPrice(planOne.monthPrice)
       dispatch(setOffer(''))
       dispatch(setPopular(''))
+      setBestOffer('')
+      setMostPopular('')
     } else if (plan2) {
       setDefaultPrice(planTwo.discountFullPrice)
       setFullPrice(planTwo.monthPrice)
       dispatch(setOffer(t('bestOffer')))
       dispatch(setPopular(''))
+      setBestOffer(t('bestOffer'))
+      setMostPopular('')
     } else {
       setDefaultPrice(planThree.discountFullPrice)
       setFullPrice(planThree.monthPrice)
       dispatch(setOffer(''))
       dispatch(setPopular(t('mostPopular')))
+      setBestOffer('')
+      setMostPopular(t('mostPopular'))
     }
   }
 
@@ -117,7 +121,7 @@ const Payment: React.FC = () => {
               onChange={(e) => handlePlanChange(e, 'plan1')}
             />
             <label htmlFor={paymentPlanId[0]}>
-              <div className={styles.paymentName}>{planOne.name}</div>
+              <div className={styles.paymentName}>{t('planOneName')}</div>
               <div className={styles.paymentPrice}>
                 <span>
                   <b>
@@ -144,7 +148,7 @@ const Payment: React.FC = () => {
               onChange={(e) => handlePlanChange(e, 'plan2')}
             />
             <label htmlFor={paymentPlanId[1]}>
-              <div className={styles.paymentName}>{planTwo.name}</div>
+              <div className={styles.paymentName}>{t('planTwoName')}</div>
               <div className={styles.paymentPrice}>
                 <span>
                   <b>
@@ -163,7 +167,7 @@ const Payment: React.FC = () => {
             <div
               className={`${styles.paymentPopular} ${styles.paymentBestOffer}`}
             >
-              {offer}
+              {bestOffer}
             </div>
           </div>
           <div className={styles.paymentPlan}>
@@ -176,7 +180,7 @@ const Payment: React.FC = () => {
               onChange={(e) => handlePlanChange(e, 'plan3')}
             />
             <label htmlFor={paymentPlanId[2]}>
-              <div className={styles.paymentName}>{planThree.name}</div>
+              <div className={styles.paymentName}>{t('planThreeName')}</div>
               <div className={styles.paymentPrice}>
                 <span>
                   <b>
@@ -192,7 +196,7 @@ const Payment: React.FC = () => {
                 </span>
               </div>
             </label>
-            <div className={styles.paymentPopular}>{popular}</div>
+            <div className={styles.paymentPopular}>{mostPopular}</div>
           </div>
         </div>
         <div className={styles.checkboxes}>

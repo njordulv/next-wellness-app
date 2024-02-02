@@ -48,9 +48,9 @@ const initialState: PaymentState = {
   plan2: true,
   plan3: false,
   currency: {
-    name: 'dollar',
-    abbr: 'USD',
-    symbol: '$',
+    name: 'euro',
+    abbr: 'EUR',
+    symbol: '€',
   },
   planOne: {
     status: false,

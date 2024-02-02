@@ -163,9 +163,9 @@
     "transformationTimeframe": "Témoignez de transformations notables en seulement 3 semaines"
   },
   "Payment": {
-    "oneMonthPlan": "Plan d'1 mois",
-    "threeMonthPlan": "Plan de 3 mois",
-    "sixMonthPlan": "Plan de 6 mois",
+    "planOneName": "Plan d'1 mois",
+    "planTwoName": "Plan de 3 mois",
+    "planThreeName": "Plan de 6 mois",
     "bestOffer": "Meilleure offre",
     "mostPopular": "Le plus populaire",
     "perDay": "par jour",

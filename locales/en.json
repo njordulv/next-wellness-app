@@ -163,9 +163,9 @@
     "transformationTimeframe": "Witness noticeable transformations within a mere 3 weeks"
   },
   "Payment": {
-    "oneMonthPlan": "1-Month Plan",
-    "threeMonthPlan": "3-Month Plan",
-    "sixMonthPlan": "6-Month Plan",
+    "planOneName": "1-Month Plan",
+    "planTwoName": "3-Month Plan",
+    "planThreeName": "6-Month Plan",
     "bestOffer": "Best Offer",
     "mostPopular": "Most Popular",
     "perDay": "per day",
