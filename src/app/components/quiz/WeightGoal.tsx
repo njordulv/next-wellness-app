@@ -19,7 +19,6 @@ import {
   selectIsMetric,
 } from '@/store/slices/formSlice'
 import MetricSwitch from '@/components/switcher/MetricSwitch'
-import { verdictData } from '@/data/verdict'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
@@ -41,24 +40,17 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const disabled = useSelector(selectDisabledGoal)
   const isMetric = useSelector(selectIsMetric)
 
-  const verdictText = (verdict: string, percentNumber: number): string => {
-    const updatedText = verdict.replace(
-      /\d+(?=\s(of your weight))/i,
-      `${percentNumber}%`
-    )
-    return updatedText
-  }
-
   let inputWeightNumber = parseFloat(inputWeight)
   let goalNumber = parseFloat(goal)
   let weightImperialNumber = parseFloat(weightImperial)
 
-  let percentNumber = isMetric
-    ? (((inputWeightNumber - goalNumber) / inputWeightNumber) * 100).toFixed()
+  const percentNumber = isMetric
+    ? (((inputWeightNumber - goalNumber) / inputWeightNumber) * 100).toFixed(1)
     : (
-        ((weightImperialNumber - goalNumber) / weightImperialNumber) *
+        ((weightImperialNumber - parseFloat(goalImperial)) /
+          weightImperialNumber) *
         100
-      ).toFixed()
+      ).toFixed(1)
 
   const goalHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = e.target.value
@@ -94,16 +86,16 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       dispatch(setVerdict(''))
       dispatch(setDisabledGoal(true))
     } else if (percentGoal >= 9) {
-      dispatch(setVerdict(verdictData[0].text))
+      dispatch(setVerdict(t('answer1', { percentNumber })))
       dispatch(setDisabledGoal(false))
     } else if (percentGoal >= 8) {
-      dispatch(setVerdict(verdictData[1].text))
+      dispatch(setVerdict(t('answer2', { percentNumber })))
       dispatch(setDisabledGoal(false))
     } else if (percentGoal >= 7) {
-      dispatch(setVerdict(verdictData[2].text))
+      dispatch(setVerdict(t('answer3', { percentNumber })))
       dispatch(setDisabledGoal(false))
     } else if (percentGoal >= 4) {
-      dispatch(setVerdict(verdictData[3].text))
+      dispatch(setVerdict(t('answer4', { percentNumber })))
       dispatch(setDisabledGoal(false))
     } else {
       dispatch(setDisabledGoal(true))
@@ -142,9 +134,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
         </button>
       </form>
       {verdict && (
-        <div className={`${styles.weightInfo} ${styles.active}`}>
-          {verdictText(verdict, Number(percentNumber))}
-        </div>
+        <div className={`${styles.weightInfo} ${styles.active}`}>{verdict}</div>
       )}
     </>
   )

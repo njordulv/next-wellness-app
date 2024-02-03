@@ -48,7 +48,11 @@
     "maxHeightImpErrMsg": "Bitte geben Sie höchstens 11 inch an",
     "weightErrMsg": "Bitte geben Sie ein Gewicht zwischen 40 und 230 Kilogramm ein",
     "weightImpErrMsg": "Bitte geben Sie ein Gewicht zwischen 90 und 540 lbs ein",
-    "weightValErrMsg": "Etwas ist schiefgelaufen, es scheint, als wäre Ihr Gewichtswert nicht festgelegt"
+    "weightValErrMsg": "Etwas ist schiefgelaufen, es scheint, als wäre Ihr Gewichtswert nicht festgelegt",
+    "answer1": "Ein praktisches Ziel ist es, {percentNumber}% Ihres Gewichts zu verlieren. Sie können Ihre allgemeine Gesundheit und Ihr Wohlbefinden langfristig sichern, indem Sie Ihr Gewicht erfolgreich regulieren. Nach den Richtlinien des CDC (Zentren für Krankheitskontrolle und Prävention) wird ein Gewichtsverlust von 4 Kilogramm pro Monat als sicher und sinnvoll erachtet.",
+    "answer2": "Ein einfaches und leichtes Ziel ist es, {percentNumber}% Ihres Gewichts zu verlieren. Sie können Ihre Energie steigern und die Schlafqualität durch regelmäßige körperliche Aktivität verbessern. Studien der Universität Utah zufolge können selbst tägliche 5-Minuten-Übungseinheiten insgesamt bedeutende Verbesserungen bewirken!",
+    "answer3": "Ein unkompliziertes und handhabbares Ziel ist es, {percentNumber}% Ihres Gewichts zu verlieren. Sie können Ihre Energie steigern und Ihren Schlaf verbessern, indem Sie körperliche Aktivität in Ihre tägliche Routine einbauen. Forschungen der Universität Utah haben gezeigt, dass selbst schnelle 5-Minuten-Übungseinheiten jeden Tag erhebliche Verbesserungen erzeugen können!",
+    "answer4": "Ein anspruchsvolles Ziel ist es, {percentNumber}% Ihres Gewichts zu verlieren. Menschen, die übergewichtig sind und es schaffen, mehr als 20% ihrer gesamten Körpermasse zu verlieren, neigen dazu, eine verbesserte Gesundheit und größere Lebenszufriedenheit zu genießen, verglichen mit denen, die 10% oder weniger verlieren."
   },
   "Results": {
     "yourBMI": "Ihr BMI ist ",
