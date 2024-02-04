@@ -41,16 +41,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const isMetric = useSelector(selectIsMetric)
 
   let inputWeightNumber = parseFloat(inputWeight)
-  let goalNumber = parseFloat(goal)
   let weightImperialNumber = parseFloat(weightImperial)
-
-  const percentNumber = isMetric
-    ? (((inputWeightNumber - goalNumber) / inputWeightNumber) * 100).toFixed(1)
-    : (
-        ((weightImperialNumber - parseFloat(goalImperial)) /
-          weightImperialNumber) *
-        100
-      ).toFixed(1)
 
   const goalHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = e.target.value
@@ -82,20 +73,26 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       return
     }
 
+    const currentWeight = parseFloat(inputWeight)
+    const percentNumber = (
+      ((currentWeight - numericValue) / currentWeight) *
+      100
+    ).toFixed()
+
     if (percentGoal >= 9.8) {
       dispatch(setVerdict(''))
       dispatch(setDisabledGoal(true))
     } else if (percentGoal >= 9) {
-      dispatch(setVerdict(t('answer1', { percentNumber })))
+      dispatch(setVerdict(t('answer1', { percentNumber: percentNumber })))
       dispatch(setDisabledGoal(false))
     } else if (percentGoal >= 8) {
-      dispatch(setVerdict(t('answer2', { percentNumber })))
+      dispatch(setVerdict(t('answer2', { percentNumber: percentNumber })))
       dispatch(setDisabledGoal(false))
     } else if (percentGoal >= 7) {
-      dispatch(setVerdict(t('answer3', { percentNumber })))
+      dispatch(setVerdict(t('answer3', { percentNumber: percentNumber })))
       dispatch(setDisabledGoal(false))
     } else if (percentGoal >= 4) {
-      dispatch(setVerdict(t('answer4', { percentNumber })))
+      dispatch(setVerdict(t('answer4', { percentNumber: percentNumber })))
       dispatch(setDisabledGoal(false))
     } else {
       dispatch(setDisabledGoal(true))
