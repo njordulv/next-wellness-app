@@ -323,7 +323,7 @@ const Checkout: React.FC = () => {
                 <label className={`${styles.inputField}`}>
                   <div
                     className={`${styles.inputHolder} ${styles.withIcon} ${
-                      errors.cardNumber && `${styles.isError}`
+                      errors.cardNumber ? styles.isError : ''
                     }`}
                   >
                     {paymentCard}
@@ -346,7 +346,7 @@ const Checkout: React.FC = () => {
                 <label className={`${styles.inputField}`}>
                   <div
                     className={`${styles.inputHolder} ${
-                      errors.expDate && `${styles.isError}`
+                      errors.expDate ? styles.isError : ''
                     }`}
                   >
                     <input
@@ -368,7 +368,7 @@ const Checkout: React.FC = () => {
                 <label className={`${styles.inputField}`}>
                   <div
                     className={`${styles.inputHolder} ${
-                      errors.cvv && `${styles.isError}`
+                      errors.cvv ? styles.isError : ''
                     }`}
                   >
                     <input
@@ -390,7 +390,7 @@ const Checkout: React.FC = () => {
                 <label className={`${styles.inputField}`}>
                   <div
                     className={`${styles.inputHolder} ${
-                      errors.firstName && `${styles.isError}`
+                      errors.firstName ? styles.isError : ''
                     }`}
                   >
                     <input
@@ -411,7 +411,7 @@ const Checkout: React.FC = () => {
                 <label className={`${styles.inputField}`}>
                   <div
                     className={`${styles.inputHolder} ${
-                      errors.lastName && `${styles.isError}`
+                      errors.lastName ? styles.isError : ''
                     }`}
                   >
                     <input
@@ -432,7 +432,7 @@ const Checkout: React.FC = () => {
                 <label className={`${styles.inputField}`}>
                   <div
                     className={`${styles.inputHolder} ${
-                      errors.email && `${styles.isError}`
+                      errors.email ? styles.isError : ''
                     }`}
                   >
                     <input
