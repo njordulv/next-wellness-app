@@ -111,10 +111,6 @@
   box-sizing: border-box;
   outline: none;
   background-color: var(--background);
-  &:-webkit-autofill,
-  &[data-autocompleted] {
-    background-color: var(--background) !important;
-  }
   &::placeholder {
     color: var(--placeholder);
     transition: all 0.3s ease;
@@ -125,7 +121,14 @@
       font-size: 10px;
     }
   }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+  }
 }
+
 .withIcon {
   svg {
     font-size: 40px;
