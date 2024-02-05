@@ -22,10 +22,7 @@ export const submitEmail = createAsyncThunk(
   'email/submitEmail',
   async (dataWithTime: SubmitEmailData, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
-        'http://localhost:4000/submit-email',
-        dataWithTime
-      )
+      const response = await axios.post('api/submit-email', dataWithTime)
       return response.data
     } catch (error: any) {
       return rejectWithValue(error.message)

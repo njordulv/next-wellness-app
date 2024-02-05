@@ -294,7 +294,7 @@ const Checkout: React.FC = () => {
       totalDiscount: totalDiscountPrice ? totalDiscountPrice : '0',
     }
     try {
-      await axios.post('http://localhost:4000/submit-checkout', {
+      await axios.post('api/submit-checkout', {
         checkoutData: updatedCheckoutData,
       })
       setLoading(true)
@@ -302,7 +302,7 @@ const Checkout: React.FC = () => {
         setPopup(true)
         setLoading(false)
       }, 3000)
-    } catch (error) {
+    } catch (error: any) {
       toast.error(`${mess.errorSendData(t)}: ${error}`)
     }
   }
