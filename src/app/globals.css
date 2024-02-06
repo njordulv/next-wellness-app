@@ -222,6 +222,7 @@ form button {
 [lang='de'] .button--small,
 [lang='fr'] .button--small {
   font-size: 17px;
+  line-height: 19px;
 }
 
 .button--extra-small {
@@ -366,7 +367,9 @@ hr::before {
 
 @media (max-width: 480px) {
   header .button {
-    max-width: 105px;
+    font-size: 17px;
+    line-height: 19px;
+    max-width: 140px;
     font-size: 15px;
     padding: 0 10px;
   }

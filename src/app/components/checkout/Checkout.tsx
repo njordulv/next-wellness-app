@@ -294,7 +294,7 @@ const Checkout: React.FC = () => {
       totalDiscount: totalDiscountPrice ? totalDiscountPrice : '0',
     }
     try {
-      await axios.post('api/submit-checkout', {
+      await axios.post('/api/checkout', {
         checkoutData: updatedCheckoutData,
       })
       setLoading(true)
