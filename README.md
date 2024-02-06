@@ -12,7 +12,7 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 4. **BMI Results Page:** Utilizing user data, the app calculates BMI and categorizes it as UNDERWEIGHT, NORMAL, OVERWEIGHT, or OBESE, offering detailed descriptions for each category.
 
-5. **Testimonials:** Read inspiring feedback from users across the globe who have achieved their health goals using our app, now available in all supported languages.
+5. **Testimonials:** Read inspiring feedback from users across the globe who have achieved their health goals using the app, now available in all supported languages.
 
 6. **Loader:** Smooth transitions between app sections are facilitated by a Loader component displaying engaging loading animations.
 
@@ -22,11 +22,11 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 9. **Navigation:** Users can move across 14 different app pages, including a "Step Back" button for easy navigation.
 
-10. **Email:** Allows users to save data to the backend API with frontend/backend validation.
+10. **Email:** Streamlines user engagement by enabling seamless email registration through API. Featuring dual-layer validation, this function ensures only valid and unique email addresses are captured and stored in PostgreSQL database on Vercel, enhancing data integrity and user experience.
 
 11. **Offer:** Users can select from three available plans.
 
-12. **Checkout:** Simulates payment, performs form validation, and sends data to the backend server using the /submit-checkout endpoint.
+12. **Checkout:** Checkout module offers a streamlined simulation of payment procedures, integrating thorough validations and secure data handling. Utilizing the /submit-checkout endpoint, it efficiently processes and stores transaction details in Vercel-hosted PostgreSQL database, embodying a secure, accurate, and user-friendly payment experience.
 
 13. **Theme Switcher:** Toggle between light and dark themes for personalized app display.
 
