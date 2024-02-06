@@ -35,10 +35,6 @@ const Email: React.FC = () => {
   const [disabled, setDisabled] = useState(true)
   const [loading, setLoading] = useState(false)
 
-  const date = new Date()
-  const hours = String(date.getHours()).padStart(2, '0')
-  const minutes = String(date.getMinutes()).padStart(2, '0')
-
   const {
     register,
     handleSubmit,
@@ -77,20 +73,19 @@ const Email: React.FC = () => {
   }
 
   const onSubmitHandler = async (data: EmailFormData) => {
-    const dataWithTime = { email: data.email, time: `${hours}:${minutes}` }
+    const emailData = { email: data.email }
     setLoading(true)
     try {
-      const result = await dispatch(submitEmail(dataWithTime))
-
-      setTimeout(() => {
-        if (submitEmail.fulfilled.match(result)) {
-          setLoading(false)
-          router.push(`/${locale}/offer`)
-        }
-      }, 3000)
+      const resultAction = await dispatch(submitEmail(emailData))
+      if (submitEmail.fulfilled.match(resultAction)) {
+        router.push(`/${locale}/offer`)
+      } else {
+        throw new Error('Failed to submit email')
+      }
     } catch (error) {
-      setLoading(false)
       console.error(mess.errorEmail(t), error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -105,7 +100,7 @@ const Email: React.FC = () => {
           <input
             {...register('email', emailValidation)}
             type="text"
-            className={`${styles.input} ${styles.formEmail__input}`}
+            className={`${styles.formEmail__input}`}
             placeholder="Email"
             value={emailValue}
             onChange={inputHandler}

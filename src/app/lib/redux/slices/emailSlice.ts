@@ -13,19 +13,16 @@ const initialState: EmailState = {
   success: false,
 }
 
-interface SubmitEmailData {
-  email: string
-  time: string
-}
-
 export const submitEmail = createAsyncThunk(
   'email/submitEmail',
-  async (dataWithTime: SubmitEmailData, { rejectWithValue }) => {
+  async (emailData: { email: string }, thunkAPI) => {
     try {
-      const response = await axios.post('api/submit-email', dataWithTime)
+      const response = await axios.post('/api/subscribe', emailData)
       return response.data
-    } catch (error: any) {
-      return rejectWithValue(error.message)
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        'An error occurred while submitting the email'
+      )
     }
   }
 )

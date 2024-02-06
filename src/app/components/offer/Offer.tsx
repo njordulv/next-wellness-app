@@ -83,7 +83,7 @@ const Offer = () => {
         <br />
         <h2>{t('customPlanAwaits')}</h2>
         <div className={styles.offerTarget_weight}>
-          <h4>{t('targetWeight')}</h4>
+          <div className="text-[20px] font-semibold">{t('targetWeight')}</div>
           <span>
             <GiWeightScale className="text-green text-[22px]" />
             {isMetric
@@ -154,7 +154,7 @@ const Offer = () => {
         <br />
         <h2>{t('transformationTimeframe')}</h2>
         <div className={styles.offerTarget_weight}>
-          <h4>{t('targetWeight')}</h4>
+          <div className="text-[20px] font-semibold">{t('targetWeight')}</div>
           <span>
             <GiWeightScale className="text-green text-[22px]" />
             {goal ? `${goal} lbs` : mess.completePrevSteps(t)}
