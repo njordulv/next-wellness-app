@@ -1,14 +1,19 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import Email from '@/components/email/Email'
 
 type Props = {
   params: { locale: string }
 }
 
-export const metadata = {
-  title: 'Provide your email address',
-  description:
-    'Provide your email address for receiving your personalized fasting plan!',
+export async function generateMetadata({
+  params: { locale },
+}: Omit<Props, 'children'>) {
+  const t = await getTranslations({ locale, namespace: 'Email' })
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
 }
 
 export default function EmailPage({ params: { locale } }: Props) {

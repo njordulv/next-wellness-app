@@ -1,13 +1,19 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import Checkout from '@/components/checkout/Checkout'
 
 type Props = {
   params: { locale: string }
 }
 
-export const metadata = {
-  title: 'Next Wellness App Checkout',
-  description: 'Add details of your payment information',
+export async function generateMetadata({
+  params: { locale },
+}: Omit<Props, 'children'>) {
+  const t = await getTranslations({ locale, namespace: 'Checkout' })
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
 }
 
 export default function CheckoutPage({ params: { locale } }: Props) {

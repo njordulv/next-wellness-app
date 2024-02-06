@@ -144,7 +144,8 @@
     "submit": "Submit"
   },
   "Offer": {
-    "title": "Provide your email address for receiving your personalized fasting plan!",
+    "title": "Your custom plan awaits!",
+    "description": "Unlock your tailored subscription benefits now!",
     "before": "Before",
     "after": "After",
     "metabolicRate": "Metabolic rate",
@@ -183,6 +184,7 @@
   },
   "Checkout": {
     "title": "Include details of your payment information.",
+    "description": "Enter your billing details to proceed with your purchase.",
     "orderDetails": "Order Details",
     "yourChoice": "Your choice",
     "monthlyPrice": "Monthly price",

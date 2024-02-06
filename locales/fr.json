@@ -144,7 +144,8 @@
     "submit": "Soumettre"
   },
   "Offer": {
-    "title": "Fournissez votre adresse e-mail pour recevoir votre plan de jeûne personnalisé !",
+    "title": "Votre plan personnalisé vous attend !",
+    "description": "Débloquez dès maintenant vos avantages d'abonnement sur mesure !",
     "before": "Avant",
     "after": "Après",
     "metabolicRate": "Taux métabolique",
@@ -183,6 +184,7 @@
   },
   "Checkout": {
     "title": "Incluez les détails de vos informations de paiement.",
+    "description": "Entrez vos détails de facturation pour procéder à votre achat.",
     "orderDetails": "Détails de la commande",
     "yourChoice": "Votre choix",
     "monthlyPrice": "Prix mensuel",

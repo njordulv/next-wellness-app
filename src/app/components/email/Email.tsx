@@ -17,7 +17,7 @@ import {
   clearNetworkError,
   selectNetworkError,
 } from '@/store/slices/emailSlice'
-import PageLayout from '@/components/layouts/PageLayout'
+import PageLayoutAltTitle from '@/components/layouts/PageLayoutAltTitle'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/email.module.scss'
 
@@ -90,7 +90,7 @@ const Email: React.FC = () => {
   }
 
   return (
-    <PageLayout title={t('title')}>
+    <PageLayoutAltTitle title={t('title')}>
       <form
         onSubmit={handleSubmit(onSubmitHandler)}
         className={styles.formEmail}
@@ -139,7 +139,7 @@ const Email: React.FC = () => {
           </button>
         )}
       </form>
-    </PageLayout>
+    </PageLayoutAltTitle>
   )
 }
 

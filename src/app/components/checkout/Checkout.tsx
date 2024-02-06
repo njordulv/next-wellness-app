@@ -23,7 +23,7 @@ import {
   selectPlanTwo,
   selectPlanThree,
 } from '@/store/slices/paymentSlice'
-import PageLayout from '@/components/layouts/PageLayout'
+import PageLayoutAltTitle from '@/components/layouts/PageLayoutAltTitle'
 import Plans from './Plans'
 import Final from './Final'
 import * as mess from '@/utils/messages'
@@ -308,7 +308,7 @@ const Checkout: React.FC = () => {
   }
 
   return (
-    <PageLayout title={t('title')}>
+    <PageLayoutAltTitle title={t('title')}>
       <div
         className={
           popup
@@ -492,7 +492,7 @@ const Checkout: React.FC = () => {
       {popup && (
         <Final showPopup={popup} setPopup={setPopup} emailValue={emailValue} />
       )}
-    </PageLayout>
+    </PageLayoutAltTitle>
   )
 }
 

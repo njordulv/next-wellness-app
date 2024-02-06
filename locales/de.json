@@ -144,7 +144,8 @@
     "submit": "Absenden"
   },
   "Offer": {
-    "title": "Geben Sie Ihre E-Mail-Adresse an, um Ihren persönlichen Fastenplan zu erhalten!",
+    "title": "Ihr individueller Plan wartet!",
+    "description": "Schalten Sie jetzt Ihre maßgeschneiderten Abonnementvorteile frei!",
     "before": "Vorher",
     "after": "Nachher",
     "metabolicRate": "Stoffwechselrate",
@@ -183,6 +184,7 @@
   },
   "Checkout": {
     "title": "Geben Sie Ihre Zahlungsinformationen ein.",
+    "description": "Geben Sie Ihre Rechnungsdetails ein, um mit Ihrem Kauf fortzufahren.",
     "orderDetails": "Bestelldetails",
     "yourChoice": "Ihre Auswahl",
     "monthlyPrice": "Monatlicher Preis",
