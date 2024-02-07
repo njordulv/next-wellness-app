@@ -9,7 +9,7 @@ type Props = {
 export default function PageLayoutAltTitle({ children, title }: Props) {
   return (
     <main className="text-center scroll-smooth mt-[68px] py-[60px] bg-background">
-      <section className="custom-bg min-h-[545px]">
+      <section className="custom-bg min-h-[560px]">
         <div className={styles.wrapper}>
           <h2 className={styles.page_heading}>{title}</h2>
           <div className={styles.content}>{children}</div>

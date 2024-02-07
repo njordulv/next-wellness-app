@@ -1,17 +1,15 @@
-'use client'
+import { useTranslations } from 'next-intl'
+import Back from '@/components/Back'
 
-import Error from 'next/error'
+export default function NotFoundPage() {
+  const t = useTranslations('NotFoundPage')
 
-// Render the default Next.js 404 page when a route
-// is requested that doesn't match the middleware and
-// therefore doesn't have a locale associated with it.
-
-export default function NotFound() {
   return (
-    <html lang="en">
-      <body>
-        <Error statusCode={404} />
-      </body>
-    </html>
+    <div className="grid justify-center">
+      <h1>{t('title')}</h1>
+      <hr />
+      <h3 className="my-7">{t('description')}</h3>
+      <Back back={t('back')} />
+    </div>
   )
 }
