@@ -14,6 +14,7 @@ const Popup = styled.div`
   align-items: center;
   width: 100%;
   max-width: 400px;
+  z-index: 2;
 
   &.show {
     display: flex;

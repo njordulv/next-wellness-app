@@ -23,7 +23,7 @@ import {
   selectPlanTwo,
   selectPlanThree,
 } from '@/store/slices/paymentSlice'
-import PageLayoutAltTitle from '@/components/layouts/PageLayoutAltTitle'
+import PageLayoutWithoutTitle from '@/components/layouts/PageLayoutWithoutTitle'
 import Plans from './Plans'
 import Final from './Final'
 import * as mess from '@/utils/messages'
@@ -308,7 +308,7 @@ const Checkout: React.FC = () => {
   }
 
   return (
-    <PageLayoutAltTitle title={t('title')}>
+    <PageLayoutWithoutTitle>
       <div
         className={
           popup
@@ -316,6 +316,7 @@ const Checkout: React.FC = () => {
             : `${styles.checkoutPage}`
         }
       >
+        <h2>{t('title')}</h2>
         <section className={styles.checkoutForm}>
           <form>
             <div className={`${styles.formWrapper}`}>
@@ -492,7 +493,7 @@ const Checkout: React.FC = () => {
       {popup && (
         <Final showPopup={popup} setPopup={setPopup} emailValue={emailValue} />
       )}
-    </PageLayoutAltTitle>
+    </PageLayoutWithoutTitle>
   )
 }
 
