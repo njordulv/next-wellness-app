@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { IoChevronDown } from 'react-icons/io5'
@@ -26,6 +26,24 @@ const LocaleSwitch: React.FC = () => {
   const handleOptionClick = () => {
     setIsActive(false)
   }
+
+  useEffect(() => {
+    const closeDropdown = (e: MouseEvent) => {
+      if (
+        isActive &&
+        e.target &&
+        !(e.target as HTMLElement).closest('.select-menu')
+      ) {
+        setIsActive(false)
+      }
+    }
+
+    if (isActive) {
+      document.addEventListener('click', closeDropdown)
+    }
+
+    return () => document.removeEventListener('click', closeDropdown)
+  }, [isActive])
 
   return (
     <div className={`select-menu ${isActive ? 'active' : ''}`}>

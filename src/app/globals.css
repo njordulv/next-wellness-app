@@ -418,7 +418,7 @@ hr::before {
 
 @keyframes fadeInUp {
   from {
-    transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, -15px, 0);
   }
   to {
     transform: translate3d(0, 0, 0);
@@ -431,7 +431,7 @@ hr::before {
     opacity: 1;
   }
   to {
-    transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, -10px, 0);
     opacity: 0;
   }
 }
