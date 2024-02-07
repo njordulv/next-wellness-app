@@ -62,7 +62,14 @@ const LocaleSwitch: React.FC = () => {
               className="option"
               onClick={() => handleOptionClick()}
             >
-              <Link href={redirectedPathName(locale)} className="option-text">
+              <Link
+                href={redirectedPathName(locale)}
+                className={
+                  pathName == redirectedPathName(locale)
+                    ? 'option-text active'
+                    : 'option-text'
+                }
+              >
                 {locale}
               </Link>
             </li>

@@ -19,7 +19,7 @@ export default function HeaderCSR() {
   return (
     <header>
       <div className="w-full max-w-[620px] px-4 mx-auto box-border">
-        <div className={`flex items-center gap-4 relative h-[48px]`}>
+        <div className="flex items-center gap-5 relative h-[48px]">
           <ThemeSwitch />
           <LocaleSwitch />
           <GetPlanBtn />

@@ -11,7 +11,7 @@ import {
 import styles from '@/styles/checkout.module.scss'
 
 const Plans: React.FC = () => {
-  const t = useTranslations('Checkout')
+  const t = useTranslations('Plans')
   const plans = useSelector(selectPlans)
   const planOne = useSelector(selectPlanOne)
   const planTwo = useSelector(selectPlanTwo)
@@ -25,7 +25,7 @@ const Plans: React.FC = () => {
   let totalDiscountPrice: string = ''
 
   if (plans.plan1 === true) {
-    selectedPlan = planOne.name
+    selectedPlan = t('planOneName')
     monthlyPrice = planOne.monthPrice
     discountPrice = planOne.discountFullPrice
     totalPrice = planOne.totalPrice
@@ -33,7 +33,7 @@ const Plans: React.FC = () => {
   }
 
   if (plans.plan2 === true) {
-    selectedPlan = planTwo.name
+    selectedPlan = t('planTwoName')
     monthlyPrice = planTwo.monthPrice
     discountPrice = planTwo.discountFullPrice
     totalPrice = planTwo.totalPrice
@@ -41,7 +41,7 @@ const Plans: React.FC = () => {
   }
 
   if (plans.plan3 === true) {
-    selectedPlan = planThree.name
+    selectedPlan = t('planThreeName')
     monthlyPrice = planThree.monthPrice
     discountPrice = planThree.discountFullPrice
     totalPrice = planThree.totalPrice

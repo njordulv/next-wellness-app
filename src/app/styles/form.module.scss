@@ -23,7 +23,7 @@
 .inputRow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 15px;
+  grid-column-gap: 12px;
   grid-row-gap: 20px;
   width: 100%;
   > label {
@@ -140,6 +140,7 @@
   }
   .input {
     padding-left: 48px;
+    word-spacing: 1px;
   }
 }
 .inputError,
@@ -148,9 +149,9 @@
   left: 0;
   right: 0;
   text-align: left;
-  bottom: -14px;
+  top: 40px;
   font-size: 10px;
-  line-height: 14px;
+  line-height: 8px;
   font-weight: 400;
 }
 .inputError {
@@ -183,13 +184,21 @@
 }
 @media (max-width: 480px) {
   .inputRow {
+    grid-template-columns: 1fr;
     > label {
-      &:nth-child(5) {
-        grid-area: 4 / 1 / 5 / 5;
-      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
       &:nth-child(6) {
-        grid-area: 5 / 1 / 5 / 5;
+        grid-area: auto;
       }
     }
+  }
+  .inputError,
+  .emailSuccess {
+    font-size: 11px;
+    line-height: 12px;
   }
 }

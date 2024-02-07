@@ -185,10 +185,6 @@
   "Checkout": {
     "title": "Wprowadź dane swojej karty płatniczej.",
     "description": "Wprowadź swoje dane rozliczeniowe, aby przejść do zakupu.",
-    "orderDetails": "Szczegóły zamówienia",
-    "yourChoice": "Twój wybór",
-    "monthlyPrice": "Cena miesięczna",
-    "total": "Całkowity",
     "submitOrder": "Złóż zamówienie",
     "orderAccepted": "Składając to zamówienie, potwierdzasz, że zapoznałeś się i zaakceptowałeś naszą",
     "privacyText": "Politykę Prywatności",
@@ -214,5 +210,14 @@
     "finalThanx": "Dziękujemy za wybranie Next Wellness App!",
     "finalEmailStart": "Wysłano email do ",
     "finalEmailEnd": "z Twoim spersonalizowanym kodem do rejestracji na naszej platformie."
+  },
+  "Plans": {
+    "orderDetails": "Szczegóły zamówienia",
+    "yourChoice": "Twój wybór",
+    "monthlyPrice": "Cena miesięczna",
+    "total": "Całkowity",
+    "planOneName": "Plan 1-miesięczny",
+    "planTwoName": "Plan 3-miesięczny",
+    "planThreeName": "Plan 6-miesięczny"
   }
 }

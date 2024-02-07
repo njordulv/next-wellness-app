@@ -185,10 +185,6 @@
   "Checkout": {
     "title": "Incluye los detalles de tu información de pago.",
     "description": "Ingresa tus detalles de facturación para proceder con tu compra.",
-    "orderDetails": "Detalles del Pedido",
-    "yourChoice": "Tu elección",
-    "monthlyPrice": "Precio mensual",
-    "total": "Total",
     "submitOrder": "Enviar Pedido",
     "orderAccepted": "Al realizar este pedido, reconoces que has revisado y aceptado nuestra",
     "privacyText": "Política de Privacidad",
@@ -214,5 +210,14 @@
     "finalThanx": "¡Gracias por elegir Next Wellness App!",
     "finalEmailStart": "Se envió un correo electrónico a ",
     "finalEmailEnd": "con tu código personalizado para registrarte en nuestra plataforma."
+  },
+  "Plans": {
+    "orderDetails": "Detalles del Pedido",
+    "yourChoice": "Tu elección",
+    "monthlyPrice": "Precio mensual",
+    "total": "Total",
+    "planOneName": "Plan de 1 Mes",
+    "planTwoName": "Plan de 3 Meses",
+    "planThreeName": "Plan de 6 Meses"
   }
 }
