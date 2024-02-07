@@ -26,11 +26,11 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 11. **Offer:** Users can select from three available plans.
 
-12. **Checkout:** Checkout module offers a streamlined simulation of payment procedures, integrating thorough validations and secure data handling. Utilizing the /submit-checkout endpoint, it efficiently processes and stores transaction details in Vercel-hosted PostgreSQL database, embodying a secure, accurate, and user-friendly payment experience.
+12. **Checkout:** Checkout module offers a streamlined simulation of payment procedures, integrating thorough validations and secure data handling. Utilizing the /api/checkout endpoint, it efficiently processes and stores transaction details in Vercel-hosted PostgreSQL database, embodying a secure, accurate, and user-friendly payment experience.
 
 13. **Theme Switcher:** Toggle between light and dark themes for personalized app display.
 
-14. **Multilingual Support:** I've thrilled to announce a major update to my app with full localization in English, German, and French! This update is part of commitment to making the wellness app accessible and user-friendly for a global audience.
+14. **Multilingual Support:** I've thrilled to announce a major update to my app with full localization in English, German, French, Polish and Spanish! This update is part of commitment to making the wellness app accessible and user-friendly for a global audience.
 
 ### Usage
 
@@ -38,11 +38,8 @@ To run the app:
 
 1. Clone the repository to your local machine: `git clone https://github.com/njordulv/next-wellness-app.git`
 2. Install the required dependencies using Yarn: `yarn install`
-3. Navigate to the backend API directory: `cd api`
-4. Start the backend server: `yarn dev`
-5. Return to the root directory of the project.
-6. Start the frontend development server: `yarn dev`
-7. Open your web browser and navigate to http://localhost:3000 to access the app.
+3. Start the development server: `yarn dev`
+4. Open your web browser and navigate to http://localhost:3000 to access the app.
 
 ### Future Enhancements
 
