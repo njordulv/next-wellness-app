@@ -201,9 +201,14 @@ const Payment: React.FC = () => {
         </div>
         <div className={styles.checkboxes}>
           <div className={styles.checkbox}>
-            <label className={styles.checkboxWrapper}>
+            <label
+              htmlFor="checkbox-conditions"
+              className={styles.checkboxWrapper}
+            >
               <input
                 type="checkbox"
+                id="checkbox-conditions"
+                name="checkbox-conditions"
                 checked={checkbox.conditions}
                 onChange={(e) => handleCheckboxChange(e, 'conditions')}
               />
@@ -214,9 +219,11 @@ const Payment: React.FC = () => {
             <small>{t('checkboxOne')}</small>
           </div>
           <div className={styles.checkbox}>
-            <label className={styles.checkboxWrapper}>
+            <label htmlFor="checkbox-terms" className={styles.checkboxWrapper}>
               <input
                 type="checkbox"
+                id="checkbox-terms"
+                name="checkbox-terms"
                 checked={checkbox.terms}
                 onChange={(e) => handleCheckboxChange(e, 'terms')}
               />

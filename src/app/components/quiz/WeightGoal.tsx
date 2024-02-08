@@ -110,10 +110,11 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       <MetricSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>
-          <label htmlFor="input-weight">
+          <label htmlFor={isMetric ? 'weight-goal' : 'weight-goal-imperial'}>
             <input
+              id={isMetric ? 'weight-goal' : 'weight-goal-imperial'}
+              name={isMetric ? 'weight-goal' : 'weight-goal-imperial'}
               type="text"
-              name="input-weight"
               className={`${styles.input}`}
               maxLength={3}
               placeholder={isMetric ? '65' : '120'}

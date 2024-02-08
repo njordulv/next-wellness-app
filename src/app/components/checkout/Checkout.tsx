@@ -330,8 +330,8 @@ const Checkout: React.FC = () => {
                     {paymentCard}
                     <input
                       {...register('cardNumber', cardValidation)}
-                      className={`${styles.input}`}
                       type="text"
+                      className={`${styles.input}`}
                       maxLength={19}
                       placeholder={t('placeholderCard')}
                       value={cardValue}
@@ -352,8 +352,8 @@ const Checkout: React.FC = () => {
                   >
                     <input
                       {...register('expDate', expDateValidation)}
-                      className={`${styles.input}`}
                       type="text"
+                      className={`${styles.input}`}
                       maxLength={5}
                       placeholder="MM/YY"
                       value={expDateValue}
@@ -374,8 +374,8 @@ const Checkout: React.FC = () => {
                   >
                     <input
                       {...register('cvv', cvvValidation)}
-                      className={`${styles.input}`}
                       type="password"
+                      className={`${styles.input}`}
                       maxLength={4}
                       placeholder="CVV/CVC"
                       value={cvvValue}
@@ -443,6 +443,7 @@ const Checkout: React.FC = () => {
                       placeholder={t('placeholderEmail')}
                       value={emailValue}
                       onChange={emailHandler}
+                      autoComplete="email"
                     />
                   </div>
                   {errors.email && (

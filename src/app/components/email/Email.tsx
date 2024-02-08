@@ -104,6 +104,7 @@ const Email: React.FC = () => {
             placeholder="Email"
             value={emailValue}
             onChange={inputHandler}
+            autoComplete="email"
           />
           {errors.email && (
             <div className={styles.formEmail__error}>

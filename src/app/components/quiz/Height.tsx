@@ -72,8 +72,9 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
             <div>
               <label htmlFor="input-height">
                 <input
-                  type="text"
+                  id="input-height"
                   name="input-height"
+                  type="text"
                   className={`${styles.input}`}
                   maxLength={3}
                   placeholder="180"

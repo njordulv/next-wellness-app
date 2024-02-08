@@ -74,8 +74,9 @@ const HeightImperial = () => {
         <div className={styles.inputField}>
           <label htmlFor="input-height-ft">
             <input
-              type="text"
+              id="input-height-ft"
               name="input-height-ft"
+              type="text"
               className={`${styles.input} ${styles.inputMin}`}
               maxLength={1}
               placeholder="5"
@@ -86,8 +87,9 @@ const HeightImperial = () => {
           </label>
           <label htmlFor="input-height-inch">
             <input
-              type="text"
+              id="input-height-inch"
               name="input-height-inch"
+              type="text"
               className={`${styles.input} ${styles.inputMin}`}
               maxLength={2}
               placeholder="9"

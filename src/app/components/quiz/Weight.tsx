@@ -88,8 +88,9 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
         <div className={styles.inputField}>
           <label htmlFor={isMetric ? 'input-weight' : 'input-weight-imperial'}>
             <input
-              type="text"
+              id={isMetric ? 'input-weight' : 'input-weight-imperial'}
               name={isMetric ? 'input-weight' : 'input-weight-imperial'}
+              type="text"
               className={`${styles.input}`}
               maxLength={3}
               placeholder={isMetric ? '75' : '130'}
