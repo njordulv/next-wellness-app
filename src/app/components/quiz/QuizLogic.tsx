@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
+import { notFound } from 'next/navigation'
 import { useDispatch } from '@/store/store'
 import { setQuizSlug, setQuizTotal } from '@/store/slices/quizSlice'
-import getQuizPagesByLocale from '@/utils/localeUtils'
-import NotFound from '@/src/app/not-found'
 import PageLayoutWithoutTitle from '@/components/layouts/PageLayoutWithoutTitle'
+import getQuizPagesByLocale from '@/utils/localeUtils'
 import QuizTemplate from './QuizTemplate'
 import Height from './Height'
 import Weight from './Weight'
@@ -35,23 +35,25 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
   }, [dispatch, currentIndex, quizTotal])
 
   return (
-    <PageLayoutWithoutTitle>
+    <>
       {currentQuiz ? (
-        <>
-          <QuizTemplate
-            heading={currentQuiz.heading}
-            options={currentQuiz.options}
-            path={nextPage ? nextPage.slug : '/quiz/results'}
-          />
-          {params.quizSlug === 'height' && <Height title="" />}
-          {params.quizSlug === 'weight' && <Weight title="" />}
-          {params.quizSlug === 'weight-goal' && <WeightGoal title="" />}
-          {params.quizSlug === 'results' && <Results title="" />}
-        </>
+        <PageLayoutWithoutTitle>
+          <>
+            <QuizTemplate
+              heading={currentQuiz.heading}
+              options={currentQuiz.options}
+              path={nextPage ? nextPage.slug : '/quiz/results'}
+            />
+            {params.quizSlug === 'height' && <Height title="" />}
+            {params.quizSlug === 'weight' && <Weight title="" />}
+            {params.quizSlug === 'weight-goal' && <WeightGoal title="" />}
+            {params.quizSlug === 'results' && <Results title="" />}
+          </>
+        </PageLayoutWithoutTitle>
       ) : (
-        <NotFound />
+        notFound()
       )}
-    </PageLayoutWithoutTitle>
+    </>
   )
 }
 
