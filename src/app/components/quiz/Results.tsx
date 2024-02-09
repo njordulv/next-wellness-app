@@ -114,7 +114,6 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
               active === 0 ? `${styles.bmiUnderweight}` : `${styles.bmiVariant}`
             }
           >
-            <b className={styles.bmiUnderweight}></b>
             <strong>{t('underweight')}</strong>
           </span>
           <span
@@ -122,7 +121,6 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
               active === 1 ? `${styles.bmiNormal}` : `${styles.bmiVariant}`
             }
           >
-            <b className={styles.bmiNormal}></b>
             <strong>{t('normal')}</strong>
           </span>
           <span
@@ -130,7 +128,6 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
               active === 2 ? `${styles.bmiOverweight}` : `${styles.bmiVariant}`
             }
           >
-            <b className={styles.bmiOverweight}></b>
             <strong>{t('overweight')}</strong>
           </span>
           <span
@@ -138,7 +135,6 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
               active === 3 ? `${styles.bmiObese}` : `${styles.bmiVariant}`
             }
           >
-            <b className={styles.bmiObese}></b>
             <strong>{t('obese')}</strong>
           </span>
         </div>

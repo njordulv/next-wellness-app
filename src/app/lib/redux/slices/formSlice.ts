@@ -40,7 +40,7 @@ const initialState: FormState = {
   goal: '',
   goalImperial: '',
   verdict: '',
-  active: 0,
+  active: -1,
 }
 
 const formSlice = createSlice({
