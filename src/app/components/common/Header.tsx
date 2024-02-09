@@ -2,16 +2,16 @@
 
 import Link from 'next/link'
 import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
-import { IoFitnessOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
+import { usePathname } from 'next/navigation'
+import { IoFitnessOutline } from 'react-icons/io5'
 import ThemeSwitch from '@/components/switcher/ThemeSwitch'
 import LocaleSwitch from '@/components/switcher/LocaleSwitch'
 import GetPlanBtn from '@/components/GetPlanBtn'
 import TotalQuiz from '@/components/quiz/TotalQuiz'
+import StepBack from '@/components/quiz/StepBack'
 
-export default function HeaderCSR() {
+export default function Header() {
   const locale = useLocale()
-  const router = useRouter()
   const pathname = usePathname()
   const offerPage = pathname === `/${locale}/offer`
   const quizPages = pathname.startsWith(`/${locale}/quiz`)
@@ -25,10 +25,7 @@ export default function HeaderCSR() {
           <GetPlanBtn />
           {quizPages && (
             <>
-              <IoArrowBackCircleOutline
-                className="absolute flex left-[97px] text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
-                onClick={() => router.back()}
-              />
+              <StepBack />
               <TotalQuiz />
             </>
           )}

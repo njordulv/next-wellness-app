@@ -1,11 +1,5 @@
-'use client'
-
 import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
-
-type Props = {
-  plan: string
-}
 
 export default function GetPlanBtn() {
   const locale = useLocale()
