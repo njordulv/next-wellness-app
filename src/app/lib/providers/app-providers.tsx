@@ -2,7 +2,8 @@
 
 import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
-import { reduxStore } from '../redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { reduxStore, persistor } from '@/store/store'
 
 export default function AppProviders({
   children,
@@ -16,7 +17,11 @@ export default function AppProviders({
       enableSystem
       storageKey="theme"
     >
-      <Provider store={reduxStore}>{children}</Provider>
+      <Provider store={reduxStore}>
+        <PersistGate loading={null} persistor={persistor}>
+          {children}
+        </PersistGate>
+      </Provider>
     </ThemeProvider>
   )
 }
