@@ -10,8 +10,8 @@ const initialState: SwitcherState = {
   isMetric: true,
 }
 
-const switcherSlice = createSlice({
-  name: 'switcher',
+const metricSlice = createSlice({
+  name: 'metricSystem',
   initialState,
   reducers: {
     toggleSwitch: (state) => {
@@ -21,11 +21,12 @@ const switcherSlice = createSlice({
   },
 })
 
-export const { toggleSwitch } = switcherSlice.actions
+export const { toggleSwitch } = metricSlice.actions
 
-export const selectSwitcherSystem = (state: { switcher: SwitcherState }) =>
-  state.switcher.system
-export const selectSwitcherIsMetric = (state: { switcher: SwitcherState }) =>
-  state.switcher.isMetric
+export const selectSwitcherSystem = (state: { metricSystem: SwitcherState }) =>
+  state.metricSystem.system
+export const selectSwitcherIsMetric = (state: {
+  metricSystem: SwitcherState
+}) => state.metricSystem.isMetric
 
-export default switcherSlice.reducer
+export default metricSlice.reducer

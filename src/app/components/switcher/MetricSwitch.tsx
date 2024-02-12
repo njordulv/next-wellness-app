@@ -5,7 +5,7 @@ import {
   toggleSwitch,
   selectSwitcherSystem,
   selectSwitcherIsMetric,
-} from '@/store/slices/switcherSlice'
+} from '@/store/slices/metricSlice'
 import { resetForm, setIsMetric } from '@/store/slices/formSlice'
 import styles from '@/styles/metric-switch.module.scss'
 

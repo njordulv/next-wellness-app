@@ -16,7 +16,7 @@ import {
 } from 'react-redux'
 import optionHistoryReducer from './slices/optionHistorySlice'
 import formReducer from './slices/formSlice'
-import switcherReducer from './slices/switcherSlice'
+import metricReducer from './slices/metricSlice'
 import emailReducer from './slices/emailSlice'
 import paymentReducer from './slices/paymentSlice'
 import checkboxReducer from './slices/checkboxSlice'
@@ -25,7 +25,7 @@ import quizReducer from './slices/quizSlice'
 const rootReducer = combineReducers({
   optionHistory: optionHistoryReducer,
   form: formReducer,
-  switcher: switcherReducer,
+  metricSystem: metricReducer,
   email: emailReducer,
   payment: paymentReducer,
   checkbox: checkboxReducer,
