@@ -3,7 +3,7 @@
 import { useDispatch } from '@/store/store'
 import { useRouter } from 'next/navigation'
 import { RiCheckFill } from 'react-icons/ri'
-import { setOptionHistory } from '@/store/slices/optionHistorySlice'
+import { setQuiz } from '@/store/slices/quizSlice'
 import styles from '@/styles/quiz.module.scss'
 
 interface QuizTemplateProps {
@@ -21,7 +21,7 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
   const router = useRouter()
 
   const handleOptionChange = (option: string) => {
-    dispatch(setOptionHistory({ pathname: path, option }))
+    dispatch(setQuiz({ pathname: path, option }))
 
     setTimeout(() => {
       router.push(path)

@@ -14,22 +14,22 @@ import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
 } from 'react-redux'
-import optionHistoryReducer from './slices/optionHistorySlice'
+import quizReducer from './slices/quizSlice'
 import formReducer from './slices/formSlice'
 import metricReducer from './slices/metricSlice'
 import emailReducer from './slices/emailSlice'
 import paymentReducer from './slices/paymentSlice'
 import checkboxReducer from './slices/checkboxSlice'
-import quizReducer from './slices/quizSlice'
+import stepReducer from './slices/stepSlice'
 
 const rootReducer = combineReducers({
-  optionHistory: optionHistoryReducer,
+  quiz: quizReducer,
   form: formReducer,
-  metricSystem: metricReducer,
+  metric: metricReducer,
   email: emailReducer,
   payment: paymentReducer,
   checkbox: checkboxReducer,
-  quiz: quizReducer,
+  steps: stepReducer,
 })
 
 const persistConfig = {
@@ -50,6 +50,7 @@ export const reduxStore = configureStore({
 })
 
 export const persistor = persistStore(reduxStore)
+
 export type AppDispatch = typeof reduxStore.dispatch
 export const useDispatch = () => useReduxDispatch()
 export const useSelector = useReduxSelector

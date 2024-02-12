@@ -1,32 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface QuizState {
-  quizSlug: string
-  quizTotal: number
+  [pathname: string]: string
 }
 
-const initialState: QuizState = {
-  quizSlug: '',
-  quizTotal: 0,
+interface QuizPayload {
+  pathname: string
+  option: string
 }
+
+const initialState: QuizState = {}
 
 const quizSlice = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-    setQuizSlug: (state, action: PayloadAction<string>) => {
-      state.quizSlug = action.payload
-    },
-    setQuizTotal: (state, action: PayloadAction<number>) => {
-      state.quizTotal = action.payload
+    setQuiz: (state, action: PayloadAction<QuizPayload>) => {
+      const { pathname, option } = action.payload
+      state[pathname] = option
     },
   },
 })
 
-export const { setQuizSlug, setQuizTotal } = quizSlice.actions
-export const selectQuizSlug = (state: { quiz: QuizState }) =>
-  state.quiz.quizSlug
-export const selectQuizTotal = (state: { quiz: QuizState }) =>
-  state.quiz.quizTotal
+export const { setQuiz } = quizSlice.actions
 
 export default quizSlice.reducer

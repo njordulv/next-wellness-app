@@ -1,15 +1,15 @@
 import { useSelector } from '@/store/store'
-import { selectQuizSlug, selectQuizTotal } from '@/store/slices/quizSlice'
+import { selectQuizCurrent, selectQuizTotal } from '@/store/slices/stepSlice'
 
 const TotalQuiz: React.FC = () => {
-  const quizCurrent = useSelector(selectQuizSlug)
-  const quizTotal = useSelector(selectQuizTotal)
+  const current = useSelector(selectQuizCurrent)
+  const total = useSelector(selectQuizTotal)
 
   return (
     <div className="flex right-0 absolute gap-1 text-[16px] text-dark">
-      <span>{quizCurrent || '0'}</span>
+      <span>{current || 0}</span>
       <span>/</span>
-      <span>{quizTotal || 0}</span>
+      <span>{total || 0}</span>
     </div>
   )
 }

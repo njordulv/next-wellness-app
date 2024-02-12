@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { notFound } from 'next/navigation'
 import { useDispatch } from '@/store/store'
-import { setQuizSlug, setQuizTotal } from '@/store/slices/quizSlice'
+import { setQuizCurrent, setQuizTotal } from '@/store/slices/stepSlice'
 import PageLayoutWithoutTitle from '@/components/layouts/PageLayoutWithoutTitle'
 import getQuizPagesByLocale from '@/utils/localeUtils'
 import QuizTemplate from './QuizTemplate'
@@ -30,7 +30,7 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
   const nextPage = hasNextPage ? quizPages[nextIndex - 1] : null
 
   useEffect(() => {
-    dispatch(setQuizSlug(`${currentIndex}`))
+    dispatch(setQuizCurrent(currentIndex))
     dispatch(setQuizTotal(quizTotal))
   }, [dispatch, currentIndex, quizTotal])
 
