@@ -39,6 +39,12 @@ module.exports = {
         '.custom-bg-darker': {
           background: 'var(--background-darker)',
         },
+        '.gradient2': {
+          background: 'linear-gradient(to right, var(--gradient-2))',
+        },
+        '.trans': {
+          transition: 'all 0.35s ease',
+        },
       })
     }),
   ],

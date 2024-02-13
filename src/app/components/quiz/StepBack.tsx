@@ -19,7 +19,7 @@ const StepBack = () => {
 
   return (
     <IoArrowBackCircleOutline
-      className="absolute flex left-[97px] text-[28px] cursor-pointer hover:text-blue transition-all active:scale-90"
+      className="absolute flex left-[92px] text-[27px] cursor-pointer hover:text-blue transition-all active:scale-90"
       onClick={() => router.push(path)}
     />
   )

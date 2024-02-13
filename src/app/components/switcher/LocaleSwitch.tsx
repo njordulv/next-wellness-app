@@ -32,7 +32,7 @@ const LocaleSwitch: React.FC = () => {
       if (
         isActive &&
         e.target &&
-        !(e.target as HTMLElement).closest('.select-menu')
+        !(e.target as HTMLElement).closest('.language-select')
       ) {
         setIsActive(false)
       }
@@ -46,14 +46,14 @@ const LocaleSwitch: React.FC = () => {
   }, [isActive])
 
   return (
-    <div className={`select-menu ${isActive ? 'active' : ''}`}>
-      <span
-        className="flex gap-1 items-center cursor-pointer hover:text-blue transition-all active:scale-90"
+    <div className={`language-select ${isActive ? 'active' : ''}`}>
+      <div
+        className="flex gap-[1px] items-center cursor-pointer hover:text-blue trans active:scale-90"
         onClick={handleSelectClick}
       >
-        {locale}
+        <span>{locale}</span>
         <IoChevronDown />
-      </span>
+      </div>
       {isActive && (
         <ul className="options">
           {locales.map((locale) => (

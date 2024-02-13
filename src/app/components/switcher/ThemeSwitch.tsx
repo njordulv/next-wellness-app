@@ -1,6 +1,6 @@
 'use client'
 
-import { IoSunny, IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
+import { IoInvertMode, IoInvertModeOutline } from 'react-icons/io5'
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 
@@ -13,11 +13,11 @@ export default function ThemeSwitch() {
   return (
     <div className="flex text-2xl cursor-pointer hover:text-blue transition-all active:scale-90">
       {!mounted ? (
-        <IoSunny />
+        <IoInvertMode />
       ) : resolvedTheme === 'dark' ? (
-        <IoSunnyOutline onClick={() => setTheme('light')} />
+        <IoInvertMode onClick={() => setTheme('light')} />
       ) : (
-        <IoMoonSharp onClick={() => setTheme('dark')} />
+        <IoInvertModeOutline onClick={() => setTheme('dark')} />
       )}
     </div>
   )

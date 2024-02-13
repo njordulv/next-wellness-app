@@ -298,13 +298,13 @@ hr::before {
   top: 50%;
   margin-top: -1px;
 }
-.select-menu {
+.language-select {
   position: relative;
   display: flex;
   align-items: center;
   text-transform: uppercase;
 }
-.select-menu .options {
+.language-select .options {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -327,36 +327,36 @@ hr::before {
   -webkit-animation-duration: 0.4s;
   -webkit-animation-fill-mode: both;
 }
-.select-menu .options .option {
+.language-select .options .option {
   cursor: pointer;
   text-align: center;
   width: 100%;
-  border-radius: 4px;
   transition: all 0.3s ease;
+  border-radius: 4px;
   background: var(--background-darker);
 }
-.select-menu .options .option .option-text {
+.language-select .options .option .option-text {
   color: var(--color);
   font-size: 16px;
 }
 
-.select-menu .options .option:hover {
+.language-select .options .option:hover {
   background: var(--background);
 }
 
-.select-menu .options .option-text.active,
-.select-menu .options .option:hover .option-text {
+.language-select .options .option-text.active,
+.language-select .options .option:hover .option-text {
   color: var(--blue);
 }
 
-.select-menu svg {
+.language-select svg {
   transition: all 0.3s ease;
 }
 
-.select-menu.active svg {
+.language-select.active svg {
   transform: rotate(-180deg);
 }
-.select-menu.active .options {
+.language-select.active .options {
   display: flex;
   opacity: 0;
   z-index: 10;

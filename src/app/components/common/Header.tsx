@@ -7,8 +7,9 @@ import { IoFitnessOutline } from 'react-icons/io5'
 import ThemeSwitch from '@/components/switcher/ThemeSwitch'
 import LocaleSwitch from '@/components/switcher/LocaleSwitch'
 import GetPlanBtn from '@/components/GetPlanBtn'
-import TotalQuiz from '@/components/quiz/TotalQuiz'
 import StepBack from '@/components/quiz/StepBack'
+import StepProgress from '@/components/quiz/StepProgress'
+import TotalQuiz from '@/components/quiz/TotalQuiz'
 
 export default function Header() {
   const locale = useLocale()
@@ -19,13 +20,14 @@ export default function Header() {
   return (
     <header>
       <div className="w-full max-w-[620px] px-4 mx-auto box-border">
-        <div className="flex items-center gap-5 relative h-[48px]">
-          <ThemeSwitch />
+        <div className="flex items-center gap-4 relative h-[48px]">
           <LocaleSwitch />
+          <ThemeSwitch />
           <GetPlanBtn />
           {quizPages && (
             <>
               <StepBack />
+              <StepProgress />
               <TotalQuiz />
             </>
           )}
