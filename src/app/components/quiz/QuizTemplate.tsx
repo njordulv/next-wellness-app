@@ -1,8 +1,9 @@
 'use client'
 
-import { useDispatch } from '@/store/store'
 import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { RiCheckFill } from 'react-icons/ri'
+import { useDispatch } from '@/store/store'
 import { setQuiz } from '@/store/slices/quizSlice'
 import styles from '@/styles/quiz.module.scss'
 
@@ -19,13 +20,21 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
 }) => {
   const dispatch = useDispatch()
   const router = useRouter()
+  const pathName = usePathname()
+
+  const extractKeyFromPathname = (pathName: string): string => {
+    const segments = pathName.split('/')
+    const lastSegment = segments.pop()
+    return lastSegment || '/'
+  }
 
   const handleOptionChange = (option: string) => {
-    dispatch(setQuiz({ pathname: path, option }))
+    const key = extractKeyFromPathname(pathName)
+    dispatch(setQuiz({ pathname: key, option }))
 
     setTimeout(() => {
       router.push(path)
-    }, 500)
+    }, 400)
   }
 
   return (

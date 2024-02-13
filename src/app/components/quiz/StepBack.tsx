@@ -12,8 +12,7 @@ const StepBack = () => {
   const router = useRouter()
   const quizPages = getQuizPagesByLocale(locale)
   const currentIndex = useSelector(selectQuizCurrent)
-  const currentNumber = currentIndex
-  const prevIndex = currentNumber - 2
+  const prevIndex = currentIndex - 2
   const hasPrevPage = prevIndex >= 0
   const prevPage = hasPrevPage ? quizPages[prevIndex] : null
   const path = prevPage ? `/${locale}/quiz/${prevPage.slug}` : `/${locale}`

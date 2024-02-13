@@ -22,6 +22,16 @@ import paymentReducer from './slices/paymentSlice'
 import checkboxReducer from './slices/checkboxSlice'
 import stepReducer from './slices/stepSlice'
 
+const rootReducer = combineReducers({
+  quiz: quizReducer,
+  form: formReducer,
+  metric: metricReducer,
+  email: emailReducer,
+  payment: paymentReducer,
+  checkbox: checkboxReducer,
+  steps: stepReducer,
+})
+
 const createNoopStorage = () => {
   return {
     getItem(_key: string) {
@@ -42,15 +52,6 @@ const storage =
     : createNoopStorage()
 
 export default storage
-const rootReducer = combineReducers({
-  quiz: quizReducer,
-  form: formReducer,
-  metric: metricReducer,
-  email: emailReducer,
-  payment: paymentReducer,
-  checkbox: checkboxReducer,
-  steps: stepReducer,
-})
 
 const persistConfig = {
   key: 'root',
