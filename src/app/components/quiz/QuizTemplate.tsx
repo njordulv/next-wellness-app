@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import { RiCheckFill } from 'react-icons/ri'
@@ -13,6 +14,11 @@ interface QuizTemplateProps {
   path: string
 }
 
+const extractKeyFromPathname = (pathName: string): string => {
+  const segments = pathName.split('/')
+  return segments.pop() || '/'
+}
+
 const QuizTemplate: React.FC<QuizTemplateProps> = ({
   heading,
   options,
@@ -21,16 +27,22 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
   const dispatch = useDispatch()
   const router = useRouter()
   const pathName = usePathname()
+  const [selectedOption, setSelectedOption] = useState<string | null>(null)
 
-  const extractKeyFromPathname = (pathName: string): string => {
-    const segments = pathName.split('/')
-    const lastSegment = segments.pop()
-    return lastSegment || '/'
-  }
+  useEffect(() => {
+    const key = extractKeyFromPathname(pathName)
+    const savedOption = localStorage.getItem(key)
+    if (savedOption) {
+      setSelectedOption(savedOption)
+    }
+  }, [pathName])
 
   const handleOptionChange = (option: string) => {
     const key = extractKeyFromPathname(pathName)
+
     dispatch(setQuiz({ pathname: key, option }))
+    localStorage.setItem(key, option)
+    setSelectedOption(option)
 
     setTimeout(() => {
       router.push(path)
@@ -42,7 +54,14 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
       <h2>{heading}</h2>
       <div className={styles.items}>
         {options.map((option) => (
-          <div key={option} className={styles.item}>
+          <div
+            key={option}
+            className={
+              selectedOption === option
+                ? `${styles.item} ${styles.selected}`
+                : `${styles.item}`
+            }
+          >
             <label>
               <input
                 className={styles.input}

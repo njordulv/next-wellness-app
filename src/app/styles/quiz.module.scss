@@ -18,12 +18,29 @@
 
   &:hover {
     .back {
-      background-color: var(--purple);
+      opacity: 0.85;
       color: #fff;
     }
 
     .questionItemTitle {
       color: whitesmoke;
+    }
+  }
+
+  &.selected {
+    .back {
+      background-color: var(--green);
+      & + span + span {
+        .icon {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      .back {
+        opacity: 0.85;
+      }
     }
   }
 }
@@ -79,14 +96,6 @@
               }
             }
           }
-        }
-      }
-    }
-
-    &:hover {
-      + {
-        .back {
-          background-color: var(--green);
         }
       }
     }
