@@ -15,7 +15,7 @@ import {
   selectDisabledWeight,
   selectIsMetric,
 } from '@/store/slices/formSlice'
-import MeasureSwitch from '@/src/app/components/switcher/MeasureSwitch'
+import MeasureSwitch from '@/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
@@ -36,7 +36,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
 
   const inputWeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    const numericValue = parseInt(value, 10)
+    const numericValue = parseInt(value)
 
     if (isMetric) {
       dispatch(setInputWeight(value))

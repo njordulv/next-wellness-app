@@ -14,7 +14,7 @@ import {
   selectIsMetric,
 } from '@/store/slices/formSlice'
 import HeightImperial from './Imperial'
-import MeasureSwitch from '@/src/app/components/switcher/MeasureSwitch'
+import MeasureSwitch from '@/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
@@ -37,7 +37,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
     dispatch(setInputHeight(value))
     dispatch(setTotalCm(parseInt(value)))
 
-    const numericValue = parseInt(value, 10)
+    const numericValue = parseInt(value)
 
     if (isMetric) {
       if (!value) {
