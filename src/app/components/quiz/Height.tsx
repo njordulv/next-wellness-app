@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from '@/store/store'
 import {
   setInputHeight,
   setHeightError,
+  setTotalCm,
   setDisabled,
   selectInputHeight,
   selectHeightError,
@@ -13,7 +14,7 @@ import {
   selectIsMetric,
 } from '@/store/slices/formSlice'
 import HeightImperial from './Imperial'
-import MetricSwitch from '@/components/switcher/MetricSwitch'
+import MeasureSwitch from '@/src/app/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
@@ -34,6 +35,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   const inputHeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     dispatch(setInputHeight(value))
+    dispatch(setTotalCm(parseInt(value)))
 
     const numericValue = parseInt(value, 10)
 
@@ -65,7 +67,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   return (
     <>
       <h2>{title}</h2>
-      <MetricSwitch />
+      <MeasureSwitch />
       {isMetric ? (
         <form onSubmit={continueHandler} className={styles.heightForm}>
           <div className={styles.inputField}>

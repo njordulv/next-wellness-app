@@ -7,18 +7,18 @@ import {
   setGoal,
   setGoalImperial,
   setVerdict,
-  setWeightError,
+  setWeightGoalError,
   setDisabledGoal,
   selectGoal,
   selectInputWeight,
   selectGoalImperial,
   selectWeightImperial,
-  selectWeightError,
+  selectWeightGoalError,
   selectVerdict,
   selectDisabledGoal,
   selectIsMetric,
 } from '@/store/slices/formSlice'
-import MetricSwitch from '@/components/switcher/MetricSwitch'
+import MeasureSwitch from '@/src/app/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
@@ -35,7 +35,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const weightImperial = useSelector(selectWeightImperial)
   const goal = useSelector(selectGoal)
   const goalImperial = useSelector(selectGoalImperial)
-  const weightError = useSelector(selectWeightError)
+  const weightGoalError = useSelector(selectWeightGoalError)
   const verdict = useSelector(selectVerdict)
   const disabled = useSelector(selectDisabledGoal)
   const isMetric = useSelector(selectIsMetric)
@@ -53,13 +53,13 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
     if (value.length === 0 || isNaN(numericValue)) {
       dispatch(setDisabledGoal(true))
       dispatch(setVerdict(''))
-      dispatch(setWeightError(''))
+      dispatch(setWeightGoalError(''))
       return
     }
 
     if (value.length < 2) {
       dispatch(setDisabledGoal(true))
-      dispatch(setWeightError(''))
+      dispatch(setWeightGoalError(''))
     }
 
     const percentGoal =
@@ -67,9 +67,9 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       10
 
     if (!value) {
-      dispatch(setWeightError(''))
+      dispatch(setWeightGoalError(''))
     } else if ((isMetric && !inputWeight) || (!isMetric && !weightImperial)) {
-      dispatch(setWeightError(mess.weightValErrMsg(t)))
+      dispatch(setWeightGoalError(mess.weightValErrMsg(t)))
       return
     }
 
@@ -107,7 +107,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   return (
     <>
       <h2>{title}</h2>
-      <MetricSwitch />
+      <MeasureSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>
           <label htmlFor={isMetric ? 'weight-goal' : 'weight-goal-imperial'}>
@@ -125,7 +125,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
               {isMetric ? 'kg' : 'lbs'}
             </span>
           </label>
-          <div className={styles.inputError}>{weightError}</div>
+          <div className={styles.inputError}>{weightGoalError}</div>
         </div>
         <button type="submit" disabled={disabled} className="button">
           {t('continue')}

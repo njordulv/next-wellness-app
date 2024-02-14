@@ -10,6 +10,7 @@ interface FormState {
   inputWeight: string
   weightImperial: string
   weightError: string
+  weightGoalError: string
   heightImperial: { feet: string; inch: string }
   totalCm: number
   totalKg: number
@@ -34,6 +35,7 @@ const initialState: FormState = {
   inputWeight: '',
   weightImperial: '',
   weightError: '',
+  weightGoalError: '',
   heightImperial: { feet: '', inch: '' },
   totalCm: 0,
   totalKg: 0,
@@ -74,6 +76,9 @@ const formSlice = createSlice({
     setWeightError(state, action: PayloadAction<string>) {
       state.weightError = action.payload
     },
+    setWeightGoalError(state, action: PayloadAction<string>) {
+      state.weightGoalError = action.payload
+    },
     setHeightImperial(state, action: PayloadAction<HeightImperialPayload>) {
       state.heightImperial = action.payload
     },
@@ -101,8 +106,26 @@ const formSlice = createSlice({
     setActive(state, action: PayloadAction<number>) {
       state.active = action.payload
     },
-    resetForm() {
-      return initialState
+    resetForm(state) {
+      state.inputHeight = initialState.inputHeight
+      state.heightError = initialState.heightError
+      state.heightImperial.feet = initialState.heightImperial.feet
+      state.heightImperial.inch = initialState.heightImperial.inch
+      state.totalCm = initialState.totalCm
+      state.disabled = initialState.disabled
+    },
+    resetWeightForm(state) {
+      state.inputWeight = initialState.inputWeight
+      state.weightImperial = initialState.weightImperial
+      state.weightError = initialState.weightError
+      state.disabledWeight = initialState.disabledWeight
+    },
+    resetWeightGoalForm(state) {
+      state.disabledGoal = initialState.disabledGoal
+      state.goal = initialState.goal
+      state.goalImperial = initialState.goalImperial
+      state.verdict = initialState.verdict
+      state.weightGoalError = initialState.weightGoalError
     },
   },
 })
@@ -117,6 +140,7 @@ export const {
   setInputWeight,
   setWeightImperial,
   setWeightError,
+  setWeightGoalError,
   setHeightImperial,
   setFeet,
   setInch,
@@ -127,6 +151,8 @@ export const {
   setVerdict,
   setActive,
   resetForm,
+  resetWeightForm,
+  resetWeightGoalForm,
 } = formSlice.actions
 
 export const selectInputHeight = (state: { form: FormState }) =>
@@ -147,6 +173,8 @@ export const selectWeightImperial = (state: { form: FormState }) =>
   state.form.weightImperial
 export const selectWeightError = (state: { form: FormState }) =>
   state.form.weightError
+export const selectWeightGoalError = (state: { form: FormState }) =>
+  state.form.weightGoalError
 export const selectHeightImperialFeet = (state: { form: FormState }) =>
   state.form.heightImperial.feet
 export const selectHeightImperialInch = (state: { form: FormState }) =>

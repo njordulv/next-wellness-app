@@ -12,6 +12,7 @@ import {
   selectInputWeight,
   selectWeightImperial,
   selectTotalCm,
+  selectTotalKg,
 } from '@/store/slices/formSlice'
 import { BMI } from '@/utils/healthMetrics'
 import styles from '@/styles/results.module.scss'
@@ -31,7 +32,7 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
   let inputHeight = useSelector(selectInputHeight)
   let inputWeight = useSelector(selectInputWeight)
   let totalCm = useSelector(selectTotalCm)
-  let totalKg = (parseFloat(weightImperial) * 0.45359237).toFixed()
+  let totalKg = useSelector(selectTotalKg)
 
   const BMIcurrent = BMI(inputHeight, inputWeight, totalCm, totalKg)
   const delay = 1700

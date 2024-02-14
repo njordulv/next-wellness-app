@@ -8,13 +8,14 @@ import {
   setWeightImperial,
   setWeightError,
   setDisabledWeight,
+  setTotalKg,
   selectInputWeight,
   selectWeightImperial,
   selectWeightError,
   selectDisabledWeight,
   selectIsMetric,
 } from '@/store/slices/formSlice'
-import MetricSwitch from '@/components/switcher/MetricSwitch'
+import MeasureSwitch from '@/src/app/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
@@ -35,11 +36,11 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
 
   const inputWeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    dispatch(setInputWeight(value))
-
     const numericValue = parseInt(value, 10)
 
     if (isMetric) {
+      dispatch(setInputWeight(value))
+      dispatch(setTotalKg(parseInt(value)))
       dispatch(setWeightError(''))
 
       if (!value) {
@@ -57,6 +58,8 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
       }
     } else {
       dispatch(setWeightImperial(value))
+      let totalKg = Math.floor(parseInt(value) / 2.20462)
+      dispatch(setTotalKg(totalKg))
 
       if (!numericValue) {
         dispatch(setWeightError(''))
@@ -83,7 +86,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
   return (
     <>
       <h2>{title}</h2>
-      <MetricSwitch />
+      <MeasureSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>
           <label htmlFor={isMetric ? 'input-weight' : 'input-weight-imperial'}>
