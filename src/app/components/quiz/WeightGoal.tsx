@@ -30,74 +30,107 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations('Quiz')
-  const totalWeight = useSelector(selectTotalKg)
   const goal = useSelector(selectGoal)
   const goalImperial = useSelector(selectGoalImperial)
   const weightGoalError = useSelector(selectWeightGoalError)
   const verdict = useSelector(selectVerdict)
   const disabled = useSelector(selectDisabledGoal)
   const isMetric = useSelector(selectIsMetric)
+  const totalWeight = useSelector(selectTotalKg)
+  const totalWeightLbs = totalWeight * 2.20462
 
-  const goalHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+  const goalHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    const numericValue = parseInt(value)
+    const numericValue = parseFloat(value)
 
     if (isMetric) {
       dispatch(setGoal(value))
+      if (!value) {
+        dispatch(setDisabledGoal(true))
+      } else if (
+        isNaN(numericValue) ||
+        numericValue < 40 ||
+        numericValue > 250
+      ) {
+        dispatch(setDisabledGoal(true))
+        dispatch(setWeightGoalError(mess.weightGoalErrMsg(t)))
+      } else if (numericValue >= totalWeight) {
+        dispatch(setDisabledGoal(true))
+        dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
+      } else if (totalWeight - numericValue <= 3) {
+        dispatch(setDisabledGoal(true))
+        dispatch(setWeightGoalError(mess.weightDiffErrMsg(t)))
+      } else {
+        dispatch(setDisabledGoal(false))
+        dispatch(setWeightGoalError(''))
+      }
     } else {
       dispatch(setGoalImperial(value))
+      if (!value) {
+        dispatch(setDisabledGoal(true))
+      } else if (
+        isNaN(numericValue) ||
+        numericValue < 90 ||
+        numericValue > 550
+      ) {
+        dispatch(setDisabledGoal(true))
+        dispatch(setWeightGoalError(mess.weightGoalImpErrMsg(t)))
+      } else if (numericValue >= totalWeightLbs) {
+        dispatch(setDisabledGoal(true))
+        dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
+      } else if (totalWeightLbs - numericValue <= 6) {
+        dispatch(setWeightGoalError(mess.weightGapImpErrMsg(t)))
+      } else {
+        dispatch(setDisabledGoal(false))
+        dispatch(setWeightGoalError(''))
+      }
     }
 
     if (!totalWeight) {
       dispatch(setWeightGoalError(mess.weightValErrMsg(t)))
     }
 
-    if (!value || isNaN(numericValue)) {
-      dispatch(setDisabledGoal(true))
-      dispatch(setVerdict(''))
-      dispatch(setWeightGoalError(''))
-      return
-    }
-
     if (value.length < 2) {
+      dispatch(setVerdict(''))
       dispatch(setDisabledGoal(true))
       dispatch(setWeightGoalError(''))
     }
 
-    let totalWeightLbs = totalWeight * 2.20462
-    let percentImperial = ((numericValue / totalWeightLbs) * 100).toFixed()
-    let percentGoal: string = ((numericValue / totalWeight) * 100).toFixed()
+    let percentNumber: string
 
-    function dispatchVerdict(
-      percent: number,
-      isImperial: boolean = false
-    ): void {
-      const percentNumber: string = isImperial
-        ? percent.toFixed()
-        : (((totalWeight - numericValue) / totalWeight) * 100).toFixed()
+    if (isMetric) {
+      percentNumber = (
+        ((totalWeight - numericValue) / totalWeight) *
+        100
+      ).toFixed()
+    } else {
+      const numericValueKg = numericValue / 2.20462
+      percentNumber = (
+        ((totalWeight - numericValueKg) / totalWeight) *
+        100
+      ).toFixed()
+    }
 
-      if (percent >= 98) {
+    function dispatchVerdict(): void {
+      const percent = percentNumber
+
+      if (+percent >= 98.9) {
         dispatch(setVerdict(''))
         dispatch(setDisabledGoal(true))
-      } else if (percent >= 90) {
+      } else if (+percent >= 95) {
         dispatch(setVerdict(t('answer1', { percentNumber })))
         dispatch(setDisabledGoal(false))
-      } else if (percent >= 80) {
+      } else if (+percent >= 92) {
         dispatch(setVerdict(t('answer2', { percentNumber })))
         dispatch(setDisabledGoal(false))
-      } else if (percent >= 70) {
-        dispatch(setVerdict(t('answer3', { percentNumber })))
-        dispatch(setDisabledGoal(false))
-      } else if (percent >= 40) {
+      } else if (+percent >= 16) {
         dispatch(setVerdict(t('answer4', { percentNumber })))
         dispatch(setDisabledGoal(false))
       } else {
         dispatch(setDisabledGoal(true))
       }
     }
-
-    dispatchVerdict(+percentGoal)
-    dispatchVerdict(+percentImperial, true)
+    dispatchVerdict()
   }
 
   const continueHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
