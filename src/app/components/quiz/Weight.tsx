@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
@@ -33,6 +34,11 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
   const weightError = useSelector(selectWeightError)
   const disabled = useSelector(selectDisabledWeight)
   const isMetric = useSelector(selectIsMetric)
+  const cursorOnInput = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    cursorOnInput.current?.focus()
+  }, [isMetric])
 
   const inputWeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
@@ -99,6 +105,7 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
               placeholder={isMetric ? '75' : '130'}
               value={isMetric ? inputWeight : inputWeightImp}
               onChange={inputWeightHandler}
+              ref={cursorOnInput}
             />
             <span className={styles.inputMeasure}>
               {isMetric ? 'kg' : 'lbs'}

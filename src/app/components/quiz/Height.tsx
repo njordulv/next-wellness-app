@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
@@ -31,13 +32,18 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
   const heightError = useSelector(selectHeightError)
   const disabled = useSelector(selectDisabled)
   const isMetric = useSelector(selectIsMetric)
+  const cursorOnInput = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    cursorOnInput.current?.focus()
+  }, [isMetric])
 
   const inputHeightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
+    const numericValue = parseInt(value)
+
     dispatch(setInputHeight(value))
     dispatch(setTotalCm(parseInt(value)))
-
-    const numericValue = parseInt(value)
 
     if (isMetric) {
       if (!value) {
@@ -82,6 +88,7 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
                   placeholder="180"
                   value={inputHeight}
                   onChange={inputHeightHandler}
+                  ref={cursorOnInput}
                 />
                 <span className={styles.inputMeasure}>cm</span>
               </label>

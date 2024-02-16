@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
@@ -38,6 +39,11 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const isMetric = useSelector(selectIsMetric)
   const totalWeight = useSelector(selectTotalKg)
   const totalWeightLbs = totalWeight * 2.20462
+  const cursorOnInput = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    cursorOnInput.current?.focus()
+  }, [isMetric])
 
   const goalHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
@@ -100,49 +106,6 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       return
     }
 
-    // if (isMetric) {
-    //   dispatch(setGoal(value))
-    //   if (!value) {
-    //     dispatch(setDisabledGoal(true))
-    //   } else if (
-    //     isNaN(numericValue) ||
-    //     numericValue < 40 ||
-    //     numericValue > 250
-    //   ) {
-    //     dispatch(setDisabledGoal(true))
-    //     dispatch(setWeightGoalError(mess.weightGoalErrMsg(t)))
-    //   } else if (numericValue >= totalWeight) {
-    //     dispatch(setDisabledGoal(true))
-    //     dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
-    //   } else if (totalWeight - numericValue <= 3) {
-    //     dispatch(setDisabledGoal(true))
-    //     dispatch(setWeightGoalError(mess.weightDiffErrMsg(t)))
-    //   } else {
-    //     dispatch(setDisabledGoal(false))
-    //     dispatch(setWeightGoalError(''))
-    //   }
-    // } else {
-    //   dispatch(setGoalImperial(value))
-    //   if (!value) {
-    //     dispatch(setDisabledGoal(true))
-    //   } else if (
-    //     isNaN(numericValue) ||
-    //     numericValue < 90 ||
-    //     numericValue > 550
-    //   ) {
-    //     dispatch(setDisabledGoal(true))
-    //     dispatch(setWeightGoalError(mess.weightGoalImpErrMsg(t)))
-    //   } else if (numericValue >= totalWeightLbs) {
-    //     dispatch(setDisabledGoal(true))
-    //     dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
-    //   } else if (totalWeightLbs - numericValue <= 6) {
-    //     dispatch(setWeightGoalError(mess.weightDiffImpErrMsg(t)))
-    //   } else {
-    //     dispatch(setDisabledGoal(false))
-    //     dispatch(setWeightGoalError(''))
-    //   }
-    // }
-
     let percentNumber: string
 
     if (isMetric) {
@@ -176,7 +139,6 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       } else {
         dispatch(setDisabledGoal(true))
       }
-      console.log(percent)
     }
     dispatchVerdict()
   }
@@ -202,6 +164,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
               placeholder={isMetric ? '65' : '120'}
               value={isMetric ? goal : goalImperial}
               onChange={goalHandler}
+              ref={cursorOnInput}
             />
             <span className={styles.inputMeasure}>
               {isMetric ? 'kg' : 'lbs'}

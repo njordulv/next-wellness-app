@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import {
@@ -23,6 +24,11 @@ const HeightImperial = () => {
   const heightError = useSelector(selectHeightError)
   const localFeet = useSelector(selectHeightImperialFeet)
   const localInch = useSelector(selectHeightImperialInch)
+  const cursorOnInput = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    cursorOnInput.current?.focus()
+  }, [])
 
   const imperialInputHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -82,6 +88,7 @@ const HeightImperial = () => {
               placeholder="5"
               value={localFeet}
               onChange={(e) => imperialInputHandler(e, 'feet')}
+              ref={cursorOnInput}
             />
             <span className={styles.inputMeasure}>ft</span>
           </label>
