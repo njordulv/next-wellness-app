@@ -50,12 +50,9 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
       dispatch(setWeightError(''))
 
       if (!value) {
+        dispatch(setWeightError(''))
         dispatch(setDisabledWeight(true))
-      } else if (
-        isNaN(numericValue) ||
-        numericValue < 50 ||
-        numericValue > 250
-      ) {
+      } else if (numericValue < 50 || numericValue > 250) {
         dispatch(setDisabledWeight(true))
         dispatch(setWeightError(mess.weightErrMsg(t)))
       } else {
@@ -70,17 +67,22 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
       if (!numericValue) {
         dispatch(setWeightError(''))
         dispatch(setDisabledWeight(true))
-      } else if (
-        isNaN(numericValue) ||
-        numericValue < 110 ||
-        numericValue > 550
-      ) {
+      } else if (numericValue < 110 || numericValue > 550) {
         dispatch(setDisabledWeight(true))
         dispatch(setWeightError(mess.weightImpErrMsg(t)))
       } else {
         dispatch(setDisabledWeight(false))
         dispatch(setWeightError(''))
       }
+    }
+
+    if (isNaN(numericValue)) {
+      dispatch(setDisabledWeight(true))
+      dispatch(setWeightError(mess.getDigitsErrMsg(t)))
+    }
+
+    if (value.length < 1) {
+      dispatch(setWeightError(''))
     }
   }
 

@@ -48,6 +48,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const goalHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     const numericValue = parseFloat(value)
+
     let isValid = true
 
     if (isMetric) {
@@ -63,14 +64,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
     } else if (!totalWeight) {
       dispatch(setWeightGoalError(mess.weightValErrMsg(t)))
       isValid = false
-    } else if (value.length < 2) {
-      dispatch(setDisabledGoal(true))
-      dispatch(setWeightGoalError(''))
-      isValid = false
-    } else if (
-      isMetric &&
-      (isNaN(numericValue) || numericValue < 40 || numericValue > 250)
-    ) {
+    } else if (isMetric && (numericValue < 40 || numericValue > 250)) {
       dispatch(setDisabledGoal(true))
       dispatch(setWeightGoalError(mess.weightGoalErrMsg(t)))
       isValid = false
@@ -82,10 +76,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       dispatch(setDisabledGoal(true))
       dispatch(setWeightGoalError(mess.weightDiffErrMsg(t)))
       isValid = false
-    } else if (
-      !isMetric &&
-      (isNaN(numericValue) || numericValue < 90 || numericValue > 550)
-    ) {
+    } else if (!isMetric && (numericValue < 90 || numericValue > 550)) {
       dispatch(setDisabledGoal(true))
       dispatch(setWeightGoalError(mess.weightGoalImpErrMsg(t)))
       isValid = false
@@ -98,6 +89,16 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       dispatch(setWeightGoalError(mess.weightDiffImpErrMsg(t)))
       isValid = false
     } else {
+      dispatch(setWeightGoalError(''))
+    }
+
+    if (isNaN(numericValue)) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.getDigitsErrMsg(t)))
+    }
+
+    if (value.length < 1) {
+      dispatch(setDisabledGoal(true))
       dispatch(setWeightGoalError(''))
     }
 
@@ -140,6 +141,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
         dispatch(setDisabledGoal(true))
       }
     }
+
     dispatchVerdict()
   }
 

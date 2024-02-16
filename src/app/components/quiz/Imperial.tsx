@@ -40,6 +40,9 @@ const HeightImperial = () => {
     } else if (name === 'inch') {
       dispatch(setInch(value))
     }
+    if (!value) {
+      dispatch(setHeightError(''))
+    }
   }
 
   const continueImperialHandler = (e: React.FormEvent<HTMLFormElement>) => {
