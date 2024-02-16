@@ -42,59 +42,106 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const goalHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     const numericValue = parseFloat(value)
+    let isValid = true
 
     if (isMetric) {
       dispatch(setGoal(value))
-      if (!value) {
-        dispatch(setDisabledGoal(true))
-      } else if (
-        isNaN(numericValue) ||
-        numericValue < 40 ||
-        numericValue > 250
-      ) {
-        dispatch(setDisabledGoal(true))
-        dispatch(setWeightGoalError(mess.weightGoalErrMsg(t)))
-      } else if (numericValue >= totalWeight) {
-        dispatch(setDisabledGoal(true))
-        dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
-      } else if (totalWeight - numericValue <= 3) {
-        dispatch(setDisabledGoal(true))
-        dispatch(setWeightGoalError(mess.weightDiffErrMsg(t)))
-      } else {
-        dispatch(setDisabledGoal(false))
-        dispatch(setWeightGoalError(''))
-      }
     } else {
       dispatch(setGoalImperial(value))
-      if (!value) {
-        dispatch(setDisabledGoal(true))
-      } else if (
-        isNaN(numericValue) ||
-        numericValue < 90 ||
-        numericValue > 550
-      ) {
-        dispatch(setDisabledGoal(true))
-        dispatch(setWeightGoalError(mess.weightGoalImpErrMsg(t)))
-      } else if (numericValue >= totalWeightLbs) {
-        dispatch(setDisabledGoal(true))
-        dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
-      } else if (totalWeightLbs - numericValue <= 6) {
-        dispatch(setWeightGoalError(mess.weightGapImpErrMsg(t)))
-      } else {
-        dispatch(setDisabledGoal(false))
-        dispatch(setWeightGoalError(''))
-      }
     }
 
-    if (!totalWeight) {
-      dispatch(setWeightGoalError(mess.weightValErrMsg(t)))
-    }
-
-    if (value.length < 2) {
-      dispatch(setVerdict(''))
+    if (!value) {
       dispatch(setDisabledGoal(true))
       dispatch(setWeightGoalError(''))
+      isValid = false
+    } else if (!totalWeight) {
+      dispatch(setWeightGoalError(mess.weightValErrMsg(t)))
+      isValid = false
+    } else if (value.length < 2) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(''))
+      isValid = false
+    } else if (
+      isMetric &&
+      (isNaN(numericValue) || numericValue < 40 || numericValue > 250)
+    ) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.weightGoalErrMsg(t)))
+      isValid = false
+    } else if (isMetric && numericValue >= totalWeight) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
+      isValid = false
+    } else if (isMetric && totalWeight - numericValue <= 3) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.weightDiffErrMsg(t)))
+      isValid = false
+    } else if (
+      !isMetric &&
+      (isNaN(numericValue) || numericValue < 90 || numericValue > 550)
+    ) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.weightGoalImpErrMsg(t)))
+      isValid = false
+    } else if (!isMetric && numericValue >= totalWeightLbs) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
+      isValid = false
+    } else if (!isMetric && totalWeightLbs - numericValue <= 6) {
+      dispatch(setDisabledGoal(true))
+      dispatch(setWeightGoalError(mess.weightDiffImpErrMsg(t)))
+      isValid = false
+    } else {
+      dispatch(setWeightGoalError(''))
     }
+
+    if (!isValid) {
+      dispatch(setVerdict(''))
+      return
+    }
+
+    // if (isMetric) {
+    //   dispatch(setGoal(value))
+    //   if (!value) {
+    //     dispatch(setDisabledGoal(true))
+    //   } else if (
+    //     isNaN(numericValue) ||
+    //     numericValue < 40 ||
+    //     numericValue > 250
+    //   ) {
+    //     dispatch(setDisabledGoal(true))
+    //     dispatch(setWeightGoalError(mess.weightGoalErrMsg(t)))
+    //   } else if (numericValue >= totalWeight) {
+    //     dispatch(setDisabledGoal(true))
+    //     dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
+    //   } else if (totalWeight - numericValue <= 3) {
+    //     dispatch(setDisabledGoal(true))
+    //     dispatch(setWeightGoalError(mess.weightDiffErrMsg(t)))
+    //   } else {
+    //     dispatch(setDisabledGoal(false))
+    //     dispatch(setWeightGoalError(''))
+    //   }
+    // } else {
+    //   dispatch(setGoalImperial(value))
+    //   if (!value) {
+    //     dispatch(setDisabledGoal(true))
+    //   } else if (
+    //     isNaN(numericValue) ||
+    //     numericValue < 90 ||
+    //     numericValue > 550
+    //   ) {
+    //     dispatch(setDisabledGoal(true))
+    //     dispatch(setWeightGoalError(mess.weightGoalImpErrMsg(t)))
+    //   } else if (numericValue >= totalWeightLbs) {
+    //     dispatch(setDisabledGoal(true))
+    //     dispatch(setWeightGoalError(mess.weightHigherErrMsg(t)))
+    //   } else if (totalWeightLbs - numericValue <= 6) {
+    //     dispatch(setWeightGoalError(mess.weightDiffImpErrMsg(t)))
+    //   } else {
+    //     dispatch(setDisabledGoal(false))
+    //     dispatch(setWeightGoalError(''))
+    //   }
+    // }
 
     let percentNumber: string
 
@@ -114,21 +161,22 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
     function dispatchVerdict(): void {
       const percent = percentNumber
 
-      if (+percent >= 98.9) {
+      if (+percent <= 1) {
         dispatch(setVerdict(''))
         dispatch(setDisabledGoal(true))
-      } else if (+percent >= 95) {
+      } else if (+percent <= 60) {
         dispatch(setVerdict(t('answer1', { percentNumber })))
         dispatch(setDisabledGoal(false))
-      } else if (+percent >= 92) {
+      } else if (+percent <= 70) {
         dispatch(setVerdict(t('answer2', { percentNumber })))
         dispatch(setDisabledGoal(false))
-      } else if (+percent >= 16) {
+      } else if (+percent <= 84) {
         dispatch(setVerdict(t('answer4', { percentNumber })))
         dispatch(setDisabledGoal(false))
       } else {
         dispatch(setDisabledGoal(true))
       }
+      console.log(percent)
     }
     dispatchVerdict()
   }
