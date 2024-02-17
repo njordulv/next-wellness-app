@@ -1,8 +1,15 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
+import {
+  GiLifeInTheBalance,
+  GiTennisRacket,
+  GiRunningShoe,
+  GiTrophyCup,
+  GiNothingToSay,
+} from 'react-icons/gi'
 import { useSelector, useDispatch } from '@/store/store'
 import {
   setGoal,
@@ -40,6 +47,7 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const totalWeight = useSelector(selectTotalKg)
   const totalWeightLbs = totalWeight * 2.20462
   const cursorOnInput = useRef<HTMLInputElement>(null)
+  const [Icon, setIcon] = useState(() => GiNothingToSay)
 
   useEffect(() => {
     cursorOnInput.current?.focus()
@@ -48,7 +56,6 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
   const goalHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     const numericValue = parseFloat(value)
-
     let isValid = true
 
     if (isMetric) {
@@ -126,15 +133,23 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
       const percent = percentNumber
 
       if (+percent <= 1) {
+        setIcon(() => GiNothingToSay)
         dispatch(setVerdict(''))
         dispatch(setDisabledGoal(true))
-      } else if (+percent <= 60) {
+      } else if (+percent <= 6) {
+        setIcon(() => GiLifeInTheBalance)
         dispatch(setVerdict(t('answer1', { percentNumber })))
         dispatch(setDisabledGoal(false))
-      } else if (+percent <= 70) {
+      } else if (+percent <= 12) {
+        setIcon(() => GiTennisRacket)
         dispatch(setVerdict(t('answer2', { percentNumber })))
         dispatch(setDisabledGoal(false))
-      } else if (+percent <= 84) {
+      } else if (+percent <= 21) {
+        setIcon(() => GiRunningShoe)
+        dispatch(setVerdict(t('answer3', { percentNumber })))
+        dispatch(setDisabledGoal(false))
+      } else if (+percent <= 100) {
+        setIcon(() => GiTrophyCup)
         dispatch(setVerdict(t('answer4', { percentNumber })))
         dispatch(setDisabledGoal(false))
       } else {
@@ -179,7 +194,10 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
         </button>
       </form>
       {verdict && (
-        <div className={`${styles.weightInfo} ${styles.active}`}>{verdict}</div>
+        <div className={`${styles.weightInfo} ${styles.active}`}>
+          <Icon className={styles.weightIcon} />
+          <div>{verdict}</div>
+        </div>
       )}
     </>
   )

@@ -103,24 +103,56 @@
 }
 
 .weightInfo {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  align-items: center;
   font-size: 13px;
   line-height: 20px;
   text-align: left;
   background-color: var(--background-darker);
   padding: 20px;
   border-radius: 10px;
-  gap: 20px;
   transition: all 0.25s ease;
   opacity: 0;
   box-sizing: border-box;
   min-height: 100px;
   width: 100%;
   margin: 30px auto;
+
+  &.active {
+    opacity: 1;
+  }
 }
 
-.weightInfo.active {
-  opacity: 1;
+.weightIcon {
+  font-size: 40px;
+  mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.7) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.7) 70%
+  );
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.7) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.7) 70%
+  );
+  mask-size: 200%;
+  -webkit-mask-size: 200%;
+  animation: shine 2.2s infinite;
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
