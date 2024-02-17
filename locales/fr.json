@@ -54,10 +54,10 @@
     "weightDiffErrMsg": "La différence de poids doit être supérieure à 3 kilogrammes",
     "weightDiffImpErrMsg": "La différence de poids doit être supérieure à 6 livres",
     "weightValErrMsg": "Quelque chose s'est mal passé, il semble que votre valeur de poids n'est pas définie",
-    "answer1": "Un objectif pratique est de perdre {percentNumber}% de votre poids. Vous pouvez assurer votre santé et bien-être général sur le long terme en régulant avec succès votre poids. Selon les directives du CDC (Centres pour le Contrôle et la Prévention des Maladies), perdre 4 kilogrammes par mois est considéré comme un plan de perte de poids sûr et sensé.",
-    "answer2": "Un objectif simple et facile est de perdre {percentNumber}% de votre poids. Vous pouvez augmenter votre énergie et améliorer la qualité de votre sommeil par une activité physique régulière. D'après des études réalisées par l'Université de l'Utah, même des séances d'exercice quotidiennes de 5 minutes peuvent produire des améliorations significatives globalement !",
-    "answer3": "Un but simple et gérable est de perdre {percentNumber}% de votre poids. Vous pouvez amplifier votre énergie et améliorer votre sommeil en intégrant une activité physique dans votre routine quotidienne. La recherche effectuée à l'Université de l'Utah a démontré que même de courtes séances d'exercice de 5 minutes chaque jour peuvent générer des améliorations substantielles !",
-    "answer4": "Un objectif exigeant est de perdre {percentNumber}% de votre poids. Les personnes en surpoids qui réussissent à perdre plus de 20% de leur masse corporelle totale ont tendance à jouir d'une santé améliorée et d'une plus grande satisfaction de vie, comparées à celles qui ne perdent que 10% ou moins."
+    "answer1": "Objectif : perdre {percentNumber}% de poids pour une santé durable. Les directives du CDC suggèrent qu'une perte jusqu'à 4 kg par mois est sûre et efficace.",
+    "answer2": "Cible : une perte de poids de {percentNumber}% pour augmenter l'énergie et améliorer le sommeil. Les études montrent que des exercices quotidiens de 5 minutes font une grande différence.",
+    "answer3": "Objectif : Réduire le poids de {percentNumber}% pour plus d'énergie et un meilleur sommeil grâce à des exercices quotidiens rapides, comme le montre la recherche de l'Université de l'Utah.",
+    "answer4": "Défi : Perdre {percentNumber}% de votre poids. Une perte significative de plus de 20% conduit à une meilleure santé et une plus grande satisfaction dans la vie."
   },
   "Results": {
     "yourBMI": "Votre IMC est ",

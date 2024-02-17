@@ -26,7 +26,7 @@ const StepBack = () => {
 
   return (
     <IoArrowBackCircleOutline
-      className="absolute flex left-[92px] text-[27px] cursor-pointer hover:text-blue transition-all active:scale-90"
+      className="absolute flex left-[88px] text-[27px] cursor-pointer hover:text-blue transition-all active:scale-90"
       onClick={backHandler}
     />
   )

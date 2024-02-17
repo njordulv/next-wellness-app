@@ -54,10 +54,10 @@
     "weightDiffErrMsg": "The difference in weight must be greater than 3 kilograms",
     "weightDiffImpErrMsg": "The difference in weight must be greater than 6 pounds",
     "weightValErrMsg": "Something went wrong, it looks like your weight value isn't set",
-    "answer1": "A practical objective is to lose {percentNumber}% of your weight. You can ensure your overall health and wellness over the long run by successfully regulating your weight. As per the guidance from the CDC (Centers for Disease Control and Prevention), losing 4 kilograms per month is viewed as a safe and sensible weight loss plan.",
-    "answer2": "A straightforward and easy objective is to lose {percentNumber}% of your weight. You can increase your energy and improve sleep quality through regular physical activity. Based on studies done by the University of Utah, even 5-minute exercise sessions done daily can produce meaningful improvements overall!",
-    "answer3": "An uncomplicated and manageable aim is to lose {percentNumber}% of your weight. You can amplify your energy and make your sleep better by incorporating physical activity into your daily routine. Research performed at the University of Utah demonstrated that even quick 5-minute exercise sessions done every day can generate substantial improvements!",
-    "answer4": "A demanding objective is to lose {percentNumber}% of your weight. People who are overweight and succeed in losing over 20% of their total body mass tend to enjoy enhanced health and greater life fulfillment, compared to those who only lose 10% or less."
+    "answer1": "Aim to lose {percentNumber}% weight for lasting health. CDC guidelines suggest losing up to 4 kg monthly is safe and effective.",
+    "answer2": "Target a {percentNumber}% weight loss to boost energy and improve sleep. Studies show even 5-minute daily exercises make a big difference.",
+    "answer3": "Goal: Reduce weight by {percentNumber}% for better energy and sleep through daily quick exercises, as research by the University of Utah shows.",
+    "answer4": "Challenge: Lose {percentNumber}% of your weight. Significant loss over 20% leads to improved health and greater satisfaction in life."
   },
   "Results": {
     "yourBMI": "Your BMI is ",

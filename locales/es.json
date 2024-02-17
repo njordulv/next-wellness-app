@@ -54,10 +54,10 @@
     "weightDiffErrMsg": "La diferencia de peso debe ser mayor a 3 kilogramos",
     "weightDiffImpErrMsg": "La diferencia de peso debe ser mayor a 6 libras",
     "weightValErrMsg": "Algo salió mal, parece que tu valor de peso no está establecido",
-    "answer1": "Un objetivo práctico es perder el {percentNumber}% de tu peso. Puedes asegurar tu salud y bienestar a largo plazo regulando exitosamente tu peso. Según la guía del CDC (Centros para el Control y la Prevención de Enfermedades), perder 4 kilogramos por mes se considera un plan de pérdida de peso seguro y sensato.",
-    "answer2": "Un objetivo simple y fácil es perder el {percentNumber}% de tu peso. Puedes aumentar tu energía y mejorar la calidad del sueño mediante actividad física regular. Basado en estudios realizados por la Universidad de Utah, incluso sesiones de ejercicio de 5 minutos al día pueden producir mejoras significativas en general.",
-    "answer3": "Un objetivo sencillo y manejable es perder el {percentNumber}% de tu peso. Puedes aumentar tu energía y mejorar tu sueño incorporando actividad física en tu rutina diaria. Investigaciones realizadas en la Universidad de Utah demostraron que incluso sesiones de ejercicio rápidas de 5 minutos al día pueden generar mejoras sustanciales.",
-    "answer4": "Un objetivo exigente es perder el {percentNumber}% de tu peso. Las personas con sobrepeso que logran perder más del 20% de su masa corporal total tienden a disfrutar de una salud mejorada y una mayor satisfacción con la vida, en comparación con aquellos que solo pierden el 10% o menos."
+    "answer1": "Meta: perder {percentNumber}% de peso para una salud a largo plazo. Las guías del CDC sugieren que perder hasta 4 kg mensuales es seguro y efectivo.",
+    "answer2": "Objetivo: una pérdida de peso del {percentNumber}% para aumentar energía y mejorar el sueño. Estudios indican que ejercicios diarios de 5 minutos marcan una gran diferencia.",
+    "answer3": "Meta: Reducir el peso en un {percentNumber}% para mejorar energía y sueño con ejercicios rápidos diarios, según investigaciones de la Universidad de Utah.",
+    "answer4": "Desafío: Perder {percentNumber}% de tu peso. Una pérdida significativa de más del 20% mejora la salud y la satisfacción vital."
   },
   "Results": {
     "yourBMI": "Tu IMC es ",

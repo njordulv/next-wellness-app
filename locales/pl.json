@@ -54,10 +54,10 @@
     "weightDiffErrMsg": "Różnica w wadze musi być większa niż 3 kilogramy",
     "weightDiffImpErrMsg": "Różnica w wadze musi być większa niż 6 funtów",
     "weightValErrMsg": "Coś poszło nie tak, wygląda na to, że twoja wartość wagi nie jest ustawiona",
-    "answer1": "Praktycznym celem jest utrata {percentNumber}% twojej wagi. Możesz zapewnić sobie ogólne zdrowie i dobre samopoczucie na dłuższą metę, skutecznie regulując swoją wagę. Zgodnie z zaleceniami CDC (Centers for Disease Control and Prevention), utrata 4 kilogramów miesięcznie jest uznawana za bezpieczny i rozsądny plan odchudzania.",
-    "answer2": "Prostym i łatwym celem jest utrata {percentNumber}% twojej wagi. Możesz zwiększyć swoją energię i poprawić jakość snu dzięki regularnej aktywności fizycznej. Na podstawie badań przeprowadzonych przez University of Utah, nawet 5-minutowe sesje ćwiczne wykonywane codziennie mogą przynieść znaczące poprawy!",
-    "answer3": "Nieskomplikowanym i łatwym do zarządzania celem jest utrata {percentNumber}% twojej wagi. Możesz zwiększyć swoją energię i poprawić jakość snu, włączając do swojej codziennej rutyny aktywność fizyczną. Badania przeprowadzone na University of Utah wykazały, że nawet krótkie 5-minutowe sesje ćwiczeń każdego dnia mogą przynieść znaczące korzyści!",
-    "answer4": "Wymagającym celem jest utrata {percentNumber}% twojej wagi. Osoby z nadwagą, które odnoszą sukces w utracie ponad 20% swojej całkowitej masy ciała, zazwyczaj cieszą się lepszym zdrowiem i większym zadowoleniem z życia, w porównaniu do tych, którzy tracą 10% lub mniej."
+    "answer1": "Cel: stracić {percentNumber}% masy ciała dla długotrwałego zdrowia. Według CDC, bezpieczne jest tracenie do 4 kg miesięcznie.",
+    "answer2": "Cel: redukcja wagi o {percentNumber}% zwiększa energię i poprawia jakość snu. Badania pokazują, że codzienne 5-minutowe ćwiczenia robią dużą różnicę.",
+    "answer3": "Cel: Obniżenie wagi o {percentNumber}% dla lepszej energii i snu przez codzienne krótkie ćwiczenia, jak pokazują badania Uniwersytetu w Utah.",
+    "answer4": "Wyzwanie: Zgubić {percentNumber}% swojej wagi. Znacząca utrata ponad 20% masy ciała prowadzi do poprawy zdrowia i większego zadowolenia z życia."
   },
   "Results": {
     "yourBMI": "Twoje BMI wynosi ",
