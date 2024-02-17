@@ -3,12 +3,10 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { useLocale } from 'next-intl'
-import { IoChevronDown } from 'react-icons/io5'
+import { MdGTranslate } from 'react-icons/md'
 import { locales } from '@/config'
 
 const LocaleSwitch: React.FC = () => {
-  const locale = useLocale()
   const pathName = usePathname()
   const [isActive, setIsActive] = useState(false)
 
@@ -50,26 +48,23 @@ const LocaleSwitch: React.FC = () => {
       <div
         className="flex gap-[1px] items-center cursor-pointer hover:text-blue trans active:scale-90"
         onClick={handleSelectClick}
+        title="Language"
       >
-        <span>{locale}</span>
-        <IoChevronDown />
+        <MdGTranslate className="text-[22px]" />
       </div>
       {isActive && (
         <ul className="options">
           {locales.map((locale) => (
             <li
               key={locale}
-              className="option"
+              className={
+                pathName == redirectedPathName(locale)
+                  ? 'option active'
+                  : 'option'
+              }
               onClick={() => handleOptionClick()}
             >
-              <Link
-                href={redirectedPathName(locale)}
-                className={
-                  pathName == redirectedPathName(locale)
-                    ? 'option-text active'
-                    : 'option-text'
-                }
-              >
+              <Link href={redirectedPathName(locale)} className="option-text">
                 {locale}
               </Link>
             </li>

@@ -11,7 +11,10 @@ export default function ThemeSwitch() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <div className="flex text-2xl cursor-pointer hover:text-blue transition-all active:scale-90">
+    <div
+      className="flex text-2xl cursor-pointer hover:text-blue trans active:scale-90"
+      title={resolvedTheme === 'dark' ? 'Light Theme' : 'Dark Theme'}
+    >
       {!mounted ? (
         <IoInvertMode />
       ) : resolvedTheme === 'dark' ? (
