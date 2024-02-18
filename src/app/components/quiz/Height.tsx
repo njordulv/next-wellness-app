@@ -19,11 +19,7 @@ import MeasureSwitch from '@/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
-interface QuizHeightProps {
-  title: string
-}
-
-const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
+const QuizHeight: React.FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
@@ -72,7 +68,6 @@ const QuizHeight: React.FC<QuizHeightProps> = ({ title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
       <MeasureSwitch />
       {isMetric ? (
         <form onSubmit={continueHandler} className={styles.heightForm}>

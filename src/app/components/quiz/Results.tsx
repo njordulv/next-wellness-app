@@ -5,29 +5,27 @@ import { useTranslations, useLocale } from 'next-intl'
 import { useSelector, useDispatch } from '@/store/store'
 import { useState, useEffect } from 'react'
 import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri'
+import { GiWeightScale } from 'react-icons/gi'
+import { FaThumbsUp } from 'react-icons/fa'
+import { FaWeightScale } from 'react-icons/fa6'
+import { IoWarning } from 'react-icons/io5'
 import {
   setActive,
   selectActive,
   selectInputHeight,
   selectInputWeight,
-  selectWeightImperial,
   selectTotalCm,
   selectTotalKg,
 } from '@/store/slices/formSlice'
 import { BMI } from '@/utils/healthMetrics'
 import styles from '@/styles/results.module.scss'
 
-interface ResultsProps {
-  title: string
-}
-
-const Results: React.FC<ResultsProps> = ({ title }) => {
+const Results: React.FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations('Results')
   const active = useSelector(selectActive)
-  const weightImperial = useSelector(selectWeightImperial)
   const [disabled, setDisabled] = useState(true)
   let inputHeight = useSelector(selectInputHeight)
   let inputWeight = useSelector(selectInputWeight)
@@ -61,6 +59,8 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
         }, delay)
       }
 
+      console.log(activeIndex)
+
       if (isNaN(BMIcurrent)) {
         setDisabled(true)
       } else {
@@ -87,7 +87,6 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
       <div className={styles.bmiContainer}>
         <div className={styles.bmiTop}>
           <span>
@@ -98,7 +97,9 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
               <span style={{ color: '#f26241' }}>{t('incorrect')}</span>
             )}
           </span>
-          <span>{t('normal')} 21.4</span>
+          <span>
+            {t('normal')} <b>21.4</b>
+          </span>
         </div>
         <div className={styles.bmiProgressBar}>
           <span
@@ -141,31 +142,51 @@ const Results: React.FC<ResultsProps> = ({ title }) => {
         </div>
       </div>
       {BMIcurrent <= 18.4 && (
-        <div className={styles.bmiText}>
-          <p>{t('underText1')}</p>
-          <p>{t('underText2')}</p>
-          <p>{t('underText3')}</p>
+        <div className={`${styles.bmiText} bg-amber-200 text-black`}>
+          <GiWeightScale className="text-4xl" />
+          <div>
+            <p>
+              <b>{t('underText1')}</b>
+            </p>
+            <p>{t('underText2')}</p>
+            <p>{t('underText3')}</p>
+          </div>
         </div>
       )}
       {BMIcurrent >= 18.5 && BMIcurrent <= 24.9 && (
-        <div className={styles.bmiText}>
-          <p>{t('normalText1')}</p>
-          <p>{t('normalText2')}</p>
-          <p>{t('normalText3')}</p>
+        <div className={`${styles.bmiText} bg-customBlue text-white`}>
+          <FaThumbsUp className="text-4xl" />
+          <div>
+            <p>
+              <b>{t('normalText1')}</b>
+            </p>
+            <p>{t('normalText2')}</p>
+            <p>{t('normalText3')}</p>
+          </div>
         </div>
       )}
       {BMIcurrent >= 25 && BMIcurrent <= 39.9 && (
-        <div className={styles.bmiText}>
-          <p>{t('overText1')}</p>
-          <p>{t('overText2')}</p>
-          <p>{t('overText3')}</p>
+        <div className={`${styles.bmiText} bg-amber-200 text-slate-900`}>
+          <FaWeightScale className="text-4xl" />
+          <div>
+            <p>
+              <b>{t('overText1')}</b>
+            </p>
+            <p>{t('overText2')}</p>
+            <p>{t('overText3')}</p>
+          </div>
         </div>
       )}
       {BMIcurrent >= 40 && (
-        <div className={styles.bmiText}>
-          <p>{t('obeseText1')}</p>
-          <p>{t('obeseText2')}</p>
-          <p>{t('obeseText3')}</p>
+        <div className={`${styles.bmiText} bg-red text-slate-900`}>
+          <IoWarning className="text-4xl" />
+          <div>
+            <p>
+              <b>{t('obeseText1')}</b>
+            </p>
+            <p>{t('obeseText2')}</p>
+            <p>{t('obeseText3')}</p>
+          </div>
         </div>
       )}
       {isNaN(BMIcurrent) && (

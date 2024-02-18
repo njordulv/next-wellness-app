@@ -1,19 +1,38 @@
 .bmiText {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 20px;
+  border-radius: 8px;
   text-align: left;
-  font-size: 15px;
+  margin-bottom: 30px;
+  justify-items: center;
+
+  b {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 0;
+    & + p {
+      margin-top: 8px;
+    }
+  }
 }
 
 .bmiTextError {
+  background-color: var(--background-darker);
   color: var(--red);
   margin-bottom: 25px;
   text-align: center;
 }
 
 .bmiTextSmall {
-  padding: 20px;
-  background: linear-gradient(to left, var(--gradient-2));
   color: var(--white);
-  border-radius: 8px;
   text-align: left;
 }
 
@@ -46,7 +65,7 @@
 }
 
 .bmiNormal {
-  background-color: var(--green);
+  background-color: #00bbcb;
   color: var(--black);
 }
 
@@ -69,9 +88,9 @@
   background: linear-gradient(
     60deg,
     khaki 0%,
-    var(--yellow) 20%,
-    var(--green) 26%,
-    var(--green) 47%,
+    #dedf40 20%,
+    #62cb5c 26%,
+    #62cb5c 47%,
     orange 52%,
     orange 74%,
     var(--red) 78%,
@@ -119,12 +138,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 10px;
-  line-height: 14px;
-  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
 
   b {
-    font-size: 13px;
+    font-weight: 600;
     color: var(--purple);
   }
 }
@@ -150,14 +169,10 @@
     flex-direction: row;
     align-items: center;
     min-height: 20px;
+    padding: 3px 0;
     transition: all 0.3s ease;
     border-radius: 8px;
     letter-spacing: 0.3px;
-
-    &.bmiVariant {
-      background-color: var(--background);
-    }
-
     &:before {
       content: '';
       position: absolute;
@@ -169,6 +184,9 @@
       border-radius: 50%;
       display: inline-block;
       border: 2px solid var(--black);
+    }
+    &.bmiVariant {
+      background-color: var(--background);
     }
 
     strong {

@@ -20,11 +20,7 @@ import MeasureSwitch from '@/components/switcher/MeasureSwitch'
 import * as mess from '@/utils/messages'
 import styles from '@/styles/main.module.scss'
 
-interface QuizWeightProps {
-  title: string
-}
-
-const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
+const QuizWeight: React.FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
@@ -93,7 +89,6 @@ const QuizWeight: React.FC<QuizWeightProps> = ({ title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
       <MeasureSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>

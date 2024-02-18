@@ -30,6 +30,7 @@ module.exports = {
         dark: 'var(--dark)',
         grey: 'var(--grey)',
         customGreen: '#00b67a',
+        customBlue: '#00bbcb',
       },
     },
   },

@@ -33,7 +33,7 @@ interface QuizWeightGoalProps {
   title: string
 }
 
-const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
+const QuizWeightGoal: React.FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const locale = useLocale()
@@ -167,7 +167,6 @@ const QuizWeightGoal: React.FC<QuizWeightGoalProps> = ({ title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
       <MeasureSwitch />
       <form onSubmit={continueHandler} className={styles.weightForm}>
         <div className={styles.inputField}>

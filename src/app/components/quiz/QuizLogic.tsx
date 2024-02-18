@@ -38,17 +38,15 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
     <>
       {currentQuiz ? (
         <PageLayoutWithoutTitle>
-          <>
-            <QuizTemplate
-              heading={currentQuiz.heading}
-              options={currentQuiz.options}
-              path={nextPage ? nextPage.slug : '/quiz/results'}
-            />
-            {params.quizSlug === 'height' && <Height title="" />}
-            {params.quizSlug === 'weight' && <Weight title="" />}
-            {params.quizSlug === 'weight-goal' && <WeightGoal title="" />}
-            {params.quizSlug === 'results' && <Results title="" />}
-          </>
+          <QuizTemplate
+            heading={currentQuiz.heading}
+            options={currentQuiz.options}
+            path={nextPage ? nextPage.slug : '/quiz/results'}
+          />
+          {params.quizSlug === 'height' && <Height />}
+          {params.quizSlug === 'weight' && <Weight />}
+          {params.quizSlug === 'weight-goal' && <WeightGoal />}
+          {params.quizSlug === 'results' && <Results />}
         </PageLayoutWithoutTitle>
       ) : (
         notFound()
