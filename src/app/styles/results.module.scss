@@ -1,4 +1,5 @@
 .bmiText {
+  background-color: var(--background-darker);
   display: grid;
   grid-template-columns: 1fr 10fr;
   grid-template-rows: 1fr;
@@ -6,7 +7,7 @@
   font-size: 13px;
   line-height: 16px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: left;
   margin-bottom: 30px;
   justify-items: center;
@@ -22,17 +23,35 @@
       margin-top: 8px;
     }
   }
+
+  svg {
+    mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 0.8) 30%,
+      #000 50%,
+      rgba(0, 0, 0, 0.8) 70%
+    );
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 0.8) 30%,
+      #000 50%,
+      rgba(0, 0, 0, 0.8) 70%
+    );
+    mask-size: 200%;
+    -webkit-mask-size: 200%;
+    animation: shine 2.2s infinite;
+  }
 }
 
 .bmiTextError {
+  display: flex;
+  justify-content: center;
   background-color: var(--background-darker);
   color: var(--red);
   margin-bottom: 25px;
-  text-align: center;
 }
 
 .bmiTextSmall {
-  color: var(--white);
   text-align: left;
 }
 
@@ -65,7 +84,7 @@
 }
 
 .bmiNormal {
-  background-color: #00bbcb;
+  background-color: #62cb5c;
   color: var(--black);
 }
 
@@ -200,5 +219,15 @@
 @keyframes moveRight {
   from {
     left: 0;
+  }
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
   }
 }

@@ -44,22 +44,23 @@ const Results: React.FC = () => {
       let activeIndex: number = 0
 
       if (BMIcurrent <= 18.4) {
-        activeIndex = 0
-      } else if (BMIcurrent >= 18.5 && BMIcurrent <= 24.9) {
         activeIndex = 1
-      } else if (BMIcurrent >= 25 && BMIcurrent <= 39.9) {
+      } else if (BMIcurrent >= 18.5 && BMIcurrent <= 24.9) {
         activeIndex = 2
-      } else if (BMIcurrent > 40) {
+      } else if (BMIcurrent >= 25 && BMIcurrent <= 39.9) {
         activeIndex = 3
+      } else if (BMIcurrent > 40) {
+        activeIndex = 4
+      } else {
+        activeIndex = 0
       }
+      console.log(activeIndex)
 
       if (activeIndex !== 0) {
         setTimeout(() => {
           dispatch(setActive(activeIndex))
         }, delay)
       }
-
-      console.log(activeIndex)
 
       if (isNaN(BMIcurrent)) {
         setDisabled(true)
@@ -111,38 +112,27 @@ const Results: React.FC = () => {
           </span>
         </div>
         <div className={styles.bmiBottom}>
+          {active === 0 && ''}
           <span
-            className={
-              active === 0 ? `${styles.bmiUnderweight}` : `${styles.bmiVariant}`
-            }
+            className={active === 1 ? styles.bmiUnderweight : styles.bmiVariant}
           >
             <strong>{t('underweight')}</strong>
           </span>
-          <span
-            className={
-              active === 1 ? `${styles.bmiNormal}` : `${styles.bmiVariant}`
-            }
-          >
+          <span className={active === 2 ? styles.bmiNormal : styles.bmiVariant}>
             <strong>{t('normal')}</strong>
           </span>
           <span
-            className={
-              active === 2 ? `${styles.bmiOverweight}` : `${styles.bmiVariant}`
-            }
+            className={active === 3 ? styles.bmiOverweight : styles.bmiVariant}
           >
             <strong>{t('overweight')}</strong>
           </span>
-          <span
-            className={
-              active === 3 ? `${styles.bmiObese}` : `${styles.bmiVariant}`
-            }
-          >
+          <span className={active === 4 ? styles.bmiObese : styles.bmiVariant}>
             <strong>{t('obese')}</strong>
           </span>
         </div>
       </div>
       {BMIcurrent <= 18.4 && (
-        <div className={`${styles.bmiText} bg-amber-200 text-black`}>
+        <div className={`${styles.bmiText} shadow-custom shadow-amber-100`}>
           <GiWeightScale className="text-4xl" />
           <div>
             <p>
@@ -154,7 +144,7 @@ const Results: React.FC = () => {
         </div>
       )}
       {BMIcurrent >= 18.5 && BMIcurrent <= 24.9 && (
-        <div className={`${styles.bmiText} bg-customBlue text-white`}>
+        <div className={`${styles.bmiText} shadow-custom shadow-customGreen`}>
           <FaThumbsUp className="text-4xl" />
           <div>
             <p>
@@ -166,7 +156,7 @@ const Results: React.FC = () => {
         </div>
       )}
       {BMIcurrent >= 25 && BMIcurrent <= 39.9 && (
-        <div className={`${styles.bmiText} bg-amber-200 text-slate-900`}>
+        <div className={`${styles.bmiText} shadow-custom shadow-orange`}>
           <FaWeightScale className="text-4xl" />
           <div>
             <p>
@@ -178,8 +168,8 @@ const Results: React.FC = () => {
         </div>
       )}
       {BMIcurrent >= 40 && (
-        <div className={`${styles.bmiText} bg-red text-slate-900`}>
-          <IoWarning className="text-4xl" />
+        <div className={`${styles.bmiText} shadow-custom shadow-red`}>
+          <IoWarning className="text-4xl text-red" />
           <div>
             <p>
               <b>{t('obeseText1')}</b>

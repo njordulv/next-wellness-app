@@ -42,7 +42,7 @@ const initialState: FormState = {
   goal: '',
   goalImperial: '',
   verdict: '',
-  active: -1,
+  active: 0,
 }
 
 const formSlice = createSlice({
@@ -126,6 +126,7 @@ const formSlice = createSlice({
       state.goalImperial = initialState.goalImperial
       state.verdict = initialState.verdict
       state.weightGoalError = initialState.weightGoalError
+      state.active = initialState.active
     },
   },
 })

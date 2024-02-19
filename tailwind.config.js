@@ -32,6 +32,9 @@ module.exports = {
         customGreen: '#00b67a',
         customBlue: '#00bbcb',
       },
+      boxShadow: {
+        custom: '0 0 35px -15px rgba(0, 0, 0, 1)',
+      },
     },
   },
   plugins: [
