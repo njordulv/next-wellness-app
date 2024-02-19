@@ -37,17 +37,7 @@ import {
   GiInvertedDice5,
 } from 'react-icons/gi'
 
-interface Option {
-  text: string
-  icon?: React.ElementType
-}
-interface QuizPagesData {
-  slug: string
-  title: string
-  description: string
-  heading: string
-  options: Option[]
-}
+import { QuizPagesData } from '../Types'
 
 const quizPagesEn: QuizPagesData[] = [
   {

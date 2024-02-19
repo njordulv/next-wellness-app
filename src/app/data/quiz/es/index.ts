@@ -1,35 +1,67 @@
-interface QuizPagesData {
-  slug: string
-  title: string
-  description: string
-  heading: string
-  options: string[]
-}
+import {
+  GiCommercialAirplane,
+  GiBasketballBall,
+  GiBigDiamondRing,
+  GiIsland,
+  GiFamilyHouse,
+  GiHumanPyramid,
+  GiTomato,
+  GiOrangeSlice,
+  GiDonerKebab,
+  GiMilkCarton,
+  GiGrain,
+  GiHamburger,
+  GiCakeSlice,
+  GiWaterBottle,
+  GiBoba,
+  GiChipsBag,
+  GiBroccoli,
+  GiHotMeal,
+  GiWeightLiftingUp,
+  GiRunningShoe,
+  GiSofa,
+  GiWeightScale,
+  GiBiceps,
+  GiNotebook,
+  GiHealthIncrease,
+  GiMedicines,
+  GiStethoscope,
+  GiKidneys,
+  GiBrokenHeart,
+  GiLindenLeaf,
+  GiCancel,
+  GiInvertedDice1,
+  GiInvertedDice2,
+  GiInvertedDice3,
+  GiInvertedDice4,
+  GiInvertedDice5,
+} from 'react-icons/gi'
+
+import { QuizPagesData } from '../Types'
 
 const quizPagesEs: QuizPagesData[] = [
   {
     slug: 'your-goal',
-    title: 'Cuestionario de Objetivos de Manejo de Peso',
-    description: 'Elige tu objetivo para el manejo del peso.',
-    heading: '¿Cuál es tu objetivo respecto al manejo del peso?',
+    title: 'Cuestionario de Objetivos de Gestión de Peso',
+    description: 'Elige tu meta para la gestión de peso.',
+    heading: '¿Cuál es tu objetivo con respecto a la gestión de peso?',
     options: [
-      'Pérdida de peso',
-      'Ganancia muscular',
-      'Mantener el peso actual',
-      'Mejorar la salud en general',
+      { text: 'Pérdida de peso', icon: GiWeightScale },
+      { text: 'Ganancia muscular', icon: GiBiceps },
+      { text: 'Mantener el peso actual', icon: GiNotebook },
+      { text: 'Mejorar la salud general', icon: GiHealthIncrease },
     ],
   },
   {
     slug: 'full-meals',
     title: 'Cuestionario de Comidas Diarias',
-    description:
-      'Selecciona el número de comidas completas que tienes en un día.',
-    heading: '¿Cuántas comidas completas tienes durante el día?',
+    description: 'Selecciona el número de comidas completas que tienes al día.',
+    heading: '¿Cuántas comidas completas tienes al día?',
     options: [
-      'Tres veces al día',
-      'Más de tres veces al día',
-      'Una vez al día',
-      'Menos de una vez al día',
+      { text: 'Tres veces al día', icon: GiInvertedDice3 },
+      { text: 'Más de tres veces al día', icon: GiInvertedDice5 },
+      { text: 'Una vez al día', icon: GiInvertedDice1 },
+      { text: 'Menos de una vez al día', icon: GiCancel },
     ],
   },
   {
@@ -37,7 +69,13 @@ const quizPagesEs: QuizPagesData[] = [
     title: 'Cuestionario de Alimentos Favoritos',
     description: 'Selecciona tus tipos de alimentos favoritos.',
     heading: '¿Qué tipo de alimentos disfrutas más?',
-    options: ['Verduras', 'Frutas', 'Carne', 'Productos lácteos', 'Granos'],
+    options: [
+      { text: 'Verduras', icon: GiTomato },
+      { text: 'Frutas', icon: GiOrangeSlice },
+      { text: 'Carne', icon: GiDonerKebab },
+      { text: 'Productos lácteos', icon: GiMilkCarton },
+      { text: 'Granos', icon: GiGrain },
+    ],
   },
   {
     slug: 'least-foods',
@@ -45,55 +83,62 @@ const quizPagesEs: QuizPagesData[] = [
     description: 'Elige los tipos de alimentos que menos disfrutas.',
     heading: '¿Qué tipo de alimentos disfrutas menos?',
     options: [
-      'Comida rápida',
-      'Dulces',
-      'Bebidas carbonatadas',
-      'Snacks altos en calorías',
+      { text: 'Comida rápida', icon: GiHamburger },
+      { text: 'Dulces', icon: GiCakeSlice },
+      { text: 'Bebidas carbonatadas', icon: GiBoba },
+      { text: 'Snacks altos en calorías', icon: GiChipsBag },
     ],
   },
   {
     slug: 'loss-plan',
-    title: 'Cuestionario de Plan de Pérdida',
+    title: 'Cuestionario del Plan de Pérdida',
     description: 'Selecciona una de estas condiciones médicas',
     heading:
       '¿Tienes alguna condición médica o restricciones dietéticas que puedan afectar tu plan de pérdida de peso?',
     options: [
-      'No',
-      'Diabetes',
-      'Problemas de tiroides',
-      'Problemas cardiacos',
-      'Problemas renales',
+      { text: 'No', icon: GiCancel },
+      { text: 'Diabetes', icon: GiMedicines },
+      { text: 'Problemas de tiroides', icon: GiStethoscope },
+      { text: 'Problemas cardíacos', icon: GiBrokenHeart },
+      { text: 'Problemas renales', icon: GiKidneys },
     ],
   },
   {
     slug: 'diet',
     title: 'Cuestionario de Dieta',
-    description: 'Selecciona tus métodos de pérdida de peso o dietas',
+    description: 'Selecciona tus métodos de pérdida o dietas',
     heading:
       '¿Qué métodos de pérdida de peso o dietas has probado anteriormente?',
     options: [
-      'Dieta cetogénica',
-      'Dieta baja en carbohidratos',
-      'Ayuno con agua',
-      'Vegetarianismo',
+      { text: 'Dieta Keto', icon: GiBroccoli },
+      { text: 'Dieta baja en carbohidratos', icon: GiHotMeal },
+      { text: 'Ayuno con agua', icon: GiWaterBottle },
+      { text: 'Vegetarianismo', icon: GiLindenLeaf },
     ],
   },
   {
     slug: 'activity',
     title: 'Cuestionario de Actividad',
     description: 'Selecciona tu actividad actual',
-    heading: '¿Actualmente haces ejercicio o eres físicamente activo?',
-    options: ['Sí, regularmente', 'Ocasionalmente', 'No, en absoluto'],
+    heading: '¿Actualmente estás ejercitando o físicamente activo?',
+    options: [
+      { text: 'Sí, regularmente', icon: GiWeightLiftingUp },
+      { text: 'Ocasionalmente', icon: GiRunningShoe },
+      { text: 'No, en absoluto', icon: GiSofa },
+    ],
   },
   {
     slug: 'handling-stress',
-    title: 'Cuestionario de Alimentación Emocional',
-    description: 'Selecciona tu forma de comer emocional',
-    heading: '¿Cómo manejas el estrés y la alimentación emocional?',
+    title: 'Cuestionario de Comer Emocional',
+    description: 'Selecciona tu comer emocional',
+    heading: '¿Cómo manejas el estrés y el comer emocional?',
     options: [
-      'Como más cuando estoy estresado',
-      'Como menos cuando estoy estresado',
-      'El estrés no afecta mi forma de comer',
+      { text: 'Comer más cuando estoy estresado', icon: GiInvertedDice5 },
+      { text: 'Comer menos cuando estoy estresado', icon: GiInvertedDice1 },
+      {
+        text: 'No afectado por el estrés en términos de comer',
+        icon: GiCancel,
+      },
     ],
   },
   {
@@ -102,11 +147,23 @@ const quizPagesEs: QuizPagesData[] = [
     description: 'Selecciona tu nivel de actividad física',
     heading: '¿Cuál es tu nivel de actividad física?',
     options: [
-      'Sedentario (poco o ningún ejercicio)',
-      'Ligeramente activo (ejercicio ligero o deportes 1-3 días a la semana)',
-      'Moderadamente activo (ejercicio moderado o deportes 3-5 días a la semana)',
-      'Muy activo (ejercicio intenso o deportes 6-7 días a la semana)',
-      'Extremadamente activo (ejercicio intenso o entrenamiento dos veces al día)',
+      { text: 'Sedentario (poco o ningún ejercicio)', icon: GiInvertedDice1 },
+      {
+        text: 'Ligeramente activo (ejercicio ligero o deportes 1-3 días a la semana)',
+        icon: GiInvertedDice2,
+      },
+      {
+        text: 'Moderadamente activo (ejercicio moderado o deportes 3-5 días a la semana)',
+        icon: GiInvertedDice3,
+      },
+      {
+        text: 'Muy activo (ejercicio intenso o deportes 6-7 días a la semana)',
+        icon: GiInvertedDice4,
+      },
+      {
+        text: 'Extremadamente activo (ejercicio intenso o entrenamiento dos veces al día)',
+        icon: GiInvertedDice5,
+      },
     ],
   },
   {
@@ -114,13 +171,13 @@ const quizPagesEs: QuizPagesData[] = [
     title: 'Cuestionario de Motivación',
     description: 'Selecciona tu motivación',
     heading:
-      '¿Qué tan motivado estás para hacer cambios en tu dieta y estilo de vida para el manejo del peso?',
+      '¿Cuán motivado estás para hacer cambios en tu dieta y estilo de vida para la gestión de peso?',
     options: [
-      'No estoy motivado en absoluto',
-      'Ligeramente motivado',
-      'Moderadamente motivado',
-      'Altamente motivado',
-      'Extremadamente motivado',
+      { text: 'Nada motivado', icon: GiCancel },
+      { text: 'Ligeramente motivado', icon: GiInvertedDice1 },
+      { text: 'Moderadamente motivado', icon: GiInvertedDice3 },
+      { text: 'Muy motivado', icon: GiInvertedDice4 },
+      { text: 'Extremadamente motivado', icon: GiInvertedDice5 },
     ],
   },
   {
@@ -140,7 +197,7 @@ const quizPagesEs: QuizPagesData[] = [
   {
     slug: 'weight-goal',
     title: 'Cuestionario de Peso Objetivo',
-    description: 'Especifica tu peso objetivo para el manejo del peso',
+    description: 'Especifica tu peso objetivo para la gestión de peso',
     heading: '¿Cuál es tu peso objetivo?',
     options: [],
   },
@@ -148,9 +205,25 @@ const quizPagesEs: QuizPagesData[] = [
     slug: 'results',
     title: 'Resultados del Cuestionario',
     description:
-      'Vista del resumen de tu bienestar general basado en tus respuestas.',
+      'Consulta el resumen de tu bienestar general basado en tus respuestas.',
     heading: 'Un resumen de tu bienestar general',
     options: [],
+  },
+  {
+    slug: 'event',
+    title: 'Cuestionario de Evento',
+    description:
+      'Explora estrategias personalizadas de pérdida de peso para tus próximos eventos.',
+    heading: '¿Quieres perder peso debido a un evento específico próximo?',
+    options: [
+      { text: 'Vacaciones', icon: GiCommercialAirplane },
+      { text: 'Competencia atlética', icon: GiBasketballBall },
+      { text: 'Boda', icon: GiBigDiamondRing },
+      { text: 'Viaje a la costa', icon: GiIsland },
+      { text: 'Evento familiar', icon: GiFamilyHouse },
+      { text: 'Reunión', icon: GiHumanPyramid },
+      { text: 'Ningún evento relacionado', icon: GiCancel },
+    ],
   },
 ]
 
