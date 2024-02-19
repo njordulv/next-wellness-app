@@ -4,7 +4,7 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 ### Features
 
-1. **Quiz Page:** Initiated with a quiz, the app guides users through various questions, collecting crucial data to tailor wellness and health recommendations.
+1. **Quiz Page:** This project involves creating a quiz platform focused on various themes such as weight management, dietary habits, physical activity, and general health. The platform is designed to offer personalized advice based on user responses. Integration of a variety of icons representing different quiz options.
 
 2. **Redux Toolkit Slices:** Efficient state management using Redux Toolkit slices ensures organized data handling across multiple components and pages.
 
@@ -20,7 +20,7 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 8. **Routing and Communication:** Seamless navigation between quiz, variants, height/weight input, and results, with interactive component communication for a smooth user experience.
 
-9. **Navigation:** Users can move across 14 different app pages, including a "Step Back" button for easy navigation.
+9. **Navigation:** Users can move across 15 different app pages, including a "Step Back" button for easy navigation.
 
 10. **Email:** Streamlines user engagement by enabling seamless email registration through API. Featuring dual-layer validation, this function ensures only valid and unique email addresses are captured and stored in PostgreSQL database on Vercel, enhancing data integrity and user experience.
 
