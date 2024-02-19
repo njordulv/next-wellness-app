@@ -36,7 +36,7 @@ const Results: React.FC = () => {
   const delay = 1700
 
   const btnContinueHandler = () => {
-    return router.push(`/${locale}/testimonials`)
+    return router.push(`/${locale}/quiz/event`)
   }
 
   useEffect(() => {

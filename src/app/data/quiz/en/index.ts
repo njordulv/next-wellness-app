@@ -1,9 +1,52 @@
+import {
+  GiCommercialAirplane,
+  GiBasketballBall,
+  GiBigDiamondRing,
+  GiIsland,
+  GiFamilyHouse,
+  GiHumanPyramid,
+  GiTomato,
+  GiOrangeSlice,
+  GiDonerKebab,
+  GiMilkCarton,
+  GiGrain,
+  GiHamburger,
+  GiCakeSlice,
+  GiWaterBottle,
+  GiBoba,
+  GiChipsBag,
+  GiBroccoli,
+  GiHotMeal,
+  GiWeightLiftingUp,
+  GiRunningShoe,
+  GiSofa,
+  GiWeightScale,
+  GiBiceps,
+  GiNotebook,
+  GiHealthIncrease,
+  GiMedicines,
+  GiStethoscope,
+  GiKidneys,
+  GiBrokenHeart,
+  GiLindenLeaf,
+  GiCancel,
+  GiInvertedDice1,
+  GiInvertedDice2,
+  GiInvertedDice3,
+  GiInvertedDice4,
+  GiInvertedDice5,
+} from 'react-icons/gi'
+
+interface Option {
+  text: string
+  icon?: React.ElementType
+}
 interface QuizPagesData {
   slug: string
   title: string
   description: string
   heading: string
-  options: string[]
+  options: Option[]
 }
 
 const quizPagesEn: QuizPagesData[] = [
@@ -13,10 +56,10 @@ const quizPagesEn: QuizPagesData[] = [
     description: 'Choose your goal for weight management.',
     heading: 'What is your goal with regard to weight management?',
     options: [
-      'Weight loss',
-      'Muscle gain',
-      'Maintaining current weight',
-      'Improving overall health',
+      { text: 'Weight loss', icon: GiWeightScale },
+      { text: 'Muscle gain', icon: GiBiceps },
+      { text: 'Maintaining current weight', icon: GiNotebook },
+      { text: 'Improving overall health', icon: GiHealthIncrease },
     ],
   },
   {
@@ -25,10 +68,10 @@ const quizPagesEn: QuizPagesData[] = [
     description: 'Select the number of full meals you have in a day.',
     heading: 'How many full meals do you have during the day?',
     options: [
-      'Three times a day',
-      'More than three times a day',
-      'Once a day',
-      'Less than once a day',
+      { text: 'Three times a day', icon: GiInvertedDice3 },
+      { text: 'More than three times a day', icon: GiInvertedDice5 },
+      { text: 'Once a day', icon: GiInvertedDice1 },
+      { text: 'Less than once a day', icon: GiCancel },
     ],
   },
   {
@@ -36,7 +79,13 @@ const quizPagesEn: QuizPagesData[] = [
     title: 'Favorite Foods Quiz',
     description: 'Select your favorite types of foods.',
     heading: 'What type of foods do you enjoy the most?',
-    options: ['Vegetables', 'Fruits', 'Meat', 'Dairy products', 'Grains'],
+    options: [
+      { text: 'Vegetables', icon: GiTomato },
+      { text: 'Fruits', icon: GiOrangeSlice },
+      { text: 'Meat', icon: GiDonerKebab },
+      { text: 'Dairy products', icon: GiMilkCarton },
+      { text: 'Grains', icon: GiGrain },
+    ],
   },
   {
     slug: 'least-foods',
@@ -44,10 +93,10 @@ const quizPagesEn: QuizPagesData[] = [
     description: 'Choose the types of foods you enjoy the least.',
     heading: 'What type of foods do you enjoy the least?',
     options: [
-      'Fast food',
-      'Sweets',
-      'Carbonated beverages',
-      'High-calorie snacks',
+      { text: 'Fast food', icon: GiHamburger },
+      { text: 'Sweets', icon: GiCakeSlice },
+      { text: 'Carbonated beverages', icon: GiBoba },
+      { text: 'High-calorie snacks', icon: GiChipsBag },
     ],
   },
   {
@@ -57,11 +106,11 @@ const quizPagesEn: QuizPagesData[] = [
     heading:
       'Do you have any medical conditions or dietary restrictions that may affect your weight loss plan?',
     options: [
-      'No',
-      'Diabetes',
-      'Thyroid issues',
-      'Heart problems',
-      'Kidney problems',
+      { text: 'No', icon: GiCancel },
+      { text: 'Diabetes', icon: GiMedicines },
+      { text: 'Thyroid issues', icon: GiStethoscope },
+      { text: 'Heart problems', icon: GiBrokenHeart },
+      { text: 'Kidney problems', icon: GiKidneys },
     ],
   },
   {
@@ -69,14 +118,23 @@ const quizPagesEn: QuizPagesData[] = [
     title: 'Diet Quiz',
     description: 'Select your loss methods or diets',
     heading: 'Which weight loss methods or diets have you previously tried?',
-    options: ['Keto diet', 'Low-carb diet', 'Water fasting', 'Vegetarianism'],
+    options: [
+      { text: 'Keto diet', icon: GiBroccoli },
+      { text: 'Low-carb diet', icon: GiHotMeal },
+      { text: 'Water fasting', icon: GiWaterBottle },
+      { text: 'Vegetarianism', icon: GiLindenLeaf },
+    ],
   },
   {
     slug: 'activity',
     title: 'Activity Quiz',
     description: 'Select your currently activity',
     heading: 'Are you currently exercising or physically active?',
-    options: ['Yes, regularly', 'Occasionally', 'No, not at all'],
+    options: [
+      { text: 'Yes, regularly', icon: GiWeightLiftingUp },
+      { text: 'Occasionally', icon: GiRunningShoe },
+      { text: 'No, not at all', icon: GiSofa },
+    ],
   },
   {
     slug: 'handling-stress',
@@ -84,9 +142,9 @@ const quizPagesEn: QuizPagesData[] = [
     description: 'Select your emotional eating',
     heading: 'How do you handle stress and emotional eating?',
     options: [
-      'Eat more when stressed',
-      'Eat less when stressed',
-      'Not affected by stress in terms of eating',
+      { text: 'Eat more when stressed', icon: GiInvertedDice5 },
+      { text: 'Eat less when stressed', icon: GiInvertedDice1 },
+      { text: 'Not affected by stress in terms of eating', icon: GiCancel },
     ],
   },
   {
@@ -95,11 +153,23 @@ const quizPagesEn: QuizPagesData[] = [
     description: 'Select your level of physical activity',
     heading: 'What is your level of physical activity?',
     options: [
-      'Sedentary (little to no exercise)',
-      'Lightly active (light exercise or sports 1-3 days a week)',
-      'Moderately active (moderate exercise or sports 3-5 days a week)',
-      'Very active (hard exercise or sports 6-7 days a week)',
-      'Extremely active (hard exercise or training twice a day)',
+      { text: 'Sedentary (little to no exercise)', icon: GiInvertedDice1 },
+      {
+        text: 'Lightly active (light exercise or sports 1-3 days a week)',
+        icon: GiInvertedDice2,
+      },
+      {
+        text: 'Moderately active (moderate exercise or sports 3-5 days a week)',
+        icon: GiInvertedDice3,
+      },
+      {
+        text: 'Very active (hard exercise or sports 6-7 days a week)',
+        icon: GiInvertedDice4,
+      },
+      {
+        text: 'Extremely active (hard exercise or training twice a day)',
+        icon: GiInvertedDice5,
+      },
     ],
   },
   {
@@ -109,11 +179,11 @@ const quizPagesEn: QuizPagesData[] = [
     heading:
       'How motivated are you to make changes to your diet and lifestyle for weight management?',
     options: [
-      'Not motivated at all',
-      'Slightly motivated',
-      'Moderately motivated',
-      'Highly motivated',
-      'Extremely motivated',
+      { text: 'Not motivated at all', icon: GiCancel },
+      { text: 'Slightly motivated', icon: GiInvertedDice1 },
+      { text: 'Moderately motivated', icon: GiInvertedDice3 },
+      { text: 'Highly motivated', icon: GiInvertedDice4 },
+      { text: 'Extremely motivated', icon: GiInvertedDice5 },
     ],
   },
   {
@@ -144,6 +214,22 @@ const quizPagesEn: QuizPagesData[] = [
       'View the recap of your general well-being based on your answers.',
     heading: 'A recap of your general well-being',
     options: [],
+  },
+  {
+    slug: 'event',
+    title: 'Event Quiz',
+    description:
+      'Explore personalized weight loss strategies tailored for your upcoming events.',
+    heading: 'Do you want to lose weight due to a specific upcomming event?',
+    options: [
+      { text: 'Holiday', icon: GiCommercialAirplane },
+      { text: 'Athletic competition', icon: GiBasketballBall },
+      { text: 'Wedding', icon: GiBigDiamondRing },
+      { text: 'Seaside journey', icon: GiIsland },
+      { text: 'Family event', icon: GiFamilyHouse },
+      { text: 'Gathering', icon: GiHumanPyramid },
+      { text: 'None related events', icon: GiCancel },
+    ],
   },
 ]
 

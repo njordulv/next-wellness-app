@@ -23,7 +23,9 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
   const dispatch = useDispatch()
   const quizPages = getQuizPagesByLocale(params.locale)
   const quizTotal = quizPages.length
-  const currentQuiz = quizPages.find((page) => page.slug === params.quizSlug)
+  const currentQuiz: any = quizPages.find(
+    (page) => page.slug === params.quizSlug
+  )
   const currentIndex = currentQuiz ? quizPages.indexOf(currentQuiz) + 1 : 0
   const nextIndex = currentIndex + 1
   const hasNextPage = nextIndex <= quizTotal
@@ -41,7 +43,7 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
           <QuizTemplate
             heading={currentQuiz.heading}
             options={currentQuiz.options}
-            path={nextPage ? nextPage.slug : '/quiz/results'}
+            path={nextPage ? nextPage.slug : `/${params.locale}/testimonials`}
           />
           {params.quizSlug === 'height' && <Height />}
           {params.quizSlug === 'weight' && <Weight />}

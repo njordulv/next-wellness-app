@@ -10,7 +10,7 @@ import styles from '@/styles/quiz.module.scss'
 
 interface QuizTemplateProps {
   heading: string
-  options: string[]
+  options: { text: string; icon?: React.ElementType | null }[]
   path: string
 }
 
@@ -53,11 +53,11 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
     <>
       <h2>{heading}</h2>
       <div className={styles.items}>
-        {options.map((option) => (
+        {options.map(({ text, icon: Icon }) => (
           <div
-            key={option}
+            key={text}
             className={
-              selectedOption === option
+              selectedOption === text
                 ? `${styles.item} ${styles.selected}`
                 : `${styles.item}`
             }
@@ -67,14 +67,19 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
                 className={styles.input}
                 type="radio"
                 name="quiz-options"
-                value={option}
-                onChange={() => handleOptionChange(option)}
+                value={text}
+                onChange={() => handleOptionChange(text)}
               />
               <span className={styles.back}></span>
-              <span className={styles.title}>{option}</span>
+              <span className={styles.title}>{text}</span>
               <span className={styles.checkbox}>
-                <RiCheckFill className={styles.icon} />
+                <RiCheckFill className={styles.checkIcon} />
               </span>
+              {Icon && (
+                <span className={styles.icon}>
+                  <Icon />
+                </span>
+              )}
             </label>
           </div>
         ))}
