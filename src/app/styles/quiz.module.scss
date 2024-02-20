@@ -137,3 +137,11 @@
   z-index: -1;
   top: 0;
 }
+
+.chartTitle {
+  background: var(--pink);
+  background: linear-gradient(to right, var(--purple) 37%, var(--orange) 73%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}

@@ -54,7 +54,6 @@ const Results: React.FC = () => {
       } else {
         activeIndex = 0
       }
-      console.log(activeIndex)
 
       if (activeIndex !== 0) {
         setTimeout(() => {

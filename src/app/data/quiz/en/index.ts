@@ -221,6 +221,13 @@ const quizPagesEn: QuizPagesData[] = [
       { text: 'None related events', icon: GiCancel },
     ],
   },
+  {
+    slug: 'chart',
+    title: 'Quiz Chart',
+    description: 'The ultimate wellness strategy you require',
+    heading: 'The ultimate wellness strategy you require',
+    options: [],
+  },
 ]
 
 export default quizPagesEn

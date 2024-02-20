@@ -11,6 +11,7 @@ import Height from './Height'
 import Weight from './Weight'
 import WeightGoal from './WeightGoal'
 import Results from './Results'
+import QuizChart from './QuizChart'
 
 interface QuizLogicProps {
   params: {
@@ -43,12 +44,13 @@ const QuizLogic: React.FC<QuizLogicProps> = ({ params }) => {
           <QuizTemplate
             heading={currentQuiz.heading}
             options={currentQuiz.options}
-            path={nextPage ? nextPage.slug : `/${params.locale}/testimonials`}
+            path={nextPage ? nextPage.slug : `/${params.locale}/quiz/chart`}
           />
           {params.quizSlug === 'height' && <Height />}
           {params.quizSlug === 'weight' && <Weight />}
           {params.quizSlug === 'weight-goal' && <WeightGoal />}
           {params.quizSlug === 'results' && <Results />}
+          {params.quizSlug === 'chart' && <QuizChart />}
         </PageLayoutWithoutTitle>
       ) : (
         notFound()

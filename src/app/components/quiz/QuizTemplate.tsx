@@ -52,38 +52,40 @@ const QuizTemplate: React.FC<QuizTemplateProps> = ({
   return (
     <>
       <h2>{heading}</h2>
-      <div className={styles.items}>
-        {options.map(({ text, icon: Icon }) => (
-          <div
-            key={text}
-            className={
-              selectedOption === text
-                ? `${styles.item} ${styles.selected}`
-                : `${styles.item}`
-            }
-          >
-            <label>
-              <input
-                className={styles.input}
-                type="radio"
-                name="quiz-options"
-                value={text}
-                onChange={() => handleOptionChange(text)}
-              />
-              <span className={styles.back}></span>
-              <span className={styles.title}>{text}</span>
-              <span className={styles.checkbox}>
-                <RiCheckFill className={styles.checkIcon} />
-              </span>
-              {Icon && (
-                <span className={styles.icon}>
-                  <Icon />
+      {options.length !== 0 && (
+        <div className={styles.items}>
+          {options.map(({ text, icon: Icon }) => (
+            <div
+              key={text}
+              className={
+                selectedOption === text
+                  ? `${styles.item} ${styles.selected}`
+                  : `${styles.item}`
+              }
+            >
+              <label>
+                <input
+                  className={styles.input}
+                  type="radio"
+                  name="quiz-options"
+                  value={text}
+                  onChange={() => handleOptionChange(text)}
+                />
+                <span className={styles.back}></span>
+                <span className={styles.title}>{text}</span>
+                <span className={styles.checkbox}>
+                  <RiCheckFill className={styles.checkIcon} />
                 </span>
-              )}
-            </label>
-          </div>
-        ))}
-      </div>
+                {Icon && (
+                  <span className={styles.icon}>
+                    <Icon />
+                  </span>
+                )}
+              </label>
+            </div>
+          ))}
+        </div>
+      )}
     </>
   )
 }
