@@ -53,11 +53,11 @@ const QuizChart = () => {
 
   return (
     <>
-      <h3>{t('chartTitle')}</h3>
+      <h3 className="font-medium">{t('chartTitle')}</h3>
       <h4 className={styles.chartTitle}>{`${weightGoal} ${measure} ${t(
         'by'
       )} ${date}`}</h4>
-      <div className="">
+      <div className="max-w-[490px] w-full m-auto">
         <Line
           data={{
             labels: [
@@ -82,17 +82,57 @@ const QuizChart = () => {
                 hoverBackgroundColor: '#ab79d7',
                 pointHoverBorderColor: '#ab79d7',
                 pointStyle: 'circle',
-                pointRadius: 9,
-                pointHoverRadius: 9,
+                pointRadius: 7,
+                pointHoverRadius: 7,
                 pointBorderColor: '#222',
-                pointBorderWidth: 3,
+                pointBorderWidth: 2,
                 pointHitRadius: 60,
+                tension: 0.3,
               },
             ],
           }}
+          options={{
+            animation: {
+              duration: 1100,
+              easing: 'easeOutCubic',
+            },
+            plugins: {
+              tooltip: {
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                padding: {
+                  top: 5,
+                  right: 13,
+                  bottom: 5,
+                  left: 13,
+                },
+                displayColors: false,
+                titleFont: {
+                  size: 11,
+                  weight: 500,
+                },
+                callbacks: {
+                  title: function () {
+                    return ''
+                  },
+                  label: function (tooltipItem) {
+                    const value = tooltipItem.formattedValue
+                    return `${value} ${measure}`
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                ticks: {
+                  stepSize: 10,
+                },
+                beginAtZero: false,
+              },
+            },
+          }}
         />
       </div>
-      <div className="flex items-center justify-center mt-7">
+      <div className="flex items-center justify-center mt-9">
         <button className="button" onClick={nextStepHandler}>
           {t('continue')}
         </button>
