@@ -3,7 +3,7 @@ import {
   GiBasketballBall,
   GiBigDiamondRing,
   GiIsland,
-  GiFamilyHouse,
+  GiHouse,
   GiHumanPyramid,
   GiTomato,
   GiOrangeSlice,
@@ -217,10 +217,17 @@ const quizPagesPl: QuizPagesData[] = [
       { text: 'Zawody sportowe', icon: GiBasketballBall },
       { text: 'Ślub', icon: GiBigDiamondRing },
       { text: 'Podróż nad morze', icon: GiIsland },
-      { text: 'Wydarzenie rodzinne', icon: GiFamilyHouse },
+      { text: 'Wydarzenie rodzinne', icon: GiHouse },
       { text: 'Spotkanie', icon: GiHumanPyramid },
       { text: 'Brak powiązanych wydarzeń', icon: GiCancel },
     ],
+  },
+  {
+    slug: 'chart',
+    title: 'Wykres Quizu',
+    description: 'Ostateczna strategia dobrego samopoczucia, której wymagasz',
+    heading: 'Ostateczna strategia dobrego samopoczucia, której wymagasz',
+    options: [],
   },
 ]
 

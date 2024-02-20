@@ -57,7 +57,12 @@
     "answer1": "Aim to lose {percentNumber}% weight for lasting health. CDC guidelines suggest losing up to 4 kg monthly is safe and effective.",
     "answer2": "Target a {percentNumber}% weight loss to boost energy and improve sleep. Studies show even 5-minute daily exercises make a big difference.",
     "answer3": "Goal: Reduce weight by {percentNumber}% for better energy and sleep through daily quick exercises, as research by the University of Utah shows.",
-    "answer4": "Challenge: Lose {percentNumber}% of your weight. Significant loss over 20% leads to improved health and greater satisfaction in life."
+    "answer4": "Challenge: Lose {percentNumber}% of your weight. Significant loss over 20% leads to improved health and greater satisfaction in life.",
+    "chartTitle": "You're on the verge of reaching your objective!",
+    "by": "by",
+    "start": "Start",
+    "finish": "Finish",
+    "week": "Week"
   },
   "Results": {
     "yourBMI": "Your BMI is ",

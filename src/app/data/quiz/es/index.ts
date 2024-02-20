@@ -3,7 +3,7 @@ import {
   GiBasketballBall,
   GiBigDiamondRing,
   GiIsland,
-  GiFamilyHouse,
+  GiHouse,
   GiHumanPyramid,
   GiTomato,
   GiOrangeSlice,
@@ -220,10 +220,17 @@ const quizPagesEs: QuizPagesData[] = [
       { text: 'Competencia atlética', icon: GiBasketballBall },
       { text: 'Boda', icon: GiBigDiamondRing },
       { text: 'Viaje a la costa', icon: GiIsland },
-      { text: 'Evento familiar', icon: GiFamilyHouse },
+      { text: 'Evento familiar', icon: GiHouse },
       { text: 'Reunión', icon: GiHumanPyramid },
       { text: 'Ningún evento relacionado', icon: GiCancel },
     ],
+  },
+  {
+    slug: 'chart',
+    title: 'Gráfico del Cuestionario',
+    description: 'La estrategia de bienestar definitiva que necesitas',
+    heading: 'La estrategia de bienestar definitiva que necesitas',
+    options: [],
   },
 ]
 

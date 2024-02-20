@@ -57,7 +57,12 @@
     "answer1": "Meta: perder {percentNumber}% de peso para una salud a largo plazo. Las guías del CDC sugieren que perder hasta 4 kg mensuales es seguro y efectivo.",
     "answer2": "Objetivo: una pérdida de peso del {percentNumber}% para aumentar energía y mejorar el sueño. Estudios indican que ejercicios diarios de 5 minutos marcan una gran diferencia.",
     "answer3": "Meta: Reducir el peso en un {percentNumber}% para mejorar energía y sueño con ejercicios rápidos diarios, según investigaciones de la Universidad de Utah.",
-    "answer4": "Desafío: Perder {percentNumber}% de tu peso. Una pérdida significativa de más del 20% mejora la salud y la satisfacción vital."
+    "answer4": "Desafío: Perder {percentNumber}% de tu peso. Una pérdida significativa de más del 20% mejora la salud y la satisfacción vital.",
+    "chartTitle": "¡Estás a punto de alcanzar tu objetivo!",
+    "by": "por",
+    "start": "Inicio",
+    "finish": "Fin",
+    "week": "Semana"
   },
   "Results": {
     "yourBMI": "Tu IMC es ",

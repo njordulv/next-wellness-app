@@ -3,7 +3,7 @@ import {
   GiBasketballBall,
   GiBigDiamondRing,
   GiIsland,
-  GiFamilyHouse,
+  GiHouse,
   GiHumanPyramid,
   GiTomato,
   GiOrangeSlice,
@@ -223,10 +223,17 @@ const quizPagesFr: QuizPagesData[] = [
       { text: 'Compétition sportive', icon: GiBasketballBall },
       { text: 'Mariage', icon: GiBigDiamondRing },
       { text: 'Voyage au bord de la mer', icon: GiIsland },
-      { text: 'Événement familial', icon: GiFamilyHouse },
+      { text: 'Événement familial', icon: GiHouse },
       { text: 'Rassemblement', icon: GiHumanPyramid },
       { text: 'Aucun événement lié', icon: GiCancel },
     ],
+  },
+  {
+    slug: 'chart',
+    title: 'Graphique du Quiz',
+    description: 'La stratégie de bien-être ultime dont vous avez besoin',
+    heading: 'La stratégie de bien-être ultime dont vous avez besoin',
+    options: [],
   },
 ]
 

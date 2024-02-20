@@ -57,7 +57,12 @@
     "answer1": "Objectif : perdre {percentNumber}% de poids pour une santé durable. Les directives du CDC suggèrent qu'une perte jusqu'à 4 kg par mois est sûre et efficace.",
     "answer2": "Cible : une perte de poids de {percentNumber}% pour augmenter l'énergie et améliorer le sommeil. Les études montrent que des exercices quotidiens de 5 minutes font une grande différence.",
     "answer3": "Objectif : Réduire le poids de {percentNumber}% pour plus d'énergie et un meilleur sommeil grâce à des exercices quotidiens rapides, comme le montre la recherche de l'Université de l'Utah.",
-    "answer4": "Défi : Perdre {percentNumber}% de votre poids. Une perte significative de plus de 20% conduit à une meilleure santé et une plus grande satisfaction dans la vie."
+    "answer4": "Défi : Perdre {percentNumber}% de votre poids. Une perte significative de plus de 20% conduit à une meilleure santé et une plus grande satisfaction dans la vie.",
+    "chartTitle": "Vous êtes sur le point d'atteindre votre objectif !",
+    "by": "par",
+    "start": "Début",
+    "finish": "Fin",
+    "week": "Semaine"
   },
   "Results": {
     "yourBMI": "Votre IMC est ",

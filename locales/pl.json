@@ -57,7 +57,12 @@
     "answer1": "Cel: stracić {percentNumber}% masy ciała dla długotrwałego zdrowia. Według CDC, bezpieczne jest tracenie do 4 kg miesięcznie.",
     "answer2": "Cel: redukcja wagi o {percentNumber}% zwiększa energię i poprawia jakość snu. Badania pokazują, że codzienne 5-minutowe ćwiczenia robią dużą różnicę.",
     "answer3": "Cel: Obniżenie wagi o {percentNumber}% dla lepszej energii i snu przez codzienne krótkie ćwiczenia, jak pokazują badania Uniwersytetu w Utah.",
-    "answer4": "Wyzwanie: Zgubić {percentNumber}% swojej wagi. Znacząca utrata ponad 20% masy ciała prowadzi do poprawy zdrowia i większego zadowolenia z życia."
+    "answer4": "Wyzwanie: Zgubić {percentNumber}% swojej wagi. Znacząca utrata ponad 20% masy ciała prowadzi do poprawy zdrowia i większego zadowolenia z życia.",
+    "chartTitle": "Jesteś na skraju osiągnięcia swojego celu!",
+    "by": "przez",
+    "start": "Początek",
+    "finish": "Koniec",
+    "week": "Tydzień"
   },
   "Results": {
     "yourBMI": "Twoje BMI wynosi ",

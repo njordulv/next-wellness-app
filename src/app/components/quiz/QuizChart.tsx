@@ -53,14 +53,20 @@ const QuizChart = () => {
 
   return (
     <>
-      <h3>You're on the verge of reaching your objective!</h3>
-      <h4
-        className={styles.chartTitle}
-      >{`${weightGoal} ${measure} by ${date}`}</h4>
+      <h3>{t('chartTitle')}</h3>
+      <h4 className={styles.chartTitle}>{`${weightGoal} ${measure} ${t(
+        'by'
+      )} ${date}`}</h4>
       <div className="">
         <Line
           data={{
-            labels: [`Start`, 'Week I', 'Week II', 'Week III', `Finish`],
+            labels: [
+              t('start'),
+              `${t('week')} I`,
+              `${t('week')} II`,
+              `${t('week')} III`,
+              t('finish'),
+            ],
             datasets: [
               {
                 data: [

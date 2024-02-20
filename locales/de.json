@@ -57,7 +57,12 @@
     "answer1": "Ziel: {percentNumber}% Gewichtsverlust für langanhaltende Gesundheit. Laut CDC ist der Verlust von bis zu 4 kg pro Monat sicher und wirksam.",
     "answer2": "Ziel: Eine Gewichtsreduktion von {percentNumber}% steigert Energie und Schlafqualität. Studien belegen, dass tägliche 5-Minuten-Übungen einen großen Unterschied machen.",
     "answer3": "Ziel: Gewicht um {percentNumber}% reduzieren für mehr Energie und besseren Schlaf durch tägliche kurze Übungen, wie die Forschung der Universität von Utah zeigt.",
-    "answer4": "Herausforderung: Verliere {percentNumber}% deines Gewichts. Ein signifikanter Verlust von über 20% führt zu verbesserter Gesundheit und größerer Lebenszufriedenheit."
+    "answer4": "Herausforderung: Verliere {percentNumber}% deines Gewichts. Ein signifikanter Verlust von über 20% führt zu verbesserter Gesundheit und größerer Lebenszufriedenheit.",
+    "chartTitle": "Sie stehen kurz davor, Ihr Ziel zu erreichen!",
+    "by": "bis",
+    "start": "Start",
+    "finish": "Ende",
+    "week": "Woche"
   },
   "Results": {
     "yourBMI": "Ihr BMI ist ",
