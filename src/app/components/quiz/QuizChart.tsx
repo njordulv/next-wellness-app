@@ -1,14 +1,12 @@
-'use client'
-
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
+  ComposedChart,
+  Area,
+  Line,
+  XAxis,
+  YAxis,
   Tooltip,
-  PointElement,
-  LineElement,
-} from 'chart.js'
-import { Line } from 'react-chartjs-2'
+  TooltipProps,
+} from 'recharts'
 import { useRouter } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import { useSelector } from '@/store/store'
@@ -21,9 +19,12 @@ import {
 } from '@/store/slices/formSlice'
 import styles from '@/styles/quiz.module.scss'
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip)
+interface CustomTooltipProps extends TooltipProps<string, string> {
+  active?: boolean
+  payload?: any[]
+}
 
-const QuizChart = () => {
+export default function QuizChart() {
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations('Quiz')
@@ -51,86 +52,82 @@ const QuizChart = () => {
     router.push(`/${locale}/testimonials`)
   }
 
+  const data = [
+    {
+      name: t('start'),
+      weight: weightCurr,
+    },
+    {
+      name: `${t('week')} I`,
+      weight: diff1.toFixed(),
+    },
+    {
+      name: `${t('week')} II`,
+      weight: diff2.toFixed(),
+    },
+    {
+      name: `${t('week')} III`,
+      weight: diff3.toFixed(),
+    },
+    {
+      name: t('finish'),
+      weight: weightGoal,
+    },
+  ]
+
+  const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-slate-950 bg-opacity-75 rounded-md px-3 text-white">
+          {`${payload[0].value} ${measure}`}
+        </div>
+      )
+    }
+
+    return null
+  }
+
   return (
     <>
       <h3 className="font-medium">{t('chartTitle')}</h3>
       <h4 className={styles.chartTitle}>{`${weightGoal} ${measure} ${t(
         'by'
       )} ${date}`}</h4>
-      <div className="max-w-[490px] w-full m-auto">
-        <Line
-          data={{
-            labels: [
-              t('start'),
-              `${t('week')} I`,
-              `${t('week')} II`,
-              `${t('week')} III`,
-              t('finish'),
-            ],
-            datasets: [
-              {
-                data: [
-                  weightCurr,
-                  diff1.toFixed(),
-                  diff2.toFixed(),
-                  diff3.toFixed(),
-                  weightGoal,
-                ],
-                borderWidth: 3,
-                borderColor: '#757575',
-                backgroundColor: '#ab79d7',
-                hoverBackgroundColor: '#ab79d7',
-                pointHoverBorderColor: '#ab79d7',
-                pointStyle: 'circle',
-                pointRadius: 7,
-                pointHoverRadius: 7,
-                pointBorderColor: '#222',
-                pointBorderWidth: 2,
-                pointHitRadius: 60,
-                tension: 0.3,
-              },
-            ],
-          }}
-          options={{
-            animation: {
-              duration: 1100,
-              easing: 'easeOutCubic',
-            },
-            plugins: {
-              tooltip: {
-                backgroundColor: 'rgba(0,0,0,0.8)',
-                padding: {
-                  top: 5,
-                  right: 13,
-                  bottom: 5,
-                  left: 13,
-                },
-                displayColors: false,
-                titleFont: {
-                  size: 11,
-                  weight: 500,
-                },
-                callbacks: {
-                  title: function () {
-                    return ''
-                  },
-                  label: function (tooltipItem) {
-                    const value = tooltipItem.formattedValue
-                    return `${value} ${measure}`
-                  },
-                },
-              },
-            },
-            scales: {
-              y: {
-                ticks: {
-                  stepSize: 10,
-                },
-                beginAtZero: false,
-              },
-            },
-          }}
-        />
+      <div className="flex justify-center">
+        <ComposedChart
+          width={480}
+          height={200}
+          data={data}
+          margin={{ top: 10, right: 35, left: 0, bottom: 0 }}
+        >
+          <defs>
+            <linearGradient id="line1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="24%" stopColor="#ab79d7" stopOpacity={0.8} />
+              <stop offset="98%" stopColor="#ab79d7" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" stroke="#555" />
+          <YAxis stroke="#555" />
+          <Tooltip content={<CustomTooltip />} />
+          <Area
+            type="monotone"
+            dataKey="weight"
+            stroke="#ab79d7"
+            fillOpacity={1}
+            fill="url(#line1)"
+            animationBegin={100}
+            animationEasing="ease-in-out"
+          />
+          <Line
+            type="monotone"
+            dataKey="weight"
+            stroke="#cd94ff"
+            strokeWidth="2"
+            dot={{ stroke: '#ab79d7', fill: '#ab79d7' }}
+            activeDot={{ stroke: '#ab79d7', fill: 'white' }}
+            animationEasing="ease-in-out"
+          />
+        </ComposedChart>
       </div>
       <div className="flex items-center justify-center mt-9">
         <button className="button" onClick={nextStepHandler}>
@@ -140,4 +137,3 @@ const QuizChart = () => {
     </>
   )
 }
-export default QuizChart
