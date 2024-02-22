@@ -32,6 +32,8 @@ The Next.js wellness App is a web application designed to aid users in monitorin
 
 14. **Multilingual Support:** I've thrilled to announce a major update to my app with full localization in English, German, French, Polish and Spanish! This update is part of commitment to making the wellness app accessible and user-friendly for a global audience.
 
+15. **Data Visualization with Recharts:** Leveraging the powerful Recharts library, the page "/chart" provides intuitive and interactive data weight visualizations to enhance user engagement and understanding.
+
 ### Usage
 
 To run the app:
