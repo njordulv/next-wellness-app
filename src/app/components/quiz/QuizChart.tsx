@@ -1,3 +1,5 @@
+'use client'
+
 import {
   ComposedChart,
   Area,
@@ -7,10 +9,12 @@ import {
   Tooltip,
   TooltipProps,
 } from 'recharts'
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import { useSelector } from '@/store/store'
 import {
+  selectTotalCm,
   selectInputWeight,
   selectWeightImperial,
   selectGoal,
@@ -32,6 +36,7 @@ export default function QuizChart() {
   const wImp = useSelector(selectWeightImperial)
   const g = useSelector(selectGoal)
   const gImp = useSelector(selectGoalImperial)
+  const height = useSelector(selectTotalCm)
   const isMetric = useSelector(selectIsMetric)
   const weightCurr = parseInt(isMetric ? w : wImp)
   const weightGoal = parseInt(isMetric ? g : gImp)
@@ -86,6 +91,17 @@ export default function QuizChart() {
 
     return null
   }
+
+  // redirect if height, weight & weight-goal values aren't set
+  useEffect(() => {
+    if (!height) {
+      router.push(`/${locale}/quiz/height`)
+    } else if (!weightCurr) {
+      router.push(`/${locale}/quiz/weight`)
+    } else if (!weightGoal) {
+      router.push(`/${locale}/quiz/weight-goal`)
+    }
+  }, [locale, router])
 
   return (
     <>
