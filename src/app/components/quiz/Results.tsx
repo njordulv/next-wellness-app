@@ -16,6 +16,8 @@ import {
   selectInputWeight,
   selectTotalCm,
   selectTotalKg,
+  selectGoal,
+  selectGoalImperial,
 } from '@/store/slices/formSlice'
 import { BMI } from '@/utils/healthMetrics'
 import styles from '@/styles/results.module.scss'
@@ -27,6 +29,8 @@ const Results: React.FC = () => {
   const t = useTranslations('Results')
   const active = useSelector(selectActive)
   const [disabled, setDisabled] = useState(true)
+  const goal = useSelector(selectGoal)
+  const goalImp = useSelector(selectGoalImperial)
   let inputHeight = useSelector(selectInputHeight)
   let inputWeight = useSelector(selectInputWeight)
   let totalCm = useSelector(selectTotalCm)
@@ -68,8 +72,17 @@ const Results: React.FC = () => {
       }
     }
 
+    if (!totalCm) {
+      router.push(`/${locale}/quiz/height`)
+    } else if (!totalKg) {
+      router.push(`/${locale}/quiz/weight`)
+    } else if (!goal && !goalImp) {
+      router.push(`/${locale}/quiz/weight-goal`)
+    } else {
+    }
+
     timeoutDelayHandler()
-  }, [BMIcurrent, dispatch])
+  }, [BMIcurrent, totalCm, totalKg, goal, goalImp, locale, router, dispatch])
 
   let BMIprogress: number
 

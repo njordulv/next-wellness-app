@@ -100,8 +100,9 @@ export default function QuizChart() {
       router.push(`/${locale}/quiz/weight`)
     } else if (!weightGoal) {
       router.push(`/${locale}/quiz/weight-goal`)
+    } else {
     }
-  }, [locale, router])
+  }, [height, weightCurr, weightGoal, locale, router])
 
   return (
     <>
