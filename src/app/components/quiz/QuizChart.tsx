@@ -112,10 +112,10 @@ export default function QuizChart() {
       )} ${date}`}</h4>
       <div className="flex justify-center">
         <ComposedChart
-          width={480}
-          height={200}
+          width={470}
+          height={210}
           data={data}
-          margin={{ top: 10, right: 35, left: 0, bottom: 0 }}
+          margin={{ top: 0, right: 50, left: 0, bottom: 0 }}
         >
           <defs>
             <linearGradient id="line1" x1="0" y1="0" x2="0" y2="1">
@@ -124,8 +124,8 @@ export default function QuizChart() {
             </linearGradient>
           </defs>
           <XAxis dataKey="name" stroke="#555" />
-          <YAxis stroke="#555" />
-          <Tooltip content={<CustomTooltip />} />
+          <YAxis tick={false} axisLine={false} />
+          <Tooltip cursor={{ stroke: '#27272b' }} content={<CustomTooltip />} />
           <Area
             type="monotone"
             dataKey="weight"
