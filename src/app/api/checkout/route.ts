@@ -8,21 +8,11 @@ export async function POST(request: Request) {
 
     if (!checkoutData) throw new Error('Checkout data is required')
 
-    const {
-      cardNumber,
-      expDate,
-      cvv,
-      firstName,
-      lastName,
-      email,
-      total,
-      totalDiscount,
-    } = checkoutData
+    const { cardNumber, firstName, lastName, email, total, totalDiscount } =
+      checkoutData
 
     if (
       !cardNumber ||
-      !expDate ||
-      !cvv ||
       !firstName ||
       !lastName ||
       !email ||
@@ -33,8 +23,8 @@ export async function POST(request: Request) {
     }
 
     await sql`
-      INSERT INTO Checkout (cardNumber, expDate, cvv, firstName, lastName, email, total, totalDiscount)
-      VALUES (${cardNumber}, ${expDate}, ${cvv}, ${firstName}, ${lastName}, ${email}, ${total}, ${totalDiscount});
+      INSERT INTO Checkout (cardNumber, firstName, lastName, email, total, totalDiscount)
+      VALUES (${cardNumber}, ${firstName}, ${lastName}, ${email}, ${total}, ${totalDiscount});
     `
 
     return NextResponse.json(
