@@ -1,6 +1,6 @@
 {
   "name": "next-wellness-app",
-  "version": "1.12.26",
+  "version": "1.12.27",
   "private": true,
   "license": "MIT",
   "description": "Next.js Wellness App",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@types/recharts": "^1.8.29",
+    "@vercel/analytics": "^1.3.1",
     "@vercel/postgres": "^0.7.2",
     "@vercel/speed-insights": "^1.0.9",
     "axios": "^1.6.5",

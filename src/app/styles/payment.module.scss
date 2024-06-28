@@ -140,6 +140,10 @@
     transform: skew(0deg, -5deg);
     background-color: #888;
   }
+
+  @media (max-width: 480px) {
+    bottom: 15px;
+  }
 }
 
 .paymentPopular {
@@ -150,6 +154,11 @@
   line-height: 16px;
   font-weight: 500;
   color: var(--purple);
+
+  @media (max-width: 480px) {
+    bottom: 8px;
+    right: 20px;
+  }
 }
 
 .paymentBestOffer {

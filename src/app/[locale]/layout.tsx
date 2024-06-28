@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { Baloo_2 } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { locales } from '@/config'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
@@ -60,9 +61,10 @@ export default async function LocaleLayout({
           <AppProviders>
             <Header />
             {children}
-            <SpeedInsights />
             <Cookie />
             <Footer />
+            <SpeedInsights />
+            <Analytics />
           </AppProviders>
         </NextIntlProvider>
       </body>
