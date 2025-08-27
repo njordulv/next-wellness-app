@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import PageLayout from '@/components/layouts/PageLayout'
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 }
 
 export default function CookiePolicy({ params: { locale } }: Props) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   const t = useTranslations('CookiePolicy')
 

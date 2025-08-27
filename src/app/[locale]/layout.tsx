@@ -4,7 +4,7 @@ import { Baloo_2 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { locales } from '@/config'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import AppProviders from '@/providers/app-providers'
 import NextIntlProvider from '@/providers/NextIntlProvider'
 import Footer from '@/components/common/Footer'
@@ -47,7 +47,7 @@ export default async function LocaleLayout({
     notFound()
   }
   // Enable static rendering
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   return (
     <html lang={locale} suppressHydrationWarning>

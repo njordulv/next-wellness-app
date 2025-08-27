@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Checkout from '@/components/checkout/Checkout'
 
 type Props = {
@@ -17,7 +17,7 @@ export async function generateMetadata({
 }
 
 export default function CheckoutPage({ params: { locale } }: Props) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   return <Checkout />
 }

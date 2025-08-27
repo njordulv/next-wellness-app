@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import QuizLogic from '@/components/quiz/QuizLogic'
 import getQuizPagesByLocale from '@/utils/localeUtils'
 
@@ -37,7 +37,7 @@ export function generateMetadata({ params }: { params: Params }) {
 
 export default function QuizPage({ params }: Props) {
   const { locale } = params
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
   getQuizPagesByLocale(params.locale)
 
   const t = useTranslations('Quiz')

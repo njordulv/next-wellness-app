@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import ProgressCircular from '@/components/progress/ProgressCircular'
 import PageLayout from '@/components/layouts/PageLayout'
 import Slider from '@/components/slider/testimonials'
@@ -20,7 +20,7 @@ export async function generateMetadata({
 }
 
 export default function Testimonials({ params: { locale } }: Props) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   const t = useTranslations('Testimonials')
 
